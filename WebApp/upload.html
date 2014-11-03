@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>일해요 전체 UI프로토타입</title>
+	<link rel="stylesheet" href="css/upload.css">
+	<link rel="stylesheet" href="css/Nwagon.css">
+	<script src="js/Nwagon.js"></script>
+</head>
+<body>
+
+<div id = "body-container">
+	<div id = "header">
+        <a href="javascript:location.reload()"><div class = "logo">일해요</div></a>
+        <div class = "upload">업로드</div>
+        <div class="searchBox">
+        	<form action="">
+        		<input type="text" class = "inputbox" placeholder="정당 / 정치인 이름 입력">
+        		<input type="submit" class = "submit_btn" value="검색">
+        	</form>
+        	<div class="label">엔터 (Enter)</div>
+        </div>
+        
+	</div>
+
+	<div id = "left">
+	    <span class = "login">로그인</span>
+	    <span class = "signin">회원가입</span>
+	    <div class="login-wrap">
+	    		<div class="login-pop on">
+	    			로그인
+	    		</div>
+	    		<div class="login-form">
+	    			<form action="">
+	    				<input type="text" placeholder="아이디">
+	    				<input type="password" placeholder="비밀번호">
+	    				<input type="submit" class="submit" value="로그인  ">
+	    				<div class="cancel">로그인 취소</div>
+	    			</form>
+	    		</div>
+	    	</div>
+	    <div class = "list-wrap">
+	    	<span class = "list on">메인</span>
+			<span class = "list">우리지역</span>
+			<span class = "list">정당별</span>
+			<span class = "list">지역별</span>
+			<span class = "list">정치인</span>
+		</div>
+		<div class="floatIntroduce">
+			<span>일해요 서비스 소개</span>
+		</div>
+		<div class="logoBottom">
+			<span>일해요</span>
+		</div>
+	</div>
+	
+	<div id = "main">
+		<div class="updated">이 페이지는 2014-03-02 17:32 기준 일해요의 <u>편집기준</u>에 의거하여 작성되었습니다</div>
+		<div id = "upload">
+		<div>	
+			<span>공약</span>
+			<div class = "promise-selector">1. 부동산 버블 터뜨리기</div>
+			<button class = "option">공약선택</button>
+			<button class = "option">올리기</button>
+		</div>
+		<div class = "sources">
+			<ul>
+				<li class = "attach-source">사진</li>
+				<li class = "attach-source">영상</li>
+				<li class = "attach-source">링크</li>	
+			</ul>
+			<div class = "url-bar">http://</div>
+		</div>
+		<div class = "article-attachments">
+			<ul>
+				<li class = "attach">첨부된 파일</li>
+				<li class = "attach">첨부된 파일</li>
+				<li class = "attach">첨부된 파일</li>
+			</ul>
+		</div>
+		<div class = "card-type99">
+			<div class = "title">제목</div>
+			<div class = "contents">내용을 입력하세요</div>
+		</div>
+		</div>
+	<div id = "footer">
+		<div class="link">편집기준&nbsp;&nbsp;|&nbsp;&nbsp;이용약관&nbsp;&nbsp;|&nbsp;&nbsp;개인정보 취급방침&nbsp;&nbsp;|&nbsp;&nbsp;정책&nbsp;&nbsp;|&nbsp;&nbsp;오류제보</div>
+		<div class="devInfo">서비스 개발 : 김정봉 김다혜 채종운 하태호</div>
+	</div>
+</div>
+</body>
+<script src = "js/Layout.js"></script>
+</html>

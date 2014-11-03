@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>일해요 전체 UI프로토타입</title>
+	<link rel="stylesheet" href="css/search-politician.css">
+	<link rel="stylesheet" href="css/Nwagon.css">
+	<script src="js/Nwagon.js"></script>
+</head>
+<body>
+
+<div id = "body-container">
+	<div id = "header">
+        <a href="javascript:location.reload()"><div class = "logo">일해요</div></a>
+        <div class = "upload">업로드</div>
+        <div class="searchBox">
+        	<form action="">
+        		<input type="text" class = "inputbox" placeholder="정당 / 정치인 이름 입력">
+        		<input type="submit" class = "submit_btn" value="검색">
+        	</form>
+        	<div class="label">엔터 (Enter)</div>
+        </div>
+        
+	</div>
+
+	<div id = "left">
+	    <span class = "login">로그인</span>
+	    <span class = "signin">회원가입</span>
+	    <div class="login-wrap">
+	    		<div class="login-pop on">
+	    			로그인
+	    		</div>
+	    		<div class="login-form">
+	    			<form action="">
+	    				<input type="text" placeholder="아이디">
+	    				<input type="password" placeholder="비밀번호">
+	    				<input type="submit" class="submit" value="로그인  ">
+	    				<div class="cancel">로그인 취소</div>
+	    			</form>
+	    		</div>
+	    	</div>
+	    <div class = "list-wrap">
+	    	<span class = "list on">메인</span>
+			<span class = "list">우리지역</span>
+			<span class = "list">정당별</span>
+			<span class = "list">지역별</span>
+			<span class = "list">정치인</span>
+		</div>
+		<div class="floatIntroduce">
+			<span>일해요 서비스 소개</span>
+		</div>
+		<div class="logoBottom">
+			<span>일해요</span>
+		</div>
+	</div>
+	
+	<div id = "main">
+		<div class="updated">이 페이지는 2014-03-02 17:32 기준 일해요의 <u>편집기준</u>에 의거하여 작성되었습니다</div>
+		<div class = "card type1">
+			<div class="politicianFinder">
+				<ul>
+					<li>
+						<span class = "category">지역별</span>
+						<div class="attribute">
+						<span class = "region">서울</span>
+						<span class = "test" class = "region">경기</span>
+						<span class = "region">강원</span>
+						<span class = "region">대전</span>
+						<span class = "region">충남</span>
+						<span class = "region">경북</span>
+						<span class = "region">경남</span>
+						<span class = "region">전북</span>
+						</div>
+					</li>
+					<li>
+						<span class = "category">정당별</span>
+						<div class="attribute">
+						<span class = "party">새누리당</span>
+						<span class = "party">새정연</span>
+						<span class = "party">녹색당</span>
+						<span class = "party">진보당</span>
+						<span class = "test" class = "party">알았당</span>
+						<span class = "party">구라당</span>
+						<span class = "party">뽀센당</span>
+						<span class = "party">당당당</span>
+						</div>
+					</li>
+					<li>
+						<span class = "category">정치인</span>
+						<div class="attribute">
+						<span class = "politician">뽀삐센빠이</span>
+						<span class = "politician">윤성우</span>
+						<span class = "politician">홍성대</span>
+						<span class = "politician">자바지기</span>
+						<span class = "politician">하태호</span>
+						<span class = "politician">채종운</span>
+						<span class = "test" class = "politician">박길동</span>
+						<span class = "politician">김정봉</span>
+						</div>
+					</li>
+					<li>
+						<div class="photo">
+						<img src="img/mem4.jpg" alt="">
+						</div>
+						<div class="attribute">
+						<span class = "name">박길동</span>
+						<span class = "party">형이당</span>
+						<span class = "line"></span>
+						<span class = "district">논산시·계룡시·금산군</span>
+						<span class="now">이행률</span>
+						<span class="percentage">72</span>
+						<span class="percent">%</span>
+						<button> 자세히 보기</button>	
+					</li>
+				
+				</ul>
+			</div>
+		</div>
+	<div id = "footer">
+		<div class="link">편집기준&nbsp;&nbsp;|&nbsp;&nbsp;이용약관&nbsp;&nbsp;|&nbsp;&nbsp;개인정보 취급방침&nbsp;&nbsp;|&nbsp;&nbsp;정책&nbsp;&nbsp;|&nbsp;&nbsp;오류제보</div>
+		<div class="devInfo">서비스 개발 : 김정봉 김다혜 채종운 하태호</div>
+	</div>
+</div>
+</body>
+<script src = "js/Layout.js"></script>
+</html>
