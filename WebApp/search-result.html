@@ -1,0 +1,113 @@
+<html lang="en">
+<head>
+	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+	<meta charset="UTF-8">
+	<title>일해요 정달별페이지 UI프로토타입</title>
+	<link rel="stylesheet" href="css/search-result.css">
+	<link rel="stylesheet" href="css/Nwagon.css">
+	<script src="js/Nwagon.js"></script>
+</head>
+	<body>
+	<div id = "body-container">
+		<div id = "header">
+	        <div class = "logo">일해요</div>
+	        <div class="searchBox">
+	        	<form action="">
+	        		<input type="text" class = "inputbox">
+	        		<input type="submit" class = "submit_btn">
+	        	</form>
+	        </div>
+	        <div class = "upload">업로드</div>
+		</div>
+
+		<div id = "left">
+		    <span class = "login">로그인</span>
+		    <span class = "signin">회원가입</span>
+		    <div class = "list-wrap">
+		    	<span class = "list">메인</span>
+				<span class = "list">우리지역</span>
+				<span class = "list">정당별</span>
+				<span class = "list">정치인</span>
+			</div>
+		</div>
+
+		<div id = "main">
+			<div id="results-container">
+				<span class = "title">검색 결과</span>
+				<div class = "criteria">
+					<span>이름</span>
+					<span>지역</span>
+					<span>정당</span>
+					<span class = "line"></span>
+				</div>
+				<div class = "result-list">
+					<ul>
+						<li>
+							<div class = "result-card">
+								<span class = "result-card-title">이름 (2<!--%numOfResults-->)</span>
+								<div class = "politician-list">
+									<ul>
+										<li>
+										<div class="photo">
+											<img src="img/mem1.jpg" alt="">
+										</div>
+										<div class="info">
+										<span class = "name">홍길동</span>
+										<span class = "party">밥맛있당</span>
+										<span class = "line"></span>
+										<span class = "district">제천시·단양군</span>
+										<span class="now">이행률</span>
+										<span class="percentage">82</span>
+										<span class="percent">%</span>
+										</li>
+
+										<li>
+										<div class="photo">
+											<img src="img/mem3.jpg" alt="">
+										</div>
+										<div class="info">
+										<span class = "name">홍길동</span>
+										<span class = "party">밥맛있당</span>
+										<span class = "line"></span>
+										<span class = "district">서산시·태안군</span>
+										<span class="now">이행률</span>
+										<span class="percentage">82</span>
+										<span class="percent">%</span>
+										</li>
+
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class = "result-card">
+								<span class = "line"></span>
+								<span class = "result-card-title">지역(0<!--%numOfResults-->)</span>
+								<div class = "politician-cards">
+									
+								</div>
+
+							</div>
+						</li>
+						<li>
+							<div class = "result-card">
+								<span class = "line"></span>
+								<span class = "result-card-title">정당(0<!--%numOfResults-->)</span>
+								<div class = "politician-cards">
+									
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>	
+        	</div>
+		</div>
+
+
+		<div id = "footer">
+			dd
+		</div>
+	</div>
+</body>
+<script src = "js/Layout.js"></script>
+</html>

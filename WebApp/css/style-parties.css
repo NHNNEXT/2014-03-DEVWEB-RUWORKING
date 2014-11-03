@@ -1,0 +1,172 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+/*reset.css*/
+body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select{margin:0;padding:0} body,input,textarea,select,button,table{font-family:'나눔고딕','Nanum Gothic','돋움',Dotum, Helvetica,sans-serif;font-size:12px}
+img,fieldset{border:0}
+ul,ol,li{list-style:none}
+em,address{font-style:normal}
+a{text-decoration:none;}
+a:hover,a:active,a:focus{text-decoration:underline} .blind{visibility:hidden;overflow:hidden;position:absolute;top:0;left:0;width:1px;height: 1px;font-size:0;line-height:0}
+
+/* custom */
+/*body { background-color:#F9F9F9; }*/
+html { height:100%;}
+body { background-color:#EFEFEF; height:100%;}
+
+#body-container {
+    width:980px;
+    height:100%;
+    margin:0 auto;
+    background-color:#fff;
+}
+
+#header {
+	width:100%;
+	height:60px;
+    background-color:#353941;
+    float:left;
+}
+
+#header .logo {
+	width:170px;
+    line-height: 60px;
+    text-align: center;
+    background-color:#27CED0;
+	float:left;
+    color:#fff;
+    font-size: 30px;
+}
+
+#header .searchBox {
+    width:500px;
+    height:60px;
+    float:left;
+}
+
+#header .searchBox .inputbox{
+    background-color:transparent;
+    border:2px solid #afafaf;
+    width:300px;
+    height:30px;
+}
+
+#header .searchBox .submit_btn{
+    background-color: #fff;
+    width:70px;
+    height:30px;
+}
+
+#header .upload {
+    width:100px;
+    height:100%;
+    line-height: 60px;
+    text-align: center;
+    background-color:#EB5E4F;
+	float:right;
+    color:#fff;
+    font-size: 17px;
+}
+
+#left{
+	width:170px;
+	height: 100%;
+    background-color:#353941;
+	float:left;
+}
+
+#left .login, #left .signin {
+    width:50%;
+    height:30px;
+    line-height: 30px;
+    background-color:#00ADB1;
+    float:left;
+    color:#fff;
+    text-align: center;
+}
+
+#left .list-wrap {
+    float:left;
+    margin-top: 20px;
+    margin-left: 23px;
+}
+
+#left .list {
+    width: 100%;
+    height:43px;
+    line-height: 43px;
+    color:#fff;
+    display: inline-block;
+    font-size: 18px;
+}
+
+/* dahye code */
+#parties-main{
+    width:810px;
+    float:left;
+    background-color:#fff;
+}
+
+#parties-main .cards-container {
+    margin-top:30px;
+    margin-left:40px;
+    overflow: auto;
+}
+
+#parties-main .cards-container>span{
+    font-size: 25px;
+    display: block;
+}
+
+#parties-main .cards-container .party-cards {
+    width:100%;
+    margin-top: 15px;
+}
+
+#parties-main .cards-container .party-cards ul li.card-list{
+    width:350px;
+    background-color: #fff;
+    height:240px;
+    border:1px solid #ccc;
+    float:left;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+#parties-main .cards-container .party-cards ul li.card-list span.party {
+    margin-left: 12px;
+    margin-top: 18px;
+    font-size: 22px;
+    font-weight: bold;
+    display:inline-block;
+    position: relative;
+}
+
+#parties-main .cards-container .party-cards ul li.card-list #chart_party{
+    width: 160px;
+    height: 200px;
+    float:right;
+    margin-right: 20px;
+    margin-top: 18px;
+    background-color: rgba(0,0,0,0.1);
+}
+
+#parties-main .cards-container .party-cards ul li.card-list .party-info {
+    width: 140px;
+    height: 180px;
+    float: left;
+    margin-left: 30px;
+    margin-top:15px;
+    font-size: 15px;
+}
+
+#parties-main .cards-container .party-cards ul li .party-info li {
+    list-style: disc;
+}
+/* end of dahye code */
+
+#footer {
+    width:100%;
+    height:100px;
+    background-color: #262626;
+    float:left;
+}

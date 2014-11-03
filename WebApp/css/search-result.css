@@ -1,0 +1,281 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+/*reset.css*/
+body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select{margin:0;padding:0} body,input,textarea,select,button,table{font-family:'나눔고딕','Nanum Gothic','돋움',Dotum, Helvetica,sans-serif;font-size:12px}
+img,fieldset{border:0}
+ul,ol,li{list-style:none}
+em,address{font-style:normal}
+a{text-decoration:none;}
+a:hover,a:active,a:focus{text-decoration:underline} .blind{visibility:hidden;overflow:hidden;position:absolute;top:0;left:0;width:1px;height: 1px;font-size:0;line-height:0}
+
+/* custom */
+/*body { background-color:#F9F9F9; }*/
+html { height:100%;}
+body { background-color:#EFEFEF; height:100%;}
+
+#body-container {
+    width:980px;
+    height:100%;
+    margin:0 auto;
+    background-color:#fff;
+}
+
+#header {
+    width:100%;
+    height:60px;
+    background-color:#353941;
+    float:left;
+}
+
+#header .logo {
+    width:170px;
+    line-height: 60px;
+    text-align: center;
+    background-color:#27CED0;
+    float:left;
+    color:#fff;
+    font-size: 30px;
+}
+
+#header .searchBox {
+    width:500px;
+    height:60px;
+    float:left;
+}
+
+#header .searchBox .inputbox{
+    background-color:transparent;
+    border:2px solid #afafaf;
+    width:300px;
+    height:30px;
+}
+
+#header .searchBox .submit_btn{
+    background-color: #fff;
+    width:70px;
+    height:30px;
+}
+
+#header .upload {
+    width:100px;
+    height:100%;
+    line-height: 60px;
+    text-align: center;
+    background-color:#EB5E4F;
+    float:right;
+    color:#fff;
+    font-size: 17px;
+}
+
+#left{
+    width:170px;
+    height: 100%;
+    background-color:#353941;
+    float:left;
+}
+
+#left .login, #left .signin {
+    width:50%;
+    height:30px;
+    line-height: 30px;
+    background-color:#00ADB1;
+    float:left;
+    color:#fff;
+    text-align: center;
+}
+
+#left .list-wrap {
+    float:left;
+    margin-top: 20px;
+    margin-left: 23px;
+}
+
+#left .list {
+    width: 100%;
+    height:43px;
+    line-height: 43px;
+    color:#fff;
+    display: inline-block;
+    font-size: 18px;
+}
+
+#main {
+    width:810px;
+    float:left;
+    background-color:#fff;
+}
+
+/* 여기부터 다혜 코드 */
+#results-container {
+    margin-top:30px;
+    margin-left:40px;
+    overflow: auto;
+}
+
+#results-container .title {
+    font-size: 25px;
+}
+
+#results-container .criteria {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#results-container .criteria span{
+    width: 40px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    font-size: 12px;
+    display: inline-block;
+    background-color: rgba(0,0,0, 0.1);
+    border-top-left-radius: 2px; 
+    border-top-right-radius: 2px;
+}
+
+#results-container .criteria span:hover{
+    background-color: rgba(0,0,0, 0.2);
+}
+
+#results-container .criteria .line {
+    width: 730px;
+    height: 2px;
+    display: block;
+    background-color: #ccc;
+    border-radius: 0px;
+
+}
+
+#results-container .result-list ul li .result-card{
+    width: 100%;
+    overflow: auto;
+    margin-bottom: 15px;
+}
+
+#results-container .result-list ul li .result-card .result-card-title{
+    font-size: 15px;
+    margin-left: 5px;
+}
+
+
+.politician-list {
+    width:100%;
+    margin-top: 5px;
+}
+
+.politician-list ul li{
+    width:135px;
+    background-color: #fff;
+    height:320px;
+    border:1px solid #ccc;
+    float:left;
+    margin-right:10px;
+    position: relative;
+}
+
+.politician-list ul li .info span{
+    font-size: 20px;
+}
+
+.politician-list ul li .info span.name{
+    font-size: 33px;
+    float:left;
+    margin-left: 5px;
+    margin-top: 4px;
+}
+
+.politician-list ul li .info span.party{
+    font-size: 18px;
+    float:left;
+    margin-left: 6px;
+    margin-top: 4px;
+}
+
+.politician-list ul li .info span.line{
+    width:110px;
+    height:2px;
+    margin-left: 8px;
+    margin-top:9px;
+    background-color: #ccc;
+    float: left;
+}
+
+.politician-list ul li .info span.district{
+    width:110px;
+    line-height:15px;
+    font-size: 12px;
+    float:left;
+    margin-left: 8px;
+    margin-top: 8px;
+}
+
+.politician-list ul li .info span.now{
+    font-size: 17px;
+    float:left;
+    bottom:5px;
+    left:5px;
+    font-weight: bold;
+    position: absolute;
+
+}
+
+.politician-list ul li .info span.percentage{
+    font-size: 33px;
+    float:right;
+    bottom:2px;
+    right:23px;
+    position: absolute;
+}
+
+.politician-list ul li .info span.percent{
+    font-size: 20px;
+    float:right;
+    bottom:3px;
+    right:3px;
+    position: absolute;
+}
+
+.politician-list .photo {
+    position: relative;
+    float:left;
+}
+
+.politician-list .photo span {
+    position:absolute;
+    width:30px;
+    height:30px;
+    z-index:30;
+    text-align: center;
+    color:#fff;
+    font-size: 18px;
+    line-height: 30px;
+    top:0px;
+    left:0px;
+    background-color: #45C6B4;
+}
+
+.politician-list .photo img {
+    width:135px;
+    height:160px;
+}
+
+.result-card {
+    min-height: 100px;
+}
+.result-card .line {
+    width: 700px;
+    height: 1px;
+    margin-left: 5px;
+    margin-bottom: 10px;
+    display: block;
+    background-color: rgba(0,0,0,0.1);
+}
+
+
+/* 다혜 코드 끝 */
+
+#footer {
+    width:100%;
+    height:100px;
+    background-color: #262626;
+    float:left;
+}
