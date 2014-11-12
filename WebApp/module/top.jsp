@@ -28,8 +28,8 @@
 
 	<!-- navigation bar on left side -->
 	<nav>
-	    <span class = "login">로그인</span>
 	    <span class = "signin">회원가입</span>
+	    <span class = "login">로그인</span>
 	    <div class="login-wrap">
 	    	<div class="login-pop on">로그인</div>
 	    	<div class="login-form">
