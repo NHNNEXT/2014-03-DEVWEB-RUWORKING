@@ -7,7 +7,7 @@
 <title>일해요? 일해요!</title>
 <link rel="stylesheet" href="/module/css/common_style.css">
 <link rel="stylesheet" href="/css/main_style.css">
-<script src="js/common_template.js"></script>
+<script src="/module/js/common_template.js"></script>
 </head>
 <body>
 <!-- body 전체 container -->
