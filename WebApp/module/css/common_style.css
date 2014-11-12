@@ -94,7 +94,7 @@ nav {
     position: relative;
 }
 
-nav .login, nav .signin {
+nav .login, nav .signin, nav .userId, nav .logout{
     width:50%;
     height:30px;
     line-height: 30px;
