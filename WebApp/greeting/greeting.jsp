@@ -1,3 +1,9 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%
+	String id = (String) request.getParameter("id");
+	String email = (String) request.getParameter("email");
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,11 +25,12 @@
 		</div>
 	</section>
 	<section>
+
 		<span class="title">입력하신 정보</span>
 		<div class="info-container">
-		<div class="input-wrap">아이디 : 여기 수정필요(서버에서 받아오기)</div>
+		<div class="input-wrap">아이디 : <%= id %></div>
 		<div class="input-wrap">비밀번호 : 암호화 되어 저장되었습니다</div>
-		<div class="input-wrap">이메일 : 여기 수정필요(서버에서 받아오기)</div>
+		<div class="input-wrap">이메일 : <%= email %></div>
 	
 		<div id = "gohome" data-type="submit">홈으로 이동</div>
 		</div>
