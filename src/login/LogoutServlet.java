@@ -26,8 +26,7 @@ public class LogoutServlet extends HttpServlet {
 		session.removeAttribute("userId");
 		session.removeAttribute("userPw");
 		session.invalidate();
-		RequestDispatcher view = request.getRequestDispatcher("index.jsp");
-		view.forward(request, response);
+		response.sendRedirect("/index.jsp");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

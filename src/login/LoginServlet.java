@@ -29,8 +29,7 @@ public class LoginServlet extends HttpServlet {
 			session.setAttribute("userId", userId);
 			session.setAttribute("userPw", userPw);
 			
-			RequestDispatcher view = request.getRequestDispatcher("index.jsp");
-			view.forward(request, response);
+			response.sendRedirect("/index.jsp");
 		} else {
 			// login failed
 			RequestDispatcher view = request.getRequestDispatcher("loginFail.jsp");
