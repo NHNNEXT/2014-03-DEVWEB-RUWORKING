@@ -35,13 +35,13 @@
 	<section>
 		<span class="title">정보 입력</span>
 		<form action="/Register.ruw" id ="test" method="post">
-		<div class="input-wrap"><input type="text" name="id" data-type="id" value="${user.id}" placeholder = "아이디">
+		<div class="input-wrap"><input type="text" name="id" data-type="id" placeholder = "아이디">
 		<span class="validate-info validate-big">알파벳, 숫자를 활용하여 4자 ~ 12자의 ID를 구성하세요<br>단, 아이디에 영문자가 반드시 1개이상 포함되어야 합니다</span></div>
-		<div class="input-wrap"><input type="password" name="pw1" data-type="pw1" value="${user.password}" placeholder = "비밀번호">
+		<div class="input-wrap"><input type="password" name="pw1" data-type="pw1" placeholder = "비밀번호">
 		<span class="validate-info">비밀번호가 일치하지 않습니다.</span></div>
 		<div class="input-wrap"><input type="password" name="pw2" data-type="pw2" placeholder = "비밀번호 확인">
 		<span class="validate-info">비밀번호가 일치하지 않습니다.</span></div>
-		<div class="input-wrap"><input type="email" name="email" data-type="email" value="${user.email}" placeholder = "비상연락용 이메일 (example@example.com)"><span class="validate-info">이메일 주소를 다시 확인해주세요.</span></div>
+		<div class="input-wrap"><input type="email" name="email" data-type="email" placeholder = "비상연락용 이메일 (example@example.com)"><span class="validate-info">이메일 주소를 다시 확인해주세요.</span></div>
 
 		<div class="gender-wrap">
 			<div class="male">

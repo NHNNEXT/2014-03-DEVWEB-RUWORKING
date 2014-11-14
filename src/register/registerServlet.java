@@ -22,7 +22,7 @@ public class registerServlet extends HttpServlet{
 		String password = request.getParameter("pw1");
 		String email = request.getParameter("email");
 		String gender = request.getParameter("gender");
-
+		
 		User user = new User(id, password, email, gender);
 		UserDAO userDAO = new UserDAO();
 		
@@ -36,6 +36,9 @@ public class registerServlet extends HttpServlet{
 		RequestDispatcher rd = sc.getRequestDispatcher("/greeting/greeting.jsp");
 		rd.forward(request, response);	
 	}
+	
+
+	//doget으로 올때 어디로 갈지 리다이렉트해주어야
 }
 
 
