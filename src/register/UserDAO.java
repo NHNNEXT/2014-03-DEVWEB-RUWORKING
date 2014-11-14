@@ -1,9 +1,9 @@
 package register;
 
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class UserDAO {
@@ -23,15 +23,14 @@ public class UserDAO {
 	}
 
 	public void addUser(User user) throws SQLException {
-		
-		String sql = "insert into member values(NULL,?,?,?,?)";
+		String sql = "INSERT INTO member VALUES(NULL,?,?,?,?)";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 	
 		try {
 			conn = getConnection();
-	
 			pstmt = conn.prepareStatement(sql); 
+			
 			pstmt.setString(1, user.getId());
 			pstmt.setString(2, user.getPassword());
 			pstmt.setString(3, user.getEmail());
@@ -49,6 +48,49 @@ public class UserDAO {
 				conn.close();
 			}
 		}
+	}
+	
+	public boolean checkUser(String userId, String userPw) throws SQLException {
+		String sql = "SELECT * FROM member WHERE id='?' AND password=?";
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		Boolean result = false;
+		
+		try {
+			conn = getConnection();
+			System.out.println("connection");
+			System.out.println("isClosed = " + conn.isClosed());
+			System.out.println("connection2");
+			pstmt = conn.prepareStatement(sql); 
+			System.out.println("here?");
+			
+			pstmt.setString(1, userId);
+			pstmt.setString(2, userPw);
+			System.out.println(userId + userPw);
+
+			rs = pstmt.executeQuery();
+			System.out.println("rs 아래");
+
+			
+			if(rs.next()) {
+				result = true;
+			}
+			
+		}catch(Exception e){
+			System.out.println("here" + e.getClass() + e.getMessage());
+		} finally {
+			if(rs != null) {
+				rs.close();
+			}
+			if (pstmt != null) {
+				pstmt.close();
+			}
+			if (conn != null) {
+				conn.close();
+			}
+		}
+		return result;
 	}
 }
 
