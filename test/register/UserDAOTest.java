@@ -1,4 +1,4 @@
-package test;
+package register;
 
 import register.UserDAO;
 import junit.framework.TestCase;

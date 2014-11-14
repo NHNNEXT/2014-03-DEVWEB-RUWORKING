@@ -1,7 +1,6 @@
 package register;
 
 import java.io.IOException;
-import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
@@ -26,17 +25,18 @@ public class registerServlet extends HttpServlet{
 		User user = new User(id, password, email, gender);
 		UserDAO userDAO = new UserDAO();
 		
-			try {
-				userDAO.addUser(user);
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		ServletContext sc = this.getServletContext();
-		RequestDispatcher rd = sc.getRequestDispatcher("/greeting/greeting.jsp");
-		rd.forward(request, response);	
+		try {
+			userDAO.addUser(user);
+			ServletContext sc = this.getServletContext();
+			RequestDispatcher rd = sc.getRequestDispatcher("/greeting/greeting.jsp");
+			rd.forward(request, response);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			response.sendRedirect("memberRegister/registerFailPage.jsp");
+		}
+			
 	}
-	
 
 	//doget으로 올때 어디로 갈지 리다이렉트해주어야
 }

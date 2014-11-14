@@ -1,14 +1,17 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>일해요? 일해요! - 회원가입</title>
 	<link rel="stylesheet" href="css/register_style.css">
 	<script src = "js/formverify.js"></script>
 </head>
 <body>
 	<div id="body-container">
-	<header>&nbsp;회원가입</header>
+	<header>&nbsp;회원가입 실패하였습니다. 서버오류로... 다시하세요!</header>
 	<section>
 		<span class="title">회원가입 약관</span>
 		<div class = "terms">
@@ -31,7 +34,7 @@
 	</section>
 	<section>
 		<span class="title">정보 입력</span>
-		<form action="" id ="test">
+		<form action="/Register.ruw" id ="test" method="post">
 		<div class="input-wrap"><input type="text" name="id" data-type="id" placeholder = "아이디">
 		<span class="validate-info validate-big">알파벳, 숫자를 활용하여 4자 ~ 12자의 ID를 구성하세요<br>단, 아이디에 영문자가 반드시 1개이상 포함되어야 합니다</span></div>
 		<div class="input-wrap"><input type="password" name="pw1" data-type="pw1" placeholder = "비밀번호">

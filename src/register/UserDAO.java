@@ -37,8 +37,6 @@ public class UserDAO {
 			pstmt.setString(4, user.getGender());
 			pstmt.executeUpdate();
 			
-		}catch(Exception e){
-			System.out.println(e.getMessage());
 		} finally {
 			if (pstmt != null) {
 				pstmt.close();
@@ -51,7 +49,7 @@ public class UserDAO {
 	}
 	
 	public boolean checkUser(String userId, String userPw) throws SQLException {
-		String sql = "SELECT * FROM member WHERE id='?' AND password=?";
+		String sql = "SELECT * FROM member WHERE id=? AND password=?";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -59,19 +57,12 @@ public class UserDAO {
 		
 		try {
 			conn = getConnection();
-			System.out.println("connection");
-			System.out.println("isClosed = " + conn.isClosed());
-			System.out.println("connection2");
-			pstmt = conn.prepareStatement(sql); 
-			System.out.println("here?");
-			
+			pstmt = conn.prepareStatement(sql); 			
 			pstmt.setString(1, userId);
 			pstmt.setString(2, userPw);
 			System.out.println(userId + userPw);
 
 			rs = pstmt.executeQuery();
-			System.out.println("rs 아래");
-
 			
 			if(rs.next()) {
 				result = true;
@@ -93,4 +84,3 @@ public class UserDAO {
 		return result;
 	}
 }
-
