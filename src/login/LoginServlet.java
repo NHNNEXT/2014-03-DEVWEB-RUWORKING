@@ -19,7 +19,6 @@ public class LoginServlet extends HttpServlet {
 
 	public LoginServlet() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -27,7 +26,7 @@ public class LoginServlet extends HttpServlet {
 		if (session.getAttribute("userId") != null) {
 			response.sendRedirect("/index.jsp");
 		} else {
-			RequestDispatcher view = request.getRequestDispatcher("loginFail.jsp");
+			RequestDispatcher view = request.getRequestDispatcher("module/login/loginFail.jsp");
 			view.forward(request, response);
 		}
 	}
@@ -47,12 +46,12 @@ public class LoginServlet extends HttpServlet {
 				response.sendRedirect("/index.jsp");
 			} else {
 				// login failed
-				RequestDispatcher view = request.getRequestDispatcher("loginFail.jsp");
+				RequestDispatcher view = request.getRequestDispatcher("module/login/loginFail.jsp");
 				view.forward(request, response);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
-			RequestDispatcher view = request.getRequestDispatcher("loginFail.jsp");
+			RequestDispatcher view = request.getRequestDispatcher("module/login/loginFail.jsp");
 			view.forward(request, response);
 		}
 	}

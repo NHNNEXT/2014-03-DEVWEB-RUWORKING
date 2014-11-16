@@ -9,9 +9,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @WebServlet("/Register.ruw")
-public class registerServlet extends HttpServlet{
+public class RegisterServlet extends HttpServlet{
 	
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -28,17 +29,24 @@ public class registerServlet extends HttpServlet{
 		try {
 			userDAO.addUser(user);
 			ServletContext sc = this.getServletContext();
-			RequestDispatcher rd = sc.getRequestDispatcher("/greeting/greeting.jsp");
+			RequestDispatcher rd = sc.getRequestDispatcher("module/register/registerGreeting.jsp");
 			rd.forward(request, response);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
-			response.sendRedirect("memberRegister/registerFailPage.jsp");
+			response.sendRedirect("module/register/registerFail.jsp");
 		}
-			
 	}
-
-	//doget으로 올때 어디로 갈지 리다이렉트해주어야
+	
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session = request.getSession();
+		if (session.getAttribute("userId") != null) {
+			response.sendRedirect("/index.jsp");
+		} else {
+			RequestDispatcher view = request.getRequestDispatcher("module/register/register.jsp");
+			view.forward(request, response);
+		}
+	}
 }
 
 

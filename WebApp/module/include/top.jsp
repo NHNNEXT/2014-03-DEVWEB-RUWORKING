@@ -7,9 +7,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>일해요? 일해요!</title>
-<link rel="stylesheet" href="/module/css/common_style.css">
+<link rel="stylesheet" href="/module/include/css/common_style.css">
 <link rel="stylesheet" href="/css/main_style.css">
-<script src="/module/js/common_template.js"></script>
+<script src="/module/include/js/common_template.js"></script>
 </head>
 <body>
 <!-- body 전체 container -->
