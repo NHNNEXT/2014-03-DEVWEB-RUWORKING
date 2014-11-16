@@ -7,16 +7,19 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>일해요? 일해요!</title>
-<link rel="stylesheet" href="/module/include/css/common_style.css">
-<link rel="stylesheet" href="/css/main_style.css">
-<script src="/module/include/js/common_template.js"></script>
+<link rel="stylesheet" href="/module/layout/css/common_style.css">
+<link rel="stylesheet" href="/css/page_style.css">
+<link rel="stylesheet" href="/library/css/Nwagon.css">
+<script src="/module/layout/js/common_template.js"></script>
+<script src="/library/js/Nwagon.js"></script>
+<script src="/js/Layout.js"></script>
 </head>
 <body>
 <!-- body 전체 container -->
 <div id = "body-container">
 	<!-- header -->
 	<header>
-        <a href="javascript:location.reload()"><div class = "logo">일해요</div></a>
+        <a href="/"><div class = "logo">일해요</div></a>
         <div class = "upload">업로드</div>
         <div class="searchBox">
         	<form action="">

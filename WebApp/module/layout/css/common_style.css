@@ -203,10 +203,11 @@ nav .logoBottom {
 
 #main {
     width:809px;
-    height:100%;
+    min-height:100%;
     float:left;
     background-color:#fff;
     border-right: 1px solid #ccc;
+    overflow: hidden;
 }
 
 #main .updated {

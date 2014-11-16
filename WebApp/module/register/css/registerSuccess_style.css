@@ -1,4 +1,4 @@
-/* NHNNEXT Development Practice Project RUWORKING HTH 141112 */ 
+/* NHNNEXT Development Practice Project RUWORKING HTH 141116 */ 
 
 /* webfont */
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
@@ -92,7 +92,7 @@ section .info-container .input-wrap {
     color: #8A898B;
 }
 
-section .info-container .input-wrap:nth-last-of-type(2) {
+section .info-container .input-wrap:nth-last-of-type(1) {
     border-bottom: 1px solid #ccc;    
 }
 

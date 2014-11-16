@@ -9,9 +9,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>일해요  UI프로토타입</title>
-	<link rel="stylesheet" href="css/greeting_style.css">
-	<script src = "js/formverify.js"></script>
-	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+	<link rel="stylesheet" href="css/registerSuccess_style.css">
 </head>
 <body>
 	<div id="body-container">
@@ -32,7 +30,7 @@
 		<div class="input-wrap">비밀번호 : 암호화 되어 저장되었습니다</div>
 		<div class="input-wrap">이메일 : <%= email %></div>
 	
-		<div id = "gohome" data-type="submit">홈으로 이동</div>
+		<a href="/"><div id = "gohome" data-type="submit">홈으로 이동</div></a>
 		</div>
 	</section>
 	</div>

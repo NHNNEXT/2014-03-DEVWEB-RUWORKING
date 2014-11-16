@@ -9,6 +9,7 @@
         login.addEventListener("click", loginLayerToggle, false);
         cancellogin.addEventListener("click", loginLayerToggle, false);
 
+        resizeNavBar();
     }, false);
 
     function loginLayerToggle() {
@@ -21,5 +22,12 @@
             loginLayer.style.display = "block";
             meunLayer.style.display = "none";
         }
+    }
+
+    function resizeNavBar(){
+        var height = document.getElementById("main").offsetHeight;
+        var targetEle = document.querySelector("nav");
+
+        targetEle.style.height = height + "px";
     }
 })();
