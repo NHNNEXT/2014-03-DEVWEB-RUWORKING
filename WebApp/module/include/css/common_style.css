@@ -9,7 +9,7 @@ img,fieldset{border:0}
 ul,ol,li{list-style:none}
 em,address{font-style:normal}
 a{text-decoration:none;}
-a:hover,a:active,a:focus{text-decoration:underline} .blind{visibility:hidden;overflow:hidden;position:absolute;top:0;left:0;width:1px;height: 1px;font-size:0;line-height:0}
+a:hover,a:active,a:focus{text-decoration:none} .blind{visibility:hidden;overflow:hidden;position:absolute;top:0;left:0;width:1px;height: 1px;font-size:0;line-height:0}
 
 /* custom */
 html { height:100%;}
