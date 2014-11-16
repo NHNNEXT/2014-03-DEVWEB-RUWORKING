@@ -1,0 +1,633 @@
+/* NHNNEXT Development Practice Project RUWORKING HTH 141116 */ 
+
+#pageContainer {
+    width:96%;
+    margin: 20px 2% 20px 2%;
+    overflow: hidden;
+    /*border: 1px solid #ccc;*/
+    float:left;
+}
+
+/* ns-index namespace start */
+#ns-index {
+    width:809px;
+    float:left;
+    background-color:#fff;
+    border-right: 1px solid #ccc;
+}
+
+#ns-index .type1 {
+    margin-top:20px;
+    margin-left:26px;
+    float:left;
+    overflow: auto;
+}
+
+#ns-index .type1 span{
+    font-size: 25px;
+}
+
+#ns-index .type1 span.more {
+    font-size: 13px;
+    /*margin-top: 13px;*/
+    margin-top: 8px;
+    margin-right: 10px;
+    float:right;
+    background-color: #577EF2;
+    color:#fff;
+    width:60px;
+    height:27px;
+    line-height: 27px;
+    text-align: center;
+}
+
+#ns-index .type1 .politicianList {
+    width:100%;
+    margin-top: 15px;
+}
+
+#ns-index .type1 .politicianList ul li{
+    width:135px;
+    background-color: #fff;
+    height:320px;
+    border:1px solid #ccc;
+    float:left;
+    margin-right:10px;
+    position: relative;
+}
+
+#ns-index .type1 .politicianList ul li .info span{
+    font-size: 20px;
+}
+
+#ns-index .type1 .politicianList ul li .info span.name{
+    font-size: 33px;
+    float:left;
+    margin-left: 5px;
+    margin-top: 4px;
+}
+
+#ns-index .type1 .politicianList ul li .info span.party{
+    font-size: 18px;
+    float:left;
+    margin-left: 6px;
+    margin-top: 4px;
+}
+
+#ns-index .type1 .politicianList ul li .info span.line{
+    width:110px;
+    height:2px;
+    margin-left: 8px;
+    margin-top:9px;
+    background-color: #ccc;
+    float: left;
+}
+
+#ns-index .type1 .politicianList ul li .info span.district{
+    width:110px;
+    line-height:15px;
+    font-size: 12px;
+    float:left;
+    margin-left: 8px;
+    margin-top: 8px;
+}
+#ns-index .type1 .politicianList ul li .info span.now{
+    font-size: 17px;
+    float:left;
+    bottom:5px;
+    left:5px;
+    font-weight: bold;
+    position: absolute;
+
+}
+
+#ns-index .type1 .politicianList ul li .info span.percentage{
+    font-size: 33px;
+    float:right;
+    bottom:2px;
+    right:23px;
+    position: absolute;
+}
+
+#ns-index .type1 .politicianList ul li .info span.percent{
+    font-size: 20px;
+    float:right;
+    bottom:3px;
+    right:3px;
+    position: absolute;
+}
+
+#ns-index .type1 .photo {
+    position: relative;
+}
+
+#ns-index .type1 .photo span {
+    position:absolute;
+    width:30px;
+    height:30px;
+    z-index:30;
+    text-align: center;
+    color:#fff;
+    font-size: 18px;
+    line-height: 30px;
+    top:0px;
+    left:0px;
+    background-color: #45C6B4;
+}
+
+#ns-index .type1 .photo {
+    float:left;
+}
+
+#ns-index .type1 .photo img {
+    width:135px;
+    height:160px;
+}
+
+#ns-index .secondfloor {
+    float:left;
+    margin-left:26px;
+    margin-top:30px;
+
+}
+
+#ns-index .secondfloor .boxTypeA,#ns-index .secondfloor .boxTypeC {
+    width:232px;
+    height:230px;
+    margin-right: 14.5px;
+    float:left;
+}
+
+#ns-index .secondfloor .boxTypeC {
+    margin-top: 70px;
+}
+
+#ns-index .secondfloor .boxTypeA .title ,#ns-index .secondfloor .boxTypeC .title {
+    margin-top:10px;
+    font-size: 18px;
+    float:left;
+}
+
+#ns-index .secondfloor .boxTypeB {
+    width:476px;
+    height:230px;
+    margin-right: 14.5px;
+    float:left;
+}
+
+#ns-index .secondfloor .boxTypeB .title {
+    margin-top:10px;
+    font-size: 18px;
+    float:left;
+}
+
+#ns-index .secondfloor .notice {
+    width:476px;
+    height:100px;
+    background-color: #F5F5F5;
+    margin-top: 260px;
+    float: left;
+    border:1px solid #CCCCCC;
+    font-size: 13px;
+}
+
+#ns-index .secondfloor .graph-tip {
+    width:723px;
+    height:30px;
+    line-height: 30px;
+    text-align: center;
+    background-color: #F5F5F5;
+    margin-top: 15px;
+    float: left;
+    border:1px solid #CCCCCC;
+    font-size: 13px;
+}
+
+#ns-index .secondfloor .notice .title {
+    font-size: 17px;
+    width:476px;
+    margin-top: 12px;
+    margin-bottom: 4px;
+    margin-left: 20px;
+    float: left;
+}
+
+#ns-index .secondfloor .notice .content {
+    width:300px;
+    margin-top: 3px;
+    margin-left: 10px;
+    float: left;
+}
+
+#ns-index .secondfloor .notice .date {
+    margin-top: 2px;
+    margin-right: 13px;
+    float: right;
+}
+
+#ns-index .type2 {
+    border:1px solid #cccccc;
+    width:230px;
+    height:230px;
+    margin-top: 10px;
+    float:left;
+    overflow: hidden;
+    
+}
+
+#ns-index .type2_Big {
+    border:1px solid #cccccc;
+    width:476px;
+    height:410px;
+    margin-top: 10px;
+    float:left;
+    overflow:hidden;
+}
+
+#ns-index .type3 {
+    float:left;
+    margin-left:26px;
+    margin-top: 40px;
+}
+
+#ns-index .type3 span {
+    font-size: 25px;
+}
+
+#ns-index .type3 > div {
+    margin-top: 14px;
+}
+
+#ns-index .type3 > div div{
+    background-color: #fff;
+    height:50px;
+    float:left;
+}
+
+#ns-index .type3 > div .cardA {
+    font-size: 40px;
+    width:230px;
+    height:100%;
+    text-align: center;
+    border:1px solid #ccc;
+    margin-right:14.5px;
+    margin-bottom:15px;
+    position: relative;
+}
+
+#ns-index .type3 > div .cardA .header {
+    width: 100%;
+    height:50px;
+    background-color: #F5F5F5;
+    border-bottom: 1px solid #DDDDDD;
+}
+
+#ns-index .type3 > div .cardA .header .name{
+    float:left;
+    height:50px;
+    line-height:50px;
+    margin-left: 12px;
+    font-size: 30px;
+    background-color: transparent;
+}
+
+#ns-index .type3 > div .cardA .header .party{
+    margin-left: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    background-color: transparent;
+    position: absolute;
+    right:7px;
+    top:27px;
+}
+
+#ns-index .type3 > div .cardA .body {
+    width:100%;
+    /*height:180px;*/
+    height:100%;
+    display: inline-block;
+    float:left;
+}
+
+#ns-index .type3 > div .cardA .body .title{
+    font-size: 12px;
+    margin-left: 13px;
+    margin-top: 20px;
+    width:203px;
+    white-space: nowrap;
+    overflow: hidden;
+    height: 20px;
+    float:left;
+    font-weight: 700;
+    background-color: transparent;
+}
+
+#ns-index .type3 > div .cardA .body .content{
+    width:210px;
+    height: 172px;
+    max-height: 100px;
+    overflow: hidden;
+    margin-left: 13px;
+    margin-top: 12px;
+    margin-bottom: 20px;
+    font-size: 12px;
+    text-align: left;
+}
+
+#ns-index .type3 > div .cardB {
+    font-size: 40px;
+    width:475px;
+    height:100%;
+    text-align: center;
+    border:1px solid #ccc;
+    margin-right:14.5px;
+    margin-bottom:15px;
+    position: relative;
+}
+
+#ns-index .type3 > div .cardB .header {
+    width: 100%;
+    height:50px;
+    background-color: #F5F5F5;
+    border-bottom: 1px solid #DDDDDD;
+}
+
+#ns-index .type3 > div .cardB .header .name{
+    float:left;
+    height:50px;
+    line-height:50px;
+    margin-left: 12px;
+    font-size: 30px;
+    background-color: transparent;
+}
+
+#ns-index .type3 > div .cardB .header .party{
+    margin-left: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    background-color: transparent;
+    position: absolute;
+    right:7px;
+    top:27px;
+}
+
+#ns-index .type3 > div .cardB .body {
+    width:100%;
+    /*height:180px;*/
+    height:100%;
+    display: inline-block;
+    float:left;
+}
+
+#ns-index .type3 > div .cardB .body .title{
+    font-size: 12px;
+    margin-left: 13px;
+    margin-top: 20px;
+    width:445px;
+    white-space: nowrap;
+    overflow: hidden;
+    height: 20px;
+    float:left;
+    font-weight: 700;
+    background-color: transparent;
+}
+
+#ns-index .type3 > div .cardB .body .content{
+    width:210px;
+    height: 100px;
+    max-height: 150px;
+    overflow: hidden;
+    margin-left: 20px;
+    margin-top: 12px;
+    margin-bottom: 20px;
+    font-size: 12px;
+    text-align: left;
+}
+
+
+#ns-index .type3 > div .cardC {
+    font-size: 40px;
+    width:352px;
+    height:100%;
+    text-align: center;
+    border:1px solid #ccc;
+    margin-right:16px;
+    margin-bottom:15px;
+    position: relative;
+}
+
+#ns-index .type3 > div .cardC .header {
+    width: 100%;
+    height:50px;
+    background-color: #F5F5F5;
+    border-bottom: 1px solid #DDDDDD;
+}
+
+#ns-index .type3 > div .cardC .header .name{
+    float:left;
+    height:50px;
+    line-height:50px;
+    margin-left: 12px;
+    font-size: 30px;
+    background-color: transparent;
+}
+
+#ns-index .type3 > div .cardC .header .party{
+    margin-left: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    background-color: transparent;
+    position: absolute;
+    right:7px;
+    top:27px;
+}
+
+#ns-index .type3 > div .cardC .body {
+    width:100%;
+    /*height:180px;*/
+    height:100%;
+    display: inline-block;
+    float:left;
+}
+
+#ns-index .type3 > div .cardC .body .title{
+    font-size: 12px;
+    margin-left: 13px;
+    margin-top: 20px;
+    width:325px;
+    white-space: nowrap;
+    overflow: hidden;
+    height: 20px;
+    float:left;
+    font-weight: 700;
+    background-color: transparent;
+}
+
+#ns-index .type3 > div .cardC .body .content{
+    width:312px;
+    height: 100px;
+    max-height: 150px;
+    overflow: hidden;
+    margin-left: 20px;
+    margin-top: 12px;
+    margin-bottom: 20px;
+    font-size: 12px;
+    text-align: left;
+}
+
+#ns-index .type3 > div .footer {
+    width: 100%;
+    height:30px;
+    background-color: #F5F5F5;
+    border-top: 1px solid #DDDDDD;
+    color: #AAAAAA;
+    font-size: 11px;
+}
+
+#ns-index .type3 > div .footer .date {
+    height:30px;
+    line-height: 30px;
+    background-color: transparent;
+    float:left;
+    padding-left: 10px;
+}
+
+#ns-index .type3 > div .cardB .footer .validity {
+    width:325px;
+    line-height: 30px;
+    background-color: transparent;
+    float:left;
+    padding-left: 10px;
+}
+ 
+#ns-index .type3 > div .cardC .footer .validity {
+    width:198px;
+    line-height: 30px;
+    background-color: transparent;
+    float:left;
+    padding-left: 10px;
+}
+
+#ns-index .type3 > div .footer .more{
+    height:30px;
+    line-height: 30px;
+    background-color: transparent;
+    float: right;
+    padding-right: 10px;
+}
+
+#ns-index .field_underbar {
+    position: absolute;
+    bottom:0px;
+    width:100%;
+    height:25px;
+}
+#ns-index .field_underbar span {
+    width:25%;
+    height:25px;
+    line-height: 25px;
+    text-align: center;;
+    background-color: #000;
+    float:left;
+    display:inline-block;
+    color:#fff;
+    font-weight: bold;
+    text-shadow: 0.5px 0.5px 0.5px #494C4C;
+}
+
+#ns-index .card {
+    position: relative;
+}
+
+#ns-index .Nwagon1 {
+    float:left;
+    margin-left: -120px;
+}
+
+#ns-index .Nwagon2 {
+    float:left;
+    margin-top: -50px;
+}
+/* // ns-index namespace end */
+
+/* ns-LoginFail namespace start */
+#ns-LoginFail {
+    width:650px;
+    height:400px;
+    margin: 0 auto;
+    margin-top: 60px;
+}
+
+#ns-LoginFail .title {
+    width:100%;
+    font-size: 30px;
+    display:inline-block;
+    padding-left: 11px;
+    padding-bottom: 12px;
+}
+
+#ns-LoginFail .box {
+    width:100%;
+    height:280px;
+    border:1px solid #ccc;
+    border-top:4px solid #567DF0;
+}
+
+#ns-LoginFail .noti {
+    width:100%;
+    height:40px;
+    line-height: 33px;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    background-color: #F0EEF1;
+    display:inline-block;
+    padding:5px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+#ns-LoginFail .login-form {
+    margin-top: 40px;
+}
+
+#ns-LoginFail .input-wrap {
+    width:87%;
+    height:45px;
+    font-size:15px;
+    padding-left: 17px;
+    font-weight: bold;
+    box-sizing: border-box;
+    margin-left: 6%;
+    border:1px solid #ccc;
+    border-bottom: 0px;
+    background-color: #fff;
+    float:left;
+    color: #8A898B;
+}
+
+#ns-LoginFail .input-wrap:nth-of-type(2) {
+    border-bottom: 1px solid #ccc;
+}
+
+#ns-LoginFail .input-wrap input {
+    width:100%;
+    height:100%;
+    border:0px;
+    font-size: 20px;
+}
+
+#ns-LoginFail .submit input {
+    width :87%;
+    height: 45px;
+    line-height: 45px;
+    font-size: 20px;
+    color:#fff;
+    text-align: center;
+    font-weight: bold;
+    background-color: #33B679;
+    float: left;
+    margin-top: 9px;
+    margin-left: 6%;
+    border:0px;
+}
+/* // ns-LoginFail namespace end */
