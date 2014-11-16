@@ -1,6 +1,9 @@
-// document.addEventListener("DOMcontentLoaded", function(){
+document.addEventListener("DOMContentLoaded", function(){
 
-(function(){
+    drawDonutGraphColorInfo();
+}, false);
+
+function drawDonutGraphColorInfo() {
     var donut = document.getElementById("chart_d");
     var field = document.querySelectorAll('.field_underbar');
     var length = field.length;
@@ -16,32 +19,4 @@
             }
         }, false);
     }
-    console.log("asdasasd");
-})();
-
-(function(){
-    var height = document.getElementById("main").offsetHeight;
-    var targetEle = document.getElementById("left");
-
-    targetEle.style.height = height-3 + "px";
-})();
-
-(function(){
-    var login = document.getElementById("left").querySelector(".login");
-    login.addEventListener("click", loginLayerToggle, false);
-
-    function loginLayerToggle(){
-        var loginLayer = document.getElementById("left").querySelector(".login-wrap");
-        var meunLayer = document.getElementById("left").querySelector(".list-wrap");
-        if (loginLayer.style.display==="block"){
-            loginLayer.style.display="none";
-            meunLayer.style.display="block";
-        } else {
-            loginLayer.style.display="block";
-            meunLayer.style.display="none";
-        }
-    }
-
-    var cancellogin = document.getElementById("left").querySelector(".cancel");
-    cancellogin.addEventListener("click", loginLayerToggle, false);
-})();
+}
