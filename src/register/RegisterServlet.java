@@ -29,7 +29,7 @@ public class RegisterServlet extends HttpServlet{
 		try {
 			userDAO.addUser(user);
 			ServletContext sc = this.getServletContext();
-			rd = sc.getRequestDispatcher("module/register/registerGreeting.jsp");
+			rd = sc.getRequestDispatcher("module/register/registerSuccess.jsp");
 		} catch (Exception e) {
 			e.printStackTrace();
 			rd = request.getRequestDispatcher("module/register/registerFail.jsp");

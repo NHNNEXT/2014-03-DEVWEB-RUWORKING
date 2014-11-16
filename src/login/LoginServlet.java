@@ -24,7 +24,7 @@ public class LoginServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		if (session.getAttribute("userId") != null) {
-			response.sendRedirect("/index.jsp");
+			response.sendRedirect("/");
 		} else {
 			RequestDispatcher view = request.getRequestDispatcher("module/login/loginFail.jsp");
 			view.forward(request, response);
@@ -43,7 +43,7 @@ public class LoginServlet extends HttpServlet {
 				session.setAttribute("userId", userId);
 				session.setAttribute("userPw", userPw);
 				
-				response.sendRedirect("/index.jsp");
+				response.sendRedirect("/");
 			} else {
 				// login failed
 				RequestDispatcher view = request.getRequestDispatcher("module/login/loginFail.jsp");
