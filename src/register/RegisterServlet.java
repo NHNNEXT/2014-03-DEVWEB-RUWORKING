@@ -25,15 +25,16 @@ public class RegisterServlet extends HttpServlet{
 		
 		User user = new User(id, password, email, gender);
 		UserDAO userDAO = new UserDAO();
-		
+		RequestDispatcher rd = null;
 		try {
 			userDAO.addUser(user);
 			ServletContext sc = this.getServletContext();
-			RequestDispatcher rd = sc.getRequestDispatcher("module/register/registerGreeting.jsp");
-			rd.forward(request, response);
+			rd = sc.getRequestDispatcher("module/register/registerGreeting.jsp");
 		} catch (Exception e) {
 			e.printStackTrace();
-			response.sendRedirect("module/register/registerFail.jsp");
+			rd = request.getRequestDispatcher("module/register/registerFail.jsp");
+		} finally {
+			rd.forward(request, response);
 		}
 	}
 	

@@ -6,9 +6,9 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>일해요? 일해요! - 회원가입</title>
-	<link rel="stylesheet" href="css/register_style.css">
-	<script src = "js/formverify.js"></script>
-	<script src = "js/Layout.js"></script>
+	<link rel="stylesheet" href="module/register/css/register_style.css">
+	<script src = "module/register/js/formverify.js"></script>
+	<script src = "module/register/js/Layout.js"></script>
 </head>
 <body>
 	<div id="body-container">
