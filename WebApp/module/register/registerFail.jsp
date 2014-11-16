@@ -8,10 +8,12 @@
 	<title>일해요? 일해요! - 회원가입</title>
 	<link rel="stylesheet" href="css/register_style.css">
 	<script src = "js/formverify.js"></script>
+	<script src = "js/Layout.js"></script>
 </head>
 <body>
 	<div id="body-container">
-	<header>&nbsp;회원가입 실패하였습니다. 서버오류로... 다시하세요!</header>
+	<header>&nbsp;회원가입</header>
+	<span class="fail">죄송합니다. 회원가입에 실패하였습니다. 다시 시도해 주세요</span>
 	<section>
 		<span class="title">회원가입 약관</span>
 		<div class = "terms">

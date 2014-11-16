@@ -37,6 +37,17 @@ header {
     text-align: left;
 }
 
+span.fail {
+	width:100%;
+	height:40px;
+	line-height:43px;
+	background-color:#EB3E3F;
+	display:inline-block;
+	color:#fff;
+	text-align:center;
+	font-size:17px;
+}
+
 section {
     width:50%;
     height:100%;
