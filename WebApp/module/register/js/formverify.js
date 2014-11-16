@@ -1,4 +1,4 @@
-/* NHNNEXT Development Practice Project RUWORKING HTH 141112 */ 
+/* NHNNEXT Development Practice Project RUWORKING HTH 141116 */ 
 ;
 (function() {
     // 변수선언
@@ -17,17 +17,20 @@
         var emailEle = formEle.querySelector("[data-type='email']");
         var submitEle = formEle.querySelector("[data-type='submit']");
         var genderEle = formEle.querySelectorAll("[data-type='gender']");
-
         var termsEle = document.querySelector("[data-type='agree']");
+        
+        var pwVerifyCount = 0;
 
         idEle.addEventListener("focusout", function(e) {
             IDVerified = checkID(e.target.value);
             showValidResult(IDVerified, 0);
         }, false);
         pwEle1.addEventListener("focusout", function(e) {
-            PWVerified = checkPW(pwEle1.value, pwEle2.value);
-            showValidResult(PWVerified, 1);
-            showValidResult(PWVerified, 2);
+        		if(pwVerifyCount++ != 0) {
+        			PWVerified = checkPW(pwEle1.value, pwEle2.value);
+        			showValidResult(PWVerified, 1);
+        			showValidResult(PWVerified, 2);
+        		}
         }, false);
         pwEle2.addEventListener("focusout", function(e) {
             PWVerified = checkPW(pwEle1.value, pwEle2.value);
