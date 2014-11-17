@@ -29,10 +29,10 @@ public class RegisterServlet extends HttpServlet{
 		try {
 			userDAO.addUser(user);
 			ServletContext sc = this.getServletContext();
-			rd = sc.getRequestDispatcher("module/register/registerSuccess.jsp");
+			rd = sc.getRequestDispatcher("/module/register/registerSuccess.jsp");
 		} catch (Exception e) {
 			e.printStackTrace();
-			rd = request.getRequestDispatcher("module/register/registerFail.jsp");
+			rd = request.getRequestDispatcher("/module/register/registerFail.jsp");
 		} finally {
 			rd.forward(request, response);
 		}
@@ -44,7 +44,7 @@ public class RegisterServlet extends HttpServlet{
 		if (session.getAttribute("userId") != null) {
 			response.sendRedirect("/index.jsp");
 		} else {
-			RequestDispatcher view = request.getRequestDispatcher("module/register/register.jsp");
+			RequestDispatcher view = request.getRequestDispatcher("/module/register/register.jsp");
 			view.forward(request, response);
 		}
 	}
