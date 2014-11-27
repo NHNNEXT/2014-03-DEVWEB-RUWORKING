@@ -1,3 +1,5 @@
+
+package PDFparser;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -16,7 +18,6 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
  
-
 
 public class sendPost {
 	private final String USER_AGENT = "Mozilla/5.0";
