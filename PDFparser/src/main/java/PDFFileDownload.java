@@ -24,7 +24,7 @@ public class PDFFileDownload {
 				
 				url = new URL("http://policy.nec.go.kr" + list.get(i));
 				in = url.openStream();
-				fop = new FileOutputStream(new File("/Users/chaejong-un/Desktop/PDFDownloadTest/" + i + ".pdf"));
+				fop = new FileOutputStream(new File("/Users/JB/Documents/PDF" + i + ".pdf"));
 				
 				byte [] contentInBytes = new byte[1024];
 				

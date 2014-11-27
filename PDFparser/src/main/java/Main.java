@@ -20,12 +20,12 @@ public class Main {
 		String [] lines = dd.toString().split("\n");
 		System.out.println(dd.toString());
 		parseText t = new parseText();
-//		t.parse(lines);		
+		t.parse(lines);		
 	}
 	
 	
 	public static void main(String[] args) {
-//		DownloadPdf();
+		DownloadPdf();
 		for(int i=0; i<241; i++) {
 			try {
 				parsePdf(i);				
