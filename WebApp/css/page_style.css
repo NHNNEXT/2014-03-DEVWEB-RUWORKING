@@ -1110,9 +1110,10 @@
 }
 #ns-evidence .promise select {
 	position: relative;
-	top: -11px;
    -webkit-appearance: none;
-   background: url("/img/down-icon.png") no-repeat right #577EF2;
+   background: url("./../img/down-icon.png") no-repeat right #577EF2;
+   background-position: 10px 15px 0px 0px;
+   background-size: 10px 10px;
    width: 60px;
    height: 30px;
    padding: 5px;
@@ -1121,16 +1122,20 @@
    color: #fff;
    font-weight: bold;
    border:0;
+   float: left;
 }
 
 #ns-evidence .promise span {
 	background-color: #fff;
 	border: 1px solid #ccc;
-	width: 600px;
-	height: 28px;
+	width: 585px;
+	height: 22px;
+	line-height: 22px;
+	vertical-align: middle;
 	display: inline-block;
 	position: relative;
-	left: -4px;
+	float: left;
+	padding: 3px 5px 3px 10px;
 }
 
 #ns-evidence .title span{
