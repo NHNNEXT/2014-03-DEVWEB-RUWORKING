@@ -35,6 +35,7 @@ public class ArticleDAO {
 			pstmt.setString(1, article.getTitle());
 			pstmt.setString(2, article.getContent());
 			pstmt.setInt(3, article.getPoliticianId());
+			//공약 넘버도 넣어야할듯!
 			pstmt.setInt(4, article.getMemberNumber());
 			pstmt.executeUpdate();
 			

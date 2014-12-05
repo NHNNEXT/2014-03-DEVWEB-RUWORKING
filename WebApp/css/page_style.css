@@ -1090,3 +1090,82 @@
  }
 
 /* // ns-politician namespace end */
+
+
+/* ns-evidence namespace start */
+#ns-evidence .wrap {
+	width: 730px;
+	height: 30px;
+	margin : 10px;
+}
+
+#ns-evidence .content {
+	height: 300px;
+}
+
+#ns-evidence .uploadBoard{
+	border: 1px solid #ccc;
+	height: 500px;
+	background: #F5F3F6;
+}
+#ns-evidence .promise select {
+	position: relative;
+	top: -11px;
+   -webkit-appearance: none;
+   background: url("/img/down-icon.png") no-repeat right #577EF2;
+   width: 60px;
+   height: 30px;
+   padding: 5px;
+   font-size: 12px;
+   border-radius: 0px;
+   color: #fff;
+   font-weight: bold;
+   border:0;
+}
+
+#ns-evidence .promise span {
+	background-color: #fff;
+	border: 1px solid #ccc;
+	width: 600px;
+	height: 28px;
+	display: inline-block;
+	position: relative;
+	left: -4px;
+}
+
+#ns-evidence .title span{
+	display: inline-block;
+	width: 60px;
+	height: 30px;
+	line-height:30px;
+	vertical-align: middle;
+	text-align: center;
+	background: #577EF2;
+	color: #fff;	
+}
+
+#ns-evidence .title input {
+	position: relative;
+	top: 1px;
+	left: -4px;
+	width: 596px;
+	height: 28px;
+	font-size: 12px;
+	padding-left: 4px;
+	font-weight: bold;
+	border: 1px solid #ccc;
+	display: inline-block;
+}
+
+#ns-evidence div.submit {
+	text-align: center;
+	padding-right: 70px;
+}
+#ns-evidence .submit input{
+	width: 60px;
+	height: 30px;
+	color: #fff;
+	background-color: #EB5E4F;
+	border: 0px;
+}
+/* ns-evidence namespace end */
