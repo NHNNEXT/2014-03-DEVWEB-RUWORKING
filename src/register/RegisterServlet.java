@@ -23,19 +23,25 @@ public class RegisterServlet extends HttpServlet{
 		String email = request.getParameter("email");
 		String gender = request.getParameter("gender");
 		
-		User user = new User(id, password, email, gender);
-		UserDAO userDAO = new UserDAO();
+		RegisterUser reg = new RegisterUser();
+		ServletContext sc = this.getServletContext();
 		RequestDispatcher rd = null;
-		try {
-			userDAO.addUser(user);
-			ServletContext sc = this.getServletContext();
-			rd = sc.getRequestDispatcher("/module/register/registerSuccess.jsp");
-		} catch (Exception e) {
-			e.printStackTrace();
-			rd = request.getRequestDispatcher("/module/register/registerFail.jsp");
-		} finally {
-			rd.forward(request, response);
+		if(reg.addUser(id, password, email, gender, "dev")) {
+			rd = sc.getRequestDispatcher("/module/register/registerSuccess.jsp");			
+		} else {
+			rd = request.getRequestDispatcher("/module/register/registerFail.jsp");			
 		}
+		rd.forward(request, response);
+		
+//		
+//		User user = new User(id, password, email, gender);
+//		UserDAO userDAO = new UserDAO();
+//		try {
+//			userDAO.addUser(user);
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		} finally {
+//		}
 	}
 	
 	@Override

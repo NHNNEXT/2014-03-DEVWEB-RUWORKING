@@ -1,5 +1,5 @@
 
-package PDFparser;
+package postrequest;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -22,8 +22,7 @@ import org.jsoup.select.Elements;
 public class sendPost {
 	private final String USER_AGENT = "Mozilla/5.0";
 
-	public ArrayList sendPostMsg() throws Exception {
-		String url = "http://policy.nec.go.kr/svc/policy/PolicyList.do";
+	public ArrayList sendPostMsg(String url) throws Exception {
 		HttpClient client = new DefaultHttpClient();
 		HttpPost post = new HttpPost(url);
  

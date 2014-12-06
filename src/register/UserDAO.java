@@ -6,29 +6,23 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import dbconnection.IDBConnection;
+
 public class UserDAO {
-
-	public Connection getConnection() {
-		String url = "jdbc:mysql://10.73.45.132:3306/dev";
-		String id = "developer";
-		String pw = "pwruworkingpw";
-
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			return DriverManager.getConnection(url,id,pw);
-		} catch (Exception e) {
-			System.out.println(e.getMessage());
-			return null;
-		}
+	DAOFactory factory; 
+	IDBConnection con;
+	public UserDAO(String targetDB) {
+		factory = new DAOFactory();
+		con = factory.makeConnection(targetDB);
 	}
-
+	
 	public void addUser(User user) throws SQLException {
 		String sql = "INSERT INTO member VALUES(NULL,?,?,?,?)";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 	
 		try {
-			conn = getConnection();
+			conn = con.getConnection();
 			pstmt = conn.prepareStatement(sql); 
 			
 			pstmt.setString(1, user.getId());
@@ -56,15 +50,16 @@ public class UserDAO {
 		Boolean result = false;
 		
 		try {
-			conn = getConnection();
+			conn = con.getConnection();
 			pstmt = conn.prepareStatement(sql); 			
 			pstmt.setString(1, userId);
 			pstmt.setString(2, userPw);
-			System.out.println(userId + userPw);
+			System.out.println("아이디 : " + userId + "pw :" + userPw);
 
 			rs = pstmt.executeQuery();
 			
 			if(rs.next()) {
+				System.out.println("here 1");
 				result = true;
 			}
 			

@@ -34,7 +34,9 @@ public class parseText {
 			if(array[i].matches(headRegex)) promiseCount++;
 			promise[promiseCount].pushStringBuffer(array[i] + "\n");
 		}
-		promise[1].parse();
+		for(int i = 0; i<5; i++) {
+			promise[i].parse();
+		}
 		
 	}
 }
