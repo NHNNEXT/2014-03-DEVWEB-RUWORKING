@@ -5,9 +5,9 @@ import java.sql.DriverManager;
 
 public class DevConnection implements IDBConnection{
 	public Connection getConnection() {
-		String url = "jdbc:mysql://172.16.93.153:3306/DEVWEB";
-		String id = "popi";
-		String pw = "db1004";
+		String url = "jdbc:mysql://10.73.45.132:3306/dev";
+		String id = "developer";
+		String pw = "pwruworkingpw";
 
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
