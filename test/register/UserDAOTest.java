@@ -1,6 +1,6 @@
 package register;
 
-import register.UserDAO;
+import service.register.UserDAO;
 import junit.framework.TestCase;
 
 public class UserDAOTest extends TestCase {

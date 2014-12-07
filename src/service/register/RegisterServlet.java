@@ -1,6 +1,7 @@
-package register;
+package service.register;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
@@ -14,6 +15,8 @@ import javax.servlet.http.HttpSession;
 @WebServlet("/Register.ruw")
 public class RegisterServlet extends HttpServlet{
 	
+	private static final long serialVersionUID = 1L;
+
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -23,25 +26,19 @@ public class RegisterServlet extends HttpServlet{
 		String email = request.getParameter("email");
 		String gender = request.getParameter("gender");
 		
-		RegisterUser reg = new RegisterUser();
+		RegisterModel reg = new RegisterModel();
 		ServletContext sc = this.getServletContext();
 		RequestDispatcher rd = null;
-		if(reg.addUser(id, password, email, gender, "dev")) {
-			rd = sc.getRequestDispatcher("/module/register/registerSuccess.jsp");			
-		} else {
-			rd = request.getRequestDispatcher("/module/register/registerFail.jsp");			
+		try {
+			if(reg.addUser(id, password, email, gender)) {
+				rd = sc.getRequestDispatcher("/module/register/registerSuccess.jsp");			
+			} else {
+				rd = request.getRequestDispatcher("/module/register/registerFail.jsp");			
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
 		}
 		rd.forward(request, response);
-		
-//		
-//		User user = new User(id, password, email, gender);
-//		UserDAO userDAO = new UserDAO();
-//		try {
-//			userDAO.addUser(user);
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		} finally {
-//		}
 	}
 	
 	@Override

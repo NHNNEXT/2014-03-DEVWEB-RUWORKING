@@ -1,4 +1,4 @@
-package PDFparser;
+package application.pdfparser.context;
 
 public class Header extends Context {
 	StringBuffer header = new StringBuffer();

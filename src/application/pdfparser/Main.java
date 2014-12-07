@@ -1,8 +1,8 @@
-package PDFparser;
+package application.pdfparser;
 
 import java.util.ArrayList;
 
-import postrequest.sendPost;
+import application.postrequest.sendPost;
 
 
 public class Main {
@@ -19,7 +19,7 @@ public class Main {
 	
 	private static void parsePdf(int pdfNum) throws Exception {
 		ChangePDFtoText parser = new ChangePDFtoText();
-		parser.changePDF("/Users/chaejong-un/Desktop/PDFDownloadTest/" + pdfNum + ".pdf");
+		parser.changePDF("/Users/hataeho/Desktop/PDFDownloadTest/" + pdfNum + ".pdf");
 		
 		StringBuffer dd = parser.getParsedText();
 		

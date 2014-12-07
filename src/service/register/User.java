@@ -1,4 +1,4 @@
-package register;
+package service.register;
 
 public class User {
 	private String id;

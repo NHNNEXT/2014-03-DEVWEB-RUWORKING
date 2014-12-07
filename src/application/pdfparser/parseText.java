@@ -1,7 +1,6 @@
-package PDFparser;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
+package application.pdfparser;
+import application.pdfparser.context.Header;
+import application.pdfparser.context.Promise;
 
 public class parseText {
 	boolean copyFlag = true;

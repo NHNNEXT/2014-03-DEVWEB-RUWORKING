@@ -1,9 +1,9 @@
-package register;
+package db.factory;
 
-import dbconnection.DevConnection;
-import dbconnection.IDBConnection;
+import db.connection.DevConnection;
+import db.connection.IDBConnection;
 
-public class DAOFactory {
+public class ConnectionFactory {
 	public IDBConnection makeConnection(String targetDB) {
 		if (targetDB.equals("dev")) {
 			return new DevConnection();

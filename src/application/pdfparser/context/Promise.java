@@ -1,5 +1,4 @@
-package PDFparser;
-
+package application.pdfparser.context;
 
 public class Promise extends Context {
 	StringBuffer promiseBuffer = new StringBuffer();
