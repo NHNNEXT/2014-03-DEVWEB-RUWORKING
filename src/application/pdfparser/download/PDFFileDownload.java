@@ -1,4 +1,4 @@
-package application.pdfparser;
+package application.pdfparser.download;
 import java.io.BufferedInputStream;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
