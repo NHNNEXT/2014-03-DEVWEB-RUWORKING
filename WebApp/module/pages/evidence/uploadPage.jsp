@@ -11,7 +11,7 @@
 					<option>공약4</option>
 					<option>공약5</option>
 				</select>
-				<span><!--promiseContent--></span>
+				<span>자<!--promiseContent--></span>
 
 			</div>
 			<div class="title wrap">
