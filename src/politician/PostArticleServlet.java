@@ -18,8 +18,9 @@ public class PostArticleServlet extends HttpServlet {
 		String content = request.getParameter("content");
 		int politicianId = Integer.parseInt(request.getParameter("politicianId"));
 		int memberNumber = Integer.parseInt(request.getParameter("memberNumber"));
+		int promiseId = Integer.parseInt(request.getParameter("promiseId"));
 	
-		Article article = new Article(title, content, politicianId, memberNumber);
+		Article article = new Article(title, content, politicianId, memberNumber, promiseId);
 		ArticleDAO articleDAO = new ArticleDAO();
 		
 		try {
