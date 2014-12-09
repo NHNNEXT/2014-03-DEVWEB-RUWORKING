@@ -27,29 +27,44 @@ public class DAOFactory extends SelectDB {
 		iDBconn = factory.makeConnection(targetDB);
 	}
 	
+	private void setParameter(PstmtQuerySet querySet) throws SQLException{
+		for(int i = 0; i < querySet.getQuerySetLength(); i++) {
+			if(querySet.getQueryValues(i) instanceof String){
+				pstmt.setObject(i+1, querySet.getQueryValues(i));
+			}else if(querySet.getQueryValues(i) instanceof Integer){
+				pstmt.setObject(i+1, querySet.getQueryValues(i));
+			} else if (querySet.getQueryValues(i) instanceof Timestamp) {
+				pstmt.setObject(i+1, querySet.getQueryValues(i));
+			}
+		}
+	}
+	
+	 private ResultSet selectQuery(PreparedStatement pstmt) throws SQLException {
+		 rs = pstmt.executeQuery();
+		 return rs;
+	 }
+	
+	 private void setQuery(PstmtQuerySet querySet) throws SQLException{
+		 conn = iDBconn.getConnection();
+		 pstmt = conn.prepareStatement(querySet.getSql());
+		 
+		 setParameter(querySet);		 
+	
+		 if(querySet.getSql().split(" ")[0].equalsIgnoreCase("SELECT")){
+			 if(rs.next())
+				 return true;
+		 } else {
+			 pstmt.executeUpdate();
+			 return true;
+		 }
+	 }
+	 
+	 private void selectQuery(PstmtQuerySet querySet) {
+		 
+	 }
+	 
 	public boolean runQuery(PstmtQuerySet querySet) throws SQLException{
 		try{
-			conn = iDBconn.getConnection();
-			pstmt = conn.prepareStatement(querySet.getSql());
-			
-			for(int i = 0; i < querySet.getQuerySetLength(); i++) {
-				if(querySet.getQueryValues(i) instanceof String){
-					pstmt.setString(i+1, (String)querySet.getQueryValues(i));
-				}else if(querySet.getQueryValues(i) instanceof Integer){
-					pstmt.setInt(i+1, Integer.parseInt((String) querySet.getQueryValues(i)));
-				} else if (querySet.getQueryValues(i) instanceof Timestamp) {
-					pstmt.setTimestamp(i+1, (Timestamp)querySet.getQueryValues(i));
-				}
-			}
-			
-			if(querySet.getSql().split(" ")[0].equalsIgnoreCase("SELECT")){
-				rs = pstmt.executeQuery();
-				if(rs.next())
-					return true;
-			} else {
-				pstmt.executeUpdate();
-				return true;
-			}
 			
 		} catch (Exception e) {
 			e.printStackTrace();
