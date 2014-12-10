@@ -6,8 +6,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import register.User;
-
 public class ArticleDAO {
 
 	public Connection getConnection() {

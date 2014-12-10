@@ -21,8 +21,9 @@ public class RegisterModel {
 		PstmtQuerySet querySet = new PstmtQuerySet(sql, queryValues);
 		DAOFactory DAO = new DAOFactory();
 		
-		if(DAO.runQuery(querySet))
+		if(DAO.nonSelectQuery(querySet))
 			return true;
+		DAO.closeConnections();
 		return false;
 	}
 }

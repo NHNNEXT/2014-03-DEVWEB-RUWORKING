@@ -29,50 +29,35 @@ public class DAOFactory extends SelectDB {
 	
 	private void setParameter(PstmtQuerySet querySet) throws SQLException{
 		for(int i = 0; i < querySet.getQuerySetLength(); i++) {
-			if(querySet.getQueryValues(i) instanceof String){
-				pstmt.setObject(i+1, querySet.getQueryValues(i));
-			}else if(querySet.getQueryValues(i) instanceof Integer){
-				pstmt.setObject(i+1, querySet.getQueryValues(i));
-			} else if (querySet.getQueryValues(i) instanceof Timestamp) {
-				pstmt.setObject(i+1, querySet.getQueryValues(i));
-			}
+			pstmt.setObject(i+1, querySet.getQueryValues(i));
 		}
 	}
 	
-	 private ResultSet selectQuery(PreparedStatement pstmt) throws SQLException {
-		 rs = pstmt.executeQuery();
-		 return rs;
-	 }
-	
-	 private void setQuery(PstmtQuerySet querySet) throws SQLException{
-		 conn = iDBconn.getConnection();
-		 pstmt = conn.prepareStatement(querySet.getSql());
-		 
-		 setParameter(querySet);		 
-	
-		 if(querySet.getSql().split(" ")[0].equalsIgnoreCase("SELECT")){
-			 if(rs.next())
-				 return true;
-		 } else {
-			 pstmt.executeUpdate();
-			 return true;
-		 }
+	 public ResultSet selectQuery(PstmtQuerySet querySet) throws SQLException {
+		 try {
+			 conn = iDBconn.getConnection();
+			 pstmt = conn.prepareStatement(querySet.getSql());
+			 
+			 setParameter(querySet);	
+		 }catch(SQLException e) {
+			 e.printStackTrace();
+		 } 
+		 return pstmt.executeQuery();
 	 }
 	 
-	 private void selectQuery(PstmtQuerySet querySet) {
-		 
-	 }
-	 
-	public boolean runQuery(PstmtQuerySet querySet) throws SQLException{
-		try{
+	 public boolean nonSelectQuery(PstmtQuerySet querySet) throws SQLException {
+		try {
+			conn = iDBconn.getConnection();
+			pstmt = conn.prepareStatement(querySet.getSql());
 			
-		} catch (Exception e) {
+			setParameter(querySet);	
+			pstmt.executeUpdate();
+			return true;
+		} catch(SQLException e) {
 			e.printStackTrace();
-		} finally {
-			closeConnections();
 		}
 		return false;
-	}
+	 }
 	
 	public void closeConnections() throws SQLException{
 		if (rs != null) rs.close();

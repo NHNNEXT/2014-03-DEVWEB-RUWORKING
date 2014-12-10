@@ -5,6 +5,7 @@
  */
 package service.login;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -23,8 +24,10 @@ public class LoginModel {
 		PstmtQuerySet querySet = new PstmtQuerySet(sql, queryValues);
 		
 		DAOFactory DAO = new DAOFactory();
-		if(DAO.runQuery(querySet))
-			return true;
+		ResultSet rs = DAO.selectQuery(querySet);
+		if(rs.next()) return true;
+		DAO.closeConnections();
+
 		return false;
 	}
 }
