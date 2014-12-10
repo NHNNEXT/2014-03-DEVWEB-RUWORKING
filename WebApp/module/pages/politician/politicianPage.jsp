@@ -37,12 +37,12 @@
 							<li>증거자료입니다...</li>
 						</ul>
 						<form method="post" action="/vote.ruw" class = "vote">
-							<input type="radio" name="chkBox" value="0">0
-							<input type="radio" name="chkBox" value="20">20
-							<input type="radio" name="chkBox" value="40">40
-							<input type="radio" name="chkBox" value="60">60
-							<input type="radio" name="chkBox" value="80">80
-							<input type="radio" name="chkBox" value="100">100
+							<input type="radio" name="chkBox" data-type="score" value="0">0
+							<input type="radio" name="chkBox" data-type="score" value="20">20
+							<input type="radio" name="chkBox" data-type="score" value="40">40
+							<input type="radio" name="chkBox" data-type="score" value="60">60
+							<input type="radio" name="chkBox" data-type="score" value="80">80
+							<input type="radio" name="chkBox" data-type="score" value="100">100
 							<div class = "submit" data-type="submit">투표하기</div>
 						</form>
 					</div>	
@@ -63,7 +63,7 @@
 							<li>증거자료입니다...</li>
 							<li>증거자료입니다...</li>
 						</ul>
-						<form method="post" action="/vote.ruw" class = "vote">
+						<form method="post" action="/Vote.ruw" class = "vote">
 							<input type="radio" name="chkBox" value="0">0
 							<input type="radio" name="chkBox" value="20">20
 							<input type="radio" name="chkBox" value="40">40
@@ -90,7 +90,7 @@
 							<li>증거자료입니다...</li>
 							<li>증거자료입니다...</li>
 						</ul>
-						<form method="post" action="/vote.ruw" class = "vote">
+						<form method="post" action="/Vote.ruw" class = "vote">
 							<input type="radio" name="chkBox" value="0">0
 							<input type="radio" name="chkBox" value="20">20
 							<input type="radio" name="chkBox" value="40">40
@@ -117,7 +117,7 @@
 							<li>증거자료입니다...</li>
 							<li>증거자료입니다...</li>
 						</ul>
-						<form method="post" action="/vote.ruw" class = "vote">
+						<form method="post" action="/Vote.ruw" class = "vote">
 							<input type="radio" name="chkBox" value="0">0
 							<input type="radio" name="chkBox" value="20">20
 							<input type="radio" name="chkBox" value="40">40
@@ -144,7 +144,7 @@
 							<li>증거자료입니다...</li>
 							<li>증거자료입니다...</li>
 						</ul>
-						<form method="post" action="/vote.ruw" class = "vote">
+						<form method="post" action="/Vote.ruw" class = "vote">
 							<input type="radio" name="chkBox" value="0">0
 							<input type="radio" name="chkBox" value="20">20
 							<input type="radio" name="chkBox" value="40">40
