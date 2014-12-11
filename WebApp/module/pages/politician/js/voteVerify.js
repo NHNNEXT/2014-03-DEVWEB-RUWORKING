@@ -1,3 +1,4 @@
+/* NHNNEXT Development Practice Project RUWORKING HTH 141110 */ 
 ;
 (function(){
 	
