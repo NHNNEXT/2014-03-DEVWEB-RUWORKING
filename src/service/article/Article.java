@@ -5,7 +5,6 @@ public class Article {
 	private int id;
 	private String title;
 	private String content;
-	private int politicianId;
 	private int promiseId;
 	private int memberNumber;
 
@@ -13,17 +12,14 @@ public class Article {
 
 	}
 
-	public Article(String title, String content, int politicianId,
-			int promiseId, int memberNumber) {
-		this(null, title, content, politicianId, promiseId, memberNumber);
+	public Article(String title, String content, int promiseId, int memberNumber) {
+		this(null, title, content, promiseId, memberNumber);
 	}
 
-	public Article(Integer id, String title, String content, int politicianId,
-			int promiseId, int memberNumber) {
+	public Article(Integer id, String title, String content, int promiseId, int memberNumber) {
 		this.id = id;
 		this.title = title;
 		this.content = content;
-		this.politicianId = politicianId;
 		this.promiseId = promiseId;
 		this.memberNumber = memberNumber;
 	}
@@ -38,10 +34,6 @@ public class Article {
 
 	public String getContent() {
 		return content;
-	}
-
-	public int getPoliticianId() {
-		return politicianId;
 	}
 
 	public int getPromiseId() {

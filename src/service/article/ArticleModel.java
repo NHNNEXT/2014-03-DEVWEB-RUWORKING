@@ -11,15 +11,14 @@ import db.query.PstmtQuerySet;
 
 public class ArticleModel {
 
-	public boolean postArticle(String title, String content, int politicianId, int memberNumber, int promiseId) throws SQLException {
+	public boolean postArticle(String title, String content, int memberNumber, int promiseId) throws SQLException {
 
-		Article article = new Article(title, content, politicianId, memberNumber, promiseId);
+		Article article = new Article(title, content, memberNumber, promiseId);
 		ArrayList<Object> queryValues = new ArrayList<Object>();
-		String sql = "INSERT INTO article VALUES(NULL,?,?,?,?,?)";
+		String sql = "INSERT INTO article VALUES(NULL,?,?,?,?)";
 
 		queryValues.add(article.getTitle());
 		queryValues.add(article.getContent());
-		queryValues.add(article.getPoliticianId());
 		queryValues.add(article.getPromiseId());
 		queryValues.add(article.getMemberNumber());
 		
@@ -43,7 +42,7 @@ public class ArticleModel {
 		rs = DAO.excuteQuery(querySet);		
 
 		while(rs.next()){
-			Article article = new Article(rs.getString("title"), rs.getString("content"), rs.getInt("politician_id"), rs.getInt("member_number"), rs.getInt("promise_id"));
+			Article article = new Article(rs.getString("title"), rs.getString("content"), rs.getInt("member_number"), rs.getInt("promise_id"));
 		}
 		
 		return article;
