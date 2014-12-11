@@ -26,12 +26,15 @@ public class ArticleModel {
 		PstmtQuerySet querySet = new PstmtQuerySet(sql, queryValues);
 		DAOFactory DAO = new DAOFactory();
 		
-		if(DAO.runQuery(querySet))
+		if(DAO.nonSelectQuery(querySet)){
+			DAO.closeConnections();
 			return true;
+			}
+		DAO.closeConnections();
 		return false;
 	}
 	
-	public Article getArticle(int id){
+	public Article getArticle(int id) throws SQLException{
 		
 		String sql = "SELECT * FROM article WHERE id=?"; 
 		ArrayList<Object> queryValues = new ArrayList<Object>();
@@ -39,15 +42,16 @@ public class ArticleModel {
 		PstmtQuerySet querySet = new PstmtQuerySet(sql, queryValues);
 		DAOFactory DAO = new DAOFactory();
 		ResultSet rs = null;
+		Article article = null;
 		
-		
-		rs = DAO.excuteQuery(querySet);		
+		rs = DAO.selectQuery(querySet);		
 
 		
 		while(rs.next()){
-			Article article = new Article(rs.getString("title"), rs.getString("content"), rs.getInt("member_number"), rs.getInt("promise_id"));
+			article = new Article(rs.getString("title"), rs.getString("content"), rs.getInt("member_number"), rs.getInt("promise_id"));
 		}
 		
+		DAO.closeConnections();
 		return article;
 	}
 	

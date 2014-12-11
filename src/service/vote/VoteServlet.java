@@ -17,7 +17,9 @@ public class VoteServlet extends HttpServlet{
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String score = request.getParameter("score");
+		String test = request.getParameter("test");
 		String promiseId = "1";
+		System.out.println("test"+test);
 		System.out.println("score"+score);
 		VoteModel model = new VoteModel();
 		
@@ -25,8 +27,10 @@ public class VoteServlet extends HttpServlet{
 			
 			if(model.addOpinion(score, promiseId)){		
 				System.out.println("투표 하였습니다.");
+				response.sendRedirect("/module/politician/politician.jsp");
 			}else{
 				System.out.println("투표 실패하였습니다.");
+				response.sendRedirect("/module/politician/politician.jsp");
 			}
 			
 			

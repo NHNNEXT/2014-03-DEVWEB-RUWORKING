@@ -19,7 +19,7 @@ public class VoteModel {
 
 		queryValues.add(promiseId);
 		PstmtQuerySet querySet = new PstmtQuerySet(countSql, queryValues);
-		if (!DAO.runQuery(querySet))
+		if (!DAO.nonSelectQuery(querySet))
 			return false;
 
 		// 투표 총점 update
@@ -28,10 +28,9 @@ public class VoteModel {
 		queryValues.clear();
 		queryValues.add(score);
 		queryValues.add(promiseId);
-		PstmtQuerySet newQuerySet = new PstmtQuerySet(scoreSql, queryValues);
-		DAO.runQuery(newQuerySet);
+		querySet = new PstmtQuerySet(scoreSql, queryValues);
 
-		if (!DAO.runQuery(querySet))
+		if (!DAO.nonSelectQuery(querySet))
 			return false;
 		return true;
 	}
