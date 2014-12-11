@@ -20,13 +20,16 @@ public class GetArticleServlet extends HttpServlet {
 
 		int articleId = Integer.parseInt(request.getParameter("articleId"));
 		ArticleModel art = new ArticleModel();
-		Article article = art.getArticle(articleId);
+		Article article = null;
+		try {
+			article = art.getArticle(articleId);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 
 		request.setAttribute("article", article);
 
 		RequestDispatcher rd = request.getRequestDispatcher("");
 		rd.forward(request, response);
 	}
-	
-	
 }
