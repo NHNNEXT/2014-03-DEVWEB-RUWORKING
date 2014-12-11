@@ -26,17 +26,18 @@ public class ArticleModel {
 
 		PstmtQuerySet querySet = new PstmtQuerySet(sql, queryValues);
 		DAOFactory DAO = new DAOFactory();
-
-		if (DAO.nonSelectQuery(querySet)) {
+		
+		if(DAO.nonSelectQuery(querySet)){
 			DAO.closeConnections();
 			return true;
-		}
+			}
 		DAO.closeConnections();
 		return false;
 	}
-
-	public Article getArticle(int id) throws SQLException {
-		String sql = "SELECT * FROM article WHERE id=?";
+	
+	public Article getArticle(int id) throws SQLException{
+		
+		String sql = "SELECT * FROM article WHERE id=?"; 
 		ArrayList<Object> queryValues = new ArrayList<Object>();
 		queryValues.add(id);
 		PstmtQuerySet querySet = new PstmtQuerySet(sql, queryValues);
