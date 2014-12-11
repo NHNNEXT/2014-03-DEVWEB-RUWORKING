@@ -10,20 +10,24 @@ import javax.servlet.http.HttpServletResponse;
 
 public class UploadArticleServlet extends HttpServlet{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
-		int politicianId = Integer.parseInt(request.getParameter("politicianId"));
 		int promiseId = Integer.parseInt(request.getParameter("promiseId"));
 		int memberNumber = Integer.parseInt(request.getParameter("memberNumber"));
 	
-		ArticleModel art = new ArticleModel();
+		ArticleModel articleModel = new ArticleModel();
 		
 		try {
-			art.postArticle(title, content, politicianId, promiseId, memberNumber);
+			articleModel.postArticle(title, content, memberNumber, promiseId);
 			
 		} catch (SQLException e) {
 			e.printStackTrace();

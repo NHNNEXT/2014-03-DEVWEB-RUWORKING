@@ -3,6 +3,7 @@ package service.article;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 import com.google.gson.Gson;
 
@@ -38,9 +39,11 @@ public class ArticleModel {
 		PstmtQuerySet querySet = new PstmtQuerySet(sql, queryValues);
 		DAOFactory DAO = new DAOFactory();
 		ResultSet rs = null;
-
+		
+		
 		rs = DAO.excuteQuery(querySet);		
 
+		
 		while(rs.next()){
 			Article article = new Article(rs.getString("title"), rs.getString("content"), rs.getInt("member_number"), rs.getInt("promise_id"));
 		}
@@ -63,5 +66,18 @@ public class ArticleModel {
 		}
 		
 		return articleTitles;
+	}
+
+	public List<String> getPromiseContent(String pid, String round) {
+		// TODO promise table에서 정치인아이디가 pid, 대수가 round인 공약 id 5개 search하여 List에 넣기
+		
+		// DB에 넣기 전 시험코드
+		List<String> promiseContents = new ArrayList<String>();
+		promiseContents.add("넥스트의 기존철학 지키겠다1"); 
+		promiseContents.add("넥스트의 기존철학 지키겠다2");
+		promiseContents.add("넥스트의 기존철학 지키겠다3"); 
+		promiseContents.add("넥스트의 기존철학 지키겠다4"); 
+		promiseContents.add("넥스트의 기존철학 지키겠다5"); 
+		return promiseContents;
 	}
 }
