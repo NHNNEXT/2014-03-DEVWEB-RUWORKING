@@ -24,7 +24,6 @@ public class GetArticleServlet extends HttpServlet {
 		try {
 			article = art.getArticle(articleId);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -33,6 +32,4 @@ public class GetArticleServlet extends HttpServlet {
 		RequestDispatcher rd = request.getRequestDispatcher("");
 		rd.forward(request, response);
 	}
-	
-	
 }
