@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<script src="/js/politician.js"></script>
-
 <div id = "pageContainer">
 	<div id = "ns-politician">
 		<div class = "politician-card">
@@ -9,94 +7,159 @@
 				<img src="/img/mem1.jpg" alt="">
 			</div>
 			<div class="info">
-				<span class = "name">홍길동</span>
-				<span class = "party">밥맛있당</span>
-				<span class = "line"></span>
-				<span class = "district">제천시·단양군</span>
+				<span class="name">홍길동</span>
+				<span class="party">밥맛있당</span>
+				<span class="line"></span>
+				<span class="district">제천시·단양군</span>
 				<span class="now">이행률</span>
 				<span class="percent">%</span>
 				<span class="percentage">82</span>
 			</div>
 		</div>
-		<div class = "board">
+		<div class="board">
 			<ul>
-			<li class = "promise">
-				<div class = "promise-title">공약1 : NHN NEXT 기존의 설립철학 유지하겠다. </div>
-				<div class = "down-icon">
-					<img src="/img/down-icon.png" alt="">
-				</div>
-				<div class = "promise-board">
-					<ul>
-						<li>증거자료입니다...</li>
-						<li>증거자료입니다...</li>
-						<li>증거자료입니다...</li>
-						<li>증거자료입니다...</li>
-						<li>증거자료입니다...</li>
-					</ul>
-				</div>	
-			</li>
-			<li id="grand" class = "promise">
-			<div class = "promise-title">공약2 : NHN NEXT 기존의 설립철학 유지하겠다. </div>
-				<div id = "parent"class = "down-icon">
-					<img src="/img/down-icon.png" alt="">
-				</div>			
-				<div class = "promise-board">
-					<ul>
-						<li>증거자료입니다...</li>
-						<li>증거자료입니다...</li>
-						<li>증거자료입니다...</li>
-						<li>증거자료입니다...</li>
-						<li>증거자료입니다...</li>
-					</ul>
-				</div>	
-			</li>
-			<li class = "promise">
-				<div class = "promise-title">공약3 : NHN NEXT 기존의 설립철학 유지하겠다. </div>
-				<div class = "down-icon">
-					<img src="/img/down-icon.png" alt="">
-				</div>			
-				<div class = "promise-board">
-					<ul>
-						<li>증거자료입니다...</li>
-						<li>증거자료입니다...</li>
-						<li>증거자료입니다...</li>
-						<li>증거자료입니다...</li>
-						<li>증거자료입니다...</li>
-					</ul>
-				</div>	
-			</li>
-			<li class = "promise">
-				<div class = "promise-title">공약4 : NHN NEXT 기존의 설립철학 유지하겠다. </div>
-				<div class = "down-icon">
-					<img src="/img/down-icon.png" alt="">
-				</div>			
-				<div class = "promise-board">
-					<ul>
-						<li>증거자료입니다...</li>
-						<li>증거자료입니다...</li>
-						<li>증거자료입니다...</li>
-						<li>증거자료입니다...</li>
-						<li>증거자료입니다...</li>
-					</ul>
-				</div>	
-			</li>
-			<li class = "promise">
-			<div class = "promise-title">공약5 : NHN NEXT 기존의 설립철학 유지하겠다. </div>
-				<div class = "down-icon">
-					<img src="/img/down-icon.png" alt="">
-				</div>
-				<div class = "promise-board">
-					<ul>
-						<li>증거자료입니다...</li>
-						<li>증거자료입니다...</li>
-						<li>증거자료입니다...</li>
-						<li>증거자료입니다...</li>
-						<li>증거자료입니다...</li>
-					</ul>
-				</div>	
-			</li>
+				<li class="promise">
+					<div class="promise-title">
+						<div class="title-number">약속 1:</div>	
+						NHN NEXT 기존의 설립철학 유지하겠다.
+						<div class="down-icon">
+							<img src="/img/down-icon.png" alt="">
+						</div>
+					</div>
+					<div class="promise-board">
+						<ul>
+							<li>증거자료입니다...</li>
+							<li>증거자료입니다...</li>
+							<li>증거자료입니다...</li>
+							<li>증거자료입니다...</li>
+							<li>증거자료입니다...</li>
+						</ul>
+						<form action="/Vote.ruw" method="post" class="vote" data-type="vote-form">
+							<input type="radio" name="score" data-type="score" value="0">0
+							<input type="radio" name="score" data-type="score" value="20">20
+							<input type="radio" name="score" data-type="score" value="40">40
+							<input type="radio" name="score" data-type="score" value="60">60
+							<input type="radio" name="score" data-type="score" value="80">80
+							<input type="radio" name="score" data-type="score" value="100">100
+							<div data-type="submit" class="submit">투표하기</div>
+						</form>
+					</div>	
+				</li>
+			<li class="promise">
+					<div class="promise-title">
+						<div class="title-number">약속 1:</div>	
+						NHN NEXT 기존의 설립철학 유지하겠다.
+						<div class="down-icon">
+							<img src="/img/down-icon.png" alt="">
+						</div>
+					</div>
+					<div class="promise-board">
+						<ul>
+							<li>증거자료입니다...</li>
+							<li>증거자료입니다...</li>
+							<li>증거자료입니다...</li>
+							<li>증거자료입니다...</li>
+							<li>증거자료입니다...</li>
+						</ul>
+						<form action="/Vote.ruw" method="post" class="vote" data-type="vote-form">
+							<input type="radio" name="score" data-type="score" value="0">0
+							<input type="radio" name="score" data-type="score" value="20">20
+							<input type="radio" name="score" data-type="score" value="40">40
+							<input type="radio" name="score" data-type="score" value="60">60
+							<input type="radio" name="score" data-type="score" value="80">80
+							<input type="radio" name="score" data-type="score" value="100">100
+							<div data-type="submit" class="submit">투표하기</div>
+						</form>
+					</div>	
+				</li>
+			<li class="promise">
+					<div class="promise-title">
+						<div class="title-number">약속 1:</div>	
+						NHN NEXT 기존의 설립철학 유지하겠다.
+						<div class="down-icon">
+							<img src="/img/down-icon.png" alt="">
+						</div>
+					</div>
+					<div class="promise-board">
+						<ul>
+							<li>증거자료입니다...</li>
+							<li>증거자료입니다...</li>
+							<li>증거자료입니다...</li>
+							<li>증거자료입니다...</li>
+							<li>증거자료입니다...</li>
+						</ul>
+						<form action="/Vote.ruw" method="post" class="vote" data-type="vote-form">
+							<input type="radio" name="score" data-type="score" value="0">0
+							<input type="radio" name="score" data-type="score" value="20">20
+							<input type="radio" name="score" data-type="score" value="40">40
+							<input type="radio" name="score" data-type="score" value="60">60
+							<input type="radio" name="score" data-type="score" value="80">80
+							<input type="radio" name="score" data-type="score" value="100">100
+							<div data-type="submit" class="submit">투표하기</div>
+						</form>
+					</div>	
+				</li>
+				<li class="promise">
+					<div class="promise-title">
+						<div class="title-number">약속 4:</div>	
+						NHN NEXT 기존의 설립철학 유지하겠다.
+						<div class="down-icon">
+							<img src="/img/down-icon.png" alt="">
+						</div>
+					</div>
+					<div class="promise-board">
+						<ul>
+							<li>증거자료입니다...</li>
+							<li>증거자료입니다...</li>
+							<li>증거자료입니다...</li>
+							<li>증거자료입니다...</li>
+							<li>증거자료입니다...</li>
+						</ul>
+						<form action="/Vote.ruw" method="post" class="vote" data-type="vote-form">
+							<input type="radio" name="score" data-type="score" value="0">0
+							<input type="radio" name="score" data-type="score" value="20">20
+							<input type="radio" name="score" data-type="score" value="40">40
+							<input type="radio" name="score" data-type="score" value="60">60
+							<input type="radio" name="score" data-type="score" value="80">80
+							<input type="radio" name="score" data-type="score" value="100">100
+							<div data-type="submit" class="submit">투표하기</div>
+						</form>
+					</div>	
+				</li>
+				<li class="promise">
+					<div class="promise-title">
+						<div class="title-number">약속 5:</div>	
+						NHN NEXT 기존의 설립철학 유지하겠다.
+						<div class="down-icon">
+							<img src="/img/down-icon.png" alt="">
+						</div>
+					</div>
+					<div class="promise-board">
+						<ul>
+							<li>증거자료입니다...</li>
+							<li>증거자료입니다...</li>
+							<li>증거자료입니다...</li>
+							<li>증거자료입니다...</li>
+							<li>증거자료입니다...</li>
+						</ul>
+						<form action="/Vote.ruw" method="post" class="vote" data-type="vote-form">
+							<input type="radio" name="score" data-type="score" value="0">0
+							<input type="radio" name="score" data-type="score" value="20">20
+							<input type="radio" name="score" data-type="score" value="40">40
+							<input type="radio" name="score" data-type="score" value="60">60
+							<input type="radio" name="score" data-type="score" value="80">80
+							<input type="radio" name="score" data-type="score" value="100">100
+							<div data-type="submit" class="submit">투표하기</div>
+						</form>
+					</div>	
+				</li>
 			</ul>
-		<div class = "upload">올리기</div>
-		</div>
-	</div>	
+			<form method="get" action="/test.ruw">
+				<input type="hidden" value="politicianId"></input>
+				<input type="hidden" value="round"></input>
+				<div" class = "upload" data-type="submit">올리기</div>
+			</form>	
+	</div>
 </div>
+<script src="/module/pages/politician/js/politician.js"></script>
+<script src="/module/pages/politician/js/voteVerify.js"></script>
