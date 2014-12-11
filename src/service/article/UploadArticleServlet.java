@@ -1,4 +1,4 @@
-package politician;
+package service.article;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -8,7 +8,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class PostArticleServlet extends HttpServlet {
+public class UploadArticleServlet extends HttpServlet{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -16,19 +21,19 @@ public class PostArticleServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
-		int politicianId = Integer.parseInt(request.getParameter("politicianId"));
-		int memberNumber = Integer.parseInt(request.getParameter("memberNumber"));
 		int promiseId = Integer.parseInt(request.getParameter("promiseId"));
+		int memberNumber = Integer.parseInt(request.getParameter("memberNumber"));
 	
-		Article article = new Article(title, content, politicianId, memberNumber, promiseId);
-		ArticleDAO articleDAO = new ArticleDAO();
+		ArticleModel articleModel = new ArticleModel();
 		
 		try {
-			articleDAO.addArticle(article);
+			articleModel.postArticle(title, content, memberNumber, promiseId);
+			
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}	
+		}
+		
+		response.sendRedirect("");
+
 	}	
 }
-
