@@ -26,11 +26,11 @@ public class RegisterServlet extends HttpServlet{
 		String email = request.getParameter("email");
 		String gender = request.getParameter("gender");
 		
-		RegisterModel reg = new RegisterModel();
+		RegisterModel model = new RegisterModel();
 		ServletContext sc = this.getServletContext();
 		RequestDispatcher rd = null;
 		try {
-			if(reg.addUser(id, password, email, gender)) {
+			if(model.addUser(id, password, email, gender)) {
 				rd = sc.getRequestDispatcher("/module/register/registerSuccess.jsp");			
 			} else {
 				rd = request.getRequestDispatcher("/module/register/registerFail.jsp");			

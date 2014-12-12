@@ -11,8 +11,8 @@ public class VoteModel {
 	public boolean addOpinion(String score, String promiseId)
 			throws SQLException {
 		
-		if(!updateVoteCount(promiseId)) return false;
-		if(!updateVoteScore(score, promiseId)) return false;		
+		if(!(updateVoteCount(promiseId) && updateVoteScore(score, promiseId))) return false;		
+		
 		return true;
 	}
 

@@ -22,14 +22,8 @@ public class VoteServlet extends HttpServlet{
 		VoteModel model = new VoteModel();
 		
 		try {
-			
-			if(model.addOpinion(score, promiseId)){		
-				System.out.println("투표 하였습니다.");
-			}else{
-				System.out.println("투표 실패하였습니다.");
-			}
-			
-			
+			model.addOpinion(score, promiseId);		
+
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
