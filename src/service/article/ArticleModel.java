@@ -15,14 +15,13 @@ public class ArticleModel {
 	public boolean postArticle(String title, String content, int memberNumber,
 			int promiseId) throws SQLException {
 
-		Article article = new Article(title, content, memberNumber, promiseId);
 		ArrayList<Object> queryValues = new ArrayList<Object>();
 		String sql = "INSERT INTO article VALUES(NULL,?,?,?,?)";
 
-		queryValues.add(article.getTitle());
-		queryValues.add(article.getContent());
-		queryValues.add(article.getPromiseId());
-		queryValues.add(article.getMemberNumber());
+		queryValues.add(title);
+		queryValues.add(content);
+		queryValues.add(memberNumber);
+		queryValues.add(promiseId);
 
 		PstmtQuerySet querySet = new PstmtQuerySet(sql, queryValues);
 		DAOFactory DAO = new DAOFactory();

@@ -10,7 +10,7 @@
 
 <div id="pageContainer">
 	<div id="ns-evidence">
-		<form class="uploadBoard" action="" method="post">
+		<form class="uploadBoard" action="/Upload.ruw" method="post">
 			<div class="promise wrap">
 				<select name="promise-number">
 					<option value ="1">공약1</option>

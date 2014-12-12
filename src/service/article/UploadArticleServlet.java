@@ -4,10 +4,12 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+@WebServlet("/Upload.ruw")
 public class UploadArticleServlet extends HttpServlet{
 
 	/**
@@ -21,8 +23,8 @@ public class UploadArticleServlet extends HttpServlet{
 		request.setCharacterEncoding("UTF-8");
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
-		int promiseId = Integer.parseInt(request.getParameter("promiseId"));
-		int memberNumber = Integer.parseInt(request.getParameter("memberNumber"));
+		int promiseId = Integer.parseInt(request.getParameter("promise-number"));
+		int memberNumber = 3;
 	
 		ArticleModel articleModel = new ArticleModel();
 		
@@ -33,7 +35,7 @@ public class UploadArticleServlet extends HttpServlet{
 			e.printStackTrace();
 		}
 		
-		response.sendRedirect("");
+		response.sendRedirect("/module/politician/politician.jsp");
 
 	}	
 }
