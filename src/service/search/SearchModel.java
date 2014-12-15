@@ -13,9 +13,12 @@ import db.query.PstmtQuerySet;
 public class SearchModel {
 
 	public ArrayList<Politician> getResult(String searchQuery)  {
+		if(searchQuery.matches("") || searchQuery.matches(".* .*") || searchQuery.matches(".*%.*"))
+			return null;
+		
 		ArrayList<Object> queryValues = new ArrayList<Object>();
 		String sql = "SELECT * FROM politician WHERE name LIKE ?";
-		
+
 		queryValues.add("%" + searchQuery +"%");
 		
 		PstmtQuerySet querySet = new PstmtQuerySet(sql, queryValues);
@@ -26,7 +29,6 @@ public class SearchModel {
 		try {
 			rs = DAO.selectQuery(querySet);
 			while(rs.next()) {
-				System.out.println(rs.getInt("party_id"));
 				searchResultList.add(new Politician(rs.getInt("id"), rs.getString("name"), rs.getString("local"), getParty(rs.getInt("party_id")), rs.getString("img_url")));
 			}
 			return searchResultList;
@@ -45,7 +47,6 @@ public class SearchModel {
 	public String getParty(int partyId) {
 		ArrayList<Object> queryValues = new ArrayList<Object>();
 		String sql = "SELECT * FROM party WHERE id=?";
-		System.out.println(partyId);
 		queryValues.add(partyId);
 		
 		PstmtQuerySet querySet = new PstmtQuerySet(sql, queryValues);
