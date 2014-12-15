@@ -19,7 +19,7 @@
 				<span class="party">${each.partyId}</span>
 				<span class="local">${each.local}</span>
 				<div class="line"></div>
-				<span class="more">자세히 보기</span>
+				<span class="more"><a href="/viewDetail.ruw?pid=${each.politicianId}">자세히 보기</a></span>
 			</div>
 		</c:forEach>
 		</c:otherwise>
