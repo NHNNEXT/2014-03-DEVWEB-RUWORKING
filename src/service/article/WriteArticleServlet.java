@@ -28,7 +28,7 @@ public class WriteArticleServlet extends HttpServlet {
 		round = Integer.parseInt(infoForPromise.get("round"));
 		List<String> promiseList = null;
 		try {
-			promiseList = articleModel.getPromiseContent(pid, round);
+			promiseList = articleModel.getPromiseTitle(pid, round);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

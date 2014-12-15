@@ -3,16 +3,17 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <div id="hiddenInfo" style="display: none">
-	<c:forEach var="promiseContent" items="${requestScope.promiseList}" varStatus="promiseCount">
-			<p class ="promiseContent${promiseCount.count}">${promiseContent}</p>
+	<c:forEach var="promiseTitle" items="${requestScope.promiseList}" varStatus="promiseCount">
+			<p class ="promiseContent${promiseCount.count}">${promiseTitle}</p>
 	</c:forEach>
 </div>
 
 <div id="pageContainer">
 	<div id="ns-evidence">
 		<form class="uploadBoard" action="/Upload.ruw" method="post">
+			<div class="pid" style="display:none">${requestScope.pid}</div>
 			<div class="promise wrap">
-				<select name="promise-number">
+				<select name="promiseNumber">
 					<option value ="1">공약1</option>
 					<option value ="2">공약2</option>
 					<option value ="3">공약3</option>
@@ -24,10 +25,10 @@
 				</span>
 			</div>
 			<div class="title wrap">
-				<span>제목</span> <input type="text" name="title">
+				<span>제목</span> <input type="text" name="articleTitle">
 			</div>
 			<div class="content wrap">
-				<textarea name="content" cols="107" rows="20"></textarea>
+				<textarea name="articleContent" cols="107" rows="20"></textarea>
 			</div>
 			<div class="submit">
 				<input type="submit" value="올리기">

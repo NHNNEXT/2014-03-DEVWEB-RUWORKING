@@ -12,16 +12,20 @@ import db.query.PstmtQuerySet;
 
 public class ArticleModel {
 
-	public boolean postArticle(String title, String content, int memberNumber,
-			int promiseId) throws SQLException {
+	public boolean postArticle(String title, String content, String memberId,
+			int promiseNum, int round, int pid) throws SQLException {
 
 		ArrayList<Object> queryValues = new ArrayList<Object>();
-		String sql = "INSERT INTO article VALUES(NULL,?,?,?,?)";
+		String sql = "INSERT INTO article VALUES(NULL,?,?,?,?,?,?,NULL)";
 
 		queryValues.add(title);
 		queryValues.add(content);
-		queryValues.add(memberNumber);
-		queryValues.add(promiseId);
+		queryValues.add(memberId);
+		queryValues.add(promiseNum);
+		queryValues.add(round);
+		queryValues.add(pid);
+
+
 
 		PstmtQuerySet querySet = new PstmtQuerySet(sql, queryValues);
 		DAOFactory DAO = new DAOFactory();
@@ -71,8 +75,8 @@ public class ArticleModel {
 
 		return articleTitles;
 	}
-
-	public List<String> getPromiseContent(int pid, int round) throws SQLException {
+	
+	public List<String> getPromiseTitle(int pid, int round) throws SQLException {
 		// TODO promise table에서 정치인아이디가 pid, 대수가 round인 공약 id 5개 search하여 List에 넣기
 		String sql = "SELECT * FROM promise WHERE politician_id=? and round=?";
 		ArrayList<Object> queryValues = new ArrayList<Object>();
@@ -85,7 +89,7 @@ public class ArticleModel {
 		List <String> promiseContents = new ArrayList<String>();
 		
 		while (rs.next()) {
-			promiseContents.add(rs.getString("content"));
+			promiseContents.add(rs.getString("title"));
 		}
 
 		DAO.closeConnections();
