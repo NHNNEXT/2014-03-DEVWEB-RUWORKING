@@ -26,9 +26,36 @@ public class SearchModel {
 		try {
 			rs = DAO.selectQuery(querySet);
 			while(rs.next()) {
-				searchResultList.add(new Politician(rs.getInt("id"), rs.getString("name"), rs.getString("local"), rs.getInt("party_id"), rs.getString("img_url")));
+				System.out.println(rs.getInt("party_id"));
+				searchResultList.add(new Politician(rs.getInt("id"), rs.getString("name"), rs.getString("local"), getParty(rs.getInt("party_id")), rs.getString("img_url")));
 			}
 			return searchResultList;
+		}  catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				DAO.closeConnections();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return null;
+	}
+	
+	public String getParty(int partyId) {
+		ArrayList<Object> queryValues = new ArrayList<Object>();
+		String sql = "SELECT * FROM party WHERE id=?";
+		System.out.println(partyId);
+		queryValues.add(partyId);
+		
+		PstmtQuerySet querySet = new PstmtQuerySet(sql, queryValues);
+		
+		ResultSet rs;
+		DAOFactory DAO = new DAOFactory();
+		try {
+			rs = DAO.selectQuery(querySet);
+			if(rs.next())
+			return rs.getString("name");
 		}  catch (SQLException e) {
 			e.printStackTrace();
 		} finally {

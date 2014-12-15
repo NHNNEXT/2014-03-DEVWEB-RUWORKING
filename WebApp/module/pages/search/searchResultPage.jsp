@@ -16,7 +16,7 @@
 			<div class="card">
 				<div class="img"><img src="${each.imgUrl}" alt="${each.name} 의원 사진"></div>
 				<span class="name">${each.name} 의원</span>
-				<span class="party">${each.partyId}</span>
+				<span class="party">${each.party}</span>
 				<span class="local">${each.local}</span>
 				<div class="line"></div>
 				<span class="more"><a href="/viewDetail.ruw?pid=${each.politicianId}">자세히 보기</a></span>

@@ -7,14 +7,14 @@ public class Politician {
 	private int politicianId;
 	private String name;
 	private String local;
-	private int partyId;
+	private String party;
 	private String imgUrl;
 
-	public Politician(int politicianId, String name, String local, int partyId, String imgUrl) {
+	public Politician(int politicianId, String name, String local, String party, String imgUrl) {
 		this.politicianId = politicianId;
 		this.name = name;
 		this.local = local;
-		this.partyId = partyId;
+		this.party = party;
 		this.imgUrl = imgUrl;
 	}
 
@@ -30,8 +30,8 @@ public class Politician {
 		return local;
 	}
 
-	public int getPartyId() {
-		return partyId;
+	public String getParty() {
+		return party;
 	}
 
 	public String getImgUrl() {
