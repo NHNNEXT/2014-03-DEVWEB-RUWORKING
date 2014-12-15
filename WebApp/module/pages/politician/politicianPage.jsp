@@ -155,8 +155,7 @@
 				</li>
 			</ul>
 			<form method="get" action="/WriteAritle.ruw">
-				<input type="hidden" name="pid" value="1"></input>
-				<input type="hidden" name="round" value="18"></input>
+				<input type="hidden" name="pid" value="${pid}"></input>
 				<input class="upload" type="submit" value="올리기"></div>
 			</form>	
 	</div>

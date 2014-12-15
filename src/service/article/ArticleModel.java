@@ -25,15 +25,13 @@ public class ArticleModel {
 		queryValues.add(round);
 		queryValues.add(pid);
 
-
-
 		PstmtQuerySet querySet = new PstmtQuerySet(sql, queryValues);
 		DAOFactory DAO = new DAOFactory();
 		
 		if(DAO.nonSelectQuery(querySet)){
 			DAO.closeConnections();
 			return true;
-			}
+		}
 		DAO.closeConnections();
 		return false;
 	}
