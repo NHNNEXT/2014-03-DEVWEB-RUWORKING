@@ -25,6 +25,7 @@ public class WriteArticleServlet extends HttpServlet {
 		Map<String, String> infoForPromise = URIParser.parseURI(uri);
 		ArticleModel articleModel = new ArticleModel();
 		pid = Integer.parseInt(infoForPromise.get("pid"));
+		//국회의원이냐 대통령이냐 체크하는 코드 필요
 		round = Integer.parseInt(this.getServletContext().getInitParameter("roundOfAssembly"));
 		List<String> promiseList = null;
 		try {
