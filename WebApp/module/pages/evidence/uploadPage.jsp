@@ -11,7 +11,7 @@
 <div id="pageContainer">
 	<div id="ns-evidence">
 		<form class="uploadBoard" action="/Upload.ruw" method="post">
-			<div class="pid" style="display:none">${requestScope.pid}</div>
+			<input type="text" name="politicianId" value="${requestScope.politicianId}" style="display:none"/>
 			<div class="promise wrap">
 				<select name="promiseNumber">
 					<option value ="1">공약1</option>
