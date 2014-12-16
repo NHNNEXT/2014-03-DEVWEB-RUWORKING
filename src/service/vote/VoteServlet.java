@@ -17,7 +17,7 @@ public class VoteServlet extends HttpServlet{
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String score = request.getParameter("score");
-		String promiseId = "1";//getParameter로 받아와야 
+		String promiseId = "1";//getParameter로 받아와야함
 		
 		VoteModel model = new VoteModel();
 		

@@ -20,7 +20,7 @@ public class GetBoardServlet extends HttpServlet {
 
 		int promiseId = Integer.parseInt(request.getParameter("promiseId"));
 
-		ArticleModel model = new ArticleModel();
+		BoardModel model = new BoardModel();
 		ArrayList<String> articleList = null;
 
 		try {

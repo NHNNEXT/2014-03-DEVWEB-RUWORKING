@@ -55,23 +55,6 @@ public class ArticleModel {
 		return article;
 	}
 
-	public ArrayList<String> getArticleBoard(int promiseId) throws SQLException {
-		String sql = "SELECT * FROM article WHERE promise_id=?";
-		ArrayList<Object> queryValues = new ArrayList<Object>();
-		ArrayList<String> articleTitles = new ArrayList<String>();
-
-		queryValues.add(promiseId);
-		PstmtQuerySet querySet = new PstmtQuerySet(sql, queryValues);
-		DAOFactory DAO = new DAOFactory();
-		ResultSet rs = null;
-
-		while (rs.next()) {
-			articleTitles.add(rs.getString("title"));
-		}
-
-		return articleTitles;
-	}
-
 	public List<String> getPromiseContent(int pid, int round) throws SQLException {
 		// TODO promise table에서 정치인아이디가 pid, 대수가 round인 공약 id 5개 search하여 List에 넣기
 		String sql = "SELECT * FROM promise WHERE politician_id=? and round=?";
