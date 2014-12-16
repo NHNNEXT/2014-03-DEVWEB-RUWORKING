@@ -1,6 +1,7 @@
 package service.article;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.SQLException;
 
 import javax.servlet.ServletException;
@@ -21,21 +22,31 @@ public class UploadArticleServlet extends HttpServlet{
 		HttpSession session = request.getSession();
 		String title = request.getParameter("articleTitle");
 		String content = request.getParameter("articleContent");
-		String memberId = (String) session.getAttribute("userId"); //DB재설계 필요 - member table에서 id가 primary key여야 함.
+		String userId = (String) session.getAttribute("userId");
 		int promiseNum = Integer.parseInt(request.getParameter("promiseNumber"));
-		//if문으로 대통령인지 국회의원인지 check하는 코드 필요하다.
-		int round = Integer.parseInt(this.getServletContext().getInitParameter("roundOfAssembly")); 
-		int pid = Integer.parseInt(request.getParameter("pid"));	
+		System.out.println(request.getParameter("politicianId"));
+		int politicianId = Integer.parseInt((String)request.getParameter("politicianId"));	
 	
 		ArticleModel articleModel = new ArticleModel();
 		try {
-			articleModel.postArticle(title, content, memberId, promiseNum, round, pid);
-			
+			boolean check = articleModel.postArticle(title, content, userId, promiseNum, politicianId);
+			if(!check){
+				String errorMessage = "로그인을 하지 않으시면 증거자료를 올리실 수 없습니다!";
+				alertMessage(response, errorMessage);
+				response.sendRedirect("/viewDetail.ruw?pid=" + politicianId); 
+			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		
 		//politician id로 redirect 해야하지 않을까?
-		response.sendRedirect("/module/politician/politician.jsp");
+		response.sendRedirect("/viewDetail.ruw?pid=" + politicianId);
 	}	
+	
+	private void alertMessage(HttpServletResponse response, String message) throws IOException {
+		PrintWriter out = response.getWriter();
+		out.print("<html><head>");
+		out.print("<script type=\"text/javascript\">alert(" + message + ");</script>");
+		out.print("</head><body></body></html>");
+	}
 }

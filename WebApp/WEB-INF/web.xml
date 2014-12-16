@@ -12,14 +12,5 @@
 		<welcome-file>default.htm</welcome-file>
 		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
-	
-	<context-param>
-		<param-name>roundOfPresident</param-name>
-		<param-value>18</param-value>
-	</context-param>
-	<context-param>	
-		<param-name>roundOfAssembly</param-name>
-		<param-value>19</param-value>
-	</context-param>
 </web-app>
 
