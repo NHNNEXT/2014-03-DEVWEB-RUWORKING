@@ -25,10 +25,10 @@ public class WriteArticleServlet extends HttpServlet {
 		Map<String, String> infoForPromise = URIParser.parseURI(uri);
 		ArticleModel articleModel = new ArticleModel();
 		pid = Integer.parseInt(infoForPromise.get("pid"));
-		round = Integer.parseInt(infoForPromise.get("round"));
+		round = Integer.parseInt(this.getServletContext().getInitParameter("roundOfAssembly"));
 		List<String> promiseList = null;
 		try {
-			promiseList = articleModel.getPromiseContent(pid, round);
+			promiseList = articleModel.getPromiseTitle(pid, round);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
