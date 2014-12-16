@@ -18,8 +18,8 @@
             promiseEle[3].style.display = "none";   
         } else {
             promiseEle[3].style.display = "block";    
-            resizeNavBar();
         }
+        resizeNavBar();
     }
 
     function resizeNavBar(){
