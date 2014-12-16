@@ -1053,38 +1053,68 @@
     height: 100%;
 }
 
+#ns-politician .board .percentage {
+    width: 90px;
+    height: 85px;
+    line-height: 115px;
+    text-align: center;
+    float:left;
+    background-color: #577EF2;
+    color:#fff;
+    font-size: 17px;
+}
 
 #ns-politician .board .promise-title{
     float: left;
     margin-top: 3px;
     width: 700px;
+    height:85px;
     background: #fff;
     border: 1px solid #ccc;
-
+    position: relative;
 }
 
 #ns-politician .board .promise-title .title-number{
-    background: rgb(87, 126, 242);
-    width: 60px;
+    width: 90px;
     height: 30px;
-    float: left;
-    font-size: 17px;
+    padding: 7px;
     text-align: center;
+    float: left;
+    font-size: 13px;
     color: #fff;
-    margin-right: 10px;
-    border: 1px solid #ccc;
+    position: absolute;
+    background-color: #EB5E4F;
+    box-sizing: border-box;
+}
 
+#ns-politician .board .title-ct {
+    display: inline-block;
+    margin: 13px 0px 0px 13px;
+    width: 480px;
+    line-height: 29px;
 }
 
 #ns-politician .board .down-icon {
+    width:85px;
+    height: 85px;
     float: right;
-    margin-right: 8px;
-    margin-top: 4px;
+    background-color: #EEEEEE;
+}
+
+#ns-politician .board .down-icon .relate{
+    width:85px;
+    height: 30px;
+    float: right;
+    background-color: #EEEEEE;
+    font-size: 13px;
 }
 
 #ns-politician .board .down-icon img{
-    width: 20px;
-    height: 20px;
+    width: 50px;
+    height: 50px;
+    margin-left: 18px;
+    margin-top: 22px;
+
 }
 
 #ns-politician .board .promise-board{
