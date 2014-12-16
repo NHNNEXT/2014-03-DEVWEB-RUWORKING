@@ -35,7 +35,7 @@ public class Promise extends Context {
 //			System.out.println("========================================");
 			System.out.println("공약번호 :" +  promiseNum);
 			System.out.println("타이틀 :" +  promiseTitle);
-			System.out.println("공약내용 :" +  promise.toString());			
+//			System.out.println("공약내용 :" +  promise.toString());			
 	}
 
 }

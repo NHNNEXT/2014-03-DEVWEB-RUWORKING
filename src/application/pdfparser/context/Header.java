@@ -12,11 +12,10 @@ public class Header extends Context {
 	}
 
 	public void parse() {
-		location = header.toString().split("선거구명")[1].split("후보자명")[0];
+		location = header.toString().split("선거구명")[1].split("후보자명")[0].trim().split(" ")[0];
 		name = header.toString().split("선거구명")[1].split("후보자명 ")[1].split(" ")[0];
 		party = header.toString().split("소속정당명")[1];
 		System.out.println("name : " + name + " location : " + location
 				+ " party : " + party);
 	}
-
 }
