@@ -21,7 +21,7 @@
 					<option value ="5">공약5</option>
 				</select> 
 				<span>
-					<!--promiseContent-->
+					<!--promiseTitle-->
 				</span>
 			</div>
 			<div class="title wrap">

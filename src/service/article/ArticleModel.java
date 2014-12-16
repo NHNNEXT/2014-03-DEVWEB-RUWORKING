@@ -81,13 +81,13 @@ public class ArticleModel {
 		DAOFactory DAO = new DAOFactory();
 		ResultSet rs = null;
 		rs = DAO.selectQuery(querySet);
-		List <String> promiseContents = new ArrayList<String>();
+		List <String> promiseLists = new ArrayList<String>();
 		
 		while (rs.next()) {
-			promiseContents.add(rs.getString("title"));
+			promiseLists.add(rs.getString("title"));
 		}
 
 		DAO.closeConnections();
-		return promiseContents;
+		return promiseLists;
 	}
 }
