@@ -8,9 +8,9 @@
 			</div>
 			<div class="info">
 				<span class="name">${politician.name}</span>
-				<span class="party">밥맛있당</span>
+				<span class="party">${politician.party}</span>
 				<span class="line"></span>
-				<span class="district">제천시·단양군</span>
+				<span class="district">${politician.local}</span>
 				<span class="now">이행률</span>
 				<span class="percent">%</span>
 				<span class="percentage">82</span>
@@ -20,8 +20,8 @@
 			<ul>
 				<li class="promise">
 					<div class="promise-title">
-						<div class="title-number">약속 1:</div>	
-						NHN NEXT 기존의 설립철학 유지하겠다.
+						<div class="title-number">:</div>	
+							${promise.title}
 						<div class="down-icon">
 							<img src="/img/down-icon.png" alt="">
 						</div>

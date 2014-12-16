@@ -1,8 +1,10 @@
 package service.viewdetail;
 
+//import java.awt.List;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 import db.factory.DAOFactory;
 import db.query.PstmtQuerySet;
@@ -72,13 +74,13 @@ public class ViewDetailModel {
 
 
 
-	public ArrayList<String> getPromiseTitles(String pid) {
+	public ArrayList<Promise> getPromises(String pid) {
 		
 		ArrayList<Object> queryValues = new ArrayList<Object>();
-		ArrayList<String> promiseTitles = new ArrayList<String>();
+		ArrayList<Promise> promises = new ArrayList<Promise>();
 		queryValues.add(pid);
 		
-		String sql = "SELECT * FROM politician WHERE id=?";
+		String sql = "SELECT * FROM promise WHERE politician_id=?";
 		PstmtQuerySet querySet = new PstmtQuerySet(sql, queryValues);
 		DAOFactory DAO = new DAOFactory();
 		
@@ -86,9 +88,9 @@ public class ViewDetailModel {
 		try {
 			ResultSet rs = DAO.selectQuery(querySet);
 			while(rs.next()){
-				promiseTitles.add(rs.getString("title"));
+				promises.add(new Promise(rs.getString("title"), rs.getInt("vote_count"), rs.getInt("vote_score")));
 			}
-			return promiseTitles;
+			return promises;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -103,5 +105,17 @@ public class ViewDetailModel {
 		
 		return null;
 	}
+
+
+	public int getTotalPercent(List<Promise> promises) {
+		
+		int totalPercent = 0;
+		for(Promise i:promises){
+			totalPercent+=i.getPercent();
+		}
+		return totalPercent/5;
+	}
+
+
 
 }

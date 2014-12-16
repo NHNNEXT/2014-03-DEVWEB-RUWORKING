@@ -5,6 +5,7 @@ package service.viewdetail;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -26,11 +27,14 @@ public class ViewDetailServlet extends HttpServlet {
 		ViewDetailModel model = new ViewDetailModel();
 		
 		Politician politician = model.getPolitician(pid);
-		ArrayList<String> promiseTitles = model.getPromiseTitles(pid);
 		
+		List<Promise> promises = model.getPromises(pid);
+		int percent = model.getTotalPercent(promises);
+
 		request.setAttribute("politician", politician);
-		request.setAttribute("promiseTitles", promiseTitles);
+		request.setAttribute("promises", promises);
 		request.setAttribute("pid", pid);
+		request.setAttribute("percent", percent);
 		
 		RequestDispatcher view = request.getRequestDispatcher("module/politician/politician.jsp");
 		view.forward(request, response);
