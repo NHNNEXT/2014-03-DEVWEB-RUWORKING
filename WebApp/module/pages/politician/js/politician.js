@@ -1,4 +1,3 @@
-/* NHNNEXT Development Practice Project RUWORKING HTH 141110 */ 
 ;
 (function() {
     document.addEventListener("DOMContentLoaded", function() {
@@ -11,8 +10,6 @@
     
     }, false);
     
-
-    
     function boardLayerToggle(e) {
         
         var promiseEle = e.target.parentNode.parentNode.parentNode.childNodes;
@@ -21,9 +18,16 @@
             promiseEle[3].style.display = "none";   
         } else {
             promiseEle[3].style.display = "block";    
+            resizeNavBar();
         }
     }
 
+    function resizeNavBar(){
+        var height = document.getElementById("main").offsetHeight;
+        var targetEle = document.querySelector("nav");
+
+        targetEle.style.height = height + "px";
+    }
 })();
 
 
