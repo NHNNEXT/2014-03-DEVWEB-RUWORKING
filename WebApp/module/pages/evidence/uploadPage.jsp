@@ -4,7 +4,7 @@
 
 <div id="hiddenInfo" style="display: none">
 	<c:forEach var="promiseTitle" items="${requestScope.promiseList}" varStatus="promiseCount">
-			<p class ="promiseContent${promiseCount.count}">${promiseTitle}</p>
+			<p class ="promiseTitle${promiseCount.count}">${promiseTitle}</p>
 	</c:forEach>
 </div>
 
