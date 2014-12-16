@@ -2,25 +2,28 @@ package service.article;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
+
 import db.factory.DAOFactory;
 import db.query.PstmtQuerySet;
 
 public class ArticleModel {
 
-	public boolean postArticle(String title, String content, String memberId,
-			int promiseNum, int round, int pid) throws SQLException {
+	public boolean postArticle(String title, String content, String userId,
+			int promiseNum, int politicianId) throws SQLException {
 
 		ArrayList<Object> queryValues = new ArrayList<Object>();
-		String sql = "INSERT INTO article VALUES(NULL,?,?,?,?,?,?,NULL)";
-
+		String sql = "INSERT INTO article VALUES(NULL,?,?,NULL, NULL,?,?,?,?)";
+		Timestamp date = new Timestamp(System.currentTimeMillis());
+		
 		queryValues.add(title);
 		queryValues.add(content);
-		queryValues.add(memberId);
+		queryValues.add(date);
+		queryValues.add(userId);
 		queryValues.add(promiseNum);
-		queryValues.add(round);
-		queryValues.add(pid);
+		queryValues.add(politicianId);
 
 		PstmtQuerySet querySet = new PstmtQuerySet(sql, queryValues);
 		DAOFactory DAO = new DAOFactory();
@@ -54,8 +57,6 @@ public class ArticleModel {
 		return article;
 	}
 
-
-	
 	public List<String> getPromiseTitle(int pid) throws SQLException {
 		// TODO promise table에서 정치인아이디가 pid인 것 search하여 List에 넣기
 		String sql = "SELECT * FROM promise WHERE politician_id=?";

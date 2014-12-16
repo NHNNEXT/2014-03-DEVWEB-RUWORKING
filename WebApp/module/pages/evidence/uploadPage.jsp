@@ -4,14 +4,14 @@
 
 <div id="hiddenInfo" style="display: none">
 	<c:forEach var="promiseTitle" items="${requestScope.promiseList}" varStatus="promiseCount">
-			<p class ="promiseContent${promiseCount.count}">${promiseTitle}</p>
+			<p class ="promiseTitle${promiseCount.count}">${promiseTitle}</p>
 	</c:forEach>
 </div>
 
 <div id="pageContainer">
 	<div id="ns-evidence">
 		<form class="uploadBoard" action="/Upload.ruw" method="post">
-			<div class="pid" style="display:none">${requestScope.pid}</div>
+			<input type="text" name="politicianId" value="${requestScope.politicianId}" style="display:none"/>
 			<div class="promise wrap">
 				<select name="promiseNumber">
 					<option value ="1">공약1</option>

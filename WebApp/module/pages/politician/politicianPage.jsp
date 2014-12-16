@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 <div id = "pageContainer">
 	<div id = "ns-politician">
 		<div class = "politician-card">
 			<div class="photo">
-				<img src="/img/mem1.jpg" alt="">
+				<img src="${politician.imgUrl}" alt="${politician.name} 의원 사진">
 			</div>
 			<div class="info">
 				<span class="name">${politician.name}</span>
@@ -20,8 +21,9 @@
 			<ul>
 				<li class="promise">
 					<div class="promise-title">
-						<div class="title-number">:</div>	
-							${promise.title}
+						<div class="title-number">약속 1</div>	
+						<div class="percentage">&nbsp;88 %</div>
+						<span class="title-ct">${promise.title}</span>
 						<div class="down-icon">
 							<img src="/img/down-icon.png" alt="">
 						</div>
@@ -47,8 +49,9 @@
 				</li>
 			<li class="promise">
 					<div class="promise-title">
-						<div class="title-number">약속 1:</div>	
-						NHN NEXT 기존의 설립철학 유지하겠다.
+						<div class="title-number">약속 1</div>	
+						<div class="percentage">&nbsp;88 %</div>
+						<span class="title-ct">NHN NEXT 기존의 설립철학 유지하겠다</span>
 						<div class="down-icon">
 							<img src="/img/down-icon.png" alt="">
 						</div>
@@ -74,8 +77,9 @@
 				</li>
 			<li class="promise">
 					<div class="promise-title">
-						<div class="title-number">약속 1:</div>	
-						NHN NEXT 기존의 설립철학 유지하겠다.
+						<div class="title-number">약속 1</div>	
+						<div class="percentage">&nbsp;88 %</div>
+						<span class="title-ct">NHN NEXT 기존의 설립철학 유지하겠다</span>
 						<div class="down-icon">
 							<img src="/img/down-icon.png" alt="">
 						</div>
@@ -101,8 +105,9 @@
 				</li>
 				<li class="promise">
 					<div class="promise-title">
-						<div class="title-number">약속 4:</div>	
-						NHN NEXT 기존의 설립철학 유지하겠다.
+						<div class="title-number">약속 1</div>	
+						<div class="percentage">&nbsp;88 %</div>
+						<span class="title-ct">NHN NEXT 기존의 설립철학 유지하겠다</span>
 						<div class="down-icon">
 							<img src="/img/down-icon.png" alt="">
 						</div>
@@ -128,8 +133,9 @@
 				</li>
 				<li class="promise">
 					<div class="promise-title">
-						<div class="title-number">약속 5:</div>	
-						NHN NEXT 기존의 설립철학 유지하겠다.
+						<div class="title-number">약속 1</div>	
+						<div class="percentage">&nbsp;88 %</div>
+						<span class="title-ct">NHN NEXT 기존의 설립철학 유지하겠다</span>
 						<div class="down-icon">
 							<img src="/img/down-icon.png" alt="">
 						</div>
