@@ -22,7 +22,7 @@ public class ViewDetailServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		int pid = Integer.parseInt(request.getParameter("pid"));
+		String pid = request.getParameter("pid");
 		ViewDetailModel model = new ViewDetailModel();
 		
 		Politician politician = model.getPolitician(pid);

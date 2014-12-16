@@ -10,7 +10,7 @@ import service.search.Politician;
 
 public class ViewDetailModel {	
 	
-	public Politician getPolitician(int pid) {
+	public Politician getPolitician(String pid) {
 		
 		String sql = "SELECT * FROM politician WHERE id=?";
 		ArrayList<Object> queryValues = new ArrayList<Object>();
@@ -72,7 +72,7 @@ public class ViewDetailModel {
 
 
 
-	public ArrayList<String> getPromiseTitles(int pid) {
+	public ArrayList<String> getPromiseTitles(String pid) {
 		
 		ArrayList<Object> queryValues = new ArrayList<Object>();
 		ArrayList<String> promiseTitles = new ArrayList<String>();

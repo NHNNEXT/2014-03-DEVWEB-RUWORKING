@@ -154,11 +154,11 @@
 					</div>	
 				</li>
 			</ul>
-			<form method="get" action="/WriteAritle.ruw">
-				<input type="hidden" name="pid" value="${pid}"></input>
+			<form method="get" action="/WriteArticle.ruw">
+				<input type="hidden" name="pid" value="${requestScope.pid}"/>
 				<input class="upload" type="submit" value="올리기"></div>
 			</form>	
-	</div>
+		</div>
 </div>
 <script src="/module/pages/politician/js/politician.js"></script>
 <script src="/module/pages/politician/js/voteVerify.js"></script>
