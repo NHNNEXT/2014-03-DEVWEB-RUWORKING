@@ -71,12 +71,11 @@ public class ArticleModel {
 		return articleTitles;
 	}
 	
-	public List<String> getPromiseTitle(int pid, int round) throws SQLException {
-		// TODO promise table에서 정치인아이디가 pid, 대수가 round인 공약 id 5개 search하여 List에 넣기
-		String sql = "SELECT * FROM promise WHERE politician_id=? and round=?";
+	public List<String> getPromiseTitle(int pid) throws SQLException {
+		// TODO promise table에서 정치인아이디가 pid인 것 search하여 List에 넣기
+		String sql = "SELECT * FROM promise WHERE politician_id=?";
 		ArrayList<Object> queryValues = new ArrayList<Object>();
 		queryValues.add(pid);
-		queryValues.add(round);
 		PstmtQuerySet querySet = new PstmtQuerySet(sql, queryValues);
 		DAOFactory DAO = new DAOFactory();
 		ResultSet rs = null;
@@ -86,7 +85,7 @@ public class ArticleModel {
 		while (rs.next()) {
 			promiseLists.add(rs.getString("title"));
 		}
-
+		
 		DAO.closeConnections();
 		return promiseLists;
 	}

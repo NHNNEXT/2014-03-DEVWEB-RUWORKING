@@ -3,7 +3,6 @@ package service.article;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
-import java.util.Map;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -20,20 +19,16 @@ public class WriteArticleServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L; //이게 무슨 뜻일까?
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int pid, round;
-		String uri = request.getRequestURI();
-		Map<String, String> infoForPromise = URIParser.parseURI(uri);
+		int pid = Integer.parseInt(request.getParameter("pid"));
 		ArticleModel articleModel = new ArticleModel();
-		pid = Integer.parseInt(infoForPromise.get("pid"));
-		//국회의원이냐 대통령이냐 체크하는 코드 필요
-		round = Integer.parseInt(this.getServletContext().getInitParameter("roundOfAssembly"));
 		List<String> promiseList = null;
 		try {
-			promiseList = articleModel.getPromiseTitle(pid, round);
+			promiseList = articleModel.getPromiseTitle(pid);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		request.setAttribute("promiseList", promiseList);
+		request.setAttribute("politicianId", pid);
 		RequestDispatcher view = request.getRequestDispatcher("module/evidence/upload.jsp");
 		view.forward(request, response);
 	}

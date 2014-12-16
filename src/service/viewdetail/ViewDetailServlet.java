@@ -18,9 +18,8 @@ public class ViewDetailServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("Politician ID가 잘 넘어 옵니다");
-		System.out.println(request.getParameter("pid"));
-		//response.sendRedirect("module/politician/politician.jsp");
+		String pid = request.getParameter("pid");
+		request.setAttribute("pid", pid);
 		RequestDispatcher view = request.getRequestDispatcher("module/politician/politician.jsp");
 		view.forward(request, response);
 	}
