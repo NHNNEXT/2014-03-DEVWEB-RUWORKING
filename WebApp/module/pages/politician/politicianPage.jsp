@@ -7,7 +7,7 @@
 				<img src="/img/mem1.jpg" alt="">
 			</div>
 			<div class="info">
-				<span class="name">홍길동</span>
+				<span class="name">${politician.name}</span>
 				<span class="party">밥맛있당</span>
 				<span class="line"></span>
 				<span class="district">제천시·단양군</span>
