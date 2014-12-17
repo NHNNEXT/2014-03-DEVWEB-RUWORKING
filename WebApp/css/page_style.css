@@ -1166,11 +1166,11 @@
 #ns-politician .board .promise-board{
     display: none;
     float: left;
-    width: 727px;
+    width: 729px;
 }
 
 #ns-politician .board .promise-board li{
-    width: 727px;
+    width: 730px;
     height: 30px;
     border: 1px solid #ccc;
     border-bottom: 0px;
@@ -1180,9 +1180,18 @@
 #ns-politician .board .promise-board li:nth-of-type(1) {
     border-top: 0px;
     width: 100%;
-    height:100px;
+    height: 150px;
     overflow: auto;
     font-size: 15px;
+    letter-spacing: 3px;
+    padding: 40px;
+    padding-left: 46px;
+    padding-right: 46px;
+    box-sizing: border-box;
+}
+
+#ns-politician .board .promise-board li:nth-of-type(1) .promise-detail {
+    background-color: #fff;
 }
 
 #ns-politician .board .promise-board li:nth-of-type(2) {

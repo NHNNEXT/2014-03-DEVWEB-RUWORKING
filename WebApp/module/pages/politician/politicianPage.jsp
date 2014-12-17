@@ -1,7 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-	
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<jsp:scriptlet>
+pageContext.setAttribute("space", " ");
+pageContext.setAttribute("lf", "\n");
+</jsp:scriptlet>
+
 <div id = "pageContainer">
 	<div id = "ns-politician">
 		<div class = "politician-card">
@@ -53,7 +58,11 @@
 					</div>
 					<div class="promise-board">
 						<ul>
-							<li>여기에 컨텐츠 가져오기</li>
+							<li>
+								<div class="promise-detail">
+								${fn:replace( fn:replace(each.content, space, "&nbsp;"), lf, "<br/>")}
+								</div>
+							</li>
 							<li>관련 기사 목록</li>
 							<li>증거자료입니다...</li>
 							<li>증거자료입니다...</li>
