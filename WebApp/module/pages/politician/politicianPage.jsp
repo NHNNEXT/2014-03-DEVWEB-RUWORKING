@@ -20,7 +20,7 @@
 		</div>
 		<div class="board">
 			<ul>
-			<c:forEach var="each" items="${promises}">
+			<c:forEach var="each" items="${promises}" varStatus="status">
 				<li class="promise">
 					<div class="promise-title">
 						<div class="title-number">약속 1</div>	
@@ -45,6 +45,8 @@
 							<input type="radio" name="score" data-type="score" value="60">60
 							<input type="radio" name="score" data-type="score" value="80">80
 							<input type="radio" name="score" data-type="score" value="100">100
+							<input type="hidden" name="politician-id" value="${requestScope.pid}"/>
+							<input type="hidden" name="promise-num" value="${status.count}"/>
 							<div data-type="submit" class="submit">투표하기</div>
 						</form>
 					</div>	

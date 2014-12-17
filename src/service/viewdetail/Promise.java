@@ -11,8 +11,10 @@ public class Promise {
 	}
 
 	private int getPercent(int voteScore, int voteCount) {
+		System.out.println("voteScore:"+voteScore);
+		System.out.println("voteCount:"+voteCount);
 		if(voteCount==0) return 0;
-		return voteScore/voteCount;		
+		return voteScore/voteCount;
 	}
 
 	public String getTitle() {

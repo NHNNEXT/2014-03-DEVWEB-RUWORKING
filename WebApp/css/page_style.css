@@ -1328,3 +1328,70 @@
     text-align: center;
 }
 /* //ns-searchResult namespace end */
+
+/* ns-evidenceDetail namespace start */
+#ns-evidenceDetail{
+    width:760px;
+    float:left;
+    background-color: rgb(245, 243, 246);
+    border: solid 1px #ccc;
+}
+
+#ns-evidenceDetail .evidence-wrapper{
+    width: 700px;
+    margin: 0px auto;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    border: solid 1px #ccc;
+
+}
+
+#ns-evidenceDetail .title{
+    font-size: 30px;
+    padding: 10px;
+}
+
+#ns-evidenceDetail .content{
+    font-size: 15px;
+    padding: 10px;
+}
+
+#ns-evidenceDetail .comment-input{
+    width: 700px;
+    margin: 0px auto;
+    margin-bottom: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+
+#ns-evidenceDetail .comment-box{
+    width: 620px;
+    height: 50px;
+    border: 0;
+}
+
+
+#ns-evidenceDetail .comment-submit{
+    width: 77px;
+    height: 54px;
+    border: 0;
+    background-color: #EB5E4F;
+    color: #fff;
+
+}
+
+#ns-evidenceDetail .comment-list{
+    width: 700px;
+    margin: 0px auto;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+
+#ns-evidenceDetail .comment{
+    width: 700px;
+    height: 45px;
+}
+
+/* //ns-evidenceDetail namespace end */
