@@ -1,17 +1,32 @@
 package application.pdfparser.context;
 
+import application.pdfparser.dao.PdfModel;
+
 public class Promise extends Context {
 	StringBuffer promiseBuffer = new StringBuffer();
 	StringBuffer promise = new StringBuffer();
 	String promiseTitle = new String();
-	char promiseNum;
+	String promiseNum = new String();
 	
 	@Override
 	public void pushStringBuffer(String string) {
 		promiseBuffer.append(string);
 	}
 	
-	public void parse() throws Exception {
+	public String getPromise() {
+		return promise.toString();
+	}
+	
+	public String getPromiseNum() {
+		return promiseNum;
+	}
+	
+	public String getPromiseTitle() {
+		return promiseTitle;
+	}
+	
+	public void parse(int poliId) throws Exception {
+			PdfModel model = new PdfModel();
 			boolean copyFlag = false;
 			boolean numFlag = true;
 			boolean titleFlag = true;
@@ -21,7 +36,7 @@ public class Promise extends Context {
 					promise.append(lines[i] + "\n");
 				}
 				if(lines[i].matches(".*번호.*") && numFlag) {
-					promiseNum = promiseBuffer.toString().split(": ")[1].charAt(0);
+					promiseNum = Character.toString(promiseBuffer.toString().split(": ")[1].charAt(0));
 					numFlag = false;
 				}
 				if(lines[i].matches(".*제목.*") && titleFlag) {
@@ -35,6 +50,7 @@ public class Promise extends Context {
 //			System.out.println("========================================");
 			System.out.println("공약번호 :" +  promiseNum);
 			System.out.println("타이틀 :" +  promiseTitle);
+			model.addPromise(this, poliId);
 //			System.out.println("공약내용 :" +  promise.toString());			
 	}
 

@@ -8,6 +8,7 @@ public class Converter {
 		
 		String [] lines = textBuf.toString().split("\n");
 		parseText textParser = new parseText();
+		
 		textParser.parse(lines);		
 	}
 }
