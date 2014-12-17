@@ -4,7 +4,7 @@
     document.addEventListener("DOMContentLoaded", function() {
 
         // 로그인 클릭시 로그인 레이어 표시
-        var login = document.querySelector("nav .login");
+        var login = document.querySelector("nav .login_out");
         var cancellogin = document.querySelector("nav .cancel");
         login.addEventListener("click", loginLayerToggle, false);
         cancellogin.addEventListener("click", loginLayerToggle, false);
