@@ -88,7 +88,7 @@ public class ViewDetailModel {
 		try {
 			ResultSet rs = DAO.selectQuery(querySet);
 			while(rs.next()){
-				promises.add(new Promise(rs.getString("title"), rs.getInt("vote_score"), rs.getInt("vote_count")));
+				promises.add(new Promise(rs.getString("title"), rs.getString("content") ,rs.getInt("vote_score"), rs.getInt("vote_count")));
 			}
 			return promises;
 		} catch (SQLException e) {

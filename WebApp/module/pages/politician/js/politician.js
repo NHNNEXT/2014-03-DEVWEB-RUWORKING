@@ -28,6 +28,15 @@
 
         targetEle.style.height = height + "px";
     }
+
+    (function (){
+        var targetEle = document.querySelectorAll(".promise-detail");
+        var i, length = targetEle.length;
+        for(i = 0; i < length; i++){
+                targetEle[i].innerHTML = targetEle[i].innerHTML.replace(new RegExp("ㅇ","gim"), "<br>ㅇ");
+            }
+        // document.querySelector(".promise-detail").innerHTML = document.querySelector(".promise-detail").innerHTML.replace(new RegExp("ㅇ","gim"), "<br>ㅇ");
+    })();
 })();
 
 

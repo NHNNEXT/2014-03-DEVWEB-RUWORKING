@@ -3,16 +3,16 @@ package service.viewdetail;
 public class Promise {
 
 	private String title;
+	private String content;
 	private int percent;
 	
-	public Promise(String title, int voteScore, int voteCount){
+	public Promise(String title, String content, int voteScore, int voteCount){
 		this.title = title;
+		this.content=content;
 		this.percent = getPercent(voteScore, voteCount);
 	}
 
 	private int getPercent(int voteScore, int voteCount) {
-		System.out.println("voteScore:"+voteScore);
-		System.out.println("voteCount:"+voteCount);
 		if(voteCount==0) return 0;
 		return voteScore/voteCount;
 	}
@@ -21,6 +21,10 @@ public class Promise {
 		return title;
 	}
 
+	public String getContent() {
+		return content;
+	}
+	
 	public int getPercent() {
 		return percent;
 	}

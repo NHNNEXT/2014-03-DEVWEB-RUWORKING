@@ -36,11 +36,6 @@ public class ViewDetailServlet extends HttpServlet {
 		request.setAttribute("pid", pid);
 		request.setAttribute("percent", percent);
 		
-		for(Promise i:promises){
-			System.out.println(i.getTitle());
-			System.out.println(i.getPercent());
-		}
-		
 		RequestDispatcher view = request.getRequestDispatcher("module/politician/politician.jsp");
 		view.forward(request, response);
 	}

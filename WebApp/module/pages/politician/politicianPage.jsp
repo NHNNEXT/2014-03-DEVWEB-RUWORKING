@@ -1,7 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-	
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<jsp:scriptlet>
+pageContext.setAttribute("space", " ");
+pageContext.setAttribute("lf", "\n");
+</jsp:scriptlet>
+
 <div id = "pageContainer">
 	<div id = "ns-politician">
 		<div class = "politician-card">
@@ -11,12 +16,33 @@
 			<div class="info">
 				<span class="name">${politician.name}</span>
 				<span class="party">${politician.party}</span>
-				<span class="line"></span>
 				<span class="district">${politician.local}</span>
-				<span class="now">이행률</span>
+				<span class="line"></span>
+				<span class="now">공약 이행률</span>
 				<span class="percent">%</span>
 				<span class="percentage">${percent}</span>
 			</div>
+				<div class = "graph-wrap">
+				<div id="chart_d" class="Nwagon2"></div>
+					<script>
+					var options = {
+						'dataset': {
+							title: 'Web accessibility status',
+							values:[${percent}, 100-${percent}],
+							colorset: ['#2EB400', '#DC143C'],
+							fields: ['완료', '미이행'] 
+						},
+						'donut_width' : 30, //70
+						'core_circle_radius':40,
+						'chartDiv': 'chart_d',
+						'chartType': 'donut',
+						'chartSize': {width:300, height:285}
+					};
+
+					Nwagon.chart(options);
+					</script>
+					<div class = "field_underbar"><span></span><span></span></div>
+				</div>
 		</div>
 		<div class="board">
 			<ul>
@@ -32,8 +58,12 @@
 					</div>
 					<div class="promise-board">
 						<ul>
-							<li>증거자료입니다...</li>
-							<li>증거자료입니다...</li>
+							<li>
+								<div class="promise-detail">
+								${fn:replace( fn:replace(each.content, space, "&nbsp;"), lf, "<br/>")}
+								</div>
+							</li>
+							<li>관련 기사 목록</li>
 							<li>증거자료입니다...</li>
 							<li>증거자료입니다...</li>
 							<li>증거자료입니다...</li>
