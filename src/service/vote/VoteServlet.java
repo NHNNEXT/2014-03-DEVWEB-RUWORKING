@@ -17,19 +17,20 @@ public class VoteServlet extends HttpServlet{
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String score = request.getParameter("score");
-		String promiseId = "1";//getParameter로 받아와야함
+		String politicianId = request.getParameter("politician-id");
+		String promiseNum = request.getParameter("promise-num");
 		
 		VoteModel model = new VoteModel();
 		
 		try {
-			model.addOpinion(score, promiseId);		
+			model.addOpinion(score, politicianId, promiseNum);		
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 				
-		response.sendRedirect("/module/politician/politician.jsp");
+		response.sendRedirect("/viewDetail.ruw?pid="+politicianId);
 		
 	}
 }

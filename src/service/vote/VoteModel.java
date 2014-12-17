@@ -8,33 +8,36 @@ import db.query.PstmtQuerySet;
 
 public class VoteModel {
 
-	public boolean addOpinion(String score, String promiseId)
+	public boolean addOpinion(String score, String politicianId, String promiseNum)
 			throws SQLException {
 		
-		if(!(updateVoteCount(promiseId) && updateVoteScore(score, promiseId))) return false;		
+		if(!(updateVoteCount(politicianId, promiseNum) && updateVoteScore(score, politicianId, promiseNum))) return false;		
 		
 		return true;
 	}
 
-	private boolean updateVoteScore(String score, String promiseId) throws SQLException {
-		ArrayList<Object> queryValues = new ArrayList();
+	private boolean updateVoteScore(String score, String politicianId, String promiseNum) throws SQLException {
+		ArrayList<Object> queryValues = new ArrayList<Object>();
 		DAOFactory DAO = new DAOFactory();
-		String scoreSql = "UPDATE promise SET vote_score=vote_score+? WHERE id=?";
+		String scoreSql = "UPDATE promise SET vote_score=vote_score+? WHERE politician_id=? AND promise_num=?";
 
 		queryValues.add(score);
-		queryValues.add(promiseId);
+		queryValues.add(politicianId);
+		queryValues.add(promiseNum);
+		
 		PstmtQuerySet querySet = new PstmtQuerySet(scoreSql, queryValues);
 
 		if (!DAO.nonSelectQuery(querySet)) return false;
 		return true;
 	}
 
-	private boolean updateVoteCount(String promiseId) throws SQLException {
-		ArrayList<Object> queryValues = new ArrayList();
+	private boolean updateVoteCount(String politicianId, String promiseNum) throws SQLException {
+		ArrayList<Object> queryValues = new ArrayList<Object>();
 		DAOFactory DAO = new DAOFactory();
-		String countSql = "UPDATE promise SET vote_count=vote_count+1 WHERE id=?";
+		String countSql = "UPDATE promise SET vote_count=vote_count+1 WHERE politician_id=? AND promise_num=?";
 
-		queryValues.add(promiseId);
+		queryValues.add(politicianId);
+		queryValues.add(promiseNum);
 		PstmtQuerySet querySet = new PstmtQuerySet(countSql, queryValues);
 		
 		if (!DAO.nonSelectQuery(querySet)) return false;	

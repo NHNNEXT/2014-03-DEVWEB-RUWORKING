@@ -19,7 +19,7 @@
 			
 			submitBtn.addEventListener("click", function(targetForm){
 				if(scoreVerified===true){
-					self.targetForm.submit();
+					targetForm.submit();
 				}else{
 					console.log("not verified");
 				}
