@@ -47,9 +47,10 @@ pageContext.setAttribute("lf", "\n");
 		<div class="board">
 			<ul>
 			<c:forEach var="each" items="${promises}" varStatus="status">
+				<c:set var="mapper" value= "${relatePostMap[status.count]}"/>
 				<li class="promise">
 					<div class="promise-title">
-						<div class="title-number">약속 1</div>	
+						<div class="title-number">약속 ${status.count}</div>	
 						<div class="percentage">&nbsp;${each.percent} %</div>
 						<span class="title-ct">${each.title}</span>
 						<div class="down-icon">
@@ -64,9 +65,9 @@ pageContext.setAttribute("lf", "\n");
 								</div>
 							</li>
 							<li>관련 기사 목록</li>
-							<li>증거자료입니다...</li>
-							<li>증거자료입니다...</li>
-							<li>증거자료입니다...</li>
+       						<c:forEach items="${mapper}" var="item" varStatus="loop">
+       							<li>${item}</li>
+   							</c:forEach>
 						</ul>
 						<form action="/Vote.ruw" method="post" class="vote" data-type="vote-form">
 							<input type="radio" name="score" data-type="score" value="0">0
