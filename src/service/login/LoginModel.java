@@ -16,7 +16,7 @@ public class LoginModel {
 	
 	public boolean isUserExist(String userId, String userPw) throws SQLException {
 		ArrayList<Object> queryValues = new ArrayList<Object>();
-		String sql = "SELECT * FROM member WHERE id=? AND password=?";
+		String sql = "SELECT * FROM user WHERE id=? AND password=?";
 		
 		queryValues.add(userId);
 		queryValues.add(userPw);
