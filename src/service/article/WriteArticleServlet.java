@@ -23,8 +23,10 @@ public class WriteArticleServlet extends HttpServlet {
 		//세션에 아이디 없으면 로그인 페이지로 redirect 
 		HttpSession session = request.getSession();
 		if(session.getAttribute("userId") == null) {
-			RequestDispatcher view = request.getRequestDispatcher("module/evidence/writeFail.jsp");
-			view.forward(request, response);		
+			String errorMessage = "로그인을 하지 않으시면 글을 쓰실 수 없습니다.";
+        	request.setAttribute("errorMessage", errorMessage);
+			RequestDispatcher view = request.getRequestDispatcher("module/login/loginFail.jsp");
+			view.forward(request, response);
 		}
 		int politicianId = Integer.parseInt(request.getParameter("pid"));
 		ArticleModel articleModel = new ArticleModel();

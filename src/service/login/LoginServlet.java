@@ -15,38 +15,43 @@ import javax.servlet.http.HttpSession;
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
-		if (session.getAttribute("userId") != null) {
-			response.sendRedirect("/");
-		} else {
-			RequestDispatcher view = request.getRequestDispatcher("module/login/loginFail.jsp");
-			view.forward(request, response);
+		if (session.getAttribute("userId") == null) {
+			forwardToLoginFailPage(request, response);
 		}
+		response.sendRedirect("/");
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
 		String userId = request.getParameter("userId");
 		String userPw = request.getParameter("userPw");
 		LoginModel model = new LoginModel();
-		
+
 		try {
 			if (model.isUserExist(userId, userPw)) {
 				// login success
 				HttpSession session = request.getSession();
 				session.setAttribute("userId", userId);
 				session.setAttribute("userPw", userPw);
-				
 				response.sendRedirect("/");
 			} else {
-				// login failed
-				RequestDispatcher view = request.getRequestDispatcher("module/login/loginFail.jsp");
-				view.forward(request, response);
+				forwardToLoginFailPage(request, response);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
-			RequestDispatcher view = request.getRequestDispatcher("module/login/loginFail.jsp");
-			view.forward(request, response);
+			forwardToLoginFailPage(request, response);
 		}
+	}
+
+	private void forwardToLoginFailPage(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+		String errorMessage = "RUWORKING에 등록되지 않은 회원이거나 아이디 또는 비밀번호를 잘못 입력하셨습니다.";
+		request.setAttribute("errorMessage", errorMessage);
+		RequestDispatcher view = request
+				.getRequestDispatcher("module/login/loginFail.jsp");
+		view.forward(request, response);
 	}
 }
