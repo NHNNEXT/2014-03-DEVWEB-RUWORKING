@@ -3,6 +3,8 @@ package service.register;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import org.omg.PortableInterceptor.INACTIVE;
+
 import db.factory.DAOFactory;
 import db.query.PstmtQuerySet;
 
