@@ -63,10 +63,18 @@ pageContext.setAttribute("lf", "\n");
 								</div>
 							</li>
 							<li>관련 기사 목록</li>
-       						<c:forEach items="${mapper}" var="item" varStatus="loop">
-       							<li>${item}</li>
-   							</c:forEach>
+       						<c:choose>
+       						<c:when test="${fn:length(mapper) == 0}">
+       							<li>해당 약속과 관련된 기사가 없습니다</li>
+       						</c:when>
+       						<c:otherwise>
+       							<c:forEach items="${mapper}" var="item" varStatus="loop">
+       								<li>${item}</li>
+   								</c:forEach>
+       						</c:otherwise>
+       						</c:choose>
 						</ul>
+						<c:if test="${!empty sessionScope.userId}">
 						<div class="vote-wrap">
 							<form action="/Vote.ruw" method="post" class="vote" data-type="vote-form">
 								<input type=range min="0" value="50" max="100" id="${status.count}" step="1" name="score" data-type="score-range">
@@ -76,6 +84,7 @@ pageContext.setAttribute("lf", "\n");
 								<div data-type="submit" class="submit">투표하기</div>
 							</form>
 						</div>
+						</c:if>
 					</div>	
 				</li>
 				</c:forEach>
