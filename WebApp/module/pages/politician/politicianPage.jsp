@@ -67,17 +67,15 @@ pageContext.setAttribute("lf", "\n");
        							<li>${item}</li>
    							</c:forEach>
 						</ul>
-						<form action="/Vote.ruw" method="post" class="vote" data-type="vote-form">
-							<input type="radio" name="score" data-type="score" value="0">0
-							<input type="radio" name="score" data-type="score" value="20">20
-							<input type="radio" name="score" data-type="score" value="40">40
-							<input type="radio" name="score" data-type="score" value="60">60
-							<input type="radio" name="score" data-type="score" value="80">80
-							<input type="radio" name="score" data-type="score" value="100">100
-							<input type="hidden" name="politician-id" value="${requestScope.pid}"/>
-							<input type="hidden" name="promise-num" value="${status.count}"/>
-							<div data-type="submit" class="submit">투표하기</div>
-						</form>
+						<div class="vote-wrap">
+							<form action="/Vote.ruw" method="post" class="vote" data-type="vote-form">
+								<input type=range min="0" value="50" max="100" id="${status.count}" step="1" name="score" data-type="score-range">
+								<div id="range-value">50</div>
+								<input type="hidden" name="politician-id" value="${requestScope.pid}"/>
+								<input type="hidden" name="promise-num" value="${status.count}"/>
+								<div data-type="submit" class="submit">투표하기</div>
+							</form>
+						</div>
 					</div>	
 				</li>
 				</c:forEach>
