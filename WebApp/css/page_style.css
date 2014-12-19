@@ -1144,6 +1144,10 @@
     width:85px;
     height: 85px;
     float: right;
+    background-image:url(/img/down-icon.png);
+    background-position:center center;
+    background-size: 55px;
+   	background-repeat: no-repeat;
     background-color: #EEEEEE;
 }
 

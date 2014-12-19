@@ -4,16 +4,12 @@
     	var downIcon = document.querySelectorAll(" .promise .down-icon");
         
         for(var i=0; i<5; i++){
-        downIcon[i].addEventListener("click", boardLayerToggle, false);
+        		downIcon[i].addEventListener("click", boardLayerToggle, false);
         }
-        
-    
     }, false);
     
     function boardLayerToggle(e) {
-        
-        var promiseEle = e.target.parentNode.parentNode.parentNode.childNodes;
-
+        var promiseEle = e.target.parentNode.parentNode.childNodes;
         if (promiseEle[3].style.display === "block") {
             promiseEle[3].style.display = "none";   
         } else {
@@ -35,7 +31,6 @@
         for(i = 0; i < length; i++){
                 targetEle[i].innerHTML = targetEle[i].innerHTML.replace(new RegExp("ㅇ","gim"), "<br>ㅇ");
             }
-        // document.querySelector(".promise-detail").innerHTML = document.querySelector(".promise-detail").innerHTML.replace(new RegExp("ㅇ","gim"), "<br>ㅇ");
     })();
 })();
 

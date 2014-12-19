@@ -53,9 +53,7 @@ pageContext.setAttribute("lf", "\n");
 						<div class="title-number">약속 ${status.count}</div>	
 						<div class="percentage">&nbsp;${each.percent} %</div>
 						<span class="title-ct">${each.title}</span>
-						<div class="down-icon">
-							<img src="/img/down-icon.png" alt="">
-						</div>
+						<div class="down-icon"></div>
 					</div>
 					<div class="promise-board">
 						<ul>
