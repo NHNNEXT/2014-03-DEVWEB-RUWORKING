@@ -77,11 +77,15 @@ pageContext.setAttribute("lf", "\n");
 						<c:if test="${!empty sessionScope.userId}">
 						<div class="vote-wrap">
 							<form action="/Vote.ruw" method="post" class="vote" data-type="vote-form">
-								<input type=range min="0" value="50" max="100" id="${status.count}" step="1" name="score" data-type="score-range">
-								<div id="range-value">50</div>
+								<span class="induce">회원님! ${politician.name} 의원의 ${status.count} 번째 약속 이행률을 평가해 주세요!</span>
+								<div class="rangewrap">
+									<input type="range" min="0" value="50" max="100" id="${status.count}" step="10" name="score" data-type="score-range">
+								</div>
+								
 								<input type="hidden" name="politician-id" value="${requestScope.pid}"/>
 								<input type="hidden" name="promise-num" value="${status.count}"/>
-								<div data-type="submit" class="submit">투표하기</div>
+								<div id="range-value">50 <small>%</small></div>
+								<div data-type="submit" class="submit">평가하기</div>
 							</form>
 						</div>
 						</c:if>

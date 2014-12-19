@@ -35,7 +35,7 @@
         document.addEventListener("input", outputUpdate, false);
 
         function outputUpdate(e) {
-            document.querySelectorAll('#range-value')[e.target.id-1].innerText = e.target.value;
+            document.querySelectorAll('#range-value')[e.target.id-1].innerHTML = e.target.value + " <small>%</small>";
         }
 
     }, false);

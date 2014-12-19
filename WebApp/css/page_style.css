@@ -1213,9 +1213,35 @@
 	background-color:#eee;
 	float:left;
 	width:727px;
-	height:60px;
+	height:75px;
     border:1px solid #ccc;
     border-top: 0px;
+    position: relative;
+}
+
+#ns-politician .board .promise-board .induce {
+    font-size: 17px;
+    left: 15px;
+    top:15px;
+    position: absolute;
+}
+
+#ns-politician .board .promise-board form {
+    float:left;
+    width: 100%;
+}
+
+
+#ns-politician .board .promise-board .rangewrap {
+    width:432px;
+    display: inline-block;
+    left:15px;
+    top:47px;
+    position: absolute;
+}
+
+#ns-politician .board .promise-board .rangewrap input{
+    width:100%;
 }
 
 #ns-politician .vote{
@@ -1226,18 +1252,35 @@
     margin-top: 5px;
  } 
 
+ #ns-politician .board .promise-board #range-value {
+    position: absolute;
+    right:80px;
+    width:50px;
+    top: 0px;
+    width:90px;
+    height:75px;
+    background-color: #353941;
+    color:#fff;
+    text-align: center;
+    line-height: 75px;
+ }
+
+  #ns-politician .board .promise-board #range-value small {
+    font-size: 13px;
+ }
+
 #ns-politician .submit{
-    float: right;
     width: 80px;
-    height: 35px;
+    height: 75px;
     background: #EB5E4F;
+
     color: #fff;
     text-align: center;
-    line-height: 35px;
+    line-height: 75px;
     font-size: 15px;
-    border: 1px solid #ccc;
-    margin-left: 5px;
-
+    position: absolute;
+    right: 0px;
+    top: 0px;
 }
 
 #ns-politician .upload {
