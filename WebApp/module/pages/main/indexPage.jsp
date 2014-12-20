@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <div id="pageContainer">
 <div id="ns-index">
@@ -8,77 +9,23 @@
 		<span class = "more">더보기</span>
 		<div class="politicianList">
 			<ul>
+			<c:forEach var="each" items="${Top5List}" varStatus="status">
 				<li>
 					<div class="photo">
-					<span>1</span>
-					<img src="img/mem1.jpg" alt="">
+					<span>${status.count }</span>
+					<img src="${each.imgUrl}" alt="${each.name} 의원 사진">
 					</div>
 					<div class="info">
-					<span class = "name">홍길동</span>
-					<span class = "party">밥맛있당</span>
+					<span class = "name">${each.name}</span>
+					<span class = "party">${each.party}</span>
 					<span class = "line"></span>
-					<span class = "district">제천시·단양군</span>
+					<span class = "district">${each.local}</span>
 					<span class="now">이행률</span>
-					<span class="percentage">82</span>
+					<span class="percentage">${each.promiseFulfillment}</span>
 					<span class="percent">%</span>
 					</div>
 				</li>
-				<li>
-					<div class="photo">
-					<span>2</span>
-					<img src="img/mem2.jpg" alt="">
-					</div>
-					<div class="info">
-					<span class = "name">기길동</span>
-					<span class = "party">알겠당</span>
-					<span class = "line"></span>
-					<span class = "district">증평군·진천군·괴산군·음성군</span>
-					<span class="now">이행률</span>
-					<span class="percentage">78</span>
-					<span class="percent">%</span>
-				</li>
-				<li>
-					<div class="photo">
-					<span>3</span>
-					<img src="img/mem3.jpg" alt="">
-					</div>
-					<div class="info">
-					<span class = "name">두길동</span>
-					<span class = "party">포도당</span>
-					<span class = "line"></span>
-					<span class = "district">청주시 흥덕구 을</span>
-					<span class="now">이행률</span>
-					<span class="percentage">76</span>
-					<span class="percent">%</span>
-				</li>
-				<li>
-					<div class="photo">
-					<span>4</span>
-					<img src="img/mem4.jpg" alt="">
-					</div>
-					<div class="info">
-					<span class = "name">박길동</span>
-					<span class = "party">형이당</span>
-					<span class = "line"></span>
-					<span class = "district">논산시·계룡시·금산군</span>
-					<span class="now">이행률</span>
-					<span class="percentage">72</span>
-					<span class="percent">%</span>
-				</li>
-				<li>
-					<div class="photo">
-					<span>5</span>
-					<img src="img/mem5.jpg" alt="">
-					</div>
-					<div class="info">
-					<span class = "name">나길동</span>
-					<span class = "party">누나당</span>
-					<span class = "line"></span>
-					<span class = "district">동대문구 갑</span>
-					<span class="now">이행률</span>
-					<span class="percentage">67</span>
-					<span class="percent">%</span>
-				</li>
+			</c:forEach>
 			</ul>
 		</div>
 	</div>
