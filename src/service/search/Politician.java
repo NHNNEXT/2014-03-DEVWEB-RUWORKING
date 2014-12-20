@@ -9,6 +9,7 @@ public class Politician {
 	private String local;
 	private String party;
 	private String imgUrl;
+	private int promiseFulfillment;
 
 	public Politician(int politicianId, String name, String local, String party, String imgUrl) {
 		this.politicianId = politicianId;
@@ -16,6 +17,11 @@ public class Politician {
 		this.local = local;
 		this.party = party;
 		this.imgUrl = imgUrl;
+	}
+	
+	public Politician(int politicianId, String name, String local, String party, String imgUrl, int promiseFulfillment) {
+		this(politicianId, name, local, party, imgUrl);
+		this.promiseFulfillment = promiseFulfillment;
 	}
 
 	public int getPoliticianId() {
@@ -36,5 +42,9 @@ public class Politician {
 
 	public String getImgUrl() {
 		return imgUrl;
+	}
+	
+	public int getPromiseFulfillment() {
+		return promiseFulfillment;
 	}
 }
