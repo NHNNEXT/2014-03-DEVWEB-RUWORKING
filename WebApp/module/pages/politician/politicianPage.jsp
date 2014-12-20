@@ -69,7 +69,12 @@ pageContext.setAttribute("lf", "\n");
        						</c:when>
        						<c:otherwise>
        							<c:forEach items="${mapper}" var="item" varStatus="loop">
-       								<li>${item}</li>
+       								<li>
+       									 <form action="/GetArticle.ruw" method="get">
+											<input type="hidden" name="article-id" value="${item.id}">
+											<input type="submit" value="${item.title}">
+       									</form>
+       								</li>
    								</c:forEach>
        						</c:otherwise>
        						</c:choose>
@@ -81,7 +86,7 @@ pageContext.setAttribute("lf", "\n");
 								<div class="rangewrap">
 									<input type="range" min="0" value="50" max="100" id="${status.count}" step="10" name="score" data-type="score-range">
 								</div>
-								<input type="hidden" name="politician-id" value="${requestScope.pid}"/>
+								<input type="hidden" name="politician-id" value="${politician.politicianId}"/>
 								<input type="hidden" name="promise-num" value="${status.count}"/>
 								<div id="range-value">50 <small>%</small></div>
 								<div data-type="submit" class="submit">평가하기</div>
@@ -93,7 +98,7 @@ pageContext.setAttribute("lf", "\n");
 				</c:forEach>
 			</ul>
 			<form method="get" action="/WriteArticle.ruw">
-				<input type="hidden" name="pid" value="${requestScope.pid}"/>
+				<input type="hidden" name="pid" value="${politician.politicianId}"/>
 				<input class="upload" type="submit" value="올리기"></div>
 			</form>	
 		</div>

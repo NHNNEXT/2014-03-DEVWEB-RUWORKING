@@ -1,13 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
-
 <div id="pageContainer">
     <div id="ns-evidenceDetail">
-        <div class ="evidence-wrapper">
-            <div class="title">${article.title}</div>
-            <div class="userId">글쓴이 ${article.userId}</div>
-            <div class="date">${article.date}</div>
+        <div class="evidence-wrapper">
+            <div class="article-header">
+            	<div class="title">${article.title}</div>
+            	<div class="date">${article.date}</div>
+            	<div class="basic-info">
+            		글쓴이 <div class="userId">${article.userId}</div>
+            		조회 <div>0</div>
+            		댓글 <div>0</div>
+            	</div>
+            </div>
             <div class="line"></div>
             <div class="content">${article.content}</div>
         </div>
@@ -16,15 +20,19 @@
             <input class="comment-box" type="text">
             <input class="comment-submit" type="submit" value="댓글 등록">
         </form>
-        <ul class="comment-list">
-            
+        <ul class="comment-list">          
             <li class="show-comment">
-                <span class="member">아이디</span>
+                <span class="user-id">아이디</span>
                 <span class="comment">안녕하십니다. 참 재미있네요</span>
+                <span class="date">${article.date}</span> 
             </li>
             <div class="line"></div>
-
+            <li class="show-comment">
+                <span class="user-id">아이디</span>
+                <span class="comment">안녕하십니다. 참 재미있네요</span>
+                <span class="date">${article.date}</span> 
+            </li>
+            <div class="line"></div>
         </ul>
-
     </div>
 </div>
