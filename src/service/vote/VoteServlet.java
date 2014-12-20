@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
 @WebServlet("/Vote.ruw")
 public class VoteServlet extends HttpServlet{
 
@@ -23,7 +24,8 @@ public class VoteServlet extends HttpServlet{
         	String errorMessage = "로그인을 하지 않으시면 투표하실 수 없습니다.";
         	request.setAttribute("errorMessage", errorMessage);
 			RequestDispatcher view = request.getRequestDispatcher("module/login/loginFail.jsp");
-			view.forward(request, response);		
+			view.forward(request, response);	
+			return;
 		}
         String score = request.getParameter("score");
         String politicianId = request.getParameter("politician-id");
@@ -32,14 +34,18 @@ public class VoteServlet extends HttpServlet{
         VoteModel model = new VoteModel();
         
         try {
-            model.addOpinion(score, politicianId, promiseNum);      
-           // model.checkVote(userId, politicianId, promiseNum);
+        	if(model.isAlredyVotedCase(userId, politicianId, promiseNum)){
+        		System.out.println("투표실패!!!");//투표 실패시 사용자에게 피드백을 주어야 한다.
+                response.sendRedirect("/viewDetail.ruw?pid="+politicianId);
+                return;
+        	}
+        	model.checkVoteList(userId, politicianId, promiseNum);
+            model.vote(score, politicianId, promiseNum);      
 
         } catch (SQLException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-        }
-                
+        }                
         response.sendRedirect("/viewDetail.ruw?pid="+politicianId);
     }
     

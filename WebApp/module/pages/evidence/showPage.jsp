@@ -5,8 +5,11 @@
 <div id="pageContainer">
     <div id="ns-evidenceDetail">
         <div class ="evidence-wrapper">
-            <div class="title">제목입니다.</div>
-            <div class="content">내용입니다.</div>
+            <div class="title">${article.title}</div>
+            <div class="userId">글쓴이 ${article.userId}</div>
+            <div class="date">${article.date}</div>
+            <div class="line"></div>
+            <div class="content">${article.content}</div>
         </div>
         <a class="show-list">목록보기</a>
         <form class="comment-input">

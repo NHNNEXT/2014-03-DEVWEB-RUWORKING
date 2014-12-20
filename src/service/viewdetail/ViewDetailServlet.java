@@ -34,7 +34,6 @@ public class ViewDetailServlet extends HttpServlet {
 		
 		request.setAttribute("politician", politician);
 		request.setAttribute("promises", promises);
-		request.setAttribute("pid", pid);
 		request.setAttribute("percent", percent);
 		request.setAttribute("relatePostMap", relatedPostMap);
 		

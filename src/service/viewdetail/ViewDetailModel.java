@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import service.article.Article;
 import service.search.Politician;
 import db.factory.DAOFactory;
 import db.query.PstmtQuerySet;
@@ -125,7 +126,7 @@ public class ViewDetailModel {
 		return relatedPostMap;
 	}
 
-	public List<String> getPromiseRelatePost(String politicianId, int promiseId) {
+	public List<ArticleTitle> getPromiseRelatePost(String politicianId, int promiseId) {
 
 		String sql = "SELECT * FROM article WHERE politician_id=? AND promise_num=? ORDER BY date DESC LIMIT 3";
 		ArrayList<Object> queryValues = new ArrayList<Object>();
@@ -135,12 +136,12 @@ public class ViewDetailModel {
 		PstmtQuerySet querySet = new PstmtQuerySet(sql, queryValues);
 		DAOFactory DAO = new DAOFactory();
 		ResultSet rs;
-		ArrayList<String> relatedPostListOnSamePromise = new ArrayList<String>();
+		ArrayList<ArticleTitle> relatedPostListOnSamePromise = new ArrayList<ArticleTitle>();
 		
 		try {
 			rs = DAO.selectQuery(querySet);
 			while (rs.next()) {
-				relatedPostListOnSamePromise.add(rs.getString("title"));
+				relatedPostListOnSamePromise.add(new ArticleTitle(rs.getString("id"), rs.getString("title")));
 			}
 			return relatedPostListOnSamePromise;
 		} catch (SQLException e) {
@@ -154,4 +155,5 @@ public class ViewDetailModel {
 		}
 		return null;
 	}
+	
 }

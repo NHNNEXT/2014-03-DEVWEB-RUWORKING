@@ -1,5 +1,6 @@
 package service.vote;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -8,17 +9,15 @@ import db.query.PstmtQuerySet;
 
 public class VoteModel {
 
-	public boolean addOpinion(String score, String politicianId,
-			String promiseNum) throws SQLException {
+	public void vote(String score, String politicianId, String promiseNum)
+			throws SQLException {
 
-		if (!(updateVoteCount(politicianId, promiseNum) && updateVoteScore(
-				score, politicianId, promiseNum)))
-			return false;
+		updateVoteCount(politicianId, promiseNum);
+		updateVoteScore(score, politicianId, promiseNum);
 
-		return true;
 	}
 
-	private boolean updateVoteScore(String score, String politicianId,
+	private void updateVoteScore(String score, String politicianId,
 			String promiseNum) throws SQLException {
 		ArrayList<Object> queryValues = new ArrayList<Object>();
 		DAOFactory DAO = new DAOFactory();
@@ -30,15 +29,13 @@ public class VoteModel {
 
 		PstmtQuerySet querySet = new PstmtQuerySet(scoreSql, queryValues);
 
-		if (!DAO.nonSelectQuery(querySet)){
-			DAO.closeConnections();
-			return false;
+		if (!DAO.nonSelectQuery(querySet)) {
+			System.out.println("UPDATE vote_score 실패");//실패시 처리를 해주어야 한다.
 		}
 		DAO.closeConnections();
-		return true;
 	}
 
-	private boolean updateVoteCount(String politicianId, String promiseNum)
+	private void updateVoteCount(String politicianId, String promiseNum)
 			throws SQLException {
 		ArrayList<Object> queryValues = new ArrayList<Object>();
 		DAOFactory DAO = new DAOFactory();
@@ -49,19 +46,38 @@ public class VoteModel {
 		PstmtQuerySet querySet = new PstmtQuerySet(countSql, queryValues);
 
 		if (!DAO.nonSelectQuery(querySet)) {
-			DAO.closeConnections();
-			return false;
+			System.out.println("UPDATE vote_count 실패");//실패시 처리를 해주어야 한다.
 		}
 		DAO.closeConnections();
-		return true;
 	}
 
-	public boolean checkVote(String userId, String politicianId,
+	public boolean isAlredyVotedCase(String userId, String politicianId,
 			String promiseNum) throws SQLException {
+
+		String sql = "SELECT * FROM vote_check WHERE user_id=? AND politician_id=? AND promise_num=?";
+		ArrayList<Object> queryValues = new ArrayList<Object>();
+		DAOFactory DAO = new DAOFactory();
+		queryValues.add(userId);
+		queryValues.add(politicianId);
+		queryValues.add(promiseNum);
+
+		PstmtQuerySet querySet = new PstmtQuerySet(sql, queryValues);
+		ResultSet rs = DAO.selectQuery(querySet);
+
+		while(rs.next()) {
+			DAO.closeConnections();
+			return true;
+		}
+		DAO.closeConnections();
+		return false;
+	}
+
+	public void checkVoteList(String userId, String politicianId,
+			String promiseNum) throws SQLException {
+
 		String sql = "INSERT INTO vote_check VALUES(?,?,?)";
 		ArrayList<Object> queryValues = new ArrayList<Object>();
 		DAOFactory DAO = new DAOFactory();
-
 		queryValues.add(promiseNum);
 		queryValues.add(politicianId);
 		queryValues.add(userId);
@@ -69,11 +85,11 @@ public class VoteModel {
 		PstmtQuerySet querySet = new PstmtQuerySet(sql, queryValues);
 
 		if (!DAO.nonSelectQuery(querySet)) {
-			DAO.closeConnections();
-			return false;
+			System.out.println("Insert vote_check 실패");//실패시 처리를 해주어야 한다.
 		}
 		DAO.closeConnections();
-		return true;
 
 	}
+
+
 }

@@ -66,7 +66,12 @@ pageContext.setAttribute("lf", "\n");
 							</li>
 							<li>관련 기사 목록</li>
        						<c:forEach items="${mapper}" var="item" varStatus="loop">
-       							<li>${item}</li>
+       							<li>
+       								<form action="/GetArticle.ruw" method="get">
+										<input type="hidden" name="article-id" value="${item.id}">
+										<input type="submit" value="${item.title}">
+       								</form>
+       							</li>
    							</c:forEach>
 						</ul>
 						<form action="/Vote.ruw" method="post" class="vote" data-type="vote-form">
@@ -76,7 +81,7 @@ pageContext.setAttribute("lf", "\n");
 							<input type="radio" name="score" data-type="score" value="60">60
 							<input type="radio" name="score" data-type="score" value="80">80
 							<input type="radio" name="score" data-type="score" value="100">100
-							<input type="hidden" name="politician-id" value="${requestScope.pid}"/>
+							<input type="hidden" name="politician-id" value="${politician.politicianId}"/>
 							<input type="hidden" name="promise-num" value="${status.count}"/>
 							<div data-type="submit" class="submit">투표하기</div>
 						</form>

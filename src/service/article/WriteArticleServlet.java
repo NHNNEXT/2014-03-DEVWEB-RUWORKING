@@ -27,6 +27,7 @@ public class WriteArticleServlet extends HttpServlet {
         	request.setAttribute("errorMessage", errorMessage);
 			RequestDispatcher view = request.getRequestDispatcher("module/login/loginFail.jsp");
 			view.forward(request, response);
+			return;
 		}
 		int politicianId = Integer.parseInt(request.getParameter("pid"));
 		ArticleModel articleModel = new ArticleModel();

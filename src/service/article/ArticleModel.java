@@ -17,7 +17,7 @@ public class ArticleModel {
 		ArrayList<Object> queryValues = new ArrayList<Object>();
 		String sql = "INSERT INTO article VALUES(NULL,?,?,NULL, NULL,?,?,?,?)";
 		Timestamp date = new Timestamp(System.currentTimeMillis());
-		
+
 		queryValues.add(title);
 		queryValues.add(content);
 		queryValues.add(date);
@@ -27,18 +27,18 @@ public class ArticleModel {
 
 		PstmtQuerySet querySet = new PstmtQuerySet(sql, queryValues);
 		DAOFactory DAO = new DAOFactory();
-		
-		if(DAO.nonSelectQuery(querySet)){
+
+		if (DAO.nonSelectQuery(querySet)) {
 			DAO.closeConnections();
 			return true;
 		}
 		DAO.closeConnections();
 		return false;
 	}
-	
-	public Article getArticle(int id) throws SQLException{
-		
-		String sql = "SELECT * FROM article WHERE id=?"; 
+
+	public Article getArticle(String id) throws SQLException {
+
+		String sql = "SELECT * FROM article WHERE id=?";
 		ArrayList<Object> queryValues = new ArrayList<Object>();
 		queryValues.add(id);
 		PstmtQuerySet querySet = new PstmtQuerySet(sql, queryValues);
@@ -46,11 +46,11 @@ public class ArticleModel {
 		ResultSet rs = null;
 		Article article = null;
 		rs = DAO.selectQuery(querySet);
-
 		while (rs.next()) {
-			article = new Article(rs.getString("title"),
-					rs.getString("content"), rs.getInt("member_number"),
-					rs.getInt("promise_id"));
+			article = new Article(rs.getInt("id"), rs.getString("title"),
+					rs.getString("content"), rs.getString("date"),
+					rs.getString("user_id"), rs.getInt("promise_num"),
+					rs.getInt("politician_id"));
 		}
 
 		DAO.closeConnections();
@@ -66,12 +66,12 @@ public class ArticleModel {
 		DAOFactory DAO = new DAOFactory();
 		ResultSet rs = null;
 		rs = DAO.selectQuery(querySet);
-		List <String> promiseLists = new ArrayList<String>();
-		
+		List<String> promiseLists = new ArrayList<String>();
+
 		while (rs.next()) {
 			promiseLists.add(rs.getString("title"));
 		}
-		
+
 		DAO.closeConnections();
 		return promiseLists;
 	}

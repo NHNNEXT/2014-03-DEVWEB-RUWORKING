@@ -20,6 +20,7 @@ public class LoginServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		if (session.getAttribute("userId") == null) {
 			forwardToLoginFailPage(request, response);
+			return;
 		}
 		response.sendRedirect("/");
 	}

@@ -23,6 +23,7 @@ public class BoardModel {
 			articleTitles.add(rs.getString("title"));
 		}
 
+		DAO.closeConnections();
 		return articleTitles;
 	}
 
