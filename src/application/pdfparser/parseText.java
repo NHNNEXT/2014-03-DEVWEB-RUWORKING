@@ -1,6 +1,7 @@
 package application.pdfparser;
 import application.pdfparser.context.Header;
 import application.pdfparser.context.Promise;
+import application.pdfparser.dao.PdfModel;
 
 public class parseText {
 	boolean copyFlag = true;
@@ -26,7 +27,7 @@ public class parseText {
 			header.pushStringBuffer(array[count]);
 			count++;
 		}
-		header.parse();
+		int poliId = header.parse();
 
 		//공약부분 처리 
 		for(int i = count; i<array.length; i++) {
@@ -34,7 +35,7 @@ public class parseText {
 			promise[promiseCount].pushStringBuffer(array[i] + "\n");
 		}
 		for(int i = 0; i<5; i++) {
-			promise[i].parse();
+			promise[i].parse(poliId);
 		}
 		
 	}

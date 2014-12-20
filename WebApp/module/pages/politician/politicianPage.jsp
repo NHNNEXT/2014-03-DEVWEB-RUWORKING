@@ -53,9 +53,7 @@ pageContext.setAttribute("lf", "\n");
 						<div class="title-number">약속 ${status.count}</div>	
 						<div class="percentage">&nbsp;${each.percent} %</div>
 						<span class="title-ct">${each.title}</span>
-						<div class="down-icon">
-							<img src="/img/down-icon.png" alt="">
-						</div>
+						<div class="down-icon"></div>
 					</div>
 					<div class="promise-board">
 						<ul>
@@ -65,26 +63,31 @@ pageContext.setAttribute("lf", "\n");
 								</div>
 							</li>
 							<li>관련 기사 목록</li>
-       						<c:forEach items="${mapper}" var="item" varStatus="loop">
-       							<li>
-       								<form action="/GetArticle.ruw" method="get">
-										<input type="hidden" name="article-id" value="${item.id}">
-										<input type="submit" value="${item.title}">
-       								</form>
-       							</li>
-   							</c:forEach>
+       						<c:choose>
+       						<c:when test="${fn:length(mapper) == 0}">
+       							<li>해당 약속과 관련된 기사가 없습니다</li>
+       						</c:when>
+       						<c:otherwise>
+       							<c:forEach items="${mapper}" var="item" varStatus="loop">
+       								<li>${item}</li>
+   								</c:forEach>
+       						</c:otherwise>
+       						</c:choose>
 						</ul>
-						<form action="/Vote.ruw" method="post" class="vote" data-type="vote-form">
-							<input type="radio" name="score" data-type="score" value="0">0
-							<input type="radio" name="score" data-type="score" value="20">20
-							<input type="radio" name="score" data-type="score" value="40">40
-							<input type="radio" name="score" data-type="score" value="60">60
-							<input type="radio" name="score" data-type="score" value="80">80
-							<input type="radio" name="score" data-type="score" value="100">100
-							<input type="hidden" name="politician-id" value="${politician.politicianId}"/>
-							<input type="hidden" name="promise-num" value="${status.count}"/>
-							<div data-type="submit" class="submit">투표하기</div>
-						</form>
+						<c:if test="${!empty sessionScope.userId}">
+						<div class="vote-wrap">
+							<form action="/Vote.ruw" method="post" class="vote" data-type="vote-form">
+								<span class="induce">회원님! ${politician.name} 의원의 ${status.count} 번째 약속 이행률을 평가해 주세요!</span>
+								<div class="rangewrap">
+									<input type="range" min="0" value="50" max="100" id="${status.count}" step="10" name="score" data-type="score-range">
+								</div>
+								<input type="hidden" name="politician-id" value="${requestScope.pid}"/>
+								<input type="hidden" name="promise-num" value="${status.count}"/>
+								<div id="range-value">50 <small>%</small></div>
+								<div data-type="submit" class="submit">평가하기</div>
+							</form>
+						</div>
+						</c:if>
 					</div>	
 				</li>
 				</c:forEach>
