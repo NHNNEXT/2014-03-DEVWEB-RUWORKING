@@ -22,7 +22,7 @@
         <a href="/"><div class = "logo">일해요</div></a>
         <div class = "upload">업로드</div>
         <div class="searchBox">
-        	<form action="search.ruw">
+        	<form action="search.ruw" autocomplete="off">
         		<input type="text" class = "inputbox" name="userQuery" placeholder="정당 / 정치인 이름 입력">
         		<input type="submit" class = "submit_btn" value="검색">
         	</form>
