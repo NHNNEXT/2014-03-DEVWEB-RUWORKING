@@ -27,6 +27,10 @@
         		<input type="submit" class = "submit_btn" value="검색">
         	</form>
         	<div class="label">엔터 (Enter)</div>
+        	<div class="search-result">
+        		<div class="main"></div>
+        		<div class="footer">스마트 Quick Search <sup>beta</sup></div>
+        	</div>
         </div>
 	</header>
 	<!-- // header -->
