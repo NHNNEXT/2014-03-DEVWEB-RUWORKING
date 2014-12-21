@@ -39,8 +39,6 @@ public class SearchServlet extends HttpServlet {
 		
 		searchQuery = new String(searchQuery.getBytes("ISO-8859-1"), "utf-8");
 		
-		System.out.println(searchQuery);
-		
 		List<Politician> politicianList = searchModel.getQuickSearchResult(searchQuery);
 		 response.setContentType("application/json");
 	     response.setCharacterEncoding("UTF-8");
