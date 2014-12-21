@@ -19,12 +19,12 @@
 <div id = "body-container">
 	<!-- header -->
 	<header>
-        <a href="/"><div class = "logo">일해요</div></a>
+        <a href="/" tabindex="-1"><div class = "logo">일해요</div></a>
         <div class = "upload">업로드</div>
         <div class="searchBox">
         	<form action="search.ruw" autocomplete="off">
         		<input type="text" class = "inputbox" name="userQuery" placeholder="정당 / 정치인 이름 입력">
-        		<input type="submit" class = "submit_btn" value="검색">
+        		<input type="submit" class = "submit_btn" value="검색" tabindex="-1">
         	</form>
         	<div class="label">엔터 (Enter)</div>
         	<div class="search-result">
@@ -39,12 +39,12 @@
 	<nav>
 		<c:choose>
 		<c:when test="${empty sessionScope.userId}">
-	    	<a href="/Register.ruw"><span class = "signin">회원가입</span></a>
+	    	<a href="/Register.ruw" tabindex="-1"><span class = "signin">회원가입</span></a>
 	    	<span class = "login_out">로그인</span>
 	    </c:when>
 	    <c:otherwise>
 	   		<span class = "userId">${sessionScope.userId}</span>
-	    	<a href="/Logout.ruw"><span class = "login_out">로그아웃</span></a>
+	    	<a href="/Logout.ruw" tabindex="-1"><span class = "login_out">로그아웃</span></a>
 	    </c:otherwise>
 	    </c:choose>
 	    <div class="login-wrap">

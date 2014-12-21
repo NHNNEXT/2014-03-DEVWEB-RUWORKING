@@ -14,7 +14,9 @@
         var searchWindow = document.getElementById('body-container').querySelector("header .searchBox form input[name='userQuery']");
     
         searchWindow.addEventListener("keyup", function(e){
-          setTimeout(function(){searchAutoComplete(e)}, 300);
+            if(!(e.keyIdentifier === "U+0009")){
+                setTimeout(function(){searchAutoComplete(e)}, 100);
+            }
         }, false);
 
     }, false);
@@ -69,17 +71,18 @@
         showEle(targetEle.parentNode);
         // console.log(targetEle.parentNode.style);
         for(var i = 0; i < length; i++){
-            targetEle.insertAdjacentHTML('beforeend', makeResultElement(result[i]));
+            targetEle.insertAdjacentHTML('beforeend', makeResultElement(result[i], i));
         }
     }
 
-    function makeResultElement(result){
-        return "<li><img src='" + result.imgUrl + "'/>"
+    function makeResultElement(result, count){
+        return "<li><a href='/viewDetail.ruw?pid=" + result.politicianId + "' tabindex=0>"
+        + "<img src='" + result.imgUrl + "'/>"
         + "<span class='name'>" + result.name + " 의원</span>"
         + "<span class='party'>" + result.party + "</span>"
         + "<span class='line'></span>"
         + "<span class='local'>" + result.local + "</span>"
-        + "</li>";
+        + "</a></li>";
     }
 
     function clearEle(targetElement) {
