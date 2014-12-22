@@ -5,23 +5,27 @@ public class Article {
 	private int id;
 	private String title;
 	private String content;
-	private int promiseId;
-	private int memberNumber;
+	private String date;
+	private String userId;
+	private int promiseNum;
+	private int politicianId;
 
 	public Article() {
 
 	}
 
-	public Article(String title, String content, int promiseId, int memberNumber) {
-		this(null, title, content, promiseId, memberNumber);
+	public Article(String title, String content, String date, String userId, int promiseNum, int politicianId) {
+		this(null, title, content, date, userId, promiseNum, politicianId);
 	}
 
-	public Article(Integer id, String title, String content, int promiseId, int memberNumber) {
+	public Article(Integer id, String title, String content, String date, String userId, int promiseNum, int politicianId) {
 		this.id = id;
 		this.title = title;
 		this.content = content;
-		this.promiseId = promiseId;
-		this.memberNumber = memberNumber;
+		this.date = date;
+		this.userId = userId;
+		this.promiseNum = promiseNum;
+		this.politicianId = politicianId;
 	}
 
 	public int getId() {
@@ -36,11 +40,19 @@ public class Article {
 		return content;
 	}
 
-	public int getPromiseId() {
-		return promiseId;
+	public String getDate() {
+		return date;
 	}
 
-	public int getMemberNumber() {
-		return memberNumber;
+	public String getUserId() {
+		return userId;
+	}
+
+	public int getPromiseNum() {
+		return promiseNum;
+	}
+
+	public int getPoliticianId() {
+		return politicianId;
 	}
 }

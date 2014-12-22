@@ -4,8 +4,8 @@
 package service.viewdetail;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -29,12 +29,13 @@ public class ViewDetailServlet extends HttpServlet {
 		Politician politician = model.getPolitician(pid);
 		
 		List<Promise> promises = model.getPromises(pid);
+		Map<Integer, List> relatedPostMap = model.getPromiseRelatePostList(pid);
 		int percent = model.getTotalPercent(promises);
-
+		
 		request.setAttribute("politician", politician);
 		request.setAttribute("promises", promises);
-		request.setAttribute("pid", pid);
 		request.setAttribute("percent", percent);
+		request.setAttribute("relatePostMap", relatedPostMap);
 		
 		RequestDispatcher view = request.getRequestDispatcher("module/politician/politician.jsp");
 		view.forward(request, response);
