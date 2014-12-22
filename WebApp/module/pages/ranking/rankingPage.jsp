@@ -20,5 +20,9 @@
 				<span class="more"><a href="/viewDetail.ruw?pid=${each.politicianId}">자세히 보기</a></span>
 			</div>
 		</c:forEach>
+	<div id="loader">
+		<img src="img/ajax-loader.gif" alt="로딩중">
+	</div>	
+	
 </div>
 </div>

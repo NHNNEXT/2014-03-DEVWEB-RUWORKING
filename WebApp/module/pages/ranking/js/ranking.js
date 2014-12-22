@@ -15,7 +15,7 @@
             var scrollthumbHeight = window.innerHeight * viewableRatio;
 
             if(innerHeight - (scrollY* viewableRatio + scrollthumbHeight) < 50){
-                setTimeout(function(){getElement(count++);}, 100);
+                setTimeout(function(){getElement(count++);}, 650);
             }
         }, false);
     }
@@ -35,6 +35,7 @@
             if (request.readyState === 4 && request.status === 200) {
                 var result = request.responseText;
                 result = JSON.parse(result);
+                hideLoadingBar();
                 renderSearchResult(result, rankingWrapperEle, count);
             }
             resizeNavBar();
@@ -49,12 +50,13 @@
         for(var i = 0; i < length; i++){
             targetEle.insertAdjacentHTML('beforeend', makeResultElement(result[i], i, count));
         }
+        targetEle.insertAdjacentHTML('beforeend', "<div id='loader'><img src='img/ajax-loader.gif' alt='로딩중'></div>");
     }
 
     function makeResultElement(result, index, count){
         return "<div class='card'>"
         + "<div class='img'><img src='" + result.imgUrl + "' alt='" + result.name + "의원 사진'></div>"
-        + "<div class='rank'>"+ (count*10 + index*1) + " 위</div>"
+        + "<div class='rank'>"+ (count*10 + index*1 + 1) + " 위</div>"
         + "<span class='name'>" + result.name + "</span>"
         + "<span class='party'>" + result.party + "</span>"
         + "<span class='local'>" + result.local + "</span>"
@@ -70,5 +72,10 @@
         var targetEle = document.querySelector("nav");
 
         targetEle.style.height = height + "px";
+    }
+
+    function hideLoadingBar() {
+        var loadingEle = document.getElementById("loader");
+        loadingEle.parentNode.removeChild(loadingEle);
     }
 })();

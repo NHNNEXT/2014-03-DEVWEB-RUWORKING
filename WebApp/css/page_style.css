@@ -1731,4 +1731,21 @@ a {
     font-size: 15px;
     position: absolute;
 }
+
+#ns-rankingPage #loader {
+    width:751px;
+    height:25px;
+    line-height: 50px;
+    margin: 30px 11px 25px;
+    float:left;
+    color:#222222;
+    font-size: 18px;
+}
+
+#ns-rankingPage #loader img {
+    width:400px;
+    height:25px;
+    margin-left:165px;
+}
+
 /* //ns-rankingPage namespace end */
