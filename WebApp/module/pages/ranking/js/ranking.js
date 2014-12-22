@@ -60,7 +60,7 @@
         + "<span class='rate'>" + result.promiseFulfillment + "</span>"
         + "<span class='percent'>%</span>"
         + "<div class='line'></div>"
-        + "<span class='more'><a href='/viewDetail.ruw?pid=" + result.politicianId +">자세히 보기</a></span>"
+        + "<span class='more'><a href='/viewDetail.ruw?pid=" + result.politicianId +"'>자세히 보기</a></span>"
         + "</div>";
     }
 })();
