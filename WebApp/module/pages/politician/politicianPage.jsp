@@ -70,10 +70,7 @@ pageContext.setAttribute("lf", "\n");
        						<c:otherwise>
        							<c:forEach items="${mapper}" var="item" varStatus="loop">
        								<li>
-       									 <form action="/GetArticle.ruw" method="get">
-											<input type="hidden" name="article-id" value="${item.id}">
-											<input type="submit" value="${item.title}">
-       									</form>
+       									<a href="GetArticle.ruw?article-id=${item.id}">${item.title}</a>	
        								</li>
    								</c:forEach>
        						</c:otherwise>

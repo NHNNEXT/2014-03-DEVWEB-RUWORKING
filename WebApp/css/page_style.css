@@ -1197,6 +1197,7 @@
     padding-left: 46px;
     padding-right: 46px;
     box-sizing: border-box;
+    text-decoration: none; 
 }
 
 #ns-politician .board .promise-board li:nth-of-type(1) .promise-detail {
@@ -1214,6 +1215,11 @@
 #ns-politician .board .promise-board li:nth-last-of-type(1) {
     border-bottom: 1px solid #ccc;
 }
+
+#ns-politician .board .promise-board li a {
+    color: black;
+}
+
 #ns-politician .board .promise-board .vote-wrap {
 	background-color:#eee;
 	float:left;

@@ -18,7 +18,6 @@ public class GetArticleServlet extends HttpServlet{
 			throws ServletException, IOException {
 
 		String articleId = request.getParameter("article-id");
-		
 		ArticleModel model = new ArticleModel();
 		Article article=null;
 		try {
