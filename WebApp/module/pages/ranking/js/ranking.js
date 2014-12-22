@@ -37,6 +37,7 @@
                 result = JSON.parse(result);
                 renderSearchResult(result, rankingWrapperEle, count);
             }
+            resizeNavBar();
         }
     }
 
@@ -62,5 +63,12 @@
         + "<div class='line'></div>"
         + "<span class='more'><a href='/viewDetail.ruw?pid=" + result.politicianId +"'>자세히 보기</a></span>"
         + "</div>";
+    }
+
+    function resizeNavBar(){
+        var height = document.getElementById("main").offsetHeight;
+        var targetEle = document.querySelector("nav");
+
+        targetEle.style.height = height + "px";
     }
 })();
