@@ -16,7 +16,7 @@ public class MainServlet extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		MainModel mainModel = new MainModel();
 		request.setAttribute("Top5List", mainModel.getTop5fulfillment());
-		RequestDispatcher view = request.getRequestDispatcher("index.jsp");
+		RequestDispatcher view = request.getRequestDispatcher("/index.jsp");
 		view.forward(request, response);
 	}
 }
