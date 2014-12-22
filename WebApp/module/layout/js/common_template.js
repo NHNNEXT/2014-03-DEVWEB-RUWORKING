@@ -54,12 +54,12 @@
             if (request.readyState === 4 && request.status === 200) {
                 var result = request.responseText;
                 result = JSON.parse(result);
-                renderSearchResult(result, searchResultEle);
+                renderSearchResult(e.target.value, result, searchResultEle);
             }
         }
     }
 
-    function renderSearchResult(result, targetEle) {
+    function renderSearchResult(key, result, targetEle) {
         if(result==null) {
           clearEle(targetEle);
           closeEle(targetEle.parentNode);
@@ -71,14 +71,14 @@
         showEle(targetEle.parentNode);
         // console.log(targetEle.parentNode.style);
         for(var i = 0; i < length; i++){
-            targetEle.insertAdjacentHTML('beforeend', makeResultElement(result[i], i));
+            targetEle.insertAdjacentHTML('beforeend', makeResultElement(key, result[i], i));
         }
     }
 
-    function makeResultElement(result, count){
+    function makeResultElement(key, result, count){
         return "<li><a href='/viewDetail.ruw?pid=" + result.politicianId + "' tabindex=0>"
         + "<img src='" + result.imgUrl + "'/>"
-        + "<span class='name'>" + result.name + " 의원</span>"
+        + "<span class='name'>" + result.name.replace(key, "<span class='highlight'>" + key + "</span>") + " 의원</span>"
         + "<span class='party'>" + result.party + "</span>"
         + "<span class='line'></span>"
         + "<span class='local'>" + result.local + "</span>"

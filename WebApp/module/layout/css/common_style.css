@@ -157,6 +157,7 @@ header .searchBox .search-result .main li .line{
     /*margin-left: 15px;*/
     float:left;
 }
+
 header .searchBox .search-result .main li .local{
     width: 200px;
     font-size: 13px;
@@ -165,6 +166,9 @@ header .searchBox .search-result .main li .local{
     text-align: right;
 }
 
+header .searchBox .search-result .main li span.highlight{
+    color:#FF8C00;
+}
 /* navigation bar on left side */
 nav {
 	width:170px;
