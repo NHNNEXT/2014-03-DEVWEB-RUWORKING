@@ -5,19 +5,25 @@
         addMouseEvent();  
     }, false);
 
+    var count = 1;
     function addMouseEvent() {
-        var count = 1;
         var selfwindow = window;
-        window.addEventListener("scroll", function(e) {
-            
-            var scrollHeight = document.documentElement.scrollHeight;
-            var viewableRatio = window.innerHeight / scrollHeight;
-            var scrollthumbHeight = window.innerHeight * viewableRatio;
+        window.addEventListener("scroll", ScrollEvent, false);
+    }
+    
+    function ScrollEvent() {
+    		if(count > 21) {
+    			window.removeEventListener("scroll", ScrollEvent, false);
+    			return;
+    		}
+    			
+    		var scrollHeight = document.documentElement.scrollHeight;
+        var viewableRatio = window.innerHeight / scrollHeight;
+        var scrollthumbHeight = window.innerHeight * viewableRatio;
 
-            if(innerHeight - (scrollY* viewableRatio + scrollthumbHeight) < 50){
-                setTimeout(function(){getElement(count++);}, 650);
-            }
-        }, false);
+        if(innerHeight - (scrollY* viewableRatio + scrollthumbHeight) < 10){
+            setTimeout(function(){getElement(count++);}, 650);
+        }
     }
 
     function getElement(count) {
@@ -35,7 +41,8 @@
             if (request.readyState === 4 && request.status === 200) {
                 var result = request.responseText;
                 result = JSON.parse(result);
-                hideLoadingBar();
+                if(count < 21)
+                		hideLoadingBar();
                 renderSearchResult(result, rankingWrapperEle, count);
             }
             resizeNavBar();
@@ -50,7 +57,8 @@
         for(var i = 0; i < length; i++){
             targetEle.insertAdjacentHTML('beforeend', makeResultElement(result[i], i, count));
         }
-        targetEle.insertAdjacentHTML('beforeend', "<div id='loader'><img src='img/ajax-loader.gif' alt='로딩중'></div>");
+        if(count < 21)
+        		targetEle.insertAdjacentHTML('beforeend', "<div id='loader'><img src='img/ajax-loader.gif' alt='로딩중'></div>");
     }
 
     function makeResultElement(result, index, count){
