@@ -1,4 +1,7 @@
 /* NHNNEXT Development Practice Project RUWORKING HTH 141116 */ 
+a {
+    color:#000;
+}
 
 #pageContainer {
     width:96%;
@@ -1603,3 +1606,146 @@
 
 
 /* //ns-evidenceDetail namespace end */
+
+/* ns-rankingPage namespace start */
+#ns-rankingPage .title {
+    font-size: 25px;
+    padding-left: 7px;
+}
+
+#ns-rankingPage .line {
+    width:100%;
+    height:2px;
+    background-color: #ccc;
+    margin:10px 0px 20px 0px;
+}
+
+#ns-rankingPage .card {
+    width: 47%;
+    height: 190px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    margin: 10px;
+    margin-left: 12px;
+    float: left;
+    position:relative;
+}
+
+#ns-rankingPage img {
+    width:120px;
+    height:150px;
+    float:left;
+}
+
+#ns-rankingPage .rank {
+    position: absolute;
+    top:150px;
+    height:38px;
+    line-height: 38px;
+    text-align:center;
+    width:120px;
+    background-color: #577EF2;
+    color:#fff;
+    font-size: 15px;
+    font-weight: bold;
+    z-index: 30;
+}
+
+#ns-rankingPage .name {
+    width:310px;
+    font-size: 27px;
+    padding: 20px 0px 10px 20px; 
+    display:inline-block;
+    float:left;
+    box-sizing: border-box;
+    position:absolute;
+}
+
+#ns-rankingPage .card .line {
+    width:100%;
+    height:1px;
+    top: 150px;
+    margin: 0px;
+    float: left;
+    position: absolute;
+    z-index: 20;
+}
+
+#ns-rankingPage .local {
+    width:280px;
+    display:inline-block;
+    margin-left: 22px;
+    font-size: 14px;
+    margin-top: 30px;
+    position: absolute;
+    top: 60px;
+    left: 122px;
+}
+
+#ns-rankingPage .party {
+    width:280px;
+    display:inline-block;
+    margin-left: 22px;
+    font-size: 16px;
+    top: 59px;
+    left: 121px;
+    position: absolute;
+}
+
+#ns-rankingPage .more {
+    font-size: 15px;
+    display:inline-block;
+    margin-top: -7px;
+    margin-left: 225px;
+    bottom: 10px;
+    right: 10px;
+    position: absolute;
+}
+
+#ns-rankingPage .noResult {
+    width:100%;
+    height:200px;
+    font-size: 20px;
+    line-height: 200px;
+    text-align: center;
+}
+
+#ns-rankingPage .rate_desc{
+    bottom: 50px;
+    right:93px;
+    font-size: 16px;
+    position: absolute;
+    font-weight: 500;
+}
+
+#ns-rankingPage .rate {
+    bottom: 47px;
+    right:33px;
+    font-size: 30px;
+    position: absolute;
+}
+
+#ns-rankingPage .percent {
+    bottom: 50px;
+    right:13px;
+    font-size: 15px;
+    position: absolute;
+}
+
+#ns-rankingPage #loader {
+    width:751px;
+    height:25px;
+    line-height: 50px;
+    margin: 30px 11px 25px;
+    float:left;
+    color:#222222;
+    font-size: 18px;
+}
+
+#ns-rankingPage #loader img {
+    width:400px;
+    height:25px;
+    margin-left:165px;
+}
+
+/* //ns-rankingPage namespace end */

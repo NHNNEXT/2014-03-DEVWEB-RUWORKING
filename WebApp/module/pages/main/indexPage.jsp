@@ -6,7 +6,7 @@
 <div id="ns-index">
 	<div class = "card type1">
 		<span>공약 이행률 순위</span>
-		<span class = "more">더보기</span>
+		<a href="/ranking.ruw"><span class = "more">더보기</span></a>
 		<div class="politicianList">
 			<ul>
 			<c:forEach var="each" items="${Top5List}" varStatus="status">
