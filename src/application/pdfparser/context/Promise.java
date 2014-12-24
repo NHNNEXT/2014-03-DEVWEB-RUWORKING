@@ -1,6 +1,9 @@
 package application.pdfparser.context;
 
+import java.util.ArrayList;
+
 import application.pdfparser.dao.PdfModel;
+import application.postrequest.Politician;
 
 public class Promise extends Context {
 	StringBuffer promiseBuffer = new StringBuffer();
@@ -45,13 +48,9 @@ public class Promise extends Context {
 					copyFlag = true;
 				}
 			}
-//			System.out.println("========================================");
-//			System.out.println(promiseBuffer.toString());
-//			System.out.println("========================================");
 			System.out.println("공약번호 :" +  promiseNum);
 			System.out.println("타이틀 :" +  promiseTitle);
 			model.addPromise(this, poliId);
-//			System.out.println("공약내용 :" +  promise.toString());			
 	}
 
 }

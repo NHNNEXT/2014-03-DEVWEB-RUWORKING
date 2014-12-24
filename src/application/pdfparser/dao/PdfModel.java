@@ -8,6 +8,7 @@ import db.factory.DAOFactory;
 import db.query.PstmtQuerySet;
 import application.pdfparser.context.Header;
 import application.pdfparser.context.Promise;
+import application.postrequest.Politician;
 
 public class PdfModel {
 	private int getPartyId(String partyName) throws SQLException {
@@ -49,14 +50,16 @@ public class PdfModel {
 		return false;
 	}
 	
-	public int addPolitition(Header header) throws SQLException {
+	public int addPolitition(Header header, ArrayList<Politician> poli, int index) throws SQLException {
 		int id = getPartyId(header.getParty());
 		ArrayList<Object> queryValues = new ArrayList<Object>();
 		String sql = "INSERT INTO politician VALUES(NULL, ?, ?, ?, ?, ?)";
 		
+		System.out.println("imageURL : " + poli.get(index).getImageURL());
+		
 		queryValues.add(header.getName());
 		queryValues.add(header.getLocation());
-		queryValues.add("http://www.naver.com");
+		queryValues.add(poli.get(index).getImageURL());
 		queryValues.add(10);
 		queryValues.add(id);
 		

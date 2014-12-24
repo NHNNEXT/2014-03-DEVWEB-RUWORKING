@@ -21,14 +21,22 @@ import org.jsoup.select.Elements;
 
 public class sendPost {
 	private final String USER_AGENT = "Mozilla/5.0";
+	private Politician[] temArray = new Politician[10];
 
-	public ArrayList sendPostMsg(String url) throws Exception {
+	public sendPost() {
+		for(int i = 0; i<temArray.length; i++) {
+			temArray[i] = new Politician();
+		}
+	}
+	
+	public ArrayList<Politician> sendPostMsg(String url) throws Exception {
+		int count;
 		HttpClient client = new DefaultHttpClient();
 		HttpPost post = new HttpPost(url);
  
 		// add header
 		post.setHeader("User-Agent", USER_AGENT);
-		ArrayList<String> ret = new ArrayList<String>();
+		ArrayList<Politician> ret = new ArrayList<Politician>();
 		
 		for(int i = 1; i<28; i++) {
 			List<NameValuePair> urlParameters = new ArrayList<NameValuePair>();
@@ -53,12 +61,25 @@ public class sendPost {
 			}
 			
 			Document doc = Jsoup.parse(result.toString());
-			Elements rows = doc.getElementsByClass("pm01");
-			for(Element row : rows) {
-				ret.add(row.attr("href"));
-				System.out.println(row.attr("href"));
-			}			
+			Elements pdfRows = doc.getElementsByClass("pm01");
+			Elements imgRows = doc.getElementsByClass("profile_list").select("img");
+			count = 0;
+			for(Element row : pdfRows) {
+				temArray[count++].setPdfURL(row.attr("href"));
+			}
+			count = 0;
+			for (Element element : imgRows) {
+				temArray[count++].setImageURL(element.attr("src"));
+			}
+			
+			for(count = 0; count<pdfRows.size(); count++) {
+				Politician poli = new Politician();
+				poli.setImageURL(temArray[count].getImageURL());
+				poli.setPdfURL(temArray[count].getPdfURL());
+				ret.add(poli);
+			}
 		}
+		
 		return ret;
 	}
 	

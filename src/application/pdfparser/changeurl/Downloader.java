@@ -1,22 +1,15 @@
-package application.pdfparser.download;
-import java.io.BufferedInputStream;
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
+package application.pdfparser.changeurl;
+
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLConnection;
 import java.util.ArrayList;
 
-import application.postrequest.Politician;
-
-public class PDFFileDownload {
-	public void Download(ArrayList <Politician>list) {
+public class Downloader {
+	public void downloadImage(String string, ArrayList<String> list) {
 		URL url;
 		InputStream in = null;
 
@@ -25,9 +18,9 @@ public class PDFFileDownload {
 		try {
 			for(int i = 0; i<list.size(); i++) {
 				
-				url = new URL("http://policy.nec.go.kr" + list.get(i).getPdfURL());
+				url = new URL(list.get(i));
 				in = url.openStream();
-				fop = new FileOutputStream(new File("/Users/chaejong-un/Desktop/PDFDownloadTest/" + i + ".pdf"));
+				fop = new FileOutputStream(new File(string + i + ".jpg"));
 				
 				byte [] contentInBytes = new byte[1024];
 				
@@ -42,7 +35,7 @@ public class PDFFileDownload {
 		}catch(IOException ioe) {
 			ioe.printStackTrace();
 		} finally {
-			System.out.println("file download end");
+			System.out.println("image file download end");
 			try {
 				if(in != null) in.close();
 			} catch(IOException ioe) {
@@ -50,6 +43,5 @@ public class PDFFileDownload {
 			}
 		}
 	}
-	
-	
+
 }
