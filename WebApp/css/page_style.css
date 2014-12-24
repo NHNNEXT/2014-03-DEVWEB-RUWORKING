@@ -1347,6 +1347,7 @@ a {
    font-weight: bold;
    border:0;
    float: left;
+   cursor: pointer;
 }
 
 #ns-evidence .promise span {
@@ -1396,7 +1397,9 @@ a {
 	color: #fff;
 	background-color: #EB5E4F;
 	border: 0px;
+	cursor: pointer;
 }
+
 /* //ns-evidence namespace end */
 
 /* ns-searchResult namespace start */
