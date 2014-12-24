@@ -15,7 +15,7 @@ public class ArticleModel {
 			int promiseNum, int politicianId) throws SQLException {
 
 		ArrayList<Object> queryValues = new ArrayList<Object>();
-		String sql = "INSERT INTO article VALUES(NULL,?,?,NULL, NULL,?,?,?,?)";
+		String sql = "INSERT INTO article VALUES(NULL,?,?,NULL, NULL,?,0,0,?,?,?)";
 		Timestamp date = new Timestamp(System.currentTimeMillis());
 
 		queryValues.add(title);
@@ -36,7 +36,7 @@ public class ArticleModel {
 		return false;
 	}
 
-	public Article getArticle(String id) throws SQLException {
+	public Article getArticle(String id) {
 
 		String sql = "SELECT * FROM article WHERE id=?";
 		ArrayList<Object> queryValues = new ArrayList<Object>();
@@ -45,15 +45,25 @@ public class ArticleModel {
 		DAOFactory DAO = new DAOFactory();
 		ResultSet rs = null;
 		Article article = null;
-		rs = DAO.selectQuery(querySet);
-		while (rs.next()) {
-			article = new Article(rs.getInt("id"), rs.getString("title"),
-					rs.getString("content"), rs.getString("date"),
-					rs.getString("user_id"), rs.getInt("promise_num"),
-					rs.getInt("politician_id"));
+		try {
+			rs = DAO.selectQuery(querySet);
+			while (rs.next()) {
+				article = new Article(rs.getInt("id"), rs.getString("title"),
+						rs.getString("content"), rs.getString("date"),
+						rs.getString("user_id"), rs.getInt("promise_num"),
+						rs.getInt("politician_id"));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			try {
+				DAO.closeConnections();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}	
 		}
-
-		DAO.closeConnections();
 		return article;
 	}
 
