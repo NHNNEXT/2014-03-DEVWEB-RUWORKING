@@ -16,7 +16,7 @@ public class RegisterModel {
 		String sql = "INSERT INTO user VALUES(?,?,?,?)";
 		
 		queryValues.add(user.getId());
-		queryValues.add(user.getPassword());
+		queryValues.add(SHA256Encrypt.encrypt(user.getPassword()));
 		queryValues.add(user.getEmail());
 		queryValues.add(user.getGender());
 		
