@@ -10,7 +10,7 @@
 
 <div id="pageContainer">
 	<div id="ns-evidence">
-		<form class="uploadBoard" action="/Upload.ruw" method="post">
+		<form class="uploadBoard" action="/Upload.ruw" method="post" enctype="multipart/form-data">
 			<input type="text" name="politicianId" value="${requestScope.politicianId}" style="display:none"/>
 			<div class="promise wrap">
 				<select name="promiseNumber">
@@ -29,6 +29,9 @@
 			</div>
 			<div class="content wrap">
 				<textarea name="articleContent" cols="107" rows="20"></textarea>
+			</div>
+			<div>
+				<span>이미지 첨부</span> <input type="file" name="attachedFile">
 			</div>
 			<div class="submit">
 				<input type="submit" value="올리기">

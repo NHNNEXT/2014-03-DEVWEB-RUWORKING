@@ -9,6 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import service.register.SHA256Encrypt;
 import db.factory.DAOFactory;
 import db.query.PstmtQuerySet;
 
@@ -19,7 +20,7 @@ public class LoginModel {
 		String sql = "SELECT * FROM user WHERE id=? AND password=?";
 		
 		queryValues.add(userId);
-		queryValues.add(userPw);
+		queryValues.add(SHA256Encrypt.encrypt(userPw));
 		
 		PstmtQuerySet querySet = new PstmtQuerySet(sql, queryValues);
 		

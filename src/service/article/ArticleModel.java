@@ -35,6 +35,31 @@ public class ArticleModel {
 		DAO.closeConnections();
 		return false;
 	}
+	
+	public boolean postArticle(Article article) throws SQLException {
+		ArrayList<Object> queryValues = new ArrayList<Object>();
+		String sql = "INSERT INTO article VALUES(NULL,?,?,?,?,?,0,0,?,?,?)";
+		Timestamp date = new Timestamp(System.currentTimeMillis());
+
+		queryValues.add(article.getTitle());
+		queryValues.add(article.getContent());
+		queryValues.add(article.getImgUrl());
+		queryValues.add(article.getLink());
+		queryValues.add(date);
+		queryValues.add(article.getUserId());
+		queryValues.add(article.getPromiseNum());
+		queryValues.add(article.getPoliticianId());
+
+		PstmtQuerySet querySet = new PstmtQuerySet(sql, queryValues);
+		DAOFactory DAO = new DAOFactory();
+
+		if (DAO.nonSelectQuery(querySet)) {
+			DAO.closeConnections();
+			return true;
+		}
+		DAO.closeConnections();
+		return false;
+	}
 
 	public Article getArticle(String id) throws SQLException {
 
@@ -48,7 +73,7 @@ public class ArticleModel {
 		rs = DAO.selectQuery(querySet);
 		while (rs.next()) {
 			article = new Article(rs.getInt("id"), rs.getString("title"),
-					rs.getString("content"), rs.getString("date"),
+					rs.getString("content"), null, null, rs.getString("date"),
 					rs.getString("user_id"), rs.getInt("promise_num"),
 					rs.getInt("politician_id"));
 		}

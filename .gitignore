@@ -121,3 +121,7 @@ docs/_build/
 # PyBuilder
 target/
 /WEB-INF/
+
+#userData
+WebApp/userData/
+

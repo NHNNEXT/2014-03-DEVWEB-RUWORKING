@@ -77,6 +77,14 @@
 			<artifactId>gson</artifactId>
 			<version>2.3.1</version>
 		</dependency>
+
+		<!-- cos -->
+		<dependency>
+			<groupId>servlets.com</groupId>
+			<artifactId>cos</artifactId>
+			<version>05Nov2002</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>

@@ -5,6 +5,8 @@ public class Article {
 	private int id;
 	private String title;
 	private String content;
+	private String imgUrl;
+	private String link;
 	private String date;
 	private String userId;
 	private int promiseNum;
@@ -14,14 +16,29 @@ public class Article {
 
 	}
 
-	public Article(String title, String content, String date, String userId, int promiseNum, int politicianId) {
-		this(null, title, content, date, userId, promiseNum, politicianId);
+	public Article(String title, String content, String date, String userId,
+			int promiseNum, int politicianId) {
+		this(null, title, content, null, null, date, userId, promiseNum, politicianId);
+	}
+	
+	public Article(String title, String content, String imgUrl, String link,
+			String userId, int promiseNum, int politicianId) {
+		this.title = title;
+		this.content = content;
+		this.imgUrl = imgUrl;
+		this.link = link;
+		this.userId = userId;
+		this.promiseNum = promiseNum;
+		this.politicianId = politicianId;
 	}
 
-	public Article(Integer id, String title, String content, String date, String userId, int promiseNum, int politicianId) {
+	public Article(Integer id, String title, String content, String imgUrl, String link, String date,
+			String userId, int promiseNum, int politicianId) {
 		this.id = id;
 		this.title = title;
 		this.content = content;
+		this.imgUrl = imgUrl;
+		this.link = link;
 		this.date = date;
 		this.userId = userId;
 		this.promiseNum = promiseNum;
@@ -38,6 +55,14 @@ public class Article {
 
 	public String getContent() {
 		return content;
+	}
+	
+	public String getImgUrl() {
+		return imgUrl;
+	}
+	
+	public String getLink() {
+		return link;
 	}
 
 	public String getDate() {
