@@ -4,6 +4,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import service.viewdetail.Promise;
+import service.viewdetail.ViewDetailModel;
 import db.factory.DAOFactory;
 import db.query.PstmtQuerySet;
 
@@ -114,5 +116,23 @@ public class VoteModel {
 				e.printStackTrace();
 			}
 		}
+	}
+
+
+	public VoteResponse makeResponse(boolean alreadyVoted, int score, String politicianId, int promiseNum) {
+
+		ViewDetailModel model = new ViewDetailModel();
+		ArrayList<Promise> promiseList = model.getPromises(politicianId);
+		int totalPercent = model.getTotalPercent(promiseList);
+		int eachPercent = 0;
+	
+		for(Promise i: promiseList){
+			if(i.getPromiseNum() == promiseNum){
+				eachPercent = i.getPercent();
+			}
+
+		}
+	
+		return new VoteResponse(alreadyVoted, totalPercent, eachPercent);
 	}
 }

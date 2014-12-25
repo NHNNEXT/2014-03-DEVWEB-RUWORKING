@@ -91,7 +91,7 @@ public class ViewDetailModel {
 			while (rs.next()) {
 				promises.add(new Promise(rs.getString("title"), rs
 						.getString("content"), rs.getInt("vote_score"), rs
-						.getInt("vote_count")));
+						.getInt("vote_count"), rs.getInt("promise_num")));
 			}
 			return promises;
 		} catch (SQLException e) {

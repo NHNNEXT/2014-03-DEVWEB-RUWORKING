@@ -5,11 +5,13 @@ public class Promise {
 	private String title;
 	private String content;
 	private int percent;
+	private int promiseNum;
 	
-	public Promise(String title, String content, int voteScore, int voteCount){
+	public Promise(String title, String content, int voteScore, int voteCount, int promiseNum){
 		this.title = title;
 		this.content=content;
 		this.percent = getPercent(voteScore, voteCount);
+		this.promiseNum = promiseNum;
 	}
 
 	private int getPercent(int voteScore, int voteCount) {
@@ -29,13 +31,9 @@ public class Promise {
 		return percent;
 	}
 
-	public void setTitle(String title) {
-		this.title = title;
+	public int getPromiseNum() {
+		return promiseNum;
 	}
 
-	public void setPercent(int percent) {
-		this.percent = percent;
-	}
-	
 	
 }

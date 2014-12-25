@@ -31,7 +31,14 @@
 						 if(request.readyState == 4 && request.status == 200){
 							 var result = request.responseText;
 			                 result = JSON.parse(result);
-			                 if(result){
+			                 
+			                 var totalPercentEle = document.getElementById("ns-politician").querySelector(".percentage");
+			                 totalPercentEle.innerHTML=result.totalPercent;
+
+			                 var eachPercentEle = targetForm.parentElement.parentElement.parentElement.querySelector(".percentage");
+			                 eachPercentEle.innerHTML=result.eachPercent;
+
+			                 if(result.alreayVoted){
 			                	 alert("이미 투표하셨습니다.");
 			                 }else{
 			                	 alert("투표 성공하셨습니다.");
@@ -51,6 +58,13 @@
 							 if(request.readyState == 4 && request.status == 200){
 								 var result = request.responseText;
 				                 result = JSON.parse(result);
+				                 
+				                 var totalPercentEle = document.getElementById("ns-politician").querySelector(".percentage");
+				                 totalPercentEle.innerHTML=result.totalPercent;
+
+				                 var eachPercentEle = targetForm.parentElement.parentElement.parentElement.querySelector(".percentage");
+				                 eachPercentEle.innerHTML=result.eachPercent;
+				                 
 				                 if(result){
 				                	 alert("이미 투표하셨습니다.");
 				                 }else{

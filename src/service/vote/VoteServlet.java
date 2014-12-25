@@ -38,17 +38,20 @@ public class VoteServlet extends HttpServlet{
         System.out.println(promiseNum);
         VoteModel model = new VoteModel();
         
-        boolean voted = model.alreadyVoted(userId, politicianId, promiseNum);
+        boolean alreadyVoted = model.alreadyVoted(userId, politicianId, promiseNum);
 
-        if(!voted){
+        if(!alreadyVoted){
 
         model.checkVoteList(userId, politicianId, promiseNum);
         model.vote(score, politicianId, promiseNum);      
         }
+        
+        VoteResponse voteResponse = model.makeResponse(alreadyVoted, Integer.parseInt(score), politicianId, Integer.parseInt(promiseNum));
+        
 		Gson gson = new Gson();
 		response.setContentType("application/json;charset=UTF-8");
 		PrintWriter out = response.getWriter();
-		out.print(gson.toJson(voted));
+		out.print(gson.toJson(voteResponse));
     }
     
     
