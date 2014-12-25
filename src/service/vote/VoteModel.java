@@ -4,16 +4,22 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import service.viewdetail.Promise;
+import service.viewdetail.ViewDetailModel;
 import db.factory.DAOFactory;
 import db.query.PstmtQuerySet;
 
 public class VoteModel {
 
-	public void vote(String score, String politicianId, String promiseNum)
-			throws SQLException {
+	public void vote(String score, String politicianId, String promiseNum){
 
-		updateVoteCount(politicianId, promiseNum);
-		updateVoteScore(score, politicianId, promiseNum);
+		try {
+			updateVoteCount(politicianId, promiseNum);
+			updateVoteScore(score, politicianId, promiseNum);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 
@@ -51,8 +57,8 @@ public class VoteModel {
 		DAO.closeConnections();
 	}
 
-	public boolean isAlredyVotedCase(String userId, String politicianId,
-			String promiseNum) throws SQLException {
+	public boolean alreadyVoted(String userId, String politicianId,
+			String promiseNum){
 
 		String sql = "SELECT * FROM vote_check WHERE user_id=? AND politician_id=? AND promise_num=?";
 		ArrayList<Object> queryValues = new ArrayList<Object>();
@@ -62,18 +68,29 @@ public class VoteModel {
 		queryValues.add(promiseNum);
 
 		PstmtQuerySet querySet = new PstmtQuerySet(sql, queryValues);
-		ResultSet rs = DAO.selectQuery(querySet);
 
-		while(rs.next()) {
-			DAO.closeConnections();
-			return true;
+		try {
+			ResultSet rs = DAO.selectQuery(querySet);
+			while(rs.next()) {
+				DAO.closeConnections();
+				return true;
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			try {
+				DAO.closeConnections();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
-		DAO.closeConnections();
 		return false;
 	}
 
 	public void checkVoteList(String userId, String politicianId,
-			String promiseNum) throws SQLException {
+			String promiseNum) {
 
 		String sql = "INSERT INTO vote_check VALUES(?,?,?)";
 		ArrayList<Object> queryValues = new ArrayList<Object>();
@@ -84,12 +101,38 @@ public class VoteModel {
 
 		PstmtQuerySet querySet = new PstmtQuerySet(sql, queryValues);
 
-		if (!DAO.nonSelectQuery(querySet)) {
-			System.out.println("Insert vote_check 실패");//실패시 처리를 해주어야 한다.
+		try {
+			if (!DAO.nonSelectQuery(querySet)) {
+				System.out.println("Insert vote_check 실패");//실패시 처리를 해주어야 한다.
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			try {
+				DAO.closeConnections();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
-		DAO.closeConnections();
-
 	}
 
 
+	public VoteResponse makeResponse(boolean alreadyVoted, int score, String politicianId, int promiseNum) {
+
+		ViewDetailModel model = new ViewDetailModel();
+		ArrayList<Promise> promiseList = model.getPromises(politicianId);
+		int totalPercent = model.getTotalPercent(promiseList);
+		int eachPercent = 0;
+	
+		for(Promise i: promiseList){
+			if(i.getPromiseNum() == promiseNum){
+				eachPercent = i.getPercent();
+			}
+
+		}
+	
+		return new VoteResponse(alreadyVoted, totalPercent, eachPercent);
+	}
 }

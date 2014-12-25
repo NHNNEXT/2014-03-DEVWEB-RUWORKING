@@ -26,9 +26,9 @@ pageContext.setAttribute("lf", "\n");
 		</div>
 		<a class="show-list">목록보기</a>
 		<form class="comment-input">
-			<input type="hidden" name="article-id"  value="${article.id}">			
+			<input type="hidden" class="hidden-box" name="article-id"  value="${article.id}">			
 			<input class="comment-box" name="comment" type="text"> 
-			<input class="comment-submit" value="댓글 등록">
+			<div class="comment-submit">댓글 등록</div>
 		</form>
 		<ul class="comment-list">
 			<c:forEach var="each" items="${commentList}">

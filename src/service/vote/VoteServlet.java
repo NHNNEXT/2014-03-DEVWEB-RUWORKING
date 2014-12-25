@@ -1,6 +1,7 @@
 package service.vote;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.lang.ProcessBuilder.Redirect;
 import java.sql.SQLException;
 
@@ -11,6 +12,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import com.google.gson.Gson;
 
 @WebServlet("/Vote.ruw")
 public class VoteServlet extends HttpServlet{
@@ -31,23 +34,26 @@ public class VoteServlet extends HttpServlet{
         String politicianId = request.getParameter("politician-id");
         String promiseNum = request.getParameter("promise-num");
         String userId = (String) session.getAttribute("userId");
+        System.out.println(politicianId);
+        System.out.println(promiseNum);
         VoteModel model = new VoteModel();
         
-        try {
-        	if(model.isAlredyVotedCase(userId, politicianId, promiseNum)){
-        		System.out.println("투표실패!!!");//투표 실패시 사용자에게 피드백을 주어야 한다.
-                response.sendRedirect("/viewDetail.ruw?pid="+politicianId);
-                return;
-        	}
-        	model.checkVoteList(userId, politicianId, promiseNum);
-            model.vote(score, politicianId, promiseNum);      
+        boolean alreadyVoted = model.alreadyVoted(userId, politicianId, promiseNum);
 
-        } catch (SQLException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }                
-        response.sendRedirect("/viewDetail.ruw?pid="+politicianId);
+        if(!alreadyVoted){
+
+        model.checkVoteList(userId, politicianId, promiseNum);
+        model.vote(score, politicianId, promiseNum);      
+        }
+        
+        VoteResponse voteResponse = model.makeResponse(alreadyVoted, Integer.parseInt(score), politicianId, Integer.parseInt(promiseNum));
+        
+		Gson gson = new Gson();
+		response.setContentType("application/json;charset=UTF-8");
+		PrintWriter out = response.getWriter();
+		out.print(gson.toJson(voteResponse));
     }
+    
     
 }
 
