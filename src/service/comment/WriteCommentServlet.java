@@ -32,7 +32,7 @@ public class WriteCommentServlet extends HttpServlet{
 		response.setContentType("application/json;charset=UTF-8");
 		PrintWriter out = response.getWriter();
 		out.print(gson.toJson(newComment));
-		//response.sendRedirect("/GetArticle.ruw?article-id"+articleId);
+
 	}
 
 }
