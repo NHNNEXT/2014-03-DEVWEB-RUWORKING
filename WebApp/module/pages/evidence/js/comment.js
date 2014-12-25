@@ -3,10 +3,12 @@
 	var commentSubmit = document.querySelector(".comment-submit")
 		commentSubmit.addEventListener("click", writeComment, false)
 	
-	function writeComment(e){		
-		var commentForm = e.currentTarget.form;
+	function writeComment(){		
+		var articleIdEle = document.getElementById("ns-evidenceDetail").querySelector(".hidden-box");
+		var commentInputEle = document.getElementById("ns-evidenceDetail").querySelector(".comment-box");
+			
 		 var url = "/WriteComment.ruw";
-		 var params = "articleId=" + commentForm[0].value + "&comment=" + commentForm[1].value;
+		 var params = "articleId=" + articleIdEle.value + "&comment=" + commentInputEle.value;
 		
 		 var request = new XMLHttpRequest();
 		 request.open("POST", url, true);
@@ -33,6 +35,7 @@
 			+ "<span class='user-id'>" + result.userId + "</span>"
 			+ "<span class='comment'>" + result.comment + "</span>"
 			+ "<span class='date'>" + result.time + "</span>"
-			+ "</li>";
+			+ "</li>"+"<div class='line'></div>";
+
 	}
 })();
