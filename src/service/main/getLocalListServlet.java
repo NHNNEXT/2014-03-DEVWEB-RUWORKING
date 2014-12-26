@@ -21,12 +21,11 @@ public class getLocalListServlet extends HttpServlet{
 		MainModel mainModel = new MainModel();
 		List localInfoList = mainModel.getLocalInfo();
 		int TotalPercent = mainModel.getTotalPercent();
-		
-		request.setAttribute("localInfoList", localInfoList);
-		
+				
 		Gson gson = new Gson();
 		response.setContentType("application/json;charset=UTF-8");
 		PrintWriter out = response.getWriter();
 		out.print(gson.toJson(localInfoList));
+		out.print(gson.toJson(TotalPercent));
 	}
 }
