@@ -2,7 +2,11 @@ package service.main;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,12 +24,16 @@ public class getLocalListServlet extends HttpServlet{
 			throws ServletException, IOException {
 		MainModel mainModel = new MainModel();
 		List localInfoList = mainModel.getLocalInfo();
-		int TotalPercent = mainModel.getTotalPercent();
-				
-		Gson gson = new Gson();
+		int totalPercent = mainModel.getTotalPercent();
+		ArrayList <Object> result = new ArrayList<Object>();
+		
+		result.add(totalPercent);
+		result.add(localInfoList);
+		
 		response.setContentType("application/json;charset=UTF-8");
+		Gson gson = new Gson();
 		PrintWriter out = response.getWriter();
-		out.print(gson.toJson(localInfoList));
-		out.print(gson.toJson(TotalPercent));
+		out.print(gson.toJson(result));
+		
 	}
 }

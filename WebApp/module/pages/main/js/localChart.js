@@ -14,13 +14,15 @@
 					 var percent=[];
 	                 result = JSON.parse(result);
 	                 
-	                 for(var i in result){
-	                	 local.push([result[i].local]);
-	                	 percent.push(result[i].percent);
+	                 console.log(result);
+	                 
+	                 for(var i in result[1]){
+	                	 local.push([result[1][i].local]);
+	                	 percent.push([result[1][i].percent]);
 	                 }
 	                 
 	                 local.push(["제주도"]);
-	                 percent.push(["1"]);	                 
+	                 percent.push(["0"]);	                 
 	
 	                 var options = {
 						   	    'legend':{
@@ -34,7 +36,7 @@
 						            fields: [],
 						            opacity:[0.3, 0.5, 0.7, 0.9]
 						        },
-						        'core_circle_value' : ['72.7%'],
+						        'core_circle_value' : [result[0]],
 						        'core_circle_radius':30,
 						        'maxValue' : 100,
 						        'increment' : 20,
