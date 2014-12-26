@@ -9,7 +9,7 @@ import java.net.URL;
 import java.util.ArrayList;
 
 public class Downloader {
-	public void downloadImage(String string, ArrayList<String> list) {
+	public void downloadImage(String downloadPath, ArrayList<String> list) {
 		URL url;
 		InputStream in = null;
 
@@ -20,7 +20,7 @@ public class Downloader {
 				
 				url = new URL(list.get(i));
 				in = url.openStream();
-				fop = new FileOutputStream(new File(string + i + ".jpg"));
+				fop = new FileOutputStream(new File(downloadPath + i + ".jpg"));
 				
 				byte [] contentInBytes = new byte[1024];
 				

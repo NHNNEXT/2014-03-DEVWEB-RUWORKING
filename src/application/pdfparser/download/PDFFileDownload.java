@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import application.postrequest.Politician;
 
 public class PDFFileDownload {
-	public void Download(ArrayList <Politician>list) {
+	public void Download(ArrayList <Politician>list, String absoluteURL) {
 		URL url;
 		InputStream in = null;
 
@@ -27,7 +27,7 @@ public class PDFFileDownload {
 				
 				url = new URL("http://policy.nec.go.kr" + list.get(i).getPdfURL());
 				in = url.openStream();
-				fop = new FileOutputStream(new File("/Users/chaejong-un/Desktop/PDFDownloadTest/" + i + ".pdf"));
+				fop = new FileOutputStream(new File(absoluteURL + "/serviceData/pdf/" + i + ".pdf"));
 				
 				byte [] contentInBytes = new byte[1024];
 				
@@ -50,6 +50,4 @@ public class PDFFileDownload {
 			}
 		}
 	}
-	
-	
 }

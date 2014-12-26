@@ -36,8 +36,8 @@ public class PdfModel {
 		queryValues.add(poliId);
 		queryValues.add(promise.getPromiseTitle());
 		queryValues.add(promise.getPromise());
-		queryValues.add(10000);
-		queryValues.add(10000);
+		queryValues.add(0);
+		queryValues.add(0);
 		
 		PstmtQuerySet querySet = new PstmtQuerySet(sql, queryValues);
 		DAOFactory DAO = new DAOFactory();
@@ -60,7 +60,7 @@ public class PdfModel {
 		queryValues.add(header.getName());
 		queryValues.add(header.getLocation());
 		queryValues.add(poli.get(index).getImageURL());
-		queryValues.add(10);
+		queryValues.add(18);
 		queryValues.add(id);
 		
 		PstmtQuerySet querySet = new PstmtQuerySet(sql, queryValues);
