@@ -1,7 +1,10 @@
 package application.pdfparser;
+import java.util.ArrayList;
+
 import application.pdfparser.context.Header;
 import application.pdfparser.context.Promise;
 import application.pdfparser.dao.PdfModel;
+import application.postrequest.Politician;
 
 public class parseText {
 	boolean copyFlag = true;
@@ -17,7 +20,7 @@ public class parseText {
 		}
 	}
 	
-	public void parse(String [] array) throws Exception {
+	public void parse(String [] array, int index, ArrayList<Politician> poliURL) throws Exception {
 		String headRegex = ".*공약번호.*";
 		int promiseCount = -1;
 		int count = 0;
@@ -27,7 +30,7 @@ public class parseText {
 			header.pushStringBuffer(array[count]);
 			count++;
 		}
-		int poliId = header.parse();
+		int poliId = header.parse(poliURL, index);
 
 		//공약부분 처리 
 		for(int i = count; i<array.length; i++) {
