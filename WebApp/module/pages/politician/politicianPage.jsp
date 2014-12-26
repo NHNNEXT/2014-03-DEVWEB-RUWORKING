@@ -45,7 +45,7 @@ pageContext.setAttribute("lf", "\n");
 				</div>
 		</div>
 		<div class="board">
-			<ul>
+			<ol>
 			<c:forEach var="each" items="${promises}" varStatus="status">
 				<c:set var="mapper" value= "${relatePostMap[status.count]}"/>
 				<li class="promise">
@@ -93,7 +93,7 @@ pageContext.setAttribute("lf", "\n");
 					</div>	
 				</li>
 				</c:forEach>
-			</ul>
+			</ol>
 			<form method="get" action="/WriteArticle.ruw">
 				<input type="hidden" name="pid" value="${politician.politicianId}"/>
 				<input class="upload" type="submit" value="올리기"></div>
