@@ -62,7 +62,8 @@
     }
 
     function makeResultElement(result, index, count){
-        return "<div class='card'>"
+        return "<a href='/viewDetail.ruw?pid=" + result.politicianId + "'>"
+        + "<div class='card'>"
         + "<div class='img'><img src='" + result.imgUrl + "' alt='" + result.name + "의원 사진'></div>"
         + "<div class='rank'>"+ (count*10 + index*1 + 1) + " 위</div>"
         + "<span class='name'>" + result.name + "</span>"
@@ -72,7 +73,7 @@
         + "<span class='percent'>%</span>"
         + "<div class='line'></div>"
         + "<span class='more'><a href='/viewDetail.ruw?pid=" + result.politicianId +"'>자세히 보기</a></span>"
-        + "</div>";
+        + "</div></a>";
     }
 
     function resizeNavBar(){
