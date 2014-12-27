@@ -6,23 +6,31 @@
     }, false);
 
     var count = 1;
+    var scrollAllow = true;
     function addMouseEvent() {
         var selfwindow = window;
         window.addEventListener("scroll", ScrollEvent, false);
     }
     
     function ScrollEvent() {
-    		if(count > 21) {
-    			window.removeEventListener("scroll", ScrollEvent, false);
-    			return;
-    		}
-    			
-    		var scrollHeight = document.documentElement.scrollHeight;
+        if(scrollAllow == false)
+            return;
+
+		if(count > 21) {
+			window.removeEventListener("scroll", ScrollEvent, false);
+			return;
+		}
+        
+        
+        var scrollHeight = document.documentElement.scrollHeight;
         var viewableRatio = window.innerHeight / scrollHeight;
         var scrollthumbHeight = window.innerHeight * viewableRatio;
 
         if(innerHeight - (scrollY* viewableRatio + scrollthumbHeight) < 10){
+            scrollAllow = false;
             setTimeout(function(){getElement(count++);}, 650);
+            setTimeout(function(){scrollAllow = true;}, 1650);
+
         }
     }
 
@@ -74,6 +82,7 @@
         + "<div class='line'></div>"
         + "<span class='more'>자세히 보기</span>"
         + "</div></a>";
+        scrollAllow = true;
     }
 
     function resizeNavBar(){
