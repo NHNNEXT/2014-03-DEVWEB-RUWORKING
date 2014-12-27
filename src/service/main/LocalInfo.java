@@ -5,10 +5,11 @@ public class LocalInfo {
 	private String local;
 	private int percent;
 	
-	public LocalInfo(String local, int percent) {
+	public LocalInfo(String local, int localSum, int politicianNum) {
 		this.local = local;
-		this.percent = percent;
+		this.percent = localSum/politicianNum;
 	}
+
 
 	public String getLocal() {
 		return local;
