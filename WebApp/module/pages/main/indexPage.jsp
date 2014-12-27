@@ -10,9 +10,9 @@
 		<div class="politicianList">
 			<ul>
 			<c:forEach var="each" items="${Top5List}" varStatus="status">
-				<li>
+				<li><a href="/viewDetail.ruw?pid=${each.politicianId}">
 					<div class="photo">
-					<span>${status.count }</span>
+					<span>${status.count}</span>
 					<img src="${each.imgUrl}" alt="${each.name} 의원 사진">
 					</div>
 					<div class="info">
@@ -23,7 +23,7 @@
 					<span class="now">이행률</span>
 					<span class="percentage">${each.promiseFulfillment}</span>
 					<span class="percent">%</span>
-					</div>
+					</div></a>
 				</li>
 			</c:forEach>
 			</ul>
@@ -49,39 +49,16 @@
 				'chartType': 'donut',
 				'chartSize': {width:350, height:300}
 			};
-
 			Nwagon.chart(options);
 			</script>
 			<div class = "field_underbar"><span></span><span></span><span></span><span></span></div>
 		</div>
+			
 		</div>
 		<div class="boxTypeB">
 		<span class = "title">19대<br>국회의원 평균 공약 이행률</span>
 		<div class = "card type2_Big">
 			<div id="Nwagon" class="Nwagon1"></div>
-			<script>
-			    var options = {
-			        'legend':{
-			            names: [['서울특별시'], ['대구광역시'], ['인천광역시'],['광주광역시'],['대전광역시'],['울산광역시'],['세종특별시'],['경기도'],['충청북도'],['충청남도'],['전라북도'],['전라남도'],['경상북도'],['경상남도'],['제주도']]
-			        },
-			        'dataset': {
-			            title: '국회의원 공약 이행률',
-			            values: [[70], [50.4], [21.3],[56.3],[63.4],[84.3],[57.3],[47.2],[91.1],[28.3],[65.7],[62.3],[84.3],[27.3],[33.4]],
-			            colorset: ['#0083CA', '#CC3333', '#CC3333','#0083CA','#0083CA','#CC3333','#0083CA','#0083CA','#CC3333','#CC3333','#0083CA','#0083CA','#CC3333','#CC3333','#0083CA'],
-			            // fields: ['A', 'B', 'C'],
-			            fields: [],
-			            opacity:[0.3, 0.5, 0.7, 0.9]
-			        },
-			        'core_circle_value' : ['72.7%'],
-			        'core_circle_radius':30,
-			        'maxValue' : 100,
-			        'increment' : 20,
-			        'chartDiv': 'Nwagon',
-			        'chartType': 'polar',
-			        'chartSize': {width:700, height:400}
-			    };
-			    Nwagon.chart(options);
-			</script>
 		</div>
 		</div>
 		<div class="boxTypeC">
@@ -249,3 +226,4 @@
 	</div>
 </div>
 </div>
+<script src="/module/pages/main/js/localChart.js"></script>

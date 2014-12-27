@@ -8,6 +8,7 @@
 	<span class="title">국회의원 공약 이행률 순위</span>
 	<div class="line"></div>
 		<c:forEach var="each" items="${Politician}" varStatus="status">
+			<a href="/viewDetail.ruw?pid=${each.politicianId}">
 			<div class="card">
 				<div class="img"><img src="${each.imgUrl}" alt="${each.name} 의원 사진"></div>
 				<div class="rank">${status.count} 위</div>
@@ -17,8 +18,8 @@
 				<span class="rate">${each.promiseFulfillment}</span>
 				<span class="percent">%</span>
 				<div class="line"></div>
-				<span class="more"><a href="/viewDetail.ruw?pid=${each.politicianId}">자세히 보기</a></span>
-			</div>
+				<span class="more">자세히 보기</span>
+			</div></a>
 		</c:forEach>
 	<div id="loader">
 		<img src="img/ajax-loader.gif" alt="로딩중">

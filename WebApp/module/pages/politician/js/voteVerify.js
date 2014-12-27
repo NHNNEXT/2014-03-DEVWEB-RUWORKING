@@ -31,8 +31,8 @@
 						 if(request.readyState == 4 && request.status == 200){
 							 var result = request.responseText;
 			                 result = JSON.parse(result);
-			                 
-			                 if(result.alreayVoted){
+			         
+			                 if(result.alreadyVoted===true){
 			                	 alert("이미 투표하셨습니다.");
 			                 }else{
 			                	 alert("투표 성공하셨습니다.");
@@ -60,7 +60,7 @@
 								 var result = request.responseText;
 				                 result = JSON.parse(result);
 				                 
-				                 if(result){
+				                 if(result.alreadyVoted){
 				                	 alert("이미 투표하셨습니다.");
 				                 }else{
 				                	 alert("투표 성공하셨습니다.");

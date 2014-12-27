@@ -25,7 +25,7 @@ public class UploadArticleServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		String relativePath = "/userData/articleImg";
 		String savePath = request.getServletContext().getRealPath(relativePath);
-		System.out.println(savePath);
+		//System.out.println(savePath);
 		
 		int sizeLimit = 1024*1024*50;
 		MultipartRequest multi = new MultipartRequest(request, savePath, sizeLimit, "utf-8", new DefaultFileRenamePolicy());

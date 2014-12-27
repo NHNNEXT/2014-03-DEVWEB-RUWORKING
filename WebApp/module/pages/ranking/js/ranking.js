@@ -6,23 +6,31 @@
     }, false);
 
     var count = 1;
+    var scrollAllow = true;
     function addMouseEvent() {
         var selfwindow = window;
         window.addEventListener("scroll", ScrollEvent, false);
     }
     
     function ScrollEvent() {
-    		if(count > 21) {
-    			window.removeEventListener("scroll", ScrollEvent, false);
-    			return;
-    		}
-    			
-    		var scrollHeight = document.documentElement.scrollHeight;
+        if(scrollAllow == false)
+            return;
+
+		if(count > 21) {
+			window.removeEventListener("scroll", ScrollEvent, false);
+			return;
+		}
+        
+        
+        var scrollHeight = document.documentElement.scrollHeight;
         var viewableRatio = window.innerHeight / scrollHeight;
         var scrollthumbHeight = window.innerHeight * viewableRatio;
 
         if(innerHeight - (scrollY* viewableRatio + scrollthumbHeight) < 10){
+            scrollAllow = false;
             setTimeout(function(){getElement(count++);}, 650);
+            setTimeout(function(){scrollAllow = true;}, 1650);
+
         }
     }
 
@@ -62,7 +70,8 @@
     }
 
     function makeResultElement(result, index, count){
-        return "<div class='card'>"
+        return "<a href='/viewDetail.ruw?pid=" + result.politicianId + "'>"
+        + "<div class='card'>"
         + "<div class='img'><img src='" + result.imgUrl + "' alt='" + result.name + "의원 사진'></div>"
         + "<div class='rank'>"+ (count*10 + index*1 + 1) + " 위</div>"
         + "<span class='name'>" + result.name + "</span>"
@@ -71,8 +80,9 @@
         + "<span class='rate'>" + result.promiseFulfillment + "</span>"
         + "<span class='percent'>%</span>"
         + "<div class='line'></div>"
-        + "<span class='more'><a href='/viewDetail.ruw?pid=" + result.politicianId +"'>자세히 보기</a></span>"
-        + "</div>";
+        + "<span class='more'>자세히 보기</span>"
+        + "</div></a>";
+        scrollAllow = true;
     }
 
     function resizeNavBar(){

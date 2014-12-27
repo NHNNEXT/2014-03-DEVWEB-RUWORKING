@@ -30,9 +30,12 @@
 			<div class="content wrap">
 				<textarea name="articleContent" cols="107" rows="20"></textarea>
 			</div>
-			<div>
-				<span>이미지 첨부</span> <input type="file" name="attachedFile">
+			<div class="imageAttach wrap" >
+				<span>이미지 첨부</span>
+				<input class="imageInput" type="file" name="attachedFile" accept="image/*" onchange="handleFiles(this.files)">
+				<div class="preview"></div>
 			</div>
+				
 			<div class="submit">
 				<input type="submit" value="올리기">
 			</div>
@@ -40,4 +43,5 @@
 	</div>
 </div>
 <script type="text/javascript" src="/js/SelectPromise.js"></script>
+<script type="text/javascript" src="/js/ImageAttach.js"></script>
 

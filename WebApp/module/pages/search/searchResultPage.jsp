@@ -13,6 +13,7 @@
 		</c:when>
 		<c:otherwise>
 		<c:forEach var="each" items="${Politician}">
+			<a href="/viewDetail.ruw?pid=${each.politicianId}">
 			<div class="card">
 				<div class="img"><img src="${each.imgUrl}" alt="${each.name} 의원 사진"></div>
 				<span class="name">${each.name} 의원</span>
@@ -21,6 +22,7 @@
 				<div class="line"></div>
 				<span class="more"><a href="/viewDetail.ruw?pid=${each.politicianId}">자세히 보기</a></span>
 			</div>
+			</a>
 		</c:forEach>
 		</c:otherwise>
 	</c:choose>
