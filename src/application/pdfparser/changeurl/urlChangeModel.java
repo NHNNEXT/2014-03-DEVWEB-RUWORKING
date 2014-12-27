@@ -50,7 +50,7 @@ public class urlChangeModel {
 		
 		while(rs.next()) {
 			id = rs.getInt("id");
-			queryValues.add(real_url + name);
+			queryValues.add(real_url + name + ".jpg");
 			queryValues.add(id);
 			querySet = new PstmtQuerySet(sql, queryValues);
 			DAO.nonSelectQuery(querySet);
