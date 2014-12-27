@@ -36,7 +36,7 @@
 						            fields: [],
 						            opacity:[0.3, 0.5, 0.7, 0.9]
 						        },
-						        'core_circle_value' : [result[0]],
+						        'core_circle_value' : [result[0]+"%"],
 						        'core_circle_radius':30,
 						        'maxValue' : 100,
 						        'increment' : 20,
