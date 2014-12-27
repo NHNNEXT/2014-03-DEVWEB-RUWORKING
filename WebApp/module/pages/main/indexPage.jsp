@@ -10,9 +10,9 @@
 		<div class="politicianList">
 			<ul>
 			<c:forEach var="each" items="${Top5List}" varStatus="status">
-				<li>
+				<li><a href="/viewDetail.ruw?pid=${each.politicianId}">
 					<div class="photo">
-					<span>${status.count }</span>
+					<span>${status.count}</span>
 					<img src="${each.imgUrl}" alt="${each.name} 의원 사진">
 					</div>
 					<div class="info">
@@ -23,7 +23,7 @@
 					<span class="now">이행률</span>
 					<span class="percentage">${each.promiseFulfillment}</span>
 					<span class="percent">%</span>
-					</div>
+					</div></a>
 				</li>
 			</c:forEach>
 			</ul>
