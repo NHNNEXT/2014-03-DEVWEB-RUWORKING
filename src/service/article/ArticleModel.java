@@ -10,31 +10,6 @@ import db.factory.DAOFactory;
 import db.query.PstmtQuerySet;
 
 public class ArticleModel {
-
-	public boolean postArticle(String title, String content, String userId,
-			int promiseNum, int politicianId) throws SQLException {
-
-		ArrayList<Object> queryValues = new ArrayList<Object>();
-		String sql = "INSERT INTO article VALUES(NULL,?,?,NULL, NULL,?,0,0,?,?,?)";
-		Timestamp date = new Timestamp(System.currentTimeMillis());
-
-		queryValues.add(title);
-		queryValues.add(content);
-		queryValues.add(date);
-		queryValues.add(userId);
-		queryValues.add(promiseNum);
-		queryValues.add(politicianId);
-
-		PstmtQuerySet querySet = new PstmtQuerySet(sql, queryValues);
-		DAOFactory DAO = new DAOFactory();
-
-		if (DAO.nonSelectQuery(querySet)) {
-			DAO.closeConnections();
-			return true;
-		}
-		DAO.closeConnections();
-		return false;
-	}
 	
 	public boolean postArticle(Article article) throws SQLException {
 		ArrayList<Object> queryValues = new ArrayList<Object>();
@@ -93,7 +68,7 @@ public class ArticleModel {
 		}
 		return article;
 	}
-
+	
 	public List<String> getPromiseTitle(int pid) throws SQLException {
 		// TODO promise table에서 정치인아이디가 pid인 것 search하여 List에 넣기
 		String sql = "SELECT * FROM promise WHERE politician_id=?";
@@ -111,5 +86,20 @@ public class ArticleModel {
 
 		DAO.closeConnections();
 		return promiseLists;
+	}
+
+	public boolean deleteArticleById(String articleId) throws SQLException {
+		ArrayList<Object> queryValues = new ArrayList<Object>();
+		String sql = "UPDATE article SET deleted=1 WHERE id=?"; 
+		queryValues.add(articleId);
+		PstmtQuerySet querySet = new PstmtQuerySet(sql, queryValues);
+		DAOFactory DAO = new DAOFactory();
+
+		if (DAO.nonSelectQuery(querySet)) {
+			DAO.closeConnections();
+			return true;
+		}
+		DAO.closeConnections();
+		return false;
 	}
 }

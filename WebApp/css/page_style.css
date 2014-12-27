@@ -1319,9 +1319,17 @@ a {
 /* ns-evidence namespace start */
 #ns-evidence .wrap {
 	width: 730px;
-	height: 30px;
 	margin : 10px;
 }
+
+#ns-evidence .promise {
+	height: 30px;
+}
+
+#ns-evidence .title {
+	height: 30px;
+}
+
 
 #ns-evidence .content {
 	height: 300px;
@@ -1329,8 +1337,8 @@ a {
 
 #ns-evidence .uploadBoard{
 	border: 1px solid #ccc;
-	height: 500px;
 	background: #F5F3F6;
+	padding: 20px;
 }
 #ns-evidence .promise select {
 	position: relative;
@@ -1390,6 +1398,7 @@ a {
 #ns-evidence div.submit {
 	text-align: center;
 	padding-right: 70px;
+	font: 15px;
 }
 #ns-evidence .submit input{
 	width: 60px;
@@ -1398,6 +1407,10 @@ a {
 	background-color: #EB5E4F;
 	border: 0px;
 	cursor: pointer;
+}
+
+#ns-evidence .preview {
+	margin-top: 10px;
 }
 
 /* //ns-evidence namespace end */
@@ -1534,13 +1547,17 @@ a {
     padding-top: 15px;
 }
 
-#ns-evidenceDetail .show-list{
+#ns-evidenceDetail .show-list, .edit, .delete{
     float: right;
     margin-right: 30px;
     margin-bottom: 10px;
     background-color: #fff;
     border: 1px solid #ccc;
     padding: 5px;
+}
+
+#ns-evidenceDetail .edit, .delete{
+	margin-right: 10px;
 }
 
 #ns-evidenceDetail .comment-input{
