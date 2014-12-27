@@ -18,7 +18,7 @@
 				<span class="rate">${each.promiseFulfillment}</span>
 				<span class="percent">%</span>
 				<div class="line"></div>
-				<span class="more"><a href="/viewDetail.ruw?pid=${each.politicianId}">자세히 보기</a></span>
+				<span class="more">자세히 보기</span>
 			</div></a>
 		</c:forEach>
 	<div id="loader">
