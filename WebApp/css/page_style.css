@@ -1547,13 +1547,17 @@ a {
     padding-top: 15px;
 }
 
-#ns-evidenceDetail .show-list{
+#ns-evidenceDetail .show-list, .edit, .delete{
     float: right;
     margin-right: 30px;
     margin-bottom: 10px;
     background-color: #fff;
     border: 1px solid #ccc;
     padding: 5px;
+}
+
+#ns-evidenceDetail .edit, .delete{
+	margin-right: 10px;
 }
 
 #ns-evidenceDetail .comment-input{
