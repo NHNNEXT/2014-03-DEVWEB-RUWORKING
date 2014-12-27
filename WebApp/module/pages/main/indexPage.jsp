@@ -13,9 +13,8 @@
 				<li>
 					<div class="photo">
 					<span>${status.count }</span>
-					<img src="${each.imgUrl}.jpg" alt="${each.name} 의원 사진">
-<%-- 					<img src="/img/mem1.jpg" alt="${each.name} 의원 사진">
- --%>					</div>
+					<img src="${each.imgUrl}" alt="${each.name} 의원 사진">
+					</div>
 					<div class="info">
 					<span class = "name">${each.name}</span>
 					<span class = "party">${each.party}</span>
