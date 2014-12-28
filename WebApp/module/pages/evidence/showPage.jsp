@@ -21,11 +21,12 @@
 			</div>
 			<div class="line"></div>
 			<div class="content">${fn:replace( fn:replace(article.content, space, "&nbsp;"), lf, "<br/>")}</div>
-			<div class="attachedImg">
-				<c:if test="${article.imgUrl != '/userData/articleImg/null'}">
+
+			<c:if test="${article.imgUrl != '/userData/articleImg/null'}">
+				<div class="attachedImg">
 					<img src="${article.imgUrl}">
-				</c:if>
-			</div>
+				</div>
+			</c:if>
 		</div>
 		<a class="show-list" href="/viewDetail.ruw?pid=${article.politicianId}">목록보기</a>
 		<c:if test="${sessionScope.userId==article.userId}">
