@@ -6,7 +6,6 @@
 			pageContext.setAttribute("lf", "\n");</jsp:scriptlet>
 <div id="pageContainer">
 	<div id="ns-evidenceDetail">
-	
 		<div class="evidence-wrapper">
 			<div class="article-header">
 				<div class="title">${article.title}</div>
@@ -22,6 +21,11 @@
 			</div>
 			<div class="line"></div>
 			<div class="content">${fn:replace( fn:replace(article.content, space, "&nbsp;"), lf, "<br/>")}</div>
+			<div class="attachedImg">
+				<c:if test="${article.imgUrl != '/userData/articleImg/null'}">
+					<img src="${article.imgUrl}">
+				</c:if>
+			</div>
 		</div>
 		<a class="show-list" href="/viewDetail.ruw?pid=${article.politicianId}">목록보기</a>
 		<c:if test="${sessionScope.userId==article.userId}">

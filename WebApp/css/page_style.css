@@ -1628,6 +1628,15 @@ a {
     margin-bottom: 3px;
 }
 
+#ns-evidenceDetail .attachedImg {
+	padding: 20px;
+}
+
+#ns-evidenceDetail .attachedImg img{
+	max-width:100%;
+	height: auto;
+}
+
 
 /* //ns-evidenceDetail namespace end */
 
