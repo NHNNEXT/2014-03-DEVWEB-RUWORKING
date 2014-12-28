@@ -10,10 +10,10 @@ import db.factory.DAOFactory;
 import db.query.PstmtQuerySet;
 
 public class ArticleModel {
-	
+
 	public boolean postArticle(Article article) throws SQLException {
 		ArrayList<Object> queryValues = new ArrayList<Object>();
-		String sql = "INSERT INTO article VALUES(NULL,?,?,?,?,?,0,0,?,?,?)";
+		String sql = "INSERT INTO article VALUES(NULL,?,?,?,?,?,?,0,?,?,?)";
 		Timestamp date = new Timestamp(System.currentTimeMillis());
 
 		queryValues.add(article.getTitle());
@@ -21,6 +21,7 @@ public class ArticleModel {
 		queryValues.add(article.getImgUrl());
 		queryValues.add(article.getLink());
 		queryValues.add(date);
+		queryValues.add(article.getVersion());
 		queryValues.add(article.getUserId());
 		queryValues.add(article.getPromiseNum());
 		queryValues.add(article.getPoliticianId());
@@ -51,24 +52,25 @@ public class ArticleModel {
 
 			while (rs.next()) {
 				article = new Article(rs.getInt("id"), rs.getString("title"),
-						rs.getString("content"), rs.getString("img_url"), rs.getString("link"), rs.getString("date"),
-						rs.getString("user_id"), rs.getInt("promise_num"),
-						rs.getInt("politician_id"));
+						rs.getString("content"), rs.getString("img_url"),
+						rs.getString("link"), rs.getString("date"),
+						rs.getInt("version"), rs.getString("user_id"),
+						rs.getInt("promise_num"), rs.getInt("politician_id"));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}finally{
+		} finally {
 			try {
 				DAO.closeConnections();
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}	
+			}
 		}
 		return article;
 	}
-	
+
 	public List<String> getPromiseTitle(int pid) throws SQLException {
 		// TODO promise table에서 정치인아이디가 pid인 것 search하여 List에 넣기
 		String sql = "SELECT * FROM promise WHERE politician_id=?";
@@ -87,10 +89,27 @@ public class ArticleModel {
 		DAO.closeConnections();
 		return promiseLists;
 	}
+	
+	public String getPromiseTitle(int pid, int promiseNum) throws SQLException {
+		String sql = "SELECT * FROM promise WHERE politician_id=? AND promise_num=?";
+		ArrayList<Object> queryValues = new ArrayList<Object>();
+		queryValues.add(pid);
+		queryValues.add(promiseNum);
+		PstmtQuerySet querySet = new PstmtQuerySet(sql, queryValues);
+		DAOFactory DAO = new DAOFactory();
+		ResultSet rs = null;
+		rs = DAO.selectQuery(querySet);
+		String promiseTitle = null;
+		while (rs.next()) {
+			promiseTitle = rs.getString("title");
+		}
+		DAO.closeConnections();
+		return promiseTitle;
+	}
 
 	public boolean deleteArticleById(String articleId) throws SQLException {
 		ArrayList<Object> queryValues = new ArrayList<Object>();
-		String sql = "UPDATE article SET deleted=1 WHERE id=?"; 
+		String sql = "UPDATE article SET deleted=1 WHERE id=?";
 		queryValues.add(articleId);
 		PstmtQuerySet querySet = new PstmtQuerySet(sql, queryValues);
 		DAOFactory DAO = new DAOFactory();

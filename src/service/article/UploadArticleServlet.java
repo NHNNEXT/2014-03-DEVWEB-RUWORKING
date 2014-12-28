@@ -33,13 +33,14 @@ public class UploadArticleServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		String title = multi.getParameter("articleTitle");
 		String content = multi.getParameter("articleContent");
+		int version = Integer.parseInt(multi.getParameter("version"));
 		String userId = (String) session.getAttribute("userId");
 		int promiseNum = Integer.parseInt(multi.getParameter("promiseNumber"));
 		int politicianId = Integer.parseInt((String)multi.getParameter("politicianId"));
 		String fileName = multi.getFilesystemName("attachedFile"); 
 		String filePath = relativePath+"/"+fileName;
 		
-		Article article = new Article(title, content, filePath, null, userId, promiseNum, politicianId);
+		Article article = new Article(title, content, filePath, null, version, userId, promiseNum, politicianId);
 		ArticleModel articleModel = new ArticleModel();
 		
 		boolean check;

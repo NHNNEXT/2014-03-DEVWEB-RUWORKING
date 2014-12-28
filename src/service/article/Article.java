@@ -8,38 +8,25 @@ public class Article {
 	private String imgUrl;
 	private String link;
 	private String date;
+	private int version;
 	private String userId;
 	private int promiseNum;
 	private int politicianId;
 
-	public Article() {
-
-	}
-
-	public Article(String title, String content, String date, String userId,
-			int promiseNum, int politicianId) {
-		this(null, title, content, null, null, date, userId, promiseNum, politicianId);
-	}
-	
-	public Article(String title, String content, String imgUrl, String link,
+	public Article(String title, String content, String imgUrl, String link, int version,
 			String userId, int promiseNum, int politicianId) {
-		this.title = title;
-		this.content = content;
-		this.imgUrl = imgUrl;
-		this.link = link;
-		this.userId = userId;
-		this.promiseNum = promiseNum;
-		this.politicianId = politicianId;
+		this(-1, title, content, imgUrl, link, null, version, userId, promiseNum, politicianId);
 	}
 
 	public Article(Integer id, String title, String content, String imgUrl, String link, String date,
-			String userId, int promiseNum, int politicianId) {
+			int version, String userId, int promiseNum, int politicianId) {
 		this.id = id;
 		this.title = title;
 		this.content = content;
 		this.imgUrl = imgUrl;
 		this.link = link;
 		this.date = date;
+		this.version = version;
 		this.userId = userId;
 		this.promiseNum = promiseNum;
 		this.politicianId = politicianId;
@@ -67,6 +54,10 @@ public class Article {
 
 	public String getDate() {
 		return date;
+	}
+	
+	public int getVersion() {
+		return version;
 	}
 
 	public String getUserId() {

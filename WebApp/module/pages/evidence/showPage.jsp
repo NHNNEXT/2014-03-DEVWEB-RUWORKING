@@ -26,7 +26,7 @@
 		<a class="show-list" href="/viewDetail.ruw?pid=${article.politicianId}">목록보기</a>
 		<c:if test="${sessionScope.userId==article.userId}">
 			<a class="delete" href="/DeleteArticle.ruw?articleId=${article.id}">삭제하기</a>
-			<a class="edit" href="">수정하기</a>
+			<a class="edit" href="/EditArticle.ruw?articleId=${article.id}">수정하기</a>
 		</c:if>
 
 		<form class="comment-input">
