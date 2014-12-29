@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<script src = "/module/pages/main/js/getlocal.js"></script>
 
 <div id="pageContainer">
 <div id="ns-index">
@@ -39,9 +40,9 @@
 			var options = {
 				'dataset': {
 					title: 'Web accessibility status',
-					values:[18, 12, 3, 7],
-					colorset: ['#2EB400', '#FF8C00', '#DC143C', '#666666'],
-					fields: ['완료', '진행중', '미이행', '보류'] 
+					values:[18, 12],
+					colorset: ['#2EB400', '#DC143C'],
+					fields: ['완료', '미이행'] 
 				},
 				'donut_width' : 30, //70
 				'core_circle_radius':40,
@@ -51,7 +52,7 @@
 			};
 			Nwagon.chart(options);
 			</script>
-			<div class = "field_underbar"><span></span><span></span><span></span><span></span></div>
+			<div class = "field_underbar"><span></span><span></span></div>
 		</div>
 			
 		</div>
@@ -62,26 +63,10 @@
 		</div>
 		</div>
 		<div class="boxTypeC">
-		<span class = "title">우리지역<br>국회의원 평균 공약 이행률</span>
+		<span class = "title"><span>우리지역</span><br>국회의원 평균 공약 이행률</span>
 		<div class = "card type2">
 			<div id="chart_d2" class="Nwagon2"></div>
-			<script>
-			var options = {
-				'dataset': {
-					title: 'Web accessibility status',
-					values:[18, 12, 3, 7],
-					colorset: ['#2EB400', '#FF8C00', '#DC143C', '#666666'],
-					fields: ['완료', '진행중', '미이행', '보류'] 
-				},
-				'donut_width' : 30, //70
-				'core_circle_radius':40,
-				'chartDiv': 'chart_d2',
-				'chartType': 'donut',
-				'chartSize': {width:350, height:300}
-			};
-			Nwagon.chart(options);
-			</script>
-			<div class = "field_underbar"><span></span><span></span><span></span><span></span></div>
+			<div class = "field_underbar"><span></span><span></span></div>
 		</div>
 		</div>
 
