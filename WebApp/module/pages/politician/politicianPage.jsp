@@ -81,7 +81,9 @@ pageContext.setAttribute("lf", "\n");
 							<form action="/Vote.ruw" method="post" class="vote" data-type="vote-form">
 								<span class="induce">회원님! ${politician.name} 의원의 ${status.count} 번째 약속 이행률을 평가해 주세요!</span>
 								<div class="rangewrap">
-									<input type="range" min="0" value="50" max="100" id="${status.count}" step="10" name="score" data-type="score-range">
+									<input type="range" min="0" value="50" max="100" id="${status.count}" step="10" name="score" data-type="score-range" list="volsettings">
+									<datalist id="volsettings">
+									<option>0</option><option>10</option><option>20</option><option>30</option><option>40</option><option>50</option><option>60</option><option>70</option><option>80</option><option>90</option><option>100</option></datalist>
 								</div>
 								<input type="hidden" name="politician-id" value="${politician.politicianId}"/>
 								<input type="hidden" name="promise-num" value="${status.count}"/>
