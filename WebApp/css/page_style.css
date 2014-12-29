@@ -235,7 +235,6 @@ a {
     margin-top: 10px;
     float:left;
     overflow: hidden;
-    
 }
 
 #ns-index .type2_Big {
@@ -526,7 +525,7 @@ a {
     height:25px;
 }
 #ns-index .field_underbar span {
-    width:25%;
+    width:50%;
     height:25px;
     line-height: 25px;
     text-align: center;;
