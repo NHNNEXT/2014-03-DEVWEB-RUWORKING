@@ -50,7 +50,7 @@ public class MainModel {
 		
 		ArrayList<LocalInfo> localList = new ArrayList<LocalInfo>();
 		Set<String> local = new HashSet<String>(Arrays.asList(
-			     new String[] {"서울특별시","광주광역시", "부산광역시", "대구광역시", "대전광역시", "세종특별자치시", "울산광역시", "인천광역시", "강원도","충청북도","충청남도","전라북도", "전라남도", "경상남도", "경상북도", "제주도"}));
+			     new String[] {"서울특별시","경기도","광주광역시", "부산광역시", "대구광역시", "대전광역시", "세종특별자치시", "울산광역시", "인천광역시", "강원도","충청북도","충청남도","전라북도", "전라남도", "경상남도", "경상북도", "제주도"}));
 		ResultSet rs = null;
 
 		String sql = "SELECT local, SUM(percent/promise_count) AS local_sum, COUNT(*) AS politician_num FROM (SELECT politician.local, SUM(promise.vote_score/promise.vote_count) AS percent, COUNT(*) AS promise_count FROM promise INNER JOIN politician ON promise.politician_id = politician.id GROUP BY politician.name) SUB GROUP BY local";
