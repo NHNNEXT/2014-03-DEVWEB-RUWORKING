@@ -19,7 +19,7 @@ public class GetArticleServlet extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		request.setCharacterEncoding("UTF-8");
 		String articleId = request.getParameter("article-id");
 		ArticleModel model = new ArticleModel();
 		CommentModel commentModel = new CommentModel();
