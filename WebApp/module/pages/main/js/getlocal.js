@@ -2,13 +2,39 @@
 	document.addEventListener("DOMContentLoaded", function(){
 	    getLocation();
 	}, false);
+	var Constants = {
+		error : {
+			10: "사용중이신 브라우저 또는 단말기가 위치정보 기능을 제공하지 않아 서울특별시 데이터를 표시합니다"
+		}
+	};
 
 	function getLocation() {
 	    if (navigator.geolocation) {
-	        navigator.geolocation.getCurrentPosition(getCityName);
+	        navigator.geolocation.getCurrentPosition(getCityName, showError);
 	    } else {
-	        alert("Geolocation is not supported by this browser.");
+	    	showError(new Error(10));
 	    }
+	}
+
+	function showError(error) {
+		drawGraph("서울특별시");
+		if (error.code === undefined) {
+			var code = error.message;
+			setLocalInfoMessage(Constants.error[code]);
+		} else {
+			switch(error.code) {
+		        case error.PERMISSION_DENIED:
+		        	setLocalInfoMessage("사용자가 위치정보 서비스 이용을 거부하여 현재 접속중이신 위치를 파악할 수 없어 서울특별시 데이터를 표시합니다");
+		            break;
+		        case error.POSITION_UNAVAILABLE:
+		        case error.TIMEOUT:
+		        case error.UNKNOWN_ERROR:
+		            setLocalInfoMessage("위치정보 서비스 불가능 지역에 계시거나 기술적 문제로 인해 현재 접속중이신 위치를 파악할 수 없어 서울특별시 데이터를 표시합니다");
+		            break;
+		    }
+		}
+
+	    
 	}
 
 	function getCityName(position) {
@@ -46,7 +72,7 @@
 
 	function drawGraph(location){
 		var request = new XMLHttpRequest();
-	   	
+	   	console.log(location);
 	   	var url = "/GetLocalList.ruw";
 	    request.open("GET", url, true);
 	    request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
@@ -85,11 +111,12 @@
 		Nwagon.chart(options);
 		appendUnderbarInfo();
 		drawDonutGraphColorInfo();
+		deleteLoadingEle();
 	}
 
 	function appendUnderbarInfo(){
 		var ele = document.getElementById("chart_d2");
-		ele.insertAdjacentHTML('afterbegin', "<div class='field_underbar'><span></span><span></span></div>")
+		ele.insertAdjacentHTML('afterbegin', "<div class='field_underbar'><span></span><span></span></div>");
 	}
 
 	function drawDonutGraphColorInfo() {
@@ -109,5 +136,15 @@
 	            }
 	        }, false);
 	    }
+	}
+
+	function deleteLoadingEle() {
+		var Ele = document.getElementById("ns-index").querySelector(".secondfloor .boxTypeA .card.type2 div.loading");
+		Ele.parentNode.removeChild(Ele);
+	}
+
+	function setLocalInfoMessage(message){
+		var Ele = document.getElementById("localinfo");
+		Ele.innerText = message;
 	}
 })();

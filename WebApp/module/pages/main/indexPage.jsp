@@ -30,13 +30,13 @@
 			</ul>
 		</div>
 	</div>
-
+	<div id="localinfo"></div>
 	<div class="secondfloor">
 		<div class="boxTypeA">
-		<span class = "title"><span>우리지역</span><br>국회의원 평균 공약 이행률</span>
+		<span class = "title"><span>서울특별시</span><br>국회의원 평균 공약 이행률</span>
 		<div class = "card type2">
-		
 			<div id="chart_d2" class="Nwagon2"></div>
+			<div class="loading">로딩중<br>위치 정보 사용에<br>동의해 주세요</div>
 		</div>
 			
 		</div>

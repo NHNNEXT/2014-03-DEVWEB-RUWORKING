@@ -147,11 +147,66 @@ a {
     height:160px;
 }
 
+#ns-index #localinfo {
+    width:723px;
+    height:30px;
+    line-height: 30px;
+    text-align: center;
+    margin-left: 26px;
+    background-color: #FFD17A;
+    border:1px solid #B78B27;
+    float:left;
+    margin-top: 15px;
+}
+
 #ns-index .secondfloor {
     float:left;
     margin-left:26px;
-    margin-top:30px;
+    margin-top:5px;
 
+}
+
+#ns-index .secondfloor .boxTypeA .card.type2 div.loading {
+    padding-top: 75px;
+    display: inline-block;
+    font-size: 15px;
+    -webkit-animation: loading 2s;
+    animation: loading 2s;
+    -webkit-animation-delay: 1.5s;
+    animation-delay: 1.5s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+}
+
+@-webkit-keyframes loading {
+    25% {
+        -ms-transform: rotate(-5deg);
+        -webkit-transform: rotate(-5deg);
+        transform: rotate(-5deg);
+    }
+
+    75% {
+        -ms-transform: rotate(5deg);
+        -webkit-transform: rotate(5deg);
+        transform: rotate(5deg);
+    }
+}
+
+
+@keyframes loading {
+    25% {
+        -ms-transform: rotate(-5deg);
+        -webkit-transform: rotate(-5deg);
+        transform: rotate(-5deg);
+    }
+
+    75% {
+        -ms-transform: rotate(5deg);
+        -webkit-transform: rotate(5deg);
+        transform: rotate(5deg);
+    }
 }
 
 #ns-index .secondfloor .boxTypeA,#ns-index .secondfloor .boxTypeC {
@@ -250,6 +305,8 @@ a {
     border:1px solid #cccccc;
     width:230px;
     height:230px;
+    line-height: 25px;
+    text-align: center;
     margin-top: 10px;
     float:left;
     overflow: hidden;
