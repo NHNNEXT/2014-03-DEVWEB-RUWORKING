@@ -17,6 +17,7 @@ public class MainServlet extends HttpServlet {
 		MainModel mainModel = new MainModel();
 
 		request.setAttribute("Top5List", mainModel.getRankedFulfillment(5));
+		request.setAttribute("DDay", mainModel.getPoliticianTermD_Day());
 		RequestDispatcher view = request.getRequestDispatcher("/index.jsp");
 		view.forward(request, response);
 	}

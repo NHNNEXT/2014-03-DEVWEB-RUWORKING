@@ -4,13 +4,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 import service.search.Politician;
-import service.viewdetail.Promise;
-import service.viewdetail.ViewDetailModel;
 import db.factory.DAOFactory;
 import db.query.PstmtQuerySet;
 
@@ -111,5 +110,22 @@ public class MainModel {
 		
 		return totalPercent;
 	}
+	
+	public int getPoliticianTermD_Day(){
+		Calendar cal = Calendar.getInstance();
 		
+		//국회의원 임기 만기일 설정
+		//TODO Context Scope에 묶든지 Config로 빼야지 코드에 이런 값이 들어가면 안될것 같은데 ...
+		int year = 2016;
+		int month = 5;
+		int date = 29;
+
+		long now_day = cal.getTimeInMillis(); //현재 시간 가져오기
+
+		cal.set(year, month-1, date);
+
+		long event_day = cal.getTimeInMillis(); //목표일에 대한 시간
+		long d_day = (event_day - now_day) / (60*60*24*1000); //(60초 * 60분 * 24시간 * 1000ms)
+		return (int)d_day;
+	}
 }
