@@ -1792,9 +1792,9 @@ a {
 }
 
 #ns-party .cards-container .party-cards ul li.card-list{
-    width:350px;
+    width:330px;
     background-color: #fff;
-    height:240px;
+    height:210px;
     border:1px solid #ccc;
     float:left;
     margin-right: 20px;
@@ -1811,25 +1811,50 @@ a {
     position: relative;
 }
 
-#ns-party .cards-container .party-cards ul li.card-list #chart_party{
-    width: 160px;
-    height: 200px;
-    float:right;
-    margin-right: 20px;
-    margin-top: 18px;
-    background-color: rgba(0,0,0,0.1);
+#ns-party .cards-container .party-cards .chart-container{
+	position:relative;
+	border-left: 1px solid #cccccc;
+	width: 170px;
+	height: 210px;
+	float: right;
+	overflow: hidden;
 }
 
-#ns-party .cards-container .party-cards ul li.card-list .party-info {
-    width: 140px;
-    height: 180px;
+#ns-party .chart{
+	position:relative;
+	top:-60px;
+	left:-32px;
+}
+
+#ns-party .party-info {
+    width: 110px;
     float: left;
-    margin-left: 30px;
-    margin-top:15px;
+    padding-left: 30px;
+    padding-top:15px;
     font-size: 15px;
 }
 
-#ns-party .cards-container .party-cards ul li .party-info li {
+#ns-party .party-info li {
     list-style: disc;
 }
+ 
+#ns-party .field_underbar {
+	position:absolute;
+	bottom: 0px;
+	width:100%;
+}
+#ns-party .field_underbar span {
+	
+	width: 50%;
+	height: 25px;
+	line-height: 25px;
+	text-align: center;;
+	background-color: #000;
+	float: left;
+	display: inline-block;
+	color: #fff;
+	font-weight: bold;
+	text-shadow: 0.5px 0.5px 0.5px #494C4C;
+}
+
 /* ns-party namespace end */
