@@ -83,7 +83,13 @@
 			'chartSize': {width:350, height:300}
 		};
 		Nwagon.chart(options);
+		appendUnderbarInfo();
 		drawDonutGraphColorInfo();
+	}
+
+	function appendUnderbarInfo(){
+		var ele = document.getElementById("chart_d2");
+		ele.insertAdjacentHTML('afterbegin', "<div class='field_underbar'><span></span><span></span></div>")
 	}
 
 	function drawDonutGraphColorInfo() {

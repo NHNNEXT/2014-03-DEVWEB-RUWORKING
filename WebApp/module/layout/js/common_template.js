@@ -69,7 +69,6 @@
         clearEle(targetEle);
 
         showEle(targetEle.parentNode);
-        // console.log(targetEle.parentNode.style);
         for(var i = 0; i < length; i++){
             targetEle.insertAdjacentHTML('beforeend', makeResultElement(key, result[i], i));
         }

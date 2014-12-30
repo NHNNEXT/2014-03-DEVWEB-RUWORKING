@@ -37,7 +37,6 @@
 		<div class = "card type2">
 		
 			<div id="chart_d2" class="Nwagon2"></div>
-			<div class = "field_underbar"><span></span><span></span></div>
 		</div>
 			
 		</div>
