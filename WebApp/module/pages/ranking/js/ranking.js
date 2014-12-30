@@ -74,7 +74,7 @@
         + "<div class='card'>"
         + "<div class='img'><img src='" + result.imgUrl + "' alt='" + result.name + "의원 사진'></div>"
         + "<div class='rank'>"+ (count*10 + index*1 + 1) + " 위</div>"
-        + "<span class='name'>" + result.name + "</span>"
+        + "<span class='name'>" + result.name + " 의원</span>"
         + "<span class='party'>" + result.party + "</span>"
         + "<span class='local'>" + result.local + "</span>"
         + "<span class='rate'>" + result.promiseFulfillment + "</span>"
