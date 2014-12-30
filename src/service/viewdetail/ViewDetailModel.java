@@ -128,7 +128,8 @@ public class ViewDetailModel {
 
 	public List<ArticleTitle> getPromiseRelatePost(String politicianId, int promiseId) {
 
-		String sql = "SELECT * FROM article WHERE politician_id=? AND promise_num=? AND deleted=0 ORDER BY date DESC LIMIT 3";
+		String sql = "select * from (select * from article order by version DESC) temp  where deleted=0 AND politician_id=? AND promise_num=? group by ancestor_id LIMIT 3";
+
 		ArrayList<Object> queryValues = new ArrayList<Object>();
 		queryValues.add(politicianId);
 		queryValues.add(promiseId);
