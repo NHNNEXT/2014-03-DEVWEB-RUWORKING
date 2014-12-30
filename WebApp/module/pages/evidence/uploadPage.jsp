@@ -38,6 +38,7 @@
 				</div>
 				<input type="text" name="politicianId" value="${article.politicianId}" style="display:none"/>
 				<input type="text" name="version" value="${article.version+1}" style="display:none"/>
+				<input type="text" name="ancestorId" value ="${article.ancestorId}" style="display:none"/>
 				
 			</c:otherwise>
 			</c:choose>
