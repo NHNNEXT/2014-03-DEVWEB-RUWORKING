@@ -12,7 +12,7 @@
 	}
 
 	function getCityName(position) {
-	    var localEle = document.querySelector(".secondfloor .boxTypeC .title span");
+	    var localEle = document.querySelector(".secondfloor .boxTypeA .title span");
 	    
 	    var request = new XMLHttpRequest();
 	    var absoluteUrl = "https://maps.googleapis.com/maps/api/geocode/json";
