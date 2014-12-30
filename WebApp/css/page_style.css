@@ -157,12 +157,33 @@ a {
     border:1px solid #B78B27;
     float:left;
     margin-top: 15px;
+    margin-bottom: -20px;
+    display:none;
+}
+
+#ns-index .localinfo {
+    -moz-animation-duration: 4s;
+    -webkit-animation-duration: 4s;
+    -moz-animation-name: fadeout;
+    -webkit-animation-name: fadeout;
+    -webkit-animation-delay: 5s; 
+    animation-delay: 5s;
+}
+
+@-webkit-keyframes fadeout {
+    20% {opacity: 0;}
+    to {height:0px;border:0px;opacity: 0;}
+}
+
+@keyframes fadeout {
+    20% {opacity: 0;}
+    to {height:0px;border:0px;opacity: 0;}
 }
 
 #ns-index .secondfloor {
     float:left;
     margin-left:26px;
-    margin-top:5px;
+    margin-top:30px;
 
 }
 

@@ -145,6 +145,9 @@
 
 	function setLocalInfoMessage(message){
 		var Ele = document.getElementById("localinfo");
+		Ele.style.display = "block";
+		Ele.classList.add("localinfo");
 		Ele.innerText = message;
+		setTimeout(function(){Ele.style.display="none"},8400);
 	}
 })();
