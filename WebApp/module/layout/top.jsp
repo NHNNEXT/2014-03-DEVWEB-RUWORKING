@@ -12,7 +12,6 @@
 <link rel="stylesheet" href="/library/css/Nwagon.css">
 <script src="/module/layout/js/common_template.js"></script>
 <script src="/library/js/Nwagon.js"></script>
-<script src="/js/Layout.js"></script>
 </head>
 <body>
 <!-- body 전체 container -->
