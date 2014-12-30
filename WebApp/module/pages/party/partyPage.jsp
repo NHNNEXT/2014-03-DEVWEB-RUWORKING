@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <div id="pageContainer">
 	<div id = "ns-party">
 	<div class="cards-container">
@@ -27,70 +29,6 @@
 					</div>
 				</li>
 				</c:forEach>
-				<li class="card-list">
-					<div class="party-card">
-						<span class="party">새정치민주연합</span>
-						<div id="chart_party" class="Nwagon2">차트</div>
-						<div class="party-info">
-							<ul>
-								<li class="num-of-politicians"><span class="title">의원수</span>
-									<span class="real-num-of-politicians">130</span> <span
-									class="total-num-of-politicians">/300</span></li>
-								<li class="ratio"><span class="title">이행률</span> <span
-									class="percentage">35</span> <span class="percent">%</span></li>
-							</ul>
-						</div>
-
-					</div>
-				</li>
-				<li class="card-list">
-					<div class="party-card">
-						<span class="party">통합진보당</span>
-						<div id="chart_party" class="Nwagon2">차트</div>
-						<div class="party-info">
-							<ul>
-								<li class="num-of-politicians"><span class="title">의원수</span>
-									<span class="real-num-of-politicians">5</span> <span
-									class="total-num-of-politicians">/300</span></li>
-								<li class="ratio"><span class="title">이행률</span> <span
-									class="percentage">35</span> <span class="percent">%</span></li>
-							</ul>
-						</div>
-
-					</div>
-				</li>
-				<li class="card-list">
-					<div class="party-card">
-						<span class="party">정의당</span>
-						<div id="chart_party" class="Nwagon2">차트</div>
-						<div class="party-info">
-							<ul>
-								<li class="num-of-politicians"><span class="title">의원수</span>
-									<span class="real-num-of-politicians">5</span> <span
-									class="total-num-of-politicians">/300</span></li>
-								<li class="ratio"><span class="title">이행률</span> <span
-									class="percentage">35</span> <span class="percent">%</span></li>
-							</ul>
-						</div>
-
-					</div>
-				</li>
-				<li class="card-list">
-					<div class="party-card">
-						<span class="party">무소속</span>
-						<div id="chart_party" class="Nwagon2">차트</div>
-						<div class="party-info">
-							<ul>
-								<li class="num-of-politicians"><span class="title">의원수</span>
-									<span class="real-num-of-politicians">2</span> <span
-									class="total-num-of-politicians">/300</span></li>
-								<li class="ratio"><span class="title">이행률</span> <span
-									class="percentage">35</span> <span class="percent">%</span></li>
-							</ul>
-						</div>
-
-					</div>
-				</li>
 			</ul>
 		</div>
 	</div>

@@ -24,7 +24,7 @@ public class ShowPartyServlet extends HttpServlet{
 		List<Party> partyList = partyModel.getPartyList();
 		int totalPoliticianNumber = 0;
 		for(Party party : partyList){
-			totalPoliticianNumber = party.getPoliticianNumber();
+			totalPoliticianNumber += party.getPoliticianNumber();
 		}
 		request.setAttribute("partyList", partyList);
 		request.setAttribute("totalPoliticianNumber", totalPoliticianNumber);
