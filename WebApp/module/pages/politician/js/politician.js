@@ -14,14 +14,6 @@
             } else {
                 promiseEle[3].style.display = "block";    
             }
-            resizeNavBar();
-        }
-
-        function resizeNavBar(){
-            var height = document.getElementById("main").offsetHeight;
-            var targetEle = document.querySelector("nav");
-
-            targetEle.style.height = height + "px";
         }
 
         (function (){

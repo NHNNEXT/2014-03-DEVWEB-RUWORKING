@@ -9,8 +9,6 @@
         login.addEventListener("click", loginLayerToggle, false);
         cancellogin.addEventListener("click", loginLayerToggle, false);
 
-        resizeNavBar();
-
         var searchWindow = document.getElementById('body-container').querySelector("header .searchBox form input[name='userQuery']");
     
         searchWindow.addEventListener("keyup", function(e){
@@ -31,13 +29,6 @@
             loginLayer.style.display = "block";
             meunLayer.style.display = "none";
         }
-    }
-
-    function resizeNavBar(){
-        var height = document.getElementById("main").offsetHeight;
-        var targetEle = document.querySelector("nav");
-
-        targetEle.style.height = height + "px";
     }
 
     function searchAutoComplete(e){

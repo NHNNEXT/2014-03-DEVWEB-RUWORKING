@@ -53,7 +53,6 @@
                 		hideLoadingBar();
                 renderSearchResult(result, rankingWrapperEle, count);
             }
-            resizeNavBar();
         }
     }
 
@@ -83,13 +82,6 @@
         + "<span class='more'>자세히 보기</span>"
         + "</div></a>";
         scrollAllow = true;
-    }
-
-    function resizeNavBar(){
-        var height = document.getElementById("main").offsetHeight;
-        var targetEle = document.querySelector("nav");
-
-        targetEle.style.height = height + "px";
     }
 
     function hideLoadingBar() {

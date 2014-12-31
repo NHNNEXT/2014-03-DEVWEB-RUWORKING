@@ -41,6 +41,7 @@ header .logo {
 	float:left;
     color:#fff;
     font-size: 30px;
+    position: fixed;
 }
 
 header .upload {
@@ -175,7 +176,8 @@ nav {
 	height: 100%;
     background-color:#353941;
 	float:left;
-    position: relative;
+    position: fixed;
+    top:60px;
 }
 
 nav .login_out, nav .signin, nav .userId {
@@ -294,6 +296,7 @@ nav .logoBottom {
     width:809px;
     min-height:100%;
     float:left;
+    margin-left: 170px;
     background-color:#fff;
     border-right: 1px solid #ccc;
     overflow: hidden;

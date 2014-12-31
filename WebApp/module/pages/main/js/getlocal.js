@@ -33,8 +33,6 @@
 		            break;
 		    }
 		}
-
-	    
 	}
 
 	function getCityName(position) {

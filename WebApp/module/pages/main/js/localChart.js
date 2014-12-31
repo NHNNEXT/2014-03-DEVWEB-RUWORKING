@@ -46,7 +46,7 @@
 						    };
 						    Nwagon.chart(options);				 }
 			 }
-			request.send();
+			request.send(null);
 		 
 		
 	},false);
