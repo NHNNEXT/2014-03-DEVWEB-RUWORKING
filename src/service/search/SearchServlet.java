@@ -23,8 +23,6 @@ public class SearchServlet extends HttpServlet {
 		String searchQuery = request.getParameter("userQuery");
 		SearchModel searchModel = new SearchModel();
 		
-		searchQuery = new String(searchQuery.getBytes("ISO-8859-1"), "utf-8");
-		
 		List<Politician> politicianList = searchModel.getResult(searchQuery);
 		request.setAttribute("Query", searchQuery);
 		request.setAttribute("Politician", politicianList);
