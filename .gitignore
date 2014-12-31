@@ -125,3 +125,6 @@ target/
 #userData
 WebApp/userData/
 
+#IntelliJ
+.idea/
+*.iml
