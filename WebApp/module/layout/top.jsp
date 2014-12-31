@@ -58,9 +58,9 @@
 	    	</div>
 	    </div>
 	    <div class = "list-wrap">
-	    	<span class = "list on">메인</span>
+	    	<a href="/"><span class = "list on">메인</span></a>
 			<span class = "list">우리지역</span>
-			<a class = "list" href="/Parties.ruw">정당별</a>
+			<a href="/Parties.ruw"><span class="list">정당별</span></a>
 			<span class = "list">정치인</span>
 		</div>
 		<div class="floatIntroduce">

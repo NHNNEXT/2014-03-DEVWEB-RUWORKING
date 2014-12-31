@@ -251,6 +251,11 @@ nav .on, nav .list-wrap .on {
     border-bottom: 2px solid #27CED0;
 }
 
+nav .on, nav .list-wrap .list:hover {
+    color: #27CED0;
+    border-bottom: 2px solid #27CED0;
+}
+
 nav .floatIntroduce {
     width:170px;
     position: fixed;

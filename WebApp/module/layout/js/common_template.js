@@ -18,7 +18,7 @@
                 setTimeout(function(){searchAutoComplete(e)}, 100);
             }
         }, false);
-
+        setNavMenu();
     }, false);
 
     function loginLayerToggle() {
@@ -96,4 +96,19 @@
         targetElement.style.visibility = 'visible';
     }
     
+    function setNavMenu(){
+        var lo = location.href;
+        lo = lo.split("/");
+
+        var serviceName = lo[lo.length-1];
+        var navEle = document.querySelectorAll(".list-wrap span");
+
+        if(serviceName !== ""){
+            navEle[0].classList.remove("on");
+        }
+        
+        if(serviceName === "Parties.ruw") {
+            navEle[2].classList.add("on");
+        }
+    }
 })();
