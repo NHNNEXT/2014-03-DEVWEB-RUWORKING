@@ -89,9 +89,8 @@
     
     function setNavMenu(){
         var lo = location.href;
-        lo = lo.split("/");
+        var serviceName = lo.split("/")[3].split("?")[0];
 
-        var serviceName = lo[lo.length-1];
         var navEle = document.querySelectorAll(".list-wrap span");
 
         if(serviceName !== ""){
@@ -100,6 +99,10 @@
         
         if(serviceName === "Parties.ruw") {
             navEle[2].classList.add("on");
+        }
+        
+        if(serviceName === "viewDetail.ruw") {
+            navEle[3].classList.add("on");
         }
     }
 })();

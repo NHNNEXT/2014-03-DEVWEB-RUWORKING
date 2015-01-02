@@ -75,9 +75,9 @@ public class SearchModel {
 			return null;
 		
 		ArrayList<Object> queryValues = new ArrayList<Object>();
-		String sql = "SELECT * FROM politician WHERE name LIKE ? LIMIT 5";
+		String sql = "SELECT * FROM politician WHERE name LIKE ?";
 
-		queryValues.add(searchQuery +"%");
+		queryValues.add("%" +searchQuery +"%");
 		
 		PstmtQuerySet querySet = new PstmtQuerySet(sql, queryValues);
 		
