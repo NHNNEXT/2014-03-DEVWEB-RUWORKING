@@ -16,6 +16,19 @@
                 setTimeout(function(){searchAutoComplete(e)}, 100);
             }
         }, false);
+
+        var searchinfoEle = document.getElementById("main").querySelector(".searchinfo");
+        searchinfoEle.addEventListener("click", function(e){
+            searchForm.elements[0].focus();
+            searchinfoEle.style.display="none";
+            setNavMenu("searchInfoDpOFF");
+        }, false);
+
+        var politicianEleOnNav = document.getElementById("body-container").querySelector(".list-wrap span:nth-of-type(2)");
+        politicianEleOnNav.addEventListener("click", function(e){
+            searchinfoEle.style.display="block";
+            setNavMenu("searchInfoDpON");
+        }, false);
         setNavMenu();
     }, false);
 
@@ -87,7 +100,7 @@
         targetElement.style.visibility = 'visible';
     }
     
-    function setNavMenu(){
+    function setNavMenu(type){
         var lo = location.href;
         var serviceName = lo.split("/")[3].split("?")[0];
 
@@ -103,6 +116,16 @@
         
         if(serviceName === "viewDetail.ruw") {
             navEle[3].classList.add("on");
+        }
+
+        if(type === "searchInfoDpON") {
+            navEle[0].classList.remove("on");
+            navEle[3].classList.add("on");
+        }
+
+        if(type === "searchInfoDpOFF") {
+            navEle[3].classList.remove("on");
+            navEle[0].classList.add("on");
         }
     }
 })();

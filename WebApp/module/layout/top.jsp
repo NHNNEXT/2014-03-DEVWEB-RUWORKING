@@ -21,7 +21,7 @@
         <a href="/" tabindex="-1"><div class = "logo">일해요</div></a>
         <div class = "upload">업로드</div>
         <div class="searchBox">
-        	<form action="search.ruw" autocomplete="off">
+        	<form action="search.ruw" autocomplete="off" name="searchForm">
         		<input type="text" class = "inputbox" name="userQuery" placeholder="정당 / 정치인 이름 입력">
         		<input type="submit" class = "submit_btn" value="검색" tabindex="-1">
         	</form>
@@ -33,7 +33,7 @@
         </div>
 	</header>
 	<!-- // header -->
-
+	
 	<!-- navigation bar on left side -->
 	<nav>
 		<c:choose>
@@ -71,8 +71,13 @@
 		</div>
 	</nav>
 	<!-- // navigation bar on left side -->
-	
+
 	<!-- main -->
 	<div id = "main">
+		<div class="searchinfo">
+			<div class="mask"></div>
+			<div class="info"></div>
+			<div class="bg"></div>
+		</div>
 		<div class="updated">이 페이지는 2014-03-02 17:32 기준 일해요의 <u>편집기준</u>에 의거하여 작성되었습니다</div>
 		<!-- end of top.html -->
