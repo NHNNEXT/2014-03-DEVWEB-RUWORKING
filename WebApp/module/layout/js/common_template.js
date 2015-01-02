@@ -21,16 +21,40 @@
         searchinfoEle.addEventListener("click", function(e){
             searchForm.elements[0].focus();
             searchinfoEle.style.display="none";
-            setNavMenu("searchInfoDpOFF");
+            setNavOff();
         }, false);
 
         var politicianEleOnNav = document.getElementById("body-container").querySelector(".list-wrap span:nth-of-type(2)");
         politicianEleOnNav.addEventListener("click", function(e){
             searchinfoEle.style.display="block";
-            setNavMenu("searchInfoDpON");
+            setNavOn(e);
         }, false);
         setNavMenu();
     }, false);
+
+    var originText;
+    function setNavOn(e) {
+        var originEle = e.target.parentElement.querySelector(".on");
+        originText = originEle.innerText;
+        originEle.classList.remove("on");
+        e.target.classList.add("on");
+    }
+
+    function setNavOff() {
+        var navEle = document.querySelector("nav .list-wrap");
+        var target = navEle.children;
+        
+        for(var i = 0; i < target.length; i++ ) {
+            if(target[i].innerText === originText){
+                if(target[i].tagName === "A") {
+                    target[i].children[0].classList.add("on");
+                } else {
+                    target[i].classList.add("on");
+                }
+            }
+        }
+        navEle.children[3].classList.remove("on");
+    }
 
     function loginLayerToggle() {
         var loginLayer = document.querySelector("nav .login-wrap");
@@ -100,7 +124,7 @@
         targetElement.style.visibility = 'visible';
     }
     
-    function setNavMenu(type){
+    function setNavMenu(){
         var lo = location.href;
         var serviceName = lo.split("/")[3].split("?")[0];
 
@@ -116,16 +140,6 @@
         
         if(serviceName === "viewDetail.ruw") {
             navEle[3].classList.add("on");
-        }
-
-        if(type === "searchInfoDpON") {
-            navEle[0].classList.remove("on");
-            navEle[3].classList.add("on");
-        }
-
-        if(type === "searchInfoDpOFF") {
-            navEle[3].classList.remove("on");
-            navEle[0].classList.add("on");
         }
     }
 })();
