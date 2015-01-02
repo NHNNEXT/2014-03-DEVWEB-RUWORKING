@@ -28,8 +28,8 @@
 
         if(innerHeight - (scrollY* viewableRatio + scrollthumbHeight) < 10){
             scrollAllow = false;
-            setTimeout(function(){getElement(count++);}, 650);
-            setTimeout(function(){scrollAllow = true;}, 1650);
+            setTimeout(function(){getElement(count++);}, 150);
+            setTimeout(function(){scrollAllow = true;}, 850);
 
         }
     }

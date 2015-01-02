@@ -14,8 +14,6 @@
 					 var percent=[];
 	                 result = JSON.parse(result);
 	                 
-	                 console.log(result);
-	                 
 	                 for(var i in result[1]){
 	                	 local.push([result[1][i].local]);
 	                	 percent.push([result[1][i].percent]);

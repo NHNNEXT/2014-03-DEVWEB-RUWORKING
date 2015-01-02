@@ -59,9 +59,9 @@
 	    </div>
 	    <div class = "list-wrap">
 	    	<a href="/"><span class = "list on">메인</span></a>
-			<span class = "list">우리지역</span>
+			<a href="/Top20.ruw"><span class = "list">Top20</span></a>
 			<a href="/Parties.ruw"><span class="list">정당별</span></a>
-			<span class = "list">정치인</span>
+			<span class = "list" data-listtype="poli">정치인</span>
 		</div>
 		<div class="floatIntroduce">
 			<span>일해요 서비스 소개</span>

@@ -24,7 +24,7 @@
             setNavOff();
         }, false);
 
-        var politicianEleOnNav = document.getElementById("body-container").querySelector(".list-wrap span:nth-of-type(2)");
+        var politicianEleOnNav = document.getElementById("body-container").querySelector(".list-wrap span[data-listtype='poli']");
         politicianEleOnNav.addEventListener("click", function(e){
             searchinfoEle.style.display="block";
             setNavOn(e);
@@ -41,6 +41,8 @@
     }
 
     function setNavOff() {
+        var lo = location.href;
+        var serviceName = lo.split("/")[3].split("?")[0];
         var navEle = document.querySelector("nav .list-wrap");
         var target = navEle.children;
         
@@ -53,7 +55,8 @@
                 }
             }
         }
-        navEle.children[3].classList.remove("on");
+        if(serviceName != "ranking.ruw")
+            navEle.children[3].classList.remove("on");
     }
 
     function loginLayerToggle() {
@@ -134,11 +137,15 @@
             navEle[0].classList.remove("on");
         }
         
+        if(serviceName === "Top20.ruw") {
+            navEle[1].classList.add("on");
+        }
+
         if(serviceName === "Parties.ruw") {
             navEle[2].classList.add("on");
         }
         
-        if(serviceName === "viewDetail.ruw") {
+        if(serviceName === "viewDetail.ruw" || serviceName === "ranking.ruw") {
             navEle[3].classList.add("on");
         }
     }
