@@ -141,7 +141,8 @@ public class ViewDetailModel {
 		try {
 			rs = DAO.selectQuery(querySet);
 			while (rs.next()) {
-				relatedPostListOnSamePromise.add(new ArticleTitle(rs.getString("id"), rs.getString("title")));
+				relatedPostListOnSamePromise.add(new ArticleTitle(rs.getString("id"), rs.getString("title"), rs.getString("ancestor_id")));
+				System.out.println("ancestorId: "+rs.getString("ancestor_id"));
 			}
 			return relatedPostListOnSamePromise;
 		} catch (SQLException e) {

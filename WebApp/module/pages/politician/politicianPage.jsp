@@ -70,7 +70,7 @@ pageContext.setAttribute("lf", "\n");
        						<c:otherwise>
        							<c:forEach items="${mapper}" var="item" varStatus="loop">
        								<li>
-       									<a href="GetArticle.ruw?article-id=${item.id}">${item.title}</a>	
+       									<a href="GetArticle.ruw?article-id=${item.id}&ancestor-id=${item.ancestorId}">${item.title}</a>	
        								</li>
    								</c:forEach>
        						</c:otherwise>
