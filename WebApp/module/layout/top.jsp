@@ -73,6 +73,10 @@
 	<!-- // navigation bar on left side -->
 
 	<!-- main -->
+	<div class="dim">
+		<div class="bg"></div>
+		<div class="realImg"></div>
+	</div>
 	<div id = "main">
 		<div class="searchinfo">
 			<div class="mask"></div>

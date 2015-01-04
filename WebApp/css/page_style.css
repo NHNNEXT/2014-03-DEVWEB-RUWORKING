@@ -611,6 +611,13 @@ a {
 	padding-right: 10px;
 }
 
+#ns-index .type3 .cardB .body img {
+	width: 215px;
+	max-height: 105px;
+	margin-top: 11px;
+	cursor: pointer;
+}
+
 #ns-index .field_underbar {
     position: absolute;
     bottom:0px;

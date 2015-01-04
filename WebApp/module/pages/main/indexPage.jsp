@@ -54,24 +54,6 @@
 			<div class="number">
 				${DDay}
 			</div>
-			<!-- <div id="chart_d" class="Nwagon2"></div>
-			<script>
-			var options = {
-				'dataset': {
-					title: 'Web accessibility status',
-					values:[18, 12],
-					colorset: ['#2EB400', '#DC143C'],
-					fields: ['완료', '미이행'] 
-				},
-				'donut_width' : 30, //70
-				'core_circle_radius':40,
-				'chartDiv': 'chart_d',
-				'chartType': 'donut',
-				'chartSize': {width:350, height:300}
-			};
-			Nwagon.chart(options);
-			</script>
-			<div class = "field_underbar"><span></span><span></span></div> -->
 		</div>
 		</div>
 
@@ -116,7 +98,7 @@
 				<div class="body">
 					<div class="title">${article.title}</div>
 					<div class="content">${article.content}</div>
-					<img src="${article.img_url}" width="240px" height="120px">
+					<img src="${article.img_url}">
 				</div>
 				<div class="footer">
 					<div class="date">${article.date}</div>

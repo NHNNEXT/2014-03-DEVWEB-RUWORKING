@@ -30,6 +30,29 @@
             setNavOn(e);
             gotop();
         }, false);
+        
+        var imgEle = document.querySelectorAll(".cardB .body img");
+        [].forEach.call(imgEle, function(imgEle) {
+            imgEle.addEventListener("click", function(e){
+                var Ele = document.querySelector(".dim");
+                var zoomimgEle = Ele.querySelector(".realImg");
+                Ele.style.display = "block";
+                if(window.innerHeight < e.target.naturalHeight || window.innerWidth <  e.target.naturalWidth){
+                    window.open(e.currentTarget.src, "확대 이미지 보기", "width="+screen.width+", height="+screen.height+", toolbar=no, menubar=no, scrollbars=no, resizable=no" );
+                    Ele.style.display = "none";
+                    return;
+                }
+                zoomimgEle.innerHTML = e.currentTarget.outerHTML;
+                zoomimgEle.style.width = e.target.naturalWidth +"px";
+                zoomimgEle.style.height = e.target.naturalHeight +"px";
+                zoomimgEle.style.top = "calc(50% - " + e.target.naturalHeight/2 +"px)";
+                zoomimgEle.style.left = "calc(50% - " + e.target.naturalWidth/2 +"px)";
+                Ele.addEventListener("click", function(){
+                    Ele.style.display = "none";
+                }, false);
+            }, false);
+        }, false);
+
         setNavMenu();
     }, false);
 

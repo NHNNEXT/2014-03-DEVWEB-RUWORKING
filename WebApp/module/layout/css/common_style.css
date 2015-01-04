@@ -293,6 +293,34 @@ nav .logoBottom {
     z-index:30;
 }
 
+.dim {
+    position:fixed;
+    width:100%;
+    height:100%;
+    left:0px;
+    top:0px;
+    z-index:100;
+    display:none;
+}
+
+.dim .bg {
+    background-color:#000;
+    width:100%;
+    height:100%;
+    opacity:0.75;
+}
+
+.dim .realImg {
+    position:fixed;
+    width:0px;
+    height:0px;
+}
+
+.dim img {
+    width:100%;
+    height:100%;
+}
+
 #main {
     width:809px;
     min-height:100%;
