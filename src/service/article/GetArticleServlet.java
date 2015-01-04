@@ -19,12 +19,14 @@ public class GetArticleServlet extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		request.setCharacterEncoding("UTF-8");
 		String articleId = request.getParameter("article-id");
+		String ancestorId = request.getParameter("ancestor-id");
+		
 		ArticleModel model = new ArticleModel();
 		CommentModel commentModel = new CommentModel();
 		
-		List commentList= commentModel.getCommentList(articleId);
+		List commentList= commentModel.getCommentList(ancestorId);
 		Article article = model.getArticle(articleId);
 		
 		request.setAttribute("article", article);

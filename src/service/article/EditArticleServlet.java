@@ -23,9 +23,9 @@ public class EditArticleServlet extends HttpServlet{
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		String articleId = request.getParameter("articleId");
+		String ancestorId = request.getParameter("articleId");
 		ArticleModel articleModel = new ArticleModel();
-		Article article = articleModel.getArticle(articleId);
+		Article article = articleModel.getArticle(ancestorId);
 		String promiseTitle=null;
 		try {
 			promiseTitle = articleModel.getPromiseTitle(article.getPoliticianId(), article.getPromiseNum());

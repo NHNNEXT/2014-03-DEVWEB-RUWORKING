@@ -11,9 +11,9 @@ import db.query.PstmtQuerySet;
 
 public class ArticleModel {
 
-	public boolean postArticle(Article article) throws SQLException {
+	public void postArticle(Article article) throws SQLException {
 		ArrayList<Object> queryValues = new ArrayList<Object>();
-		String sql = "INSERT INTO article VALUES(NULL,?,?,?,?,?,?,0,?,?,?)";
+		String sql = "INSERT INTO article VALUES(NULL,?,?,?,?,?,?,0,?,?,?,?)";
 		Timestamp date = new Timestamp(System.currentTimeMillis());
 
 		queryValues.add(article.getTitle());
@@ -25,16 +25,59 @@ public class ArticleModel {
 		queryValues.add(article.getUserId());
 		queryValues.add(article.getPromiseNum());
 		queryValues.add(article.getPoliticianId());
+		queryValues.add(getMaxArticleId());
 
 		PstmtQuerySet querySet = new PstmtQuerySet(sql, queryValues);
 		DAOFactory DAO = new DAOFactory();
 
 		if (DAO.nonSelectQuery(querySet)) {
 			DAO.closeConnections();
-			return true;
+			return;
 		}
 		DAO.closeConnections();
-		return false;
+	}
+	
+	private int getMaxArticleId(){
+		String sql = "SELECT MAX(id)+1 FROM article";
+		ArrayList<Object> queryValues = new ArrayList<Object>();
+		PstmtQuerySet querySet = new PstmtQuerySet(sql, queryValues);
+		DAOFactory DAO = new DAOFactory();
+		ResultSet rs = null;
+		int articleId = 0;
+		try {
+			rs = DAO.selectQuery(querySet);
+			rs.next();
+			articleId = rs.getInt(1);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return articleId;
+	}
+	
+	public void postArticle(Article article, int ancestorId) throws SQLException {
+		ArrayList<Object> queryValues = new ArrayList<Object>();
+		String sql = "INSERT INTO article VALUES(NULL,?,?,?,?,?,?,0,?,?,?,?)";
+		Timestamp date = new Timestamp(System.currentTimeMillis());
+
+		queryValues.add(article.getTitle());
+		queryValues.add(article.getContent());
+		queryValues.add(article.getImgUrl());
+		queryValues.add(article.getLink());
+		queryValues.add(date);
+		queryValues.add(article.getVersion());
+		queryValues.add(article.getUserId());
+		queryValues.add(article.getPromiseNum());
+		queryValues.add(article.getPoliticianId());
+		queryValues.add(ancestorId);
+
+		PstmtQuerySet querySet = new PstmtQuerySet(sql, queryValues);
+		DAOFactory DAO = new DAOFactory();
+
+		if (DAO.nonSelectQuery(querySet)) {
+			DAO.closeConnections();
+			return;
+		}
+		DAO.closeConnections();
 	}
 
 	public Article getArticle(String id) {
@@ -55,7 +98,7 @@ public class ArticleModel {
 						rs.getString("content"), rs.getString("img_url"),
 						rs.getString("link"), rs.getString("date"),
 						rs.getInt("version"), rs.getString("user_id"),
-						rs.getInt("promise_num"), rs.getInt("politician_id"));
+						rs.getInt("promise_num"), rs.getInt("politician_id"), rs.getInt("ancestor_id"));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

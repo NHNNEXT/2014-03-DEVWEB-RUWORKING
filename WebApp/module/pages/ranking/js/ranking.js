@@ -28,8 +28,8 @@
 
         if(innerHeight - (scrollY* viewableRatio + scrollthumbHeight) < 10){
             scrollAllow = false;
-            setTimeout(function(){getElement(count++);}, 650);
-            setTimeout(function(){scrollAllow = true;}, 1650);
+            setTimeout(function(){getElement(count++);}, 150);
+            setTimeout(function(){scrollAllow = true;}, 850);
 
         }
     }
@@ -53,7 +53,6 @@
                 		hideLoadingBar();
                 renderSearchResult(result, rankingWrapperEle, count);
             }
-            resizeNavBar();
         }
     }
 
@@ -74,7 +73,7 @@
         + "<div class='card'>"
         + "<div class='img'><img src='" + result.imgUrl + "' alt='" + result.name + "의원 사진'></div>"
         + "<div class='rank'>"+ (count*10 + index*1 + 1) + " 위</div>"
-        + "<span class='name'>" + result.name + "</span>"
+        + "<span class='name'>" + result.name + " 의원</span>"
         + "<span class='party'>" + result.party + "</span>"
         + "<span class='local'>" + result.local + "</span>"
         + "<span class='rate'>" + result.promiseFulfillment + "</span>"
@@ -83,13 +82,6 @@
         + "<span class='more'>자세히 보기</span>"
         + "</div></a>";
         scrollAllow = true;
-    }
-
-    function resizeNavBar(){
-        var height = document.getElementById("main").offsetHeight;
-        var targetEle = document.querySelector("nav");
-
-        targetEle.style.height = height + "px";
     }
 
     function hideLoadingBar() {

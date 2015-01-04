@@ -9,8 +9,6 @@
         login.addEventListener("click", loginLayerToggle, false);
         cancellogin.addEventListener("click", loginLayerToggle, false);
 
-        resizeNavBar();
-
         var searchWindow = document.getElementById('body-container').querySelector("header .searchBox form input[name='userQuery']");
     
         searchWindow.addEventListener("keyup", function(e){
@@ -19,7 +17,81 @@
             }
         }, false);
 
+        var searchinfoEle = document.getElementById("main").querySelector(".searchinfo");
+        searchinfoEle.addEventListener("click", function(e){
+            searchForm.elements[0].focus();
+            searchinfoEle.style.display="none";
+            setNavOff();
+        }, false);
+
+        var politicianEleOnNav = document.getElementById("body-container").querySelector(".list-wrap span[data-listtype='poli']");
+        politicianEleOnNav.addEventListener("click", function(e){
+            searchinfoEle.style.display="block";
+            setNavOn(e);
+            gotop();
+        }, false);
+        setNavMenu();
     }, false);
+
+    function gotop(orix,oriy,desx,desy) {
+        var Timer;
+        if (document.body.scrollTop == 0) {
+            var winHeight = document.documentElement.scrollTop;
+        } else {
+            var winHeight = document.body.scrollTop;
+        }
+        if(Timer) clearTimeout(Timer);
+        startx = 0;
+        starty = winHeight;
+        if(!orix || orix < 0) orix = 0;
+        if(!oriy || oriy < 0) oriy = 0;
+        var speed = 7;
+
+        if(!desx) desx = 0 + startx;
+        if(!desy) desy = 0 + starty;
+        desx += (orix - startx) / speed;
+        if (desx < 0) desx = 0;
+        desy += (oriy - starty) / speed;
+        if (desy < 0) desy = 0;
+        var posX = Math.ceil(desx);
+        var posY = Math.ceil(desy);
+        window.scrollTo(posX, posY);
+        if((Math.floor(Math.abs(startx - orix)) < 1) && (Math.floor(Math.abs(starty - oriy)) < 1)){
+            clearTimeout(Timer);
+            window.scroll(orix,oriy);
+        }else if(posX != orix || posY != oriy){
+            Timer = setTimeout(function(){gotop(orix,oriy,desx,desy);},15);
+        }else{
+            clearTimeout(Timer);
+        }
+    }
+    
+    var originText;
+    function setNavOn(e) {
+        var originEle = e.target.parentElement.querySelector(".on");
+        originText = originEle.innerText;
+        originEle.classList.remove("on");
+        e.target.classList.add("on");
+    }
+
+    function setNavOff() {
+        var lo = location.href;
+        var serviceName = lo.split("/")[3].split("?")[0];
+        var navEle = document.querySelector("nav .list-wrap");
+        var target = navEle.children;
+        
+        for(var i = 0; i < target.length; i++ ) {
+            if(target[i].innerText === originText){
+                if(target[i].tagName === "A") {
+                    target[i].children[0].classList.add("on");
+                } else {
+                    target[i].classList.add("on");
+                }
+            }
+        }
+        if(serviceName != "ranking.ruw")
+            navEle.children[3].classList.remove("on");
+    }
 
     function loginLayerToggle() {
         var loginLayer = document.querySelector("nav .login-wrap");
@@ -31,13 +103,6 @@
             loginLayer.style.display = "block";
             meunLayer.style.display = "none";
         }
-    }
-
-    function resizeNavBar(){
-        var height = document.getElementById("main").offsetHeight;
-        var targetEle = document.querySelector("nav");
-
-        targetEle.style.height = height + "px";
     }
 
     function searchAutoComplete(e){
@@ -69,7 +134,6 @@
         clearEle(targetEle);
 
         showEle(targetEle.parentNode);
-        // console.log(targetEle.parentNode.style);
         for(var i = 0; i < length; i++){
             targetEle.insertAdjacentHTML('beforeend', makeResultElement(key, result[i], i));
         }
@@ -97,4 +161,26 @@
         targetElement.style.visibility = 'visible';
     }
     
+    function setNavMenu(){
+        var lo = location.href;
+        var serviceName = lo.split("/")[3].split("?")[0];
+
+        var navEle = document.querySelectorAll(".list-wrap span");
+
+        if(serviceName !== ""){
+            navEle[0].classList.remove("on");
+        }
+        
+        if(serviceName === "Top20.ruw") {
+            navEle[1].classList.add("on");
+        }
+
+        if(serviceName === "Parties.ruw") {
+            navEle[2].classList.add("on");
+        }
+        
+        if(serviceName === "viewDetail.ruw" || serviceName === "ranking.ruw") {
+            navEle[3].classList.add("on");
+        }
+    }
 })();

@@ -12,14 +12,15 @@ public class Article {
 	private String userId;
 	private int promiseNum;
 	private int politicianId;
+	private int ancestorId;
 
 	public Article(String title, String content, String imgUrl, String link, int version,
 			String userId, int promiseNum, int politicianId) {
-		this(-1, title, content, imgUrl, link, null, version, userId, promiseNum, politicianId);
+		this(-1, title, content, imgUrl, link, null, version, userId, promiseNum, politicianId, -1);
 	}
 
 	public Article(Integer id, String title, String content, String imgUrl, String link, String date,
-			int version, String userId, int promiseNum, int politicianId) {
+			int version, String userId, int promiseNum, int politicianId, int ancestorId) {
 		this.id = id;
 		this.title = title;
 		this.content = content;
@@ -30,6 +31,7 @@ public class Article {
 		this.userId = userId;
 		this.promiseNum = promiseNum;
 		this.politicianId = politicianId;
+		this.ancestorId = ancestorId;
 	}
 
 	public int getId() {
@@ -70,5 +72,9 @@ public class Article {
 
 	public int getPoliticianId() {
 		return politicianId;
+	}
+	
+	public int getAncestorId() {
+		return ancestorId;
 	}
 }

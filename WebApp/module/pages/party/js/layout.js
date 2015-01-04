@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function(){
 }, false);
 
 function drawDonutGraphColorInfo() {
-    var donut = document.getElementById("chart_d");
+    var donut = document.getElementById("chart_d1");
     var field = document.querySelectorAll('.field_underbar');
     var length = field.length;
     for(var i = 0; i < length; i++)
@@ -14,8 +14,8 @@ function drawDonutGraphColorInfo() {
             var length = field_element.length;
             for(var j = 0; j < length; j++)
             {
-                field_element[j].innerHTML = document.getElementById("chart_d").querySelectorAll('.fields text')[j].innerHTML;
-                field_element[j].style.backgroundColor = document.getElementById("chart_d").querySelectorAll('.fields rect')[j].getAttribute('fill');
+                field_element[j].innerHTML = document.getElementById("chart_d1").querySelectorAll('.fields text')[j].innerHTML;
+                field_element[j].style.backgroundColor = document.getElementById("chart_d1").querySelectorAll('.fields rect')[j].getAttribute('fill');
             }
         }, false);
     }

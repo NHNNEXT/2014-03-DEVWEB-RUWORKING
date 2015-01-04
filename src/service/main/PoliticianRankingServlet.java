@@ -32,7 +32,6 @@ public class PoliticianRankingServlet extends HttpServlet{
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int startNum = Integer.parseInt(request.getParameter("start"));
-		System.out.println(startNum++);
 		PoliticianRankingModel rankingModel = new PoliticianRankingModel();
 		
 		List<Politician> politicianList = rankingModel.getPromiseList(startNum, amount);

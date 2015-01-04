@@ -1,7 +1,6 @@
 package service.article;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.SQLException;
 
 import javax.servlet.ServletException;
@@ -25,7 +24,6 @@ public class UploadArticleServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		String relativePath = "/userData/articleImg";
 		String savePath = request.getServletContext().getRealPath(relativePath);
-		//System.out.println(savePath);
 		
 		int sizeLimit = 1024*1024*50;
 		MultipartRequest multi = new MultipartRequest(request, savePath, sizeLimit, "utf-8", new DefaultFileRenamePolicy());
@@ -39,9 +37,9 @@ public class UploadArticleServlet extends HttpServlet {
 		int politicianId = Integer.parseInt((String)multi.getParameter("politicianId"));
 		String fileName = multi.getFilesystemName("attachedFile"); 
 		String filePath = relativePath+"/"+fileName;
-		
 		Article article = new Article(title, content, filePath, null, version, userId, promiseNum, politicianId);
 		ArticleModel articleModel = new ArticleModel();
+<<<<<<< HEAD
 		
 		boolean check;
 		try {
@@ -50,21 +48,29 @@ public class UploadArticleServlet extends HttpServlet {
 				String errorMessage = "로그인을 하지 않으시면 증거자료를 올리실 수 없습니다!";
 				alertMessage(response, errorMessage);
 				//response.sendRedirect("/viewDetail.ruw?pid=" + politicianId);
+=======
+
+		if(multi.getParameter("ancestorId") == null) {
+			//올릴 때
+			try {
+				articleModel.postArticle(article);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		}
+		else{
+			//수정할 때
+			int ancestorId = Integer.parseInt(multi.getParameter("ancestorId"));
+			try {
+				articleModel.postArticle(article, ancestorId);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+>>>>>>> 9229efc80edb1ff4070361f4f26eec8ad255ac42
+			}
 		}
 		
 		response.sendRedirect("/viewDetail.ruw?pid=" + politicianId);
-	}
-
-	private void alertMessage(HttpServletResponse response, String message)
-			throws IOException {
-		PrintWriter out = response.getWriter();
-		out.print("<html><head>");
-		out.print("<script type=\"text/javascript\">alert(" + message
-				+ ");</script>");
-		out.print("</head><body></body></html>");
 	}
 }

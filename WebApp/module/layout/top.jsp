@@ -12,7 +12,6 @@
 <link rel="stylesheet" href="/library/css/Nwagon.css">
 <script src="/module/layout/js/common_template.js"></script>
 <script src="/library/js/Nwagon.js"></script>
-<script src="/js/Layout.js"></script>
 </head>
 <body>
 <!-- body 전체 container -->
@@ -22,7 +21,7 @@
         <a href="/" tabindex="-1"><div class = "logo">일해요</div></a>
         <div class = "upload">업로드</div>
         <div class="searchBox">
-        	<form action="search.ruw" autocomplete="off">
+        	<form action="search.ruw" autocomplete="off" name="searchForm">
         		<input type="text" class = "inputbox" name="userQuery" placeholder="정당 / 정치인 이름 입력">
         		<input type="submit" class = "submit_btn" value="검색" tabindex="-1">
         	</form>
@@ -34,7 +33,7 @@
         </div>
 	</header>
 	<!-- // header -->
-
+	
 	<!-- navigation bar on left side -->
 	<nav>
 		<c:choose>
@@ -59,10 +58,10 @@
 	    	</div>
 	    </div>
 	    <div class = "list-wrap">
-	    	<span class = "list on">메인</span>
-			<span class = "list">우리지역</span>
-			<span class = "list">정당별</span>
-			<span class = "list">정치인</span>
+	    	<a href="/"><span class = "list on">메인</span></a>
+			<a href="/Top20.ruw"><span class = "list">Top20</span></a>
+			<a href="/Parties.ruw"><span class="list">정당별</span></a>
+			<span class = "list" data-listtype="poli">정치인</span>
 		</div>
 		<div class="floatIntroduce">
 			<span>일해요 서비스 소개</span>
@@ -72,8 +71,13 @@
 		</div>
 	</nav>
 	<!-- // navigation bar on left side -->
-	
+
 	<!-- main -->
 	<div id = "main">
+		<div class="searchinfo">
+			<div class="mask"></div>
+			<div class="info"></div>
+			<div class="bg"></div>
+		</div>
 		<div class="updated">이 페이지는 2014-03-02 17:32 기준 일해요의 <u>편집기준</u>에 의거하여 작성되었습니다</div>
 		<!-- end of top.html -->

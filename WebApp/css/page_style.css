@@ -1,157 +1,232 @@
-/* NHNNEXT Development Practice Project RUWORKING HTH 141116 */ 
+/* NHNNEXT Development Practice Project RUWORKING HTH 141116 */
 a {
-    color:#000;
+	color: #000;
 }
 
 #pageContainer {
-    width:96%;
-    margin: 20px 2% 20px 2%;
-    overflow: hidden;
-    /*border: 1px solid #ccc;*/
-    float:left;
+	width: 96%;
+	margin: 20px 2% 20px 2%;
+	overflow: hidden;
+	/*border: 1px solid #ccc;*/
+	float: left;
 }
 
 /* ns-index namespace start */
 #ns-index {
-    width:809px;
-    float:left;
-    background-color:#fff;
-    border-right: 1px solid #ccc;
+	width: 809px;
+	float: left;
+	background-color: #fff;
+	border-right: 1px solid #ccc;
 }
 
 #ns-index .type1 {
-    margin-top:20px;
-    margin-left:26px;
-    float:left;
-    overflow: auto;
+	margin-top: 20px;
+	margin-left: 26px;
+	float: left;
+	overflow: auto;
 }
 
-#ns-index .type1 span{
-    font-size: 25px;
+#ns-index .type1 span {
+	font-size: 25px;
 }
 
 #ns-index .type1 span.more {
-    font-size: 13px;
-    /*margin-top: 13px;*/
-    margin-top: 8px;
-    margin-right: 10px;
-    float:right;
-    background-color: #577EF2;
-    color:#fff;
-    width:60px;
-    height:27px;
-    line-height: 27px;
-    text-align: center;
+	font-size: 13px;
+	/*margin-top: 13px;*/
+	margin-top: 8px;
+	margin-right: 10px;
+	float: right;
+	background-color: #577EF2;
+	color: #fff;
+	width: 60px;
+	height: 27px;
+	line-height: 27px;
+	text-align: center;
 }
 
 #ns-index .type1 .politicianList {
-    width:100%;
-    margin-top: 15px;
+	width: 100%;
+	margin-top: 15px;
 }
 
-#ns-index .type1 .politicianList ul li{
-    width:135px;
-    background-color: #fff;
-    height:320px;
-    border:1px solid #ccc;
-    float:left;
-    margin-right:10px;
-    position: relative;
+#ns-index .type1 .politicianList ul li {
+	width: 135px;
+	background-color: #fff;
+	height: 320px;
+	border: 1px solid #ccc;
+	float: left;
+	margin-right: 10px;
+	position: relative;
 }
 
-#ns-index .type1 .politicianList ul li .info span{
-    font-size: 20px;
+#ns-index .type1 .politicianList ul li .info span {
+	font-size: 20px;
 }
 
-#ns-index .type1 .politicianList ul li .info span.name{
-    font-size: 33px;
-    float:left;
-    margin-left: 5px;
-    margin-top: 4px;
+#ns-index .type1 .politicianList ul li .info span.name {
+	font-size: 33px;
+	float: left;
+	margin-left: 5px;
+	margin-top: 4px;
 }
 
-#ns-index .type1 .politicianList ul li .info span.party{
-    font-size: 18px;
-    float:left;
-    margin-left: 6px;
-    margin-top: 4px;
+#ns-index .type1 .politicianList ul li .info span.party {
+	font-size: 18px;
+	float: left;
+	margin-left: 6px;
+	margin-top: 4px;
 }
 
-#ns-index .type1 .politicianList ul li .info span.line{
-    width:110px;
-    height:2px;
-    margin-left: 8px;
-    margin-top:9px;
-    background-color: #ccc;
-    float: left;
+#ns-index .type1 .politicianList ul li .info span.line {
+	width: 110px;
+	height: 2px;
+	margin-left: 8px;
+	margin-top: 9px;
+	background-color: #ccc;
+	float: left;
 }
 
-#ns-index .type1 .politicianList ul li .info span.district{
-    width:110px;
-    line-height:15px;
-    font-size: 12px;
-    float:left;
-    margin-left: 8px;
-    margin-top: 8px;
-}
-#ns-index .type1 .politicianList ul li .info span.now{
-    font-size: 17px;
-    float:left;
-    bottom:5px;
-    left:5px;
-    font-weight: bold;
-    position: absolute;
-
+#ns-index .type1 .politicianList ul li .info span.district {
+	width: 110px;
+	line-height: 15px;
+	font-size: 12px;
+	float: left;
+	margin-left: 8px;
+	margin-top: 8px;
 }
 
-#ns-index .type1 .politicianList ul li .info span.percentage{
-    font-size: 33px;
-    float:right;
-    bottom:2px;
-    right:23px;
-    position: absolute;
+#ns-index .type1 .politicianList ul li .info span.now {
+	font-size: 17px;
+	float: left;
+	bottom: 5px;
+	left: 5px;
+	font-weight: bold;
+	position: absolute;
 }
 
-#ns-index .type1 .politicianList ul li .info span.percent{
-    font-size: 20px;
-    float:right;
-    bottom:3px;
-    right:3px;
-    position: absolute;
+#ns-index .type1 .politicianList ul li .info span.percentage {
+	font-size: 33px;
+	float: right;
+	bottom: 2px;
+	right: 23px;
+	position: absolute;
+}
+
+#ns-index .type1 .politicianList ul li .info span.percent {
+	font-size: 20px;
+	float: right;
+	bottom: 3px;
+	right: 3px;
+	position: absolute;
 }
 
 #ns-index .type1 .photo {
-    position: relative;
+	position: relative;
 }
 
 #ns-index .type1 .photo span {
-    position:absolute;
-    width:30px;
-    height:30px;
-    z-index:30;
-    text-align: center;
-    color:#fff;
-    font-size: 18px;
-    line-height: 30px;
-    top:0px;
-    left:0px;
-    background-color: #45C6B4;
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	z-index: 30;
+	text-align: center;
+	color: #fff;
+	font-size: 18px;
+	line-height: 30px;
+	top: 0px;
+	left: 0px;
+	background-color: #45C6B4;
 }
 
 #ns-index .type1 .photo {
-    float:left;
+	float: left;
 }
 
 #ns-index .type1 .photo img {
-    width:135px;
-    height:160px;
+	width: 135px;
+	height: 160px;
+}
+
+#ns-index #localinfo {
+    width:723px;
+    height:30px;
+    line-height: 30px;
+    text-align: center;
+    margin-left: 26px;
+    background-color: #FFD17A;
+    border:1px solid #B78B27;
+    float:left;
+    margin-top: 15px;
+    margin-bottom: -20px;
+    display:none;
+}
+
+#ns-index .localinfo {
+    -moz-animation-duration: 4s;
+    -webkit-animation-duration: 4s;
+    -moz-animation-name: fadeout;
+    -webkit-animation-name: fadeout;
+    -webkit-animation-delay: 5s; 
+    animation-delay: 5s;
+}
+
+@-webkit-keyframes fadeout {
+    20% {opacity: 0;}
+    to {height:0px;border:0px;opacity: 0;}
+}
+
+@keyframes fadeout {
+    20% {opacity: 0;}
+    to {height:0px;border:0px;opacity: 0;}
 }
 
 #ns-index .secondfloor {
-    float:left;
-    margin-left:26px;
-    margin-top:30px;
+	float: left;
+	margin-left: 26px;
+	margin-top: 30px;
+}
 
+#ns-index .secondfloor .boxTypeA .card.type2 div.loading {
+    padding-top: 75px;
+    display: inline-block;
+    font-size: 15px;
+    -webkit-animation: loading 2s;
+    animation: loading 2s;
+    -webkit-animation-delay: 1.5s;
+    animation-delay: 1.5s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+}
+
+@-webkit-keyframes loading {
+    25% {
+        -ms-transform: rotate(-5deg);
+        -webkit-transform: rotate(-5deg);
+        transform: rotate(-5deg);
+    }
+
+    75% {
+        -ms-transform: rotate(5deg);
+        -webkit-transform: rotate(5deg);
+        transform: rotate(5deg);
+    }
+}
+
+
+@keyframes loading {
+    25% {
+        -ms-transform: rotate(-5deg);
+        -webkit-transform: rotate(-5deg);
+        transform: rotate(-5deg);
+    }
+
+    75% {
+        -ms-transform: rotate(5deg);
+        -webkit-transform: rotate(5deg);
+        transform: rotate(5deg);
+    }
 }
 
 #ns-index .secondfloor .boxTypeA,#ns-index .secondfloor .boxTypeC {
@@ -162,7 +237,25 @@ a {
 }
 
 #ns-index .secondfloor .boxTypeC {
-    margin-top: 70px;
+	margin-top: 70px;
+}
+
+#ns-index .secondfloor .boxTypeC .dday {
+    background-color: #577EF2;
+    opacity: 0.9;
+}
+
+#ns-index .secondfloor .boxTypeC .dday .number{
+    width:232px;
+    height:230px;
+    line-height: 230px;
+    text-align: center;
+    
+    opacity: 0.95;
+    font-size: 47px;
+    font-weight: 900;
+    color:#fff;
+
 }
 
 #ns-index .secondfloor .boxTypeA .title ,#ns-index .secondfloor .boxTypeC .title {
@@ -172,350 +265,350 @@ a {
 }
 
 #ns-index .secondfloor .boxTypeB {
-    width:476px;
-    height:230px;
-    margin-right: 14.5px;
-    float:left;
+	width: 476px;
+	height: 230px;
+	margin-right: 14.5px;
+	float: left;
 }
 
 #ns-index .secondfloor .boxTypeB .title {
-    margin-top:10px;
-    font-size: 18px;
-    float:left;
+	margin-top: 10px;
+	font-size: 18px;
+	float: left;
 }
 
 #ns-index .secondfloor .notice {
-    width:476px;
-    height:100px;
-    background-color: #F5F5F5;
-    margin-top: 260px;
-    float: left;
-    border:1px solid #CCCCCC;
-    font-size: 13px;
+	width: 476px;
+	height: 100px;
+	background-color: #F5F5F5;
+	margin-top: 260px;
+	float: left;
+	border: 1px solid #CCCCCC;
+	font-size: 13px;
 }
 
 #ns-index .secondfloor .graph-tip {
-    width:723px;
-    height:30px;
-    line-height: 30px;
-    text-align: center;
-    background-color: #F5F5F5;
-    margin-top: 15px;
-    float: left;
-    border:1px solid #CCCCCC;
-    font-size: 13px;
+	width: 723px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	background-color: #F5F5F5;
+	margin-top: 15px;
+	float: left;
+	border: 1px solid #CCCCCC;
+	font-size: 13px;
 }
 
 #ns-index .secondfloor .notice .title {
-    font-size: 17px;
-    width:476px;
-    margin-top: 12px;
-    margin-bottom: 4px;
-    margin-left: 20px;
-    float: left;
+	font-size: 17px;
+	width: 476px;
+	margin-top: 12px;
+	margin-bottom: 4px;
+	margin-left: 20px;
+	float: left;
 }
 
 #ns-index .secondfloor .notice .content {
-    width:300px;
-    margin-top: 3px;
-    margin-left: 10px;
-    float: left;
+	width: 300px;
+	margin-top: 3px;
+	margin-left: 10px;
+	float: left;
 }
 
 #ns-index .secondfloor .notice .date {
-    margin-top: 2px;
-    margin-right: 13px;
-    float: right;
+	margin-top: 2px;
+	margin-right: 13px;
+	float: right;
 }
 
 #ns-index .type2 {
     border:1px solid #cccccc;
     width:230px;
     height:230px;
+    line-height: 25px;
+    text-align: center;
     margin-top: 10px;
     float:left;
     overflow: hidden;
 }
 
 #ns-index .type2_Big {
-    border:1px solid #cccccc;
-    width:476px;
-    height:410px;
-    margin-top: 10px;
-    float:left;
-    overflow:hidden;
+	border: 1px solid #cccccc;
+	width: 476px;
+	height: 410px;
+	margin-top: 10px;
+	float: left;
+	overflow: hidden;
 }
 
 #ns-index .type3 {
-    float:left;
-    margin-left:26px;
-    margin-top: 40px;
+	float: left;
+	margin-left: 26px;
+	margin-top: 40px;
 }
 
 #ns-index .type3 span {
-    font-size: 25px;
+	font-size: 25px;
 }
 
-#ns-index .type3 > div {
-    margin-top: 14px;
+#ns-index .type3>div {
+	margin-top: 14px;
 }
 
-#ns-index .type3 > div div{
-    background-color: #fff;
-    height:50px;
-    float:left;
+#ns-index .type3>div div {
+	background-color: #fff;
+	height: 50px;
+	float: left;
 }
 
-#ns-index .type3 > div .cardA {
-    font-size: 40px;
-    width:230px;
-    height:100%;
-    text-align: center;
-    border:1px solid #ccc;
-    margin-right:14.5px;
-    margin-bottom:15px;
-    position: relative;
+#ns-index .type3>div .cardA {
+	font-size: 40px;
+	width: 230px;
+	height: 100%;
+	text-align: center;
+	border: 1px solid #ccc;
+	margin-right: 14.5px;
+	margin-bottom: 15px;
+	position: relative;
 }
 
-#ns-index .type3 > div .cardA .header {
-    width: 100%;
-    height:50px;
-    background-color: #F5F5F5;
-    border-bottom: 1px solid #DDDDDD;
+#ns-index .type3>div .cardA .header {
+	width: 100%;
+	height: 50px;
+	background-color: #F5F5F5;
+	border-bottom: 1px solid #DDDDDD;
 }
 
-#ns-index .type3 > div .cardA .header .name{
-    float:left;
-    height:50px;
-    line-height:50px;
-    margin-left: 12px;
-    font-size: 30px;
-    background-color: transparent;
+#ns-index .type3>div .cardA .header .name {
+	float: left;
+	height: 50px;
+	line-height: 50px;
+	margin-left: 12px;
+	font-size: 30px;
+	background-color: transparent;
 }
 
-#ns-index .type3 > div .cardA .header .party{
-    margin-left: 20px;
-    font-size: 12px;
-    font-weight: 700;
-    background-color: transparent;
-    position: absolute;
-    right:7px;
-    top:27px;
+#ns-index .type3>div .cardA .header .party {
+	margin-left: 20px;
+	font-size: 12px;
+	font-weight: 700;
+	background-color: transparent;
+	position: absolute;
+	right: 7px;
+	top: 27px;
 }
 
-#ns-index .type3 > div .cardA .body {
-    width:100%;
-    /*height:180px;*/
-    height:100%;
-    display: inline-block;
-    float:left;
+#ns-index .type3>div .cardA .body {
+	width: 100%;
+	/*height:180px;*/
+	height: 100%;
+	display: inline-block;
+	float: left;
 }
 
-#ns-index .type3 > div .cardA .body .title{
-    font-size: 12px;
-    margin-left: 13px;
-    margin-top: 20px;
-    width:203px;
-    white-space: nowrap;
-    overflow: hidden;
-    height: 20px;
-    float:left;
-    font-weight: 700;
-    background-color: transparent;
+#ns-index .type3>div .cardA .body .title {
+	font-size: 12px;
+	margin-left: 13px;
+	margin-top: 20px;
+	width: 203px;
+	white-space: nowrap;
+	overflow: hidden;
+	height: 20px;
+	float: left;
+	font-weight: 700;
+	background-color: transparent;
 }
 
-#ns-index .type3 > div .cardA .body .content{
-    width:210px;
-    height: 172px;
-    max-height: 100px;
-    overflow: hidden;
-    margin-left: 13px;
-    margin-top: 12px;
-    margin-bottom: 20px;
-    font-size: 12px;
-    text-align: left;
+#ns-index .type3>div .cardA .body .content {
+	width: 210px;
+	height: 172px;
+	max-height: 100px;
+	overflow: hidden;
+	margin-left: 13px;
+	margin-top: 12px;
+	margin-bottom: 20px;
+	font-size: 12px;
+	text-align: left;
 }
 
-#ns-index .type3 > div .cardB {
-    font-size: 40px;
-    width:475px;
-    height:100%;
-    text-align: center;
-    border:1px solid #ccc;
-    margin-right:14.5px;
-    margin-bottom:15px;
-    position: relative;
+#ns-index .type3>div .cardB {
+	font-size: 40px;
+	width: 475px;
+	height: 100%;
+	text-align: center;
+	border: 1px solid #ccc;
+	margin-right: 14.5px;
+	margin-bottom: 15px;
+	position: relative;
 }
 
-#ns-index .type3 > div .cardB .header {
-    width: 100%;
-    height:50px;
-    background-color: #F5F5F5;
-    border-bottom: 1px solid #DDDDDD;
+#ns-index .type3>div .cardB .header {
+	width: 100%;
+	height: 50px;
+	background-color: #F5F5F5;
+	border-bottom: 1px solid #DDDDDD;
 }
 
-#ns-index .type3 > div .cardB .header .name{
-    float:left;
-    height:50px;
-    line-height:50px;
-    margin-left: 12px;
-    font-size: 30px;
-    background-color: transparent;
+#ns-index .type3>div .cardB .header .name {
+	float: left;
+	height: 50px;
+	line-height: 50px;
+	margin-left: 12px;
+	font-size: 30px;
+	background-color: transparent;
 }
 
-#ns-index .type3 > div .cardB .header .party{
-    margin-left: 20px;
-    font-size: 12px;
-    font-weight: 700;
-    background-color: transparent;
-    position: absolute;
-    right:7px;
-    top:27px;
+#ns-index .type3>div .cardB .header .party {
+	margin-left: 20px;
+	font-size: 12px;
+	font-weight: 700;
+	background-color: transparent;
+	position: absolute;
+	right: 7px;
+	top: 27px;
 }
 
-#ns-index .type3 > div .cardB .body {
-    width:100%;
-    /*height:180px;*/
-    height:100%;
-    display: inline-block;
-    float:left;
+#ns-index .type3>div .cardB .body {
+	width: 100%;
+	/*height:180px;*/
+	height: 100%;
+	display: inline-block;
+	float: left;
 }
 
-#ns-index .type3 > div .cardB .body .title{
-    font-size: 12px;
-    margin-left: 13px;
-    margin-top: 20px;
-    width:445px;
-    white-space: nowrap;
-    overflow: hidden;
-    height: 20px;
-    float:left;
-    font-weight: 700;
-    background-color: transparent;
+#ns-index .type3>div .cardB .body .title {
+	font-size: 12px;
+	margin-left: 13px;
+	margin-top: 20px;
+	width: 445px;
+	white-space: nowrap;
+	overflow: hidden;
+	height: 20px;
+	float: left;
+	font-weight: 700;
+	background-color: transparent;
 }
 
-#ns-index .type3 > div .cardB .body .content{
-    width:210px;
-    height: 100px;
-    max-height: 150px;
-    overflow: hidden;
-    margin-left: 20px;
-    margin-top: 12px;
-    margin-bottom: 20px;
-    font-size: 12px;
-    text-align: left;
+#ns-index .type3>div .cardB .body .content {
+	width: 210px;
+	height: 100px;
+	max-height: 150px;
+	overflow: hidden;
+	margin-left: 20px;
+	margin-top: 12px;
+	margin-bottom: 20px;
+	font-size: 12px;
+	text-align: left;
 }
 
-
-#ns-index .type3 > div .cardC {
-    font-size: 40px;
-    width:352px;
-    height:100%;
-    text-align: center;
-    border:1px solid #ccc;
-    margin-right:16px;
-    margin-bottom:15px;
-    position: relative;
+#ns-index .type3>div .cardC {
+	font-size: 40px;
+	width: 352px;
+	height: 100%;
+	text-align: center;
+	border: 1px solid #ccc;
+	margin-right: 16px;
+	margin-bottom: 15px;
+	position: relative;
 }
 
-#ns-index .type3 > div .cardC .header {
-    width: 100%;
-    height:50px;
-    background-color: #F5F5F5;
-    border-bottom: 1px solid #DDDDDD;
+#ns-index .type3>div .cardC .header {
+	width: 100%;
+	height: 50px;
+	background-color: #F5F5F5;
+	border-bottom: 1px solid #DDDDDD;
 }
 
-#ns-index .type3 > div .cardC .header .name{
-    float:left;
-    height:50px;
-    line-height:50px;
-    margin-left: 12px;
-    font-size: 30px;
-    background-color: transparent;
+#ns-index .type3>div .cardC .header .name {
+	float: left;
+	height: 50px;
+	line-height: 50px;
+	margin-left: 12px;
+	font-size: 30px;
+	background-color: transparent;
 }
 
-#ns-index .type3 > div .cardC .header .party{
-    margin-left: 20px;
-    font-size: 12px;
-    font-weight: 700;
-    background-color: transparent;
-    position: absolute;
-    right:7px;
-    top:27px;
+#ns-index .type3>div .cardC .header .party {
+	margin-left: 20px;
+	font-size: 12px;
+	font-weight: 700;
+	background-color: transparent;
+	position: absolute;
+	right: 7px;
+	top: 27px;
 }
 
 #ns-index .type3 > div .cardC .body {
     width:100%;
-    /*height:180px;*/
     height:100%;
     display: inline-block;
     float:left;
 }
 
-#ns-index .type3 > div .cardC .body .title{
-    font-size: 12px;
-    margin-left: 13px;
-    margin-top: 20px;
-    width:325px;
-    white-space: nowrap;
-    overflow: hidden;
-    height: 20px;
-    float:left;
-    font-weight: 700;
-    background-color: transparent;
+#ns-index .type3>div .cardC .body .title {
+	font-size: 12px;
+	margin-left: 13px;
+	margin-top: 20px;
+	width: 325px;
+	white-space: nowrap;
+	overflow: hidden;
+	height: 20px;
+	float: left;
+	font-weight: 700;
+	background-color: transparent;
 }
 
-#ns-index .type3 > div .cardC .body .content{
-    width:312px;
-    height: 100px;
-    max-height: 150px;
-    overflow: hidden;
-    margin-left: 20px;
-    margin-top: 12px;
-    margin-bottom: 20px;
-    font-size: 12px;
-    text-align: left;
+#ns-index .type3>div .cardC .body .content {
+	width: 312px;
+	height: 100px;
+	max-height: 150px;
+	overflow: hidden;
+	margin-left: 20px;
+	margin-top: 12px;
+	margin-bottom: 20px;
+	font-size: 12px;
+	text-align: left;
 }
 
-#ns-index .type3 > div .footer {
-    width: 100%;
-    height:30px;
-    background-color: #F5F5F5;
-    border-top: 1px solid #DDDDDD;
-    color: #AAAAAA;
-    font-size: 11px;
+#ns-index .type3>div .footer {
+	width: 100%;
+	height: 30px;
+	background-color: #F5F5F5;
+	border-top: 1px solid #DDDDDD;
+	color: #AAAAAA;
+	font-size: 11px;
 }
 
-#ns-index .type3 > div .footer .date {
-    height:30px;
-    line-height: 30px;
-    background-color: transparent;
-    float:left;
-    padding-left: 10px;
+#ns-index .type3>div .footer .date {
+	height: 30px;
+	line-height: 30px;
+	background-color: transparent;
+	float: left;
+	padding-left: 10px;
 }
 
-#ns-index .type3 > div .cardB .footer .validity {
-    width:325px;
-    line-height: 30px;
-    background-color: transparent;
-    float:left;
-    padding-left: 10px;
-}
- 
-#ns-index .type3 > div .cardC .footer .validity {
-    width:198px;
-    line-height: 30px;
-    background-color: transparent;
-    float:left;
-    padding-left: 10px;
+#ns-index .type3>div .cardB .footer .validity {
+	width: 325px;
+	line-height: 30px;
+	background-color: transparent;
+	float: left;
+	padding-left: 10px;
 }
 
-#ns-index .type3 > div .footer .more{
-    height:30px;
-    line-height: 30px;
-    background-color: transparent;
-    float: right;
-    padding-right: 10px;
+#ns-index .type3>div .cardC .footer .validity {
+	width: 198px;
+	line-height: 30px;
+	background-color: transparent;
+	float: left;
+	padding-left: 10px;
+}
+
+#ns-index .type3>div .footer .more {
+	height: 30px;
+	line-height: 30px;
+	background-color: transparent;
+	float: right;
+	padding-right: 10px;
 }
 
 #ns-index .field_underbar {
@@ -523,13 +616,54 @@ a {
     bottom:0px;
     width:100%;
     height:25px;
+    float:left;
+    -moz-animation-duration: 2s;
+    -webkit-animation-duration: 2s;
+    -moz-animation-name: slidein;
+    -webkit-animation-name: slidein;
 }
+
+@-moz-keyframes slidein {
+  from {
+    margin-left:100%;
+    width:200%
+  }
+  
+  75% {
+    font-size:250%;
+    margin-left:20%;
+    width:150%;
+  }
+  
+  to {
+    margin-left:0%;
+    width:100%;
+  }
+}
+    
+@-webkit-keyframes slidein {
+  from {
+    margin-left:100%;
+    width:200%
+  }
+  
+  75% {
+    font-size:250%;
+    margin-left:20%;
+    width:150%;
+  }
+  
+  to {
+    margin-left:0%;
+    width:100%;
+  }
+}
+
 #ns-index .field_underbar span {
     width:50%;
     height:25px;
     line-height: 25px;
     text-align: center;;
-    background-color: #000;
     float:left;
     display:inline-block;
     color:#fff;
@@ -538,787 +672,781 @@ a {
 }
 
 #ns-index .card {
-    position: relative;
+	position: relative;
 }
 
 #ns-index .Nwagon1 {
-    float:left;
-    margin-left: -120px;
+	float: left;
+	margin-left: -120px;
 }
 
 #ns-index .Nwagon2 {
-    float:left;
-    margin-top: -50px;
+	float: left;
+	margin-top: -50px;
 }
 /* // ns-index namespace end */
 
 /* ns-LoginFail namespace start */
 #ns-LoginFail {
-    width:650px;
-    height:400px;
-    margin: 0 auto;
-    margin-top: 60px;
+	width: 650px;
+	height: 400px;
+	margin: 0 auto;
+	margin-top: 60px;
 }
 
 #ns-LoginFail .title {
-    width:100%;
-    font-size: 30px;
-    display:inline-block;
-    padding-left: 11px;
-    padding-bottom: 12px;
+	width: 100%;
+	font-size: 30px;
+	display: inline-block;
+	padding-left: 11px;
+	padding-bottom: 12px;
 }
 
 #ns-LoginFail .box {
-    width:100%;
-    height:280px;
-    border:1px solid #ccc;
-    border-top:4px solid #567DF0;
+	width: 100%;
+	height: 280px;
+	border: 1px solid #ccc;
+	border-top: 4px solid #567DF0;
 }
 
 #ns-LoginFail .noti {
-    width:100%;
-    height:40px;
-    line-height: 33px;
-    text-align: center;
-    border-bottom: 1px solid #ccc;
-    background-color: #F0EEF1;
-    display:inline-block;
-    padding:5px;
-    font-size: 14px;
-    box-sizing: border-box;
+	width: 100%;
+	height: 40px;
+	line-height: 33px;
+	text-align: center;
+	border-bottom: 1px solid #ccc;
+	background-color: #F0EEF1;
+	display: inline-block;
+	padding: 5px;
+	font-size: 14px;
+	box-sizing: border-box;
 }
 
 #ns-LoginFail .login-form {
-    margin-top: 40px;
+	margin-top: 40px;
 }
 
 #ns-LoginFail .input-wrap {
-    width:87%;
-    height:45px;
-    font-size:15px;
-    padding-left: 17px;
-    font-weight: bold;
-    box-sizing: border-box;
-    margin-left: 6%;
-    border:1px solid #ccc;
-    border-bottom: 0px;
-    background-color: #fff;
-    float:left;
-    color: #8A898B;
+	width: 87%;
+	height: 45px;
+	font-size: 15px;
+	padding-left: 17px;
+	font-weight: bold;
+	box-sizing: border-box;
+	margin-left: 6%;
+	border: 1px solid #ccc;
+	border-bottom: 0px;
+	background-color: #fff;
+	float: left;
+	color: #8A898B;
 }
 
 #ns-LoginFail .input-wrap:nth-of-type(2) {
-    border-bottom: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
 }
 
 #ns-LoginFail .input-wrap input {
-    width:100%;
-    height:100%;
-    border:0px;
-    font-size: 20px;
+	width: 100%;
+	height: 100%;
+	border: 0px;
+	font-size: 20px;
 }
 
 #ns-LoginFail .submit input {
-    width :87%;
-    height: 45px;
-    line-height: 45px;
-    font-size: 20px;
-    color:#fff;
-    text-align: center;
-    font-weight: bold;
-    background-color: #33B679;
-    float: left;
-    margin-top: 9px;
-    margin-left: 6%;
-    border:0px;
+	width: 87%;
+	height: 45px;
+	line-height: 45px;
+	font-size: 20px;
+	color: #fff;
+	text-align: center;
+	font-weight: bold;
+	background-color: #33B679;
+	float: left;
+	margin-top: 9px;
+	margin-left: 6%;
+	border: 0px;
 }
 /* // ns-LoginFail namespace end */
 
 /* ns-register namespace start */
 #ns-register #body-container {
-    width:100%;
-    max-width: 775px;
-    border:#ccc;
-    background-color: #fff;
-    overflow: auto;
-    box-sizing: border-box;
-    border:1px solid #CCCCCC;
+	width: 100%;
+	max-width: 775px;
+	border: #ccc;
+	background-color: #fff;
+	overflow: auto;
+	box-sizing: border-box;
+	border: 1px solid #CCCCCC;
 }
 
 #ns-register #body-container .header {
-    width:100%;
-    height: 80px;
-    line-height:90px;
-    background-color: #577EF2;
-    color:#fff;
-    font-size: 45px;
-    text-align: left;
+	width: 100%;
+	height: 80px;
+	line-height: 90px;
+	background-color: #577EF2;
+	color: #fff;
+	font-size: 45px;
+	text-align: left;
 }
 
 #ns-register span.fail {
-    width:100%;
-    height:40px;
-    line-height:43px;
-    background-color:#EB3E3F;
-    display:inline-block;
-    color:#fff;
-    text-align:center;
-    font-size:17px;
+	width: 100%;
+	height: 40px;
+	line-height: 43px;
+	background-color: #EB3E3F;
+	display: inline-block;
+	color: #fff;
+	text-align: center;
+	font-size: 17px;
 }
 
 #ns-register section {
-    width:50%;
-    height:100%;
-    min-height: 530px;
-    background-color: #F5F3F6;
-    float:left;
-    position: relative;
+	width: 50%;
+	height: 100%;
+	min-height: 530px;
+	background-color: #F5F3F6;
+	float: left;
+	position: relative;
 }
 
 #ns-register section:nth-of-type(1) {
-    border-right:1px solid #ccc;
+	border-right: 1px solid #ccc;
 }
 
 #ns-register section .title {
-    margin-left: 5%;
-    font-size:25px;
-    font-weight: bold;
-    padding: 20px 0px 10px 8px;
-    float:left;
+	margin-left: 5%;
+	font-size: 25px;
+	font-weight: bold;
+	padding: 20px 0px 10px 8px;
+	float: left;
 }
 
 #ns-register section .terms {
-    width:90%;
-    margin-left: 5%;
-    background-color: #fff;
-    border:1px solid #efefef;
-    padding: 15px;
-    font-size: 14px;
-    line-height: 20px;
-    box-sizing:border-box;
-    float:left;
+	width: 90%;
+	margin-left: 5%;
+	background-color: #fff;
+	border: 1px solid #efefef;
+	padding: 15px;
+	font-size: 14px;
+	line-height: 20px;
+	box-sizing: border-box;
+	float: left;
 }
 
 #ns-register section .agree {
-    width:90%;
-    margin-left: 7%;
-    margin-top: 15px;
-    float:left;
+	width: 90%;
+	margin-left: 7%;
+	margin-top: 15px;
+	float: left;
 }
 
 #ns-register section .showregistererror {
-    width:90%;
-    padding: 15px;
-    margin-left: 5%;
-    background-color:#FE7F00;
-    font-size: 20px;
-    text-align: center;
-    float:left;
-    box-sizing: border-box;
-    color: #fff;
-    border: 1px solid #F96868;
-    margin-top: 15px;
-    display: none;
+	width: 90%;
+	padding: 15px;
+	margin-left: 5%;
+	background-color: #FE7F00;
+	font-size: 20px;
+	text-align: center;
+	float: left;
+	box-sizing: border-box;
+	color: #fff;
+	border: 1px solid #F96868;
+	margin-top: 15px;
+	display: none;
 }
 
 #ns-register section .showregistererror span {
-    font-size: 14px;
-    text-align: left;
-    display: block;
-    margin-top: 10px;
-    margin-left: 5px;
-    line-height: 23px;
+	font-size: 14px;
+	text-align: left;
+	display: block;
+	margin-top: 10px;
+	margin-left: 5px;
+	line-height: 23px;
 }
 
 #ns-register section:nth-of-type(2) {
-    width:calc(50% - 1px);
+	width: calc(50% - 1px);
 }
 
 #ns-register section form {
-    float:left;
+	float: left;
 }
 
 #ns-register section form .input-wrap {
-    width:87%;
-    margin-left: 6%;
-    border:1px solid #ccc;
-    border-bottom: 0px;
-    float:left;
+	width: 87%;
+	margin-left: 6%;
+	border: 1px solid #ccc;
+	border-bottom: 0px;
+	float: left;
 }
 
 #ns-register section form .input-wrap:nth-last-of-type(3) input {
-    border-bottom: 1px solid #ccc;    
+	border-bottom: 1px solid #ccc;
 }
 
 #ns-register section form .validate-info {
-    width:100%;
-    height:30px;
-    line-height: 34px;
-    padding-left: 10px;
-    display:inline-block;
-    color:#ffffff;
-    font-size: 13px;
-    
-    background-color: #577ef2;
-    box-sizing: border-box;
-    display: none;
+	width: 100%;
+	height: 30px;
+	line-height: 34px;
+	padding-left: 10px;
+	display: inline-block;
+	color: #ffffff;
+	font-size: 13px;
+	background-color: #577ef2;
+	box-sizing: border-box;
+	display: none;
 }
 
 #ns-register section form .validate-big {
-    width:100%;
-    height:50px;
-    line-height: 22px;
-    padding-top: 5px;
+	width: 100%;
+	height: 50px;
+	line-height: 22px;
+	padding-top: 5px;
 }
 
 #ns-register section form input {
-    width: 100%;
-    height:45px;
-    font-size:15px;
-    padding-left: 15px;
-    font-weight: bold;
-    border:0px;
-    box-sizing: border-box;
+	width: 100%;
+	height: 45px;
+	font-size: 15px;
+	padding-left: 15px;
+	font-weight: bold;
+	border: 0px;
+	box-sizing: border-box;
 }
 
 #ns-register section form .gender-wrap {
-    width:87%;
-    margin-left: 6%;
-    margin-top: 10px;
-    float:left;
+	width: 87%;
+	margin-left: 6%;
+	margin-top: 10px;
+	float: left;
 }
 
-#ns-register section form .gender-wrap .male, #ns-register section form .gender-wrap .female{
-    width:50%;
-    height:45px;
-    float:left;
-    border: 0px;
-    border-bottom: 1px solid #ccc;
+#ns-register section form .gender-wrap .male, #ns-register section form .gender-wrap .female
+	{
+	width: 50%;
+	height: 45px;
+	float: left;
+	border: 0px;
+	border-bottom: 1px solid #ccc;
 }
 
-#ns-register section form .gender-wrap .male, #ns-register section form .gender-wrap .female {
-    width:50%;
-    position:relative;
+#ns-register section form .gender-wrap .male, #ns-register section form .gender-wrap .female
+	{
+	width: 50%;
+	position: relative;
 }
 
 #ns-register section form .gender-wrap .male label {
-    background-color: #5182F5;
-    position: absolute;
-    width: 100%;
-    left: 0px;
-    height:45px;
-    font-size: 20px;
-    font-weight: bold;
-    color: #fff;
-    text-align: center;
-    line-height: 48px;
+	background-color: #5182F5;
+	position: absolute;
+	width: 100%;
+	left: 0px;
+	height: 45px;
+	font-size: 20px;
+	font-weight: bold;
+	color: #fff;
+	text-align: center;
+	line-height: 48px;
 }
 
 #ns-register section form .gender-wrap .female label {
-    background-color: #F96868;
-    position: absolute;
-    width: 100%;
-    height:45px;
-    font-size: 20px;
-    font-weight: bold;
-    color: #fff;
-    text-align: center;
-    line-height: 48px;
-    left:0px;
+	background-color: #F96868;
+	position: absolute;
+	width: 100%;
+	height: 45px;
+	font-size: 20px;
+	font-weight: bold;
+	color: #fff;
+	text-align: center;
+	line-height: 48px;
+	left: 0px;
 }
 
 #ns-register section form .gender-wrap input[type=radio] {
-    opacity: 0;
-}  
-
-#ns-register section form .gender-wrap .male input[type="radio"]:checked+label {
-     background-color: #3D61B8;
-     border:2px solid #365BD8;
-     box-sizing: border-box;
+	opacity: 0;
 }
 
-#ns-register section form .gender-wrap .female input[type="radio"]:checked+label {
-     background-color: #D74E58;
-     border:2px solid #DA484F;
-     box-sizing: border-box;
+#ns-register section form .gender-wrap .male input[type="radio"]:checked+label
+	{
+	background-color: #3D61B8;
+	border: 2px solid #365BD8;
+	box-sizing: border-box;
+}
+
+#ns-register section form .gender-wrap .female input[type="radio"]:checked+label
+	{
+	background-color: #D74E58;
+	border: 2px solid #DA484F;
+	box-sizing: border-box;
 }
 
 #ns-register #submit {
-    width :87%;
-    height: 45px;
-    line-height: 45px;
-    font-size: 20px;
-    color:#fff;
-    text-align: center;
-    font-weight: bold;
-    background-color: #33B679;
-    float: left;
-    margin-top: 9px;
-    margin-left: 6%;
+	width: 87%;
+	height: 45px;
+	line-height: 45px;
+	font-size: 20px;
+	color: #fff;
+	text-align: center;
+	font-weight: bold;
+	background-color: #33B679;
+	float: left;
+	margin-top: 9px;
+	margin-left: 6%;
 }
 /* // ns-register namespace end */
 
 /* ns-registerSuccess namespace start */
 #ns-registerSuccess #body-container {
-    width:100%;
-    max-width: 775px;
-    border:#ccc;
-    background-color: #fff;
-    overflow: auto;
-    box-sizing: border-box;
-    border:1px solid #CCCCCC;
+	width: 100%;
+	max-width: 775px;
+	border: #ccc;
+	background-color: #fff;
+	overflow: auto;
+	box-sizing: border-box;
+	border: 1px solid #CCCCCC;
 }
 
 #ns-registerSuccess #body-container .header {
-    width:100%;
-    height: 80px;
-    line-height:90px;
-    background-color: #577EF2;
-    color:#fff;
-    font-size: 45px;
-    text-align: left;
+	width: 100%;
+	height: 80px;
+	line-height: 90px;
+	background-color: #577EF2;
+	color: #fff;
+	font-size: 45px;
+	text-align: left;
 }
 
 #ns-registerSuccess section {
-    width:50%;
-    height:400px;
-    background-color: #F9F9F9;
-    float:left;
-    position: relative;
+	width: 50%;
+	height: 400px;
+	background-color: #F9F9F9;
+	float: left;
+	position: relative;
 }
 
 #ns-registerSuccess section:nth-of-type(1) {
-    border-right:1px solid #ccc;
+	border-right: 1px solid #ccc;
 }
 
 #ns-registerSuccess section .title {
-    margin-left: 5%;
-    font-size:25px;
-    font-weight: bold;
-    padding: 20px 0px 10px 8px;
-    float:left;
+	margin-left: 5%;
+	font-size: 25px;
+	font-weight: bold;
+	padding: 20px 0px 10px 8px;
+	float: left;
 }
 
 #ns-registerSuccess section .noti {
-    width:90%;
-    margin-left: 5%;
-    background-color: #fff;
-    border:1px solid #efefef;
-    padding: 15px;
-    font-size: 14px;
-    box-sizing:border-box;
-    float:left;
+	width: 90%;
+	margin-left: 5%;
+	background-color: #fff;
+	border: 1px solid #efefef;
+	padding: 15px;
+	font-size: 14px;
+	box-sizing: border-box;
+	float: left;
 }
 
 #ns-registerSuccess section:nth-of-type(2) {
-    width:calc(50% - 1px);
+	width: calc(50% - 1px);
 }
 
 #ns-registerSuccess section .info-container {
-    float:left;
+	float: left;
 }
 
 #ns-registerSuccess section .info-container .input-wrap {
-    width:87%;
-    height:45px;
-    font-size:15px;
-    padding: 15px;
-    font-weight: bold;
-    box-sizing: border-box;
-    margin-left: 6%;
-    border:1px solid #ccc;
-    border-bottom: 0px;
-    background-color: #fff;
-    float:left;
-    color: #8A898B;
+	width: 87%;
+	height: 45px;
+	font-size: 15px;
+	padding: 15px;
+	font-weight: bold;
+	box-sizing: border-box;
+	margin-left: 6%;
+	border: 1px solid #ccc;
+	border-bottom: 0px;
+	background-color: #fff;
+	float: left;
+	color: #8A898B;
 }
 
-#ns-registerSuccess section .info-container .input-wrap:nth-last-of-type(1) {
-    border-bottom: 1px solid #ccc;    
+#ns-registerSuccess section .info-container .input-wrap:nth-last-of-type(1)
+	{
+	border-bottom: 1px solid #ccc;
 }
 
 #ns-registerSuccess #gohome {
-    width :87%;
-    height: 45px;
-    line-height: 45px;
-    font-size: 20px;
-    color:#fff;
-    text-align: center;
-    font-weight: bold;
-    background-color: #33B679;
-    float: left;
-    margin-top: 9px;
-    margin-left: 6%;
+	width: 87%;
+	height: 45px;
+	line-height: 45px;
+	font-size: 20px;
+	color: #fff;
+	text-align: center;
+	font-weight: bold;
+	background-color: #33B679;
+	float: left;
+	margin-top: 9px;
+	margin-left: 6%;
 }
 /* // ns-registerSuccess namespace end */
 
-
-
 /* ns-politician namespace start */
-
 #ns-politician {
-    width:760px;
-    float:left;
-    background-color: rgb(245, 243, 246);
-    border: solid 1px #ccc;
+	width: 760px;
+	float: left;
+	background-color: rgb(245, 243, 246);
+	border: solid 1px #ccc;
 }
 
 #ns-politician .politician-card {
-    margin-top:15px;
-    margin-left:15px;
-    float:left;
-    width: 728px;
-    height: 215px;
-    background-color: #fff;
-    border: solid 1px #ccc;
-
+	margin-top: 15px;
+	margin-left: 15px;
+	float: left;
+	width: 728px;
+	height: 215px;
+	background-color: #fff;
+	border: solid 1px #ccc;
 }
 
-#ns-politician .politician-card .photo{
-    float: left;
+#ns-politician .politician-card .photo {
+	float: left;
 }
 
-#ns-politician .politician-card .photo img{
-    width:172px;
-    height:215px;
+#ns-politician .politician-card .photo img {
+	width: 172px;
+	height: 215px;
 }
 
-#ns-politician .politician-card .info{
-    width: 353px;
-    position: relative;
-    float: left;
+#ns-politician .politician-card .info {
+	width: 353px;
+	position: relative;
+	float: left;
 }
 
-#ns-politician .politician-card .info span{
-    font-size: 24px;
+#ns-politician .politician-card .info span {
+	font-size: 24px;
 }
 
-#ns-politician .politician-card .info span.name{
-    font-size: 42px;
-    width: 100%;
-    float:left;
-    margin-left: 20px;
-    margin-top: 18px;
+#ns-politician .politician-card .info span.name {
+	font-size: 42px;
+	width: 100%;
+	float: left;
+	margin-left: 20px;
+	margin-top: 18px;
 }
 
-#ns-politician .politician-card .info span.party{
-    font-size: 18px;
-    width: 100%;
-    float:left;
-    margin-left: 24px;
-    margin-top: 7px;
+#ns-politician .politician-card .info span.party {
+	font-size: 18px;
+	width: 100%;
+	float: left;
+	margin-left: 24px;
+	margin-top: 7px;
 }
 
-#ns-politician .politician-card .info span.line{
-    width:305px;
-    height:2px;
-    margin-left: 25px;
-    margin-top:15px;
-    background-color: #444547;
-    float: left;
+#ns-politician .politician-card .info span.line {
+	width: 305px;
+	height: 2px;
+	margin-left: 25px;
+	margin-top: 15px;
+	background-color: #444547;
+	float: left;
 }
 
-#ns-politician .politician-card .info span.district{
-    width:330px;
-    line-height:15px;
-    font-size: 13px;
-    float:left;
-    margin-left: 25px;
-    margin-top: 8.5px;
+#ns-politician .politician-card .info span.district {
+	width: 330px;
+	line-height: 15px;
+	font-size: 13px;
+	float: left;
+	margin-left: 25px;
+	margin-top: 8.5px;
 }
 
-#ns-politician .politician-card .info span.now{
-    width:330px;
-    line-height:15px;
-    font-size: 15px;
-    float:left;
-    margin-left: 25px;
-    margin-top: 12px;
-    font-weight: bold;
-    
+#ns-politician .politician-card .info span.now {
+	width: 330px;
+	line-height: 15px;
+	font-size: 15px;
+	float: left;
+	margin-left: 25px;
+	margin-top: 12px;
+	font-weight: bold;
 }
 
-#ns-politician .politician-card .info span.percentage{
-    font-size: 45px;
-    margin-right: 5px;
-    margin-top: -11px;
-    float:right;
+#ns-politician .politician-card .info span.percentage {
+	font-size: 45px;
+	margin-right: 5px;
+	margin-top: -11px;
+	float: right;
 }
 
-#ns-politician .politician-card .info span.percent{
-    font-size: 17px;
-    float:right;
-    margin-top: 10px;
-    margin-right:30px;
+#ns-politician .politician-card .info span.percent {
+	font-size: 17px;
+	float: right;
+	margin-top: 10px;
+	margin-right: 30px;
 }
 
 #ns-politician .graph-wrap {
-    width:202px;
-    height:215px;
-    overflow: hidden;
-    /*float:left;*/
-    float: right;
-    /*margin-top: -155px;*/
-    border-left: 1px solid #ccc;
-    position: relative;
+	width: 202px;
+	height: 215px;
+	overflow: hidden;
+	/*float:left;*/
+	float: right;
+	/*margin-top: -155px;*/
+	border-left: 1px solid #ccc;
+	position: relative;
 }
 
 #ns-politician .Nwagon2 {
-    float:left;
-    margin-top: -50px;
+	float: left;
+	margin-top: -50px;
 }
 
 #ns-politician .field_underbar {
-    position: absolute;
-    bottom:0px;
-    width:100%;
-    height:25px;
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	height: 25px;
 }
 
 #ns-politician .field_underbar span {
-    width:50%;
-    height:25px;
-    line-height: 25px;
-    text-align: center;;
-    background-color: #000;
-    float:left;
-    display:inline-block;
-    color:#fff;
-    font-weight: bold;
-    text-shadow: 0.5px 0.5px 0.5px #494C4C;
+	width: 50%;
+	height: 25px;
+	line-height: 25px;
+	text-align: center;;
+	background-color: #000;
+	float: left;
+	display: inline-block;
+	color: #fff;
+	font-weight: bold;
+	text-shadow: 0.5px 0.5px 0.5px #494C4C;
 }
 
-#ns-politician .board{
-    margin-top:1px;
-    margin-left:15px;
-    width: 730px;
-    float: left;
-    font-size: 20px;
+#ns-politician .board {
+	margin-top: 1px;
+	margin-left: 15px;
+	width: 730px;
+	float: left;
+	font-size: 20px;
 }
 
-#ns-politician .board .promise{
-    width: 760px;
-    height: 100%;
+#ns-politician .board .promise {
+	width: 760px;
+	height: 100%;
 }
 
 #ns-politician .board .percentage {
-    width: 90px;
-    height: 85px;
-    line-height: 115px;
-    text-align: center;
-    float:left;
-    background-color: #577EF2;
-    color:#fff;
-    font-size: 17px;
+	width: 90px;
+	height: 85px;
+	line-height: 115px;
+	text-align: center;
+	float: left;
+	background-color: #577EF2;
+	color: #fff;
+	font-size: 17px;
 }
 
-#ns-politician .board .promise-title{
-    float: left;
-    margin-top: 7px;
-    width: 727px;
-    height:85px;
-    background: #fff;
-    border: 1px solid #ccc;
-    position: relative;
+#ns-politician .board .promise-title {
+	float: left;
+	margin-top: 7px;
+	width: 727px;
+	height: 85px;
+	background: #fff;
+	border: 1px solid #ccc;
+	position: relative;
 }
 
-#ns-politician .board .promise-title .title-number{
-    width: 90px;
-    height: 30px;
-    padding: 7px;
-    text-align: center;
-    float: left;
-    font-size: 13px;
-    color: #fff;
-    position: absolute;
-    background-color: #EB5E4F;
-    box-sizing: border-box;
+#ns-politician .board .promise-title .title-number {
+	width: 90px;
+	height: 30px;
+	padding: 7px;
+	text-align: center;
+	float: left;
+	font-size: 13px;
+	color: #fff;
+	position: absolute;
+	background-color: #EB5E4F;
+	box-sizing: border-box;
 }
 
 #ns-politician .board .title-ct {
-    display: inline-block;
-    margin: 13px 0px 0px 13px;
-    width: 480px;
-    line-height: 29px;
+	display: inline-block;
+	margin: 13px 0px 0px 13px;
+	width: 480px;
+	line-height: 29px;
 }
 
 #ns-politician .board .down-icon {
-    width:85px;
-    height: 85px;
-    float: right;
-    background-image:url(/img/down-icon.png);
-    background-position:center center;
-    background-size: 55px;
-   	background-repeat: no-repeat;
-    background-color: #EEEEEE;
+	width: 85px;
+	height: 85px;
+	float: right;
+	background-image: url(/img/down-icon.png);
+	background-position: center center;
+	background-size: 55px;
+	background-repeat: no-repeat;
+	background-color: #EEEEEE;
 }
 
-#ns-politician .board .down-icon .relate{
-    width:85px;
-    height: 30px;
-    float: right;
-    background-color: #EEEEEE;
-    font-size: 13px;
+#ns-politician .board .down-icon .relate {
+	width: 85px;
+	height: 30px;
+	float: right;
+	background-color: #EEEEEE;
+	font-size: 13px;
 }
 
-#ns-politician .board .down-icon img{
-    width: 50px;
-    height: 50px;
-    margin-left: 18px;
-    margin-top: 22px;
-
+#ns-politician .board .down-icon img {
+	width: 50px;
+	height: 50px;
+	margin-left: 18px;
+	margin-top: 22px;
 }
 
-#ns-politician .board .promise-board{
-    display: none;
-    float: left;
-    width: 729px;
+#ns-politician .board .promise-board {
+	display: none;
+	float: left;
+	width: 729px;
 }
 
-#ns-politician .board .promise-board li{
-    width: 727px;
-    height: 40px;
-    line-height: 40px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-bottom: 0px;
-    background: #fff;
-    padding-left: 10px;
-    box-sizing:border-box;
+#ns-politician .board .promise-board li {
+	width: 727px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 14px;
+	border: 1px solid #ccc;
+	border-bottom: 0px;
+	background: #fff;
+	padding-left: 10px;
+	box-sizing: border-box;
 }
 
 #ns-politician .board .promise-board li:nth-of-type(1) {
-    border-top: 0px;
-    width: 100%;
-    height: 150px;
-    line-height: 23px;
-    overflow: auto;
-    font-size: 15px;
-    letter-spacing: 3px;
-    padding: 40px;
-    padding-left: 46px;
-    padding-right: 46px;
-    box-sizing: border-box;
-    text-decoration: none; 
+	border-top: 0px;
+	width: 100%;
+	height: 150px;
+	line-height: 23px;
+	overflow: auto;
+	font-size: 15px;
+	letter-spacing: 3px;
+	padding: 40px;
+	padding-left: 46px;
+	padding-right: 46px;
+	box-sizing: border-box;
+	text-decoration: none;
 }
 
 #ns-politician .board .promise-board li:nth-of-type(1) .promise-detail {
-    background-color: #fff;
+	background-color: #fff;
 }
 
 #ns-politician .board .promise-board li:nth-of-type(2) {
-    background-color: #eeeeee;
-    font-size: 16px;
-    text-align: center;
-    height: 35px;
-    line-height: 35px;
+	background-color: #eeeeee;
+	font-size: 16px;
+	text-align: center;
+	height: 35px;
+	line-height: 35px;
 }
 
 #ns-politician .board .promise-board li:nth-last-of-type(1) {
-    border-bottom: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
 }
 
 #ns-politician .board .promise-board li a {
-    color: black;
+	color: black;
 }
 
 #ns-politician .board .promise-board .vote-wrap {
-	background-color:#eee;
-	float:left;
-	width:727px;
-	height:75px;
-    border:1px solid #ccc;
-    border-top: 0px;
-    position: relative;
+	background-color: #eee;
+	float: left;
+	width: 727px;
+	height: 75px;
+	border: 1px solid #ccc;
+	border-top: 0px;
+	position: relative;
 }
 
 #ns-politician .board .promise-board .induce {
-    font-size: 17px;
-    left: 15px;
-    top:15px;
-    position: absolute;
+	font-size: 17px;
+	left: 15px;
+	top: 15px;
+	position: absolute;
 }
 
 #ns-politician .board .promise-board form {
-    float:left;
-    width: 100%;
+	float: left;
+	width: 100%;
 }
-
 
 #ns-politician .board .promise-board .rangewrap {
-    width:432px;
-    display: inline-block;
-    left:15px;
-    top:47px;
-    position: absolute;
+	width: 432px;
+	display: inline-block;
+	left: 15px;
+	top: 47px;
+	position: absolute;
 }
 
-#ns-politician .board .promise-board .rangewrap input{
-    width:100%;
+#ns-politician .board .promise-board .rangewrap input {
+	width: 100%;
 }
 
-#ns-politician .vote{
-    width: 340px;
-    height: 60px;
-    float: right;
-    margin-right: 5px;
-    margin-top: 5px;
- } 
+#ns-politician .vote {
+	width: 340px;
+	height: 60px;
+	float: right;
+	margin-right: 5px;
+	margin-top: 5px;
+}
 
- #ns-politician .board .promise-board #range-value {
-    position: absolute;
-    right:80px;
-    width:50px;
-    top: 0px;
-    width:90px;
-    height:75px;
-    background-color: #353941;
-    color:#fff;
-    text-align: center;
-    line-height: 75px;
- }
+#ns-politician .board .promise-board #range-value {
+	position: absolute;
+	right: 80px;
+	width: 50px;
+	top: 0px;
+	width: 90px;
+	height: 75px;
+	background-color: #353941;
+	color: #fff;
+	text-align: center;
+	line-height: 75px;
+}
 
-  #ns-politician .board .promise-board #range-value small {
-    font-size: 13px;
- }
+#ns-politician .board .promise-board #range-value small {
+	font-size: 13px;
+}
 
-#ns-politician .submit{
-    width: 80px;
-    height: 75px;
-    background: #EB5E4F;
-
-    color: #fff;
-    text-align: center;
-    line-height: 75px;
-    font-size: 15px;
-    position: absolute;
-    right: 0px;
-    top: 0px;
+#ns-politician .submit {
+	width: 80px;
+	height: 75px;
+	background: #EB5E4F;
+	color: #fff;
+	text-align: center;
+	line-height: 75px;
+	font-size: 15px;
+	position: absolute;
+	right: 0px;
+	top: 0px;
 }
 
 #ns-politician .upload {
-    float: right;
-    margin-top: 30px;
-    margin-right: 30px;
-    margin-bottom: 20px;
-    width: 100px;
-    height: 50px;
-    background: #EB5E4F;
-    color: #fff;
-    text-align: center;
-    line-height: 50px;
-    font-size: 17px;
-    border: 1px solid #ccc;
+	float: right;
+	margin-top: 30px;
+	margin-right: 30px;
+	margin-bottom: 20px;
+	width: 100px;
+	height: 50px;
+	background: #EB5E4F;
+	color: #fff;
+	text-align: center;
+	line-height: 50px;
+	font-size: 17px;
+	border: 1px solid #ccc;
 }
 
-
 /* // ns-politician namespace end */
-
 
 /* ns-evidence namespace start */
 #ns-evidence .wrap {
 	width: 730px;
-	margin : 10px;
+	margin: 10px;
 }
 
 #ns-evidence .promise {
@@ -1329,32 +1457,32 @@ a {
 	height: 30px;
 }
 
-
 #ns-evidence .content {
 	height: 300px;
 }
 
-#ns-evidence .uploadBoard{
+#ns-evidence .uploadBoard {
 	border: 1px solid #ccc;
 	background: #F5F3F6;
 	padding: 20px;
 }
+
 #ns-evidence .promise select {
 	position: relative;
-   -webkit-appearance: none;
-   background: url("./../img/down-icon.png") no-repeat right #577EF2;
-   background-position: 10px 15px 0px 0px;
-   background-size: 10px 10px;
-   width: 60px;
-   height: 30px;
-   padding: 5px;
-   font-size: 12px;
-   border-radius: 0px;
-   color: #fff;
-   font-weight: bold;
-   border:0;
-   float: left;
-   cursor: pointer;
+	-webkit-appearance: none;
+	background: url("./../img/down-icon.png") no-repeat right #577EF2;
+	background-position: 10px 15px 0px 0px;
+	background-size: 10px 10px;
+	width: 60px;
+	height: 30px;
+	padding: 5px;
+	font-size: 12px;
+	border-radius: 0px;
+	color: #fff;
+	font-weight: bold;
+	border: 0;
+	float: left;
+	cursor: pointer;
 }
 
 #ns-evidence .promiseTitle {
@@ -1370,16 +1498,16 @@ a {
 	padding: 3px 5px 3px 10px;
 }
 
-#ns-evidence .title span, #ns-evidence .promiseNumber{
+#ns-evidence .title span, #ns-evidence .promiseNumber {
 	display: inline-block;
 	width: 60px;
 	height: 30px;
-	line-height:30px;
+	line-height: 30px;
 	vertical-align: middle;
 	text-align: center;
 	background: #577EF2;
-	color: #fff;	
-	float:left;
+	color: #fff;
+	float: left;
 }
 
 #ns-evidence .title input {
@@ -1399,7 +1527,8 @@ a {
 	padding-right: 70px;
 	font: 15px;
 }
-#ns-evidence .submit input{
+
+#ns-evidence .submit input {
 	width: 60px;
 	height: 30px;
 	color: #fff;
@@ -1416,368 +1545,455 @@ a {
 
 /* ns-searchResult namespace start */
 #ns-searchResult .title {
-    font-size: 25px;
-    padding-left: 7px;
+	font-size: 25px;
+	padding-left: 7px;
 }
 
 #ns-searchResult .line {
-    width:100%;
-    height:2px;
-    background-color: #ccc;
-    margin:10px 0px 20px 0px;
+	width: 100%;
+	height: 2px;
+	background-color: #ccc;
+	margin: 10px 0px 20px 0px;
 }
 
 #ns-searchResult .card {
-    width:60%;
-    height:190px;
-    border:1px solid #ccc;
-    box-sizing: border-box;
-    margin:10px;
+	width: 60%;
+	height: 190px;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+	margin: 10px;
 }
 
 #ns-searchResult img {
-    width:150px;
-    height:190px;
-    float:left;
+	width: 150px;
+	height: 190px;
+	float: left;
 }
 
 #ns-searchResult .name {
-    width:310px;
-    font-size: 27px;
-    padding: 20px 0px 10px 20px; 
-    display:inline-block;
-    float:left;
-    box-sizing: border-box;
+	width: 310px;
+	font-size: 27px;
+	padding: 20px 0px 10px 20px;
+	display: inline-block;
+	float: left;
+	box-sizing: border-box;
 }
 
 #ns-searchResult .card .line {
-    width:100%;
-    height:1px;
-    margin-top: 18px;
+	width: 100%;
+	height: 1px;
+	margin-top: 18px;
 }
 
 #ns-searchResult .local {
-    width:280px;
-    display:inline-block;
-    margin-left: 22px;
-    font-size: 14px;
-    margin-top: 30px;
+	width: 280px;
+	display: inline-block;
+	margin-left: 22px;
+	font-size: 14px;
+	margin-top: 30px;
 }
 
 #ns-searchResult .party {
-    width:280px;
-    display:inline-block;
-    margin-left: 22px;
-    font-size: 16px;
+	width: 280px;
+	display: inline-block;
+	margin-left: 22px;
+	font-size: 16px;
 }
 
 #ns-searchResult .more {
-    font-size: 15px;
-    display:inline-block;
-    margin-top: -7px;
-    margin-left: 225px;
+	font-size: 15px;
+	display: inline-block;
+	margin-top: -7px;
+	margin-left: 225px;
 }
 
 #ns-searchResult .noResult {
-    width:100%;
-    height:200px;
-    font-size: 20px;
-    line-height: 200px;
-    text-align: center;
+	width: 100%;
+	height: 200px;
+	font-size: 20px;
+	line-height: 200px;
+	text-align: center;
 }
 /* //ns-searchResult namespace end */
 
-
 /* ns-evidenceDetail namespace start */
-
-#ns-evidenceDetail{
-    width:760px;
-    float:left;
-    background-color: rgb(245, 243, 246);
-    border: solid 1px #ccc;
+#ns-evidenceDetail {
+	width: 760px;
+	float: left;
+	background-color: rgb(245, 243, 246);
+	border: solid 1px #ccc;
 }
 
-#ns-evidenceDetail .evidence-wrapper{
-    width: 700px;
-    margin: 0px auto;
-    margin-top: 30px;
-    margin-bottom: 5px;
-    background-color: #fff;
-    border: solid 1px #ccc;
-
+#ns-evidenceDetail .evidence-wrapper {
+	width: 700px;
+	margin: 0px auto;
+	margin-top: 30px;
+	margin-bottom: 5px;
+	background-color: #fff;
+	border: solid 1px #ccc;
 }
 
-#ns-evidenceDetail .article-header{
-    width: 700px;
-    height: 100%;
-    position: relative;
+#ns-evidenceDetail .article-header {
+	width: 700px;
+	height: 100%;
+	position: relative;
 }
 
-#ns-evidenceDetail .title{
-    width: 100%;
-    font-size: 25px;
-    padding: 20px;
-    padding-bottom: 10px;
+#ns-evidenceDetail .title {
+	width: 100%;
+	font-size: 25px;
+	padding: 20px;
+	padding-bottom: 10px;
 }
 
-
-#ns-evidenceDetail .date{
-    position: absolute;
-    left: 550px;
-    top: 20px;
+#ns-evidenceDetail .date {
+	position: absolute;
+	left: 550px;
+	top: 20px;
 }
 
-
-#ns-evidenceDetail .basic-info{
-    margin-left: 20px;
-    margin-top: 5px;
-    margin-bottom: 10px;
-    display: block;
+#ns-evidenceDetail .basic-info {
+	margin-left: 20px;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	display: block;
 }
 
-#ns-evidenceDetail .basic-info div{
-    margin-right: 10px;
-    display: inline;
+#ns-evidenceDetail .basic-info div {
+	margin-right: 10px;
+	display: inline;
 }
 
-#ns-evidenceDetail .content{
-    font-size: 15px;
-    padding: 20px;
-    padding-top: 15px;
+#ns-evidenceDetail .content {
+	font-size: 15px;
+	padding: 20px;
+	padding-top: 15px;
 }
 
-#ns-evidenceDetail .show-list, .edit, .delete{
-    float: right;
-    margin-right: 30px;
-    margin-bottom: 10px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    padding: 5px;
+#ns-evidenceDetail .show-list, .edit, .delete {
+	float: right;
+	margin-right: 30px;
+	margin-bottom: 10px;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	padding: 5px;
 }
 
-#ns-evidenceDetail .edit, .delete{
+#ns-evidenceDetail .edit, .delete {
 	margin-right: 10px;
 }
 
-#ns-evidenceDetail .comment-input{
-    width: 700px;
-    margin: 0px auto;
-    margin-bottom: 10px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    clear: both;
+#ns-evidenceDetail .comment-input {
+	width: 700px;
+	margin: 0px auto;
+	margin-bottom: 10px;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	clear: both;
 }
 
-#ns-evidenceDetail .comment-box{
-    width: 580px;
-    height: 50px;
-    border: 0;
-    padding-left: 20px;
-    padding-right: 20px;
-    display:inline-block;
+#ns-evidenceDetail .comment-box {
+	width: 580px;
+	height: 50px;
+	border: 0;
+	padding-left: 20px;
+	padding-right: 20px;
+	display: inline-block;
 }
 
-#ns-evidenceDetail .comment-submit{
-    width: 77px;
-    height: 54px;
-    border: 0;
-    background-color: #EB5E4F;
-    color: #fff;
-    text-align:center;
-    line-height:50px;
-    display:inline-block;
-
+#ns-evidenceDetail .comment-submit {
+	width: 77px;
+	height: 54px;
+	border: 0;
+	background-color: #EB5E4F;
+	color: #fff;
+	text-align: center;
+	line-height: 50px;
+	display: inline-block;
 }
 
-#ns-evidenceDetail .comment-list{
-    width: 700px;
-    margin: 0px auto;
-    margin-bottom: 20px;
-    background-color: #fff;
-    border: 1px solid #ccc;
+#ns-evidenceDetail .comment-list {
+	width: 700px;
+	margin: 0px auto;
+	margin-bottom: 20px;
+	background-color: #fff;
+	border: 1px solid #ccc;
 }
 
-#ns-evidenceDetail .show-comment{
-    width: 700px;
-    height: 50px;
-    border: 0;
-    position: relative;
+#ns-evidenceDetail .show-comment {
+	width: 700px;
+	height: 50px;
+	border: 0;
+	position: relative;
 }
 
-#ns-evidenceDetail .user-id{
-    display: inline-block;
-    font-size: 12px;
-    width: 80px;
-    padding-left: 20px;
-    margin-top: 20px;
-
+#ns-evidenceDetail .user-id {
+	display: inline-block;
+	font-size: 12px;
+	width: 80px;
+	padding-left: 20px;
+	margin-top: 20px;
 }
 
-#ns-evidenceDetail .comment{
-    display: inline-block;
-    font-size: 12px;
+#ns-evidenceDetail .comment {
+	display: inline-block;
+	font-size: 12px;
 }
 
-#ns-evidenceDetail .line{
-    width: 650px;
-    height: 1px;
-    background-color: #ccc;
-    margin: 0px auto;
-    margin-top: 0px;
-    margin-bottom: 3px;
+#ns-evidenceDetail .line {
+	width: 650px;
+	height: 1px;
+	background-color: #ccc;
+	margin: 0px auto;
+	margin-top: 0px;
+	margin-bottom: 3px;
 }
 
 #ns-evidenceDetail .attachedImg {
 	padding: 20px;
 }
 
-#ns-evidenceDetail .attachedImg img{
-	max-width:100%;
+#ns-evidenceDetail .attachedImg img {
+	max-width: 100%;
 	height: auto;
 }
-
 
 /* //ns-evidenceDetail namespace end */
 
 /* ns-rankingPage namespace start */
 #ns-rankingPage .title {
-    font-size: 25px;
-    padding-left: 7px;
+	font-size: 25px;
+	padding-left: 7px;
 }
 
 #ns-rankingPage .line {
-    width:100%;
-    height:2px;
-    background-color: #ccc;
-    margin:10px 0px 20px 0px;
+	width: 100%;
+	height: 2px;
+	background-color: #ccc;
+	margin: 10px 0px 20px 0px;
 }
 
 #ns-rankingPage .card {
-    width: 47%;
-    height: 190px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    margin: 10px;
-    margin-left: 12px;
-    float: left;
-    position:relative;
+	width: 47%;
+	height: 190px;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+	margin: 10px;
+	margin-left: 12px;
+	float: left;
+	position: relative;
 }
 
 #ns-rankingPage img {
-    width:120px;
-    height:150px;
-    float:left;
+	width: 120px;
+	height: 150px;
+	float: left;
+	border: 1px solid #ccc;
+	border-left: 0px;
+	border-top: 0px;
+	box-sizing: border-box;
 }
 
 #ns-rankingPage .rank {
-    position: absolute;
-    top:150px;
-    height:38px;
-    line-height: 38px;
-    text-align:center;
-    width:120px;
-    background-color: #577EF2;
-    color:#fff;
-    font-size: 15px;
-    font-weight: bold;
-    z-index: 30;
+	position: absolute;
+	top: 150px;
+	height: 38px;
+	line-height: 38px;
+	text-align: center;
+	width: 120px;
+	background-color: #577EF2;
+	color: #fff;
+	font-size: 15px;
+	font-weight: bold;
+	z-index: 30;
 }
 
 #ns-rankingPage .name {
-    width:310px;
-    font-size: 27px;
-    padding: 20px 0px 10px 20px; 
-    display:inline-block;
-    float:left;
-    box-sizing: border-box;
-    position:absolute;
+	width: 310px;
+	font-size: 27px;
+	padding: 20px 0px 10px 20px;
+	display: inline-block;
+	float: left;
+	box-sizing: border-box;
+	position: absolute;
 }
 
 #ns-rankingPage .card .line {
-    width:100%;
-    height:1px;
-    top: 150px;
-    margin: 0px;
-    float: left;
-    position: absolute;
-    z-index: 20;
+	width: 100%;
+	height: 1px;
+	top: 150px;
+	margin: 0px;
+	float: left;
+	position: absolute;
+	z-index: 20;
 }
 
 #ns-rankingPage .local {
-    width:280px;
-    display:inline-block;
-    margin-left: 22px;
-    font-size: 14px;
-    margin-top: 30px;
-    position: absolute;
-    top: 60px;
-    left: 122px;
+	width: 280px;
+	display: inline-block;
+	margin-left: 22px;
+	font-size: 14px;
+	margin-top: 30px;
+	position: absolute;
+	top: 60px;
+	left: 122px;
 }
 
 #ns-rankingPage .party {
-    width:280px;
-    display:inline-block;
-    margin-left: 22px;
-    font-size: 16px;
-    top: 59px;
-    left: 121px;
-    position: absolute;
+	width: 280px;
+	display: inline-block;
+	margin-left: 22px;
+	font-size: 16px;
+	top: 59px;
+	left: 121px;
+	position: absolute;
 }
 
 #ns-rankingPage .more {
-    font-size: 15px;
-    display:inline-block;
-    margin-top: -7px;
-    margin-left: 225px;
-    bottom: 10px;
-    right: 10px;
-    position: absolute;
+	font-size: 15px;
+	display: inline-block;
+	margin-top: -7px;
+	margin-left: 225px;
+	bottom: 10px;
+	right: 10px;
+	position: absolute;
 }
 
 #ns-rankingPage .noResult {
-    width:100%;
-    height:200px;
-    font-size: 20px;
-    line-height: 200px;
-    text-align: center;
+	width: 100%;
+	height: 200px;
+	font-size: 20px;
+	line-height: 200px;
+	text-align: center;
 }
 
-#ns-rankingPage .rate_desc{
-    bottom: 50px;
-    right:93px;
-    font-size: 16px;
-    position: absolute;
-    font-weight: 500;
+#ns-rankingPage .rate_desc {
+	bottom: 50px;
+	right: 93px;
+	font-size: 16px;
+	position: absolute;
+	font-weight: 500;
 }
 
 #ns-rankingPage .rate {
-    bottom: 47px;
-    right:33px;
-    font-size: 30px;
-    position: absolute;
+	bottom: 47px;
+	right: 33px;
+	font-size: 30px;
+	position: absolute;
 }
 
 #ns-rankingPage .percent {
-    bottom: 50px;
-    right:13px;
-    font-size: 15px;
-    position: absolute;
+	bottom: 50px;
+	right: 13px;
+	font-size: 15px;
+	position: absolute;
 }
 
 #ns-rankingPage #loader {
-    width:751px;
-    height:25px;
-    line-height: 50px;
-    margin: 30px 11px 25px;
-    float:left;
-    color:#222222;
-    font-size: 18px;
+	width: 751px;
+	height: 25px;
+	line-height: 50px;
+	margin: 30px 11px 25px;
+	float: left;
+	color: #222222;
+	font-size: 18px;
 }
 
 #ns-rankingPage #loader img {
-    width:400px;
-    height:25px;
-    margin-left:165px;
+	width: 400px;
+	height: 25px;
+	margin-left: 165px;
+	border:0px;
 }
 
 /* //ns-rankingPage namespace end */
+
+
+/* ns-party namespace start */
+#ns-party{
+    float:left;
+    background-color:#fff;
+}
+
+#ns-party .cards-container {
+	margin: 10px;
+    overflow: auto;
+}
+
+#ns-party .cards-container>span{
+    font-size: 25px;
+    display: block;
+}
+
+#ns-party .cards-container .party-cards {
+    width:100%;
+    margin-top: 15px;
+}
+
+#ns-party .cards-container .party-cards ul li.card-list{
+    width:330px;
+    background-color: #fff;
+    height:210px;
+    border:1px solid #ccc;
+    float:left;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+#ns-party .cards-container .party-cards ul li.card-list span.party {
+    margin-left: 12px;
+    margin-top: 18px;
+    font-size: 22px;
+    font-weight: bold;
+    display:inline-block;
+    position: relative;
+}
+
+#ns-party .cards-container .party-cards .chart-container{
+	position:relative;
+	border-left: 1px solid #cccccc;
+	width: 170px;
+	height: 210px;
+	float: right;
+	overflow: hidden;
+}
+
+#ns-party .chart{
+	position:relative;
+	top:-60px;
+	left:-32px;
+}
+
+#ns-party .party-info {
+    width: 110px;
+    float: left;
+    padding-left: 30px;
+    padding-top:15px;
+    font-size: 15px;
+}
+
+#ns-party .party-info li {
+    list-style: disc;
+}
+ 
+#ns-party .field_underbar {
+	position:absolute;
+	bottom: 0px;
+	width:100%;
+}
+#ns-party .field_underbar span {
+	
+	width: 50%;
+	height: 25px;
+	line-height: 25px;
+	text-align: center;;
+	background-color: #000;
+	float: left;
+	display: inline-block;
+	color: #fff;
+	font-weight: bold;
+	text-shadow: 0.5px 0.5px 0.5px #494C4C;
+}
+
+/* ns-party namespace end */

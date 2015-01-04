@@ -31,12 +31,29 @@
 			</ul>
 		</div>
 	</div>
-
+	<div id="localinfo"></div>
 	<div class="secondfloor">
 		<div class="boxTypeA">
-		<span class = "title">18대<br>대통령 공약 이행률</span>
+		<span class = "title"><span>서울특별시</span><br>국회의원 평균 공약 이행률</span>
 		<div class = "card type2">
-		<div id="chart_d" class="Nwagon2"></div>
+			<div id="chart_d2" class="Nwagon2"></div>
+			<div class="loading">로딩중<br>위치 정보 사용에<br>동의해 주세요</div>
+		</div>
+			
+		</div>
+		<div class="boxTypeB">
+		<span class = "title">19대<br>국회의원 평균 공약 이행률</span>
+		<div class = "card type2_Big">
+			<div id="Nwagon" class="Nwagon1"></div>
+		</div>
+		</div>
+		<div class="boxTypeC">
+		<span class = "title">19대<br>국회의원 임기일 D-DAY</span>
+		<div class = "card type2 dday">
+			<div class="number">
+				${DDay}
+			</div>
+			<!-- <div id="chart_d" class="Nwagon2"></div>
 			<script>
 			var options = {
 				'dataset': {
@@ -53,21 +70,7 @@
 			};
 			Nwagon.chart(options);
 			</script>
-			<div class = "field_underbar"><span></span><span></span></div>
-		</div>
-			
-		</div>
-		<div class="boxTypeB">
-		<span class = "title">19대<br>국회의원 평균 공약 이행률</span>
-		<div class = "card type2_Big">
-			<div id="Nwagon" class="Nwagon1"></div>
-		</div>
-		</div>
-		<div class="boxTypeC">
-		<span class = "title"><span>우리지역</span><br>국회의원 평균 공약 이행률</span>
-		<div class = "card type2">
-			<div id="chart_d2" class="Nwagon2"></div>
-			<div class = "field_underbar"><span></span><span></span></div>
+			<div class = "field_underbar"><span></span><span></span></div> -->
 		</div>
 		</div>
 
