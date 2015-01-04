@@ -49,7 +49,7 @@ public class UploadArticleServlet extends HttpServlet {
 			if (!check) {
 				String errorMessage = "로그인을 하지 않으시면 증거자료를 올리실 수 없습니다!";
 				alertMessage(response, errorMessage);
-				response.sendRedirect("/viewDetail.ruw?pid=" + politicianId);
+				//response.sendRedirect("/viewDetail.ruw?pid=" + politicianId);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

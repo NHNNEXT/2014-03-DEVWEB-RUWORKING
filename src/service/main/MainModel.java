@@ -5,11 +5,14 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import service.search.Politician;
+import service.viewdetail.mainArticle;
 import db.factory.DAOFactory;
 import db.query.PstmtQuerySet;
 
@@ -128,4 +131,45 @@ public class MainModel {
 		long d_day = (event_day - now_day) / (60*60*24*1000); //(60초 * 60분 * 24시간 * 1000ms)
 		return (int)d_day;
 	}
+
+	public List<mainArticle> getRecentArticleNotImage() {
+		String sql = "select politician.name, party.name as partyName, article.title, article.content from politician inner join article inner join party on politician.id = article.politician_id AND politician.party_id = party.id where article.deleted = 0 and article.img_url is null order by article.date desc limit 5;";
+		ArrayList<Object> queryValues = new ArrayList<Object>();
+		PstmtQuerySet querySet = new PstmtQuerySet(sql, queryValues);
+		DAOFactory DAO = new DAOFactory();
+		ResultSet rs;
+		ArrayList <mainArticle> ret = new ArrayList<mainArticle>();
+		
+		try {
+			rs = DAO.selectQuery(querySet);
+			while(rs.next()) {
+				ret.add(new mainArticle(rs.getString("name"), rs.getString("partyName"), rs.getString("title"), rs.getString("content")));
+			}
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return ret;
+	}
+	public List<mainArticle> getRecentArticleImage() {
+		String sql = "select politician.name, party.name as partyName, article.title, article.content from politician inner join article inner join party on politician.id = article.politician_id AND politician.party_id = party.id where article.deleted = 0 and article.img_url is null order by article.date desc limit 5;";
+		ArrayList<Object> queryValues = new ArrayList<Object>();
+		PstmtQuerySet querySet = new PstmtQuerySet(sql, queryValues);
+		DAOFactory DAO = new DAOFactory();
+		ResultSet rs;
+		ArrayList <mainArticle> ret = new ArrayList<mainArticle>();
+		
+		try {
+			rs = DAO.selectQuery(querySet);
+			while(rs.next()) {
+				ret.add(new mainArticle(rs.getString("name"), rs.getString("partyName"), rs.getString("title"), rs.getString("content")));
+			}
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return ret;
+	}
+	
+	
 }
