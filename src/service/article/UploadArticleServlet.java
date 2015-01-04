@@ -39,16 +39,6 @@ public class UploadArticleServlet extends HttpServlet {
 		String filePath = relativePath+"/"+fileName;
 		Article article = new Article(title, content, filePath, null, version, userId, promiseNum, politicianId);
 		ArticleModel articleModel = new ArticleModel();
-<<<<<<< HEAD
-		
-		boolean check;
-		try {
-			check = articleModel.postArticle(article);
-			if (!check) {
-				String errorMessage = "로그인을 하지 않으시면 증거자료를 올리실 수 없습니다!";
-				alertMessage(response, errorMessage);
-				//response.sendRedirect("/viewDetail.ruw?pid=" + politicianId);
-=======
 
 		if(multi.getParameter("ancestorId") == null) {
 			//올릴 때
@@ -67,7 +57,6 @@ public class UploadArticleServlet extends HttpServlet {
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
->>>>>>> 9229efc80edb1ff4070361f4f26eec8ad255ac42
 			}
 		}
 		
