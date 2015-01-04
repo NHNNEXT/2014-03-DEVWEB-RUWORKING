@@ -1,6 +1,7 @@
 package service.main;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -19,8 +20,9 @@ public class MainServlet extends HttpServlet {
 
 		request.setAttribute("Top5List", mainModel.getRankedFulfillment(5));
 		request.setAttribute("DDay", mainModel.getPoliticianTermD_Day());
-		
+				
 		request.setAttribute("mainArticleNotImage", mainModel.getRecentArticleNotImage());
+		request.setAttribute("mainArticleImage", mainModel.getRecentArticleImage());
 		request.setAttribute("cardList", cardList);
 		
 		RequestDispatcher view = request.getRequestDispatcher("/index.jsp");

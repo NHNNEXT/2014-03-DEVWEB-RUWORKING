@@ -133,17 +133,23 @@ public class MainModel {
 	}
 
 	public List<mainArticle> getRecentArticleNotImage() {
-		String sql = "select politician.name, party.name as partyName, article.title, article.content from politician inner join article inner join party on politician.id = article.politician_id AND politician.party_id = party.id where article.deleted = 0 and article.img_url is null order by article.date desc limit 5;";
+		String sql = "select politician.name, party.name as partyName, article.title, article.content, article.img_url, article.date, article.id, article.ancestor_id from politician inner join article on politician.id = article.politician_id inner join party on politician.party_id = party.id where article.deleted = 0 order by article.date desc;";
 		ArrayList<Object> queryValues = new ArrayList<Object>();
 		PstmtQuerySet querySet = new PstmtQuerySet(sql, queryValues);
 		DAOFactory DAO = new DAOFactory();
 		ResultSet rs;
 		ArrayList <mainArticle> ret = new ArrayList<mainArticle>();
+		int count = 0;
 		
 		try {
 			rs = DAO.selectQuery(querySet);
 			while(rs.next()) {
-				ret.add(new mainArticle(rs.getString("name"), rs.getString("partyName"), rs.getString("title"), rs.getString("content")));
+				if(count == 6) break;
+				String url = rs.getString("img_url");
+				if(url.split("/")[3].equals("null")) {
+					ret.add(new mainArticle(rs.getString("name"), rs.getString("partyName"), rs.getString("title"), rs.getString("content"), rs.getString("date").split("\\.")[0], rs.getString("id"), rs.getString("ancestor_id")));					
+					count++;
+				}
 			}
 		}catch(SQLException e) {
 			e.printStackTrace();
@@ -152,17 +158,23 @@ public class MainModel {
 		return ret;
 	}
 	public List<mainArticle> getRecentArticleImage() {
-		String sql = "select politician.name, party.name as partyName, article.title, article.content from politician inner join article inner join party on politician.id = article.politician_id AND politician.party_id = party.id where article.deleted = 0 and article.img_url is null order by article.date desc limit 5;";
+		String sql = "select politician.name, party.name as partyName, article.title, article.content, article.img_url, article.date, article.id, article.ancestor_id from politician inner join article on politician.id = article.politician_id inner join party on politician.party_id = party.id where article.deleted = 0 order by article.date desc;";
 		ArrayList<Object> queryValues = new ArrayList<Object>();
 		PstmtQuerySet querySet = new PstmtQuerySet(sql, queryValues);
 		DAOFactory DAO = new DAOFactory();
 		ResultSet rs;
 		ArrayList <mainArticle> ret = new ArrayList<mainArticle>();
+		int count = 0;
 		
 		try {
 			rs = DAO.selectQuery(querySet);
 			while(rs.next()) {
-				ret.add(new mainArticle(rs.getString("name"), rs.getString("partyName"), rs.getString("title"), rs.getString("content")));
+				if(count == 2) break;
+				String url = rs.getString("img_url");
+				if(!url.split("/")[3].equals("null")) {
+					ret.add(new mainArticle(rs.getString("name"), rs.getString("partyName"), rs.getString("title"), rs.getString("content"), rs.getString("date").split("\\.")[0], rs.getString("id"), rs.getString("ancestor_id"), rs.getString("img_url")));
+					count++;
+				}
 			}
 		}catch(SQLException e) {
 			e.printStackTrace();

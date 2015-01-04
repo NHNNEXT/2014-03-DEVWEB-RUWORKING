@@ -6,17 +6,54 @@ public class mainArticle {
 	String title = new String();
 	String content = new String();
 	String img_url = new String();
+	String date = new String();
+	String article_id = new String();
+	String ancestor_id = new String();
 	
-	public mainArticle(String name, String partyName, String title, String content) {
+	public String getName() {
+		return name;
+	}
+
+	public String getPartyName() {
+		return partyName;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public String getContent() {
+		return content;
+	}
+
+	public String getImg_url() {
+		return img_url;
+	}
+	
+	public String getDate() {
+		return date;
+	}
+	
+	public String getArticle_id() {
+		return article_id;
+	}
+	
+	public String getAncestor_id() {
+		return ancestor_id;
+	}
+
+	public mainArticle(String name, String partyName, String title, String content, String date, String article_id, String ancestor_id) {
 		this.name = name;
 		this.partyName = partyName;
 		this.title = title;
 		this.content = content;
+		this.date = date;
+		this.article_id = article_id;
+		this.ancestor_id = ancestor_id;
 	}
 	
-	public mainArticle(String name, String partyName, String title, String content, String img_url) {
-		this(name, partyName, title, content);
-		this.img_url = img_url
-				;
+	public mainArticle(String name, String partyName, String title, String content, String date, String article_id, String ancestor_id, String img_url) {
+		this(name, partyName, title, content, date, article_id, ancestor_id);
+		this.img_url = img_url;
 	}
 }

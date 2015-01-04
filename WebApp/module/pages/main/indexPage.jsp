@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <script src = "/module/pages/main/js/getlocal.js"></script>
+<script src = "/module/pages/main/js/contentShorting.js"></script>
 
 <div id="pageContainer">
 <div id="ns-index">
@@ -93,124 +94,59 @@
 		<div>
 			<div class="cardA">
 				<div class="header">
-					<div class="name">개발자</div>
-					<div class="party">개발중이당</div>
+					<div class="name">${mainArticleNotImage[0].name}</div>
+					<div class="party">${mainArticleNotImage[0].partyName}</div>
 				</div>
 				<div class="body">
-					<div class="title">홍길동 의원 복지공략 실천 이행해 좋은 반응을 얻고 있다</div>
-					<div class="content">최근 홍길동 의원은 선거 공약으로 내세웠던 내용중 하나인 복지공약을 이행해서 시민들로 부터 좋은 반응을 얻고 있다. 홍 대표는 앞으로도 더욱 열심히 시민들의 목소리에 귀를 귀울여 더욱 많은 시민들이 삶의 행복을 느끼며 살아갈 수 있도록 더욱 노력하겠다는 포부를 밝혔다. 리서치 전문 전문 기관인 OOO서치에서 설문을 실시한 결과 홍의원의 선거 공약 이행에 대한 만족도는 00%에 해당하였고 전문가 만족도는 00%에 해당하였다.</div>
+					<div class="title">${mainArticleNotImage[0].title}</div>
+					<div class="content">${mainArticleNotImage[0].content}</div>
 				</div>
 				<div class="footer">
-					<div class="date">14.11.03 14:02</div>
-					<div class="more">자세히</div>
+					<div class="date"> ${mainArticleNotImage[0].date} </div>
+					<div class="more"><a href="/GetArticle.ruw?article-id=${mainArticleNotImage[0].article_id}&ancestor-id=${mainArticleNotImage[0].ancestor_id}">자세히</a></div>
 				</div>
 			</div>
-			<div class="cardB">
+		
+		<c:forEach var="article" items="${mainArticleImage }">
+				<div class="cardB">
 				<div class="header">
-					<div class="name">개발자</div>
-					<div class="party">개발중이당</div>
+					<div class="name">${article.name }</div>
+					<div class="party">${article.partyName }</div>
 				</div>
 				<div class="body">
-					<div class="title">홍길동 의원 복지공략 실천 이행해 좋은 반응을 얻고 있다 있다</div>
-					<div class="content">최근 홍길동 의원은 선거 공약으로 내세웠던 내용중 하나인 복지공약을 이행해서 시민들로 부터 좋은 반응을 얻고 있다. 홍 대표는 앞으로도 더욱 열심히 시민들의 목소리에 귀를 귀울여 더욱 많은 시민들이 삶의 행복을 느끼며 살아갈 수 있도록 더욱 노력하겠다는 포부를 밝혔다</div>
-					<div class="content">이런식으로 좌 우로 본문 내용을 나누게 된다면 Javascript의 subString을 쓰면 될 것 같다는 생각이 든다. 이를 활용하면 더욱 멋진 UI를 구성할 수 있을것으로 예상되는 바이다</div>
+					<div class="title">${article.title}</div>
+					<div class="content">${article.content}</div>
+					<img src="${article.img_url}" width="240px" height="120px">
 				</div>
 				<div class="footer">
-					<div class="date">14.11.03 14:02</div>
-					<div class="validity">OOO의원 기사 평균 신뢰도 : 99%</div>
-					<div class="more">자세히</div>
+					<div class="date">${article.date}</div>
+					<div class="more"><a href="/GetArticle.ruw?article-id=${article.article_id}&ancestor-id=${article.ancestor_id}">자세히</a></div>
 				</div>
 			</div>
-			<div class="cardB">
-				<div class="header">
-					<div class="name">개발자</div>
-					<div class="party">개발중이당</div>
+		</c:forEach>
+		
+			<c:forEach var="article" items="${mainArticleNotImage}" begin="1" varStatus="status">
+				<c:choose>
+					<c:when test = "${ status.index == 1}"> <div class="cardA">
+					</c:when>
+					<c:otherwise>
+						<div class="cardC">
+					</c:otherwise>	
+				</c:choose>
+					<div class="header">
+						<div class="name">${article.name }</div>
+						<div class="party">${article.partyName }</div>
+					</div>
+					<div class="body">
+						<div class="title">${article.title}</div>
+						<div class="content">${article.content}</div>
+					</div>
+					<div class="footer">
+						<div class="date">${article.date} </div>
+						<div class="more"><a href="/GetArticle.ruw?article-id=${article.article_id}&ancestor-id=${article.ancestor_id}">자세히</a></div>
+					</div>
 				</div>
-				<div class="body">
-					<div class="title">홍길동 의원 복지공략 실천 이행해 좋은 반응을 얻고 있다</div>
-					<div class="content">최근 홍길동 의원은 선거 공약으로 내세웠던 내용중 하나인 복지공약을 이행해서 시민들로 부터 좋은 반응을 얻고 있다. 홍 대표는 앞으로도 더욱 열심히 시민들의 목소리에 귀를 귀울여 더욱 많은 시민들이 삶의 행복을 느끼며 살아갈 수 있도록 더욱 노력하겠다는 포부를 밝혔다</div>
-					<div class="content">최근 홍길동 의원은 선거 공약으로 내세웠던 내용중 하나인 복지공약을 이행해서 시민들로 부터 좋은 반응을 얻고 있다.</div>
-				</div>
-				<div class="footer">
-					<div class="date">14.11.03 14:02</div>
-					<div class="validity">OOO의원 기사 평균 신뢰도 : 99%</div>
-					<div class="more">자세히</div>
-				</div>
-			</div>
-			<div class="cardA">
-				<div class="header">
-					<div class="name">개발자</div>
-					<div class="party">개발중이당</div>
-				</div>
-				<div class="body">
-					<div class="title">홍길동 의원 복지공략 실천 이행해 좋은 반응을 얻고 있다</div>
-					<div class="content">최근 홍길동 의원은 선거 공약으로 내세웠던 내용중 하나인 복지공약을 이행해서 시민들로 부터 좋은 반응을 얻고 있다.</div>
-				</div>
-				<div class="footer">
-					<div class="date">14.11.03 14:02</div>
-					<div class="more">자세히</div>
-				</div>
-			</div>
-			<div class="cardC">
-				<div class="header">
-					<div class="name">개발자</div>
-					<div class="party">개발중이당</div>
-				</div>
-				<div class="body">
-					<div class="title">홍길동 의원 복지공략 실천 이행해 좋은 반응을 얻고 있다</div>
-					<div class="content">최근 홍길동 의원은 선거 공약으로 내세웠던 내용중 하나인 복지공약을 이행해서 시민들로 부터 좋은 반응을 얻고 있다. 홍 대표는 앞으로도 더욱 열심히 시민들의 목소리에 귀를 귀울여 더욱 많은 시민들이 삶의 행복을 느끼며 살아갈 수 있도록 더욱 노력하겠다는 포부를 밝혔다. 최근 홍길동 의원은 선거 공약으로 내세웠던 내용중 하나인 복지공약을 이행해서 시민들로 부터 좋은 반응을 얻고 있다.</div>
-				</div>
-				<div class="footer">
-					<div class="date">14.11.03 14:02</div>
-					<div class="validity">OOO의원 기사 평균 신뢰도 : 99%</div>
-					<div class="more">자세히</div>
-				</div>
-			</div>
-			<div class="cardC">
-				<div class="header">
-					<div class="name">개발자</div>
-					<div class="party">개발중이당</div>
-				</div>
-				<div class="body">
-					<div class="title">홍길동 의원 복지공략 실천 이행해 좋은 반응을 얻고 있다</div>
-					<div class="content">최근 홍길동 의원은 선거 공약으로 내세웠던 내용중 하나인 복지공약을 이행해서 시민들로 부터 좋은 반응을 얻고 있다. 홍 대표는 앞으로도 더욱 열심히 시민들의 목소리에 귀를 귀울여 더욱 많은 시민들이 삶의 행복을 느끼며 살아갈 수 있도록 더욱 노력하겠다는 포부를 밝혔다. 최근 홍길동 의원은 선거 공약으로 내세웠던 내용중 하나인 복지공약을 이행해서 시민들로 부터 좋은 반응을 얻고 있다.</div>
-				</div>
-				<div class="footer">
-					<div class="date">14.11.03 14:02</div>
-					<div class="validity">OOO의원 기사 평균 신뢰도 : 99%</div>
-					<div class="more">자세히</div>
-				</div>
-			</div>
-			<div class="cardC">
-				<div class="header">
-					<div class="name">개발자</div>
-					<div class="party">개발중이당</div>
-				</div>
-				<div class="body">
-					<div class="title">홍길동 의원 복지공략 실천 이행해 좋은 반응을 얻고 있다</div>
-					<div class="content">최근 홍길동 의원은 선거 공약으로 내세웠던 내용중 하나인 복지공약을 이행해서 시민들로 부터 좋은 반응을 얻고 있다. 홍 대표는 앞으로도 더욱 열심히 시민들의 목소리에 귀를 귀울여 더욱 많은 시민들이 삶의 행복을 느끼며 살아갈 수 있도록 더욱 노력하겠다는 포부를 밝혔다. 최근 홍길동 의원은 선거 공약으로 내세웠던 내용중 하나인 복지공약을 이행해서 시민들로 부터 좋은 반응을 얻고 있다.</div>
-				</div>
-				<div class="footer">
-					<div class="date">14.11.03 14:02</div>
-					<div class="validity">OOO의원 기사 평균 신뢰도 : 99%</div>
-					<div class="more">자세히</div>
-				</div>
-			</div>
-			<div class="cardC">
-				<div class="header">
-					<div class="name">개발자</div>
-					<div class="party">개발중이당</div>
-				</div>
-				<div class="body">
-					<div class="title">홍길동 의원 복지공략 실천 이행해 좋은 반응을 얻고 있다</div>
-					<div class="content">최근 홍길동 의원은 선거 공약으로 내세웠던 내용중 하나인 복지공약을 이행해서 시민들로 부터 좋은 반응을 얻고 있다. 홍 대표는 앞으로도 더욱 열심히 시민들의 목소리에 귀를 귀울여 더욱 많은 시민들이 삶의 행복을 느끼며 살아갈 수 있도록 더욱 노력하겠다는 포부를 밝혔다. 최근 홍길동 의원은 선거 공약으로 내세웠던 내용중 하나인 복지공약을 이행해서 시민들로 부터 좋은 반응을 얻고 있다.</div>
-				</div>
-				<div class="footer">
-					<div class="date">14.11.03 14:02</div>
-					<div class="validity">OOO의원 기사 평균 신뢰도 : 99%</div>
-					<div class="more">자세히</div>
-				</div>
-			</div>
+			</c:forEach>
 		</div>
 	</div>
 </div>
