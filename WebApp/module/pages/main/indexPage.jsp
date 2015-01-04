@@ -7,7 +7,7 @@
 <div id="pageContainer">
 <div id="ns-index">
 	<div class = "card type1">
-		 ${request.politicianName[0]};
+		 ${request.politicianName[0]}
 		<span>공약 이행률 순위</span>
 		<a href="/ranking.ruw"><span class = "more">더보기</span></a>
 		<div class="politicianList">
