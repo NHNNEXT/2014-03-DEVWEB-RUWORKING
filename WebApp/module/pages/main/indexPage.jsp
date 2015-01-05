@@ -73,6 +73,7 @@
 
 	<div class = "card type3">
 		<span>최근 올라온 소식</span>
+		<c:if test="${!(empty mainArticleNotImage && empty mainArticleImage)}">
 		<div>
 			<div class="cardA">
 				<div class="header">
@@ -106,7 +107,6 @@
 				</div>
 			</div>
 		</c:forEach>
-		
 			<c:forEach var="article" items="${mainArticleNotImage}" begin="1" varStatus="status">
 				<c:choose>
 					<c:when test = "${ status.index == 1}"> <div class="cardA">
@@ -129,6 +129,7 @@
 					</div>
 				</div>
 			</c:forEach>
+			</c:if>
 		</div>
 	</div>
 </div>
