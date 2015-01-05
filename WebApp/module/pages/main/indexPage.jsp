@@ -71,7 +71,6 @@
 		<div class="card type3">
 			<span>최근 올라온 소식</span>
 				<div>
-			<c:if test="${!(empty mainArticleNotImage)}">
 					<div class="cardA">
 						<div class="header">
 							<div class="name">${mainArticleNotImage[0].name}</div>
@@ -84,14 +83,10 @@
 						<div class="footer">
 							<div class="date">${mainArticleNotImage[0].date}</div>
 							<div class="more">
-								<a
-									href="/GetArticle.ruw?article-id=${mainArticleNotImage[0].article_id}&ancestor-id=${mainArticleNotImage[0].ancestor_id}">자세히</a>
+								<a href="/GetArticle.ruw?article-id=${mainArticleNotImage[0].article_id}&ancestor-id=${mainArticleNotImage[0].ancestor_id}">자세히</a>
 							</div>
 						</div>
 					</div>
-			</c:if>
-
-			<c:if test="${!(empty mainArticleImage)}">
 				<c:forEach var="article" items="${mainArticleImage }">
 					<div class="cardB">
 						<div class="header">
@@ -106,14 +101,11 @@
 						<div class="footer">
 							<div class="date">${article.date}</div>
 							<div class="more">
-								<a
-									href="/GetArticle.ruw?article-id=${article.article_id}&ancestor-id=${article.ancestor_id}">자세히</a>
+								<a href="/GetArticle.ruw?article-id=${article.article_id}&ancestor-id=${article.ancestor_id}">자세히</a>
 							</div>
 						</div>
 					</div>
 				</c:forEach>
-			</c:if>
-			<c:if test="${!(empty mainArticleNotImage)}">
 				<c:forEach var="article" items="${mainArticleNotImage}" begin="1" varStatus="status">
 					<c:choose>
 						<c:when test="${ status.index == 1}">
@@ -137,9 +129,8 @@
 							<a href="/GetArticle.ruw?article-id=${article.article_id}&ancestor-id=${article.ancestor_id}">자세히</a>
 						</div>
 					</div>
-			</c:forEach>
-		</c:if>
-	</div>
+				</div>
+		</c:forEach>
 	</div>
 </div>
 </div>
