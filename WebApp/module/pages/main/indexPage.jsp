@@ -60,11 +60,11 @@
 		<div class="notice">
 			<div class="title">공지사항</div>
 			<div class="content">- 19대 국회의원 정보가 업데이트 되었습니다.</div>
-			<div class="date">14.03.04</div>
+			<div class="date">15.01.04</div>
 			<div class="content">- 서비스 개선을 위한 정기점검 안내드립니다.</div>
-			<div class="date">14.03.04</div>
+			<div class="date">15.01.03</div>
 			<div class="content">- 서비스 개선을 위한 정기점검 안내드립니다.</div>
-			<div class="date">14.03.04</div>
+			<div class="date">14.12.29</div>
 		</div>
 		<div class="graph-tip">
 			[Tip] 그래프의 각 항목 위에 마우스를 올리시면 자세한 정보를 확인할 수 있습니다
