@@ -148,38 +148,52 @@ a {
 }
 
 #ns-index #localinfo {
-    width:723px;
-    height:30px;
-    line-height: 30px;
-    text-align: center;
-    margin-left: 26px;
-    background-color: #FFD17A;
-    border:1px solid #B78B27;
-    float:left;
-    margin-top: 15px;
-    margin-bottom: -20px;
-    display:none;
+	width: 723px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	margin-left: 26px;
+	background-color: #FFD17A;
+	border: 1px solid #B78B27;
+	float: left;
+	margin-top: 15px;
+	margin-bottom: -20px;
+	display: none;
 }
 
 #ns-index .localinfo {
-    -moz-animation-duration: 4s;
-    -webkit-animation-duration: 4s;
-    -moz-animation-name: fadeout;
-    -webkit-animation-name: fadeout;
-    -webkit-animation-delay: 5s; 
-    animation-delay: 5s;
+	-moz-animation-duration: 4s;
+	-webkit-animation-duration: 4s;
+	-moz-animation-name: fadeout;
+	-webkit-animation-name: fadeout;
+	-webkit-animation-delay: 5s;
+	animation-delay: 5s;
 }
 
-@-webkit-keyframes fadeout {
-    20% {opacity: 0;}
-    to {height:0px;border:0px;opacity: 0;}
+@
+-webkit-keyframes fadeout { 20% {
+	opacity: 0;
 }
 
-@keyframes fadeout {
-    20% {opacity: 0;}
-    to {height:0px;border:0px;opacity: 0;}
+to {
+	height: 0px;
+	border: 0px;
+	opacity: 0;
 }
 
+}
+@
+keyframes fadeout { 20% {
+	opacity: 0;
+}
+
+to {
+	height: 0px;
+	border: 0px;
+	opacity: 0;
+}
+
+}
 #ns-index .secondfloor {
 	float: left;
 	margin-left: 26px;
@@ -187,53 +201,88 @@ a {
 }
 
 #ns-index .secondfloor .boxTypeA .card.type2 div.loading {
-    padding-top: 75px;
-    display: inline-block;
-    font-size: 15px;
-    -webkit-animation: loading 2s;
-    animation: loading 2s;
-    -webkit-animation-delay: 1.5s;
-    animation-delay: 1.5s;
-    -webkit-animation-iteration-count: infinite;
-    animation-iteration-count: infinite;
-    -webkit-animation-timing-function: ease-in-out;
-    animation-timing-function: ease-in-out;
+	padding-top: 75px;
+	display: inline-block;
+	font-size: 15px;
+	-webkit-animation: loading 2s;
+	animation: loading 2s;
+	-webkit-animation-delay: 1.5s;
+	animation-delay: 1.5s;
+	-webkit-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+	-webkit-animation-timing-function: ease-in-out;
+	animation-timing-function: ease-in-out;
 }
 
-@-webkit-keyframes loading {
-    25% {
-        -ms-transform: rotate(-5deg);
-        -webkit-transform: rotate(-5deg);
-        transform: rotate(-5deg);
-    }
-
-    75% {
-        -ms-transform: rotate(5deg);
-        -webkit-transform: rotate(5deg);
-        transform: rotate(5deg);
-    }
+@
+-webkit-keyframes loading { 25% {
+	-ms-transform: rotate(-5deg);
+	-webkit-transform: rotate(-5deg);
+	transform: rotate(-5deg);
 }
 
+75%
+{
+-ms-transform
+:
+ 
+rotate
+(5deg);
 
-@keyframes loading {
-    25% {
-        -ms-transform: rotate(-5deg);
-        -webkit-transform: rotate(-5deg);
-        transform: rotate(-5deg);
-    }
+        
+-webkit-transform
+:
+ 
+rotate
+(5deg);
 
-    75% {
-        -ms-transform: rotate(5deg);
-        -webkit-transform: rotate(5deg);
-        transform: rotate(5deg);
-    }
+        
+transform
+:
+ 
+rotate
+(5deg);
+
+    
+}
+}
+@
+keyframes loading { 25% {
+	-ms-transform: rotate(-5deg);
+	-webkit-transform: rotate(-5deg);
+	transform: rotate(-5deg);
 }
 
-#ns-index .secondfloor .boxTypeA,#ns-index .secondfloor .boxTypeC {
-    width:232px;
-    height:230px;
-    margin-right: 14.5px;
-    float:left;
+75%
+{
+-ms-transform
+:
+ 
+rotate
+(5deg);
+
+        
+-webkit-transform
+:
+ 
+rotate
+(5deg);
+
+        
+transform
+:
+ 
+rotate
+(5deg);
+
+    
+}
+}
+#ns-index .secondfloor .boxTypeA, #ns-index .secondfloor .boxTypeC {
+	width: 232px;
+	height: 230px;
+	margin-right: 14.5px;
+	float: left;
 }
 
 #ns-index .secondfloor .boxTypeC {
@@ -241,27 +290,26 @@ a {
 }
 
 #ns-index .secondfloor .boxTypeC .dday {
-    background-color: #577EF2;
-    opacity: 0.9;
+	background-color: #577EF2;
+	opacity: 0.9;
 }
 
-#ns-index .secondfloor .boxTypeC .dday .number{
-    width:232px;
-    height:230px;
-    line-height: 230px;
-    text-align: center;
-    
-    opacity: 0.95;
-    font-size: 47px;
-    font-weight: 900;
-    color:#fff;
-
+#ns-index .secondfloor .boxTypeC .dday .number {
+	width: 232px;
+	height: 230px;
+	line-height: 230px;
+	text-align: center;
+	opacity: 0.95;
+	font-size: 47px;
+	font-weight: 900;
+	color: #fff;
 }
 
-#ns-index .secondfloor .boxTypeA .title ,#ns-index .secondfloor .boxTypeC .title {
-    margin-top:10px;
-    font-size: 18px;
-    float:left;
+#ns-index .secondfloor .boxTypeA .title, #ns-index .secondfloor .boxTypeC .title
+	{
+	margin-top: 10px;
+	font-size: 18px;
+	float: left;
 }
 
 #ns-index .secondfloor .boxTypeB {
@@ -322,14 +370,14 @@ a {
 }
 
 #ns-index .type2 {
-    border:1px solid #cccccc;
-    width:230px;
-    height:230px;
-    line-height: 25px;
-    text-align: center;
-    margin-top: 10px;
-    float:left;
-    overflow: hidden;
+	border: 1px solid #cccccc;
+	width: 230px;
+	height: 230px;
+	line-height: 25px;
+	text-align: center;
+	margin-top: 10px;
+	float: left;
+	overflow: hidden;
 }
 
 #ns-index .type2_Big {
@@ -538,11 +586,11 @@ a {
 	top: 27px;
 }
 
-#ns-index .type3 > div .cardC .body {
-    width:100%;
-    height:100%;
-    display: inline-block;
-    float:left;
+#ns-index .type3>div .cardC .body {
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+	float: left;
 }
 
 #ns-index .type3>div .cardC .body .title {
@@ -619,63 +667,85 @@ a {
 }
 
 #ns-index .field_underbar {
-    position: absolute;
-    bottom:0px;
-    width:100%;
-    height:25px;
-    float:left;
-    -moz-animation-duration: 2s;
-    -webkit-animation-duration: 2s;
-    -moz-animation-name: slidein;
-    -webkit-animation-name: slidein;
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	height: 25px;
+	float: left;
+	-moz-animation-duration: 2s;
+	-webkit-animation-duration: 2s;
+	-moz-animation-name: slidein;
+	-webkit-animation-name: slidein;
 }
 
-@-moz-keyframes slidein {
-  from {
-    margin-left:100%;
-    width:200%
-  }
-  
-  75% {
-    font-size:250%;
-    margin-left:20%;
-    width:150%;
-  }
-  
-  to {
-    margin-left:0%;
-    width:100%;
-  }
+@
+-moz-keyframes slidein {from { margin-left:100%;
+	width: 200%
 }
+
+75%
+{
+font-size
+:
+250%;
+
     
-@-webkit-keyframes slidein {
-  from {
-    margin-left:100%;
-    width:200%
-  }
+margin-left
+:
+20%;
+
+    
+width
+:
+150%;
+
   
-  75% {
-    font-size:250%;
-    margin-left:20%;
-    width:150%;
-  }
-  
-  to {
-    margin-left:0%;
-    width:100%;
-  }
+}
+to {
+	margin-left: 0%;
+	width: 100%;
 }
 
+}
+@
+-webkit-keyframes slidein {from { margin-left:100%;
+	width: 200%
+}
+
+75%
+{
+font-size
+:
+250%;
+
+    
+margin-left
+:
+20%;
+
+    
+width
+:
+150%;
+
+  
+}
+to {
+	margin-left: 0%;
+	width: 100%;
+}
+
+}
 #ns-index .field_underbar span {
-    width:50%;
-    height:25px;
-    line-height: 25px;
-    text-align: center;;
-    float:left;
-    display:inline-block;
-    color:#fff;
-    font-weight: bold;
-    text-shadow: 0.5px 0.5px 0.5px #494C4C;
+	width: 50%;
+	height: 25px;
+	line-height: 25px;
+	text-align: center;;
+	float: left;
+	display: inline-block;
+	color: #fff;
+	font-weight: bold;
+	text-shadow: 0.5px 0.5px 0.5px #494C4C;
 }
 
 #ns-index .card {
@@ -1651,12 +1721,15 @@ a {
 	font-size: 25px;
 	padding: 20px;
 	padding-bottom: 10px;
+	box-sizing: border-box;
+	clear: both;
 }
 
 #ns-evidenceDetail .date {
-	position: absolute;
-	left: 550px;
-	top: 20px;
+	position: relative;
+	float: right;
+	top: 15px;
+	right: 15px;
 }
 
 #ns-evidenceDetail .basic-info {
@@ -1910,55 +1983,54 @@ a {
 	width: 400px;
 	height: 25px;
 	margin-left: 165px;
-	border:0px;
+	border: 0px;
 }
 
 /* //ns-rankingPage namespace end */
 
-
 /* ns-party namespace start */
-#ns-party{
-    float:left;
-    background-color:#fff;
+#ns-party {
+	float: left;
+	background-color: #fff;
 }
 
 #ns-party .cards-container {
 	margin: 10px;
-    overflow: auto;
+	overflow: auto;
 }
 
-#ns-party .cards-container>span{
-    font-size: 25px;
-    display: block;
+#ns-party .cards-container>span {
+	font-size: 25px;
+	display: block;
 }
 
 #ns-party .cards-container .party-cards {
-    width:100%;
-    margin-top: 15px;
+	width: 100%;
+	margin-top: 15px;
 }
 
-#ns-party .cards-container .party-cards ul li.card-list{
-    width:330px;
-    background-color: #fff;
-    height:210px;
-    border:1px solid #ccc;
-    float:left;
-    margin-right: 20px;
-    margin-bottom: 20px;
-    position: relative;
+#ns-party .cards-container .party-cards ul li.card-list {
+	width: 330px;
+	background-color: #fff;
+	height: 210px;
+	border: 1px solid #ccc;
+	float: left;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	position: relative;
 }
 
 #ns-party .cards-container .party-cards ul li.card-list span.party {
-    margin-left: 12px;
-    margin-top: 18px;
-    font-size: 22px;
-    font-weight: bold;
-    display:inline-block;
-    position: relative;
+	margin-left: 12px;
+	margin-top: 18px;
+	font-size: 22px;
+	font-weight: bold;
+	display: inline-block;
+	position: relative;
 }
 
-#ns-party .cards-container .party-cards .chart-container{
-	position:relative;
+#ns-party .cards-container .party-cards .chart-container {
+	position: relative;
 	border-left: 1px solid #cccccc;
 	width: 170px;
 	height: 210px;
@@ -1966,31 +2038,31 @@ a {
 	overflow: hidden;
 }
 
-#ns-party .chart{
-	position:relative;
-	top:-60px;
-	left:-32px;
+#ns-party .chart {
+	position: relative;
+	top: -60px;
+	left: -32px;
 }
 
 #ns-party .party-info {
-    width: 110px;
-    float: left;
-    padding-left: 30px;
-    padding-top:15px;
-    font-size: 15px;
+	width: 110px;
+	float: left;
+	padding-left: 30px;
+	padding-top: 15px;
+	font-size: 15px;
 }
 
 #ns-party .party-info li {
-    list-style: disc;
+	list-style: disc;
 }
- 
+
 #ns-party .field_underbar {
-	position:absolute;
+	position: absolute;
 	bottom: 0px;
-	width:100%;
+	width: 100%;
 }
+
 #ns-party .field_underbar span {
-	
 	width: 50%;
 	height: 25px;
 	line-height: 25px;
