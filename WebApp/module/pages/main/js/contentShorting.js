@@ -14,7 +14,7 @@ function shortContent(e) {
 	for(var i=3; i<stringList.length; i++) {
 		var string = stringList[i].innerHTML;
 		if(string.length > 160) {
-			var insertString = string.substring(0, 160) + "...";
+			var insertString = string.substring(0, 130) + "...";
 			stringList[i].innerHTML = insertString;
 		}
 	}
