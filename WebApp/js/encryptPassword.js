@@ -14,6 +14,7 @@
 	    
 	    function validateEncryptedForm(){
 	    	var securedPassword = sha256_digest(pwEle.value);
+	    	pwEle.value = "";
 	    	pwEncryptEle.value = securedPassword;
 	    }
 	},false);

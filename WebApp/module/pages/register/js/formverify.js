@@ -184,8 +184,11 @@
     function validateEncryptedForm(){
         var formEle = document.getElementById("test");
     	var pwEle1 = formEle.querySelector("[data-type='pw1']");
+        var pwEle2 = formEle.querySelector("[data-type='pw2']");
         var pwEncryption = formEle.querySelector("[data-type='pwEncryption']");
     	var securedPassword = sha256_digest(pwEle1.value);
+        pwEle1.value = "";
+        pwEle2.value = "";
     	pwEncryption.value = securedPassword;
     }
 })();
