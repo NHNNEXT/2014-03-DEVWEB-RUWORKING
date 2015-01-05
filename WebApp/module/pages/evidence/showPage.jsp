@@ -34,12 +34,20 @@
 			<a class="edit" href="/EditArticle.ruw?articleId=${article.id}">수정하기</a>
 		</c:if>
 
+		<c:choose>
+		<c:when test="${!empty sessionScope.userId}">
 		<form class="comment-input">
 			<input type="hidden" class="hidden-box" name="article-id"
 				value="${article.id}"> <input class="comment-box"
 				name="comment" type="text">
 			<div class="comment-submit">댓글 등록</div>
 		</form>
+		</c:when>
+		<c:otherwise>
+			<div class="comment-input-imposible">로그인 하셔야 댓글을 등록하실 수 있습니다.</div>
+		</c:otherwise>
+		</c:choose>
+		
 		<ul class="comment-list">
 			<c:forEach var="each" items="${commentList}">
 				<li class="show-comment"><span class="user-id">${each.userId}</span>
