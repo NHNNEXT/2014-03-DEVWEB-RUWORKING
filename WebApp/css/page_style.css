@@ -1763,13 +1763,21 @@ to {
 	margin-right: 10px;
 }
 
-#ns-evidenceDetail .comment-input {
+#ns-evidenceDetail .comment-input, .comment-input-imposible{
 	width: 700px;
 	margin: 0px auto;
 	margin-bottom: 10px;
 	background-color: #fff;
 	border: 1px solid #ccc;
 	clear: both;
+}
+
+#ns-evidenceDetail div.comment-input-imposible {
+	background-color: #EB5E4F;
+	padding: 10px;
+	box-sizing: border-box;
+	color: #fff;
+	font-size:  15px;
 }
 
 #ns-evidenceDetail .comment-box {

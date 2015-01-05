@@ -28,8 +28,8 @@
 #ns-rankingPage .card {
   -webkit-animation: first 3s  alternate;
   -moz-animation: first 3s  alternate;
-  -o-animation: first 3s  alternate;
   animation: first 3s  alternate;
+  -o-animation: first 3s  alternate;
 }
 
 @-webkit-keyframes first {
@@ -54,27 +54,45 @@
   }
 }
 @-moz-keyframes first {
-  0% {
+   0% {
     opacity: 0;
+    margin-top: 300px;
+  }
+  75% {
+    margin-top: -5px;
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  90% {
+    -ms-transform: rotate(3deg);
+    -webkit-transform: rotate(3deg);
+    transform: rotate(3deg);
   }
   100% {
     opacity: 1.0;
-  }
-}
-@-o-keyframes first {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1.0;
+    margin-top: 10px;
   }
 }
 @keyframes first {
-  0% {
+    0% {
     opacity: 0;
+    margin-top: 300px;
+  }
+  75% {
+    margin-top: -5px;
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  90% {
+    -ms-transform: rotate(3deg);
+    -webkit-transform: rotate(3deg);
+    transform: rotate(3deg);
   }
   100% {
     opacity: 1.0;
+    margin-top: 10px;
   }
 }
 </style>

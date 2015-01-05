@@ -31,6 +31,12 @@ public class MainModel {
 			return makeFulfillmentList(rs);
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} finally {
+			try {
+				DAO.closeConnections();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 		return null;
 	}
@@ -153,6 +159,12 @@ public class MainModel {
 			}
 		}catch(SQLException e) {
 			e.printStackTrace();
+		} finally {
+			try {
+				DAO.closeConnections();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 		
 		return ret;
@@ -178,6 +190,12 @@ public class MainModel {
 			}
 		}catch(SQLException e) {
 			e.printStackTrace();
+		} finally {
+			try {
+				DAO.closeConnections();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 		
 		return ret;
