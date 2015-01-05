@@ -829,7 +829,7 @@ to {
 	font-size: 20px;
 }
 
-#ns-LoginFail .submit input {
+#ns-LoginFail div.submit div {
 	width: 87%;
 	height: 45px;
 	line-height: 45px;

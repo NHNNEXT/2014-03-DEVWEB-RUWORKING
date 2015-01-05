@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 
 <script src = "module/pages/register/js/formverify.js"></script>
+<script src = "library/js/sha256.js"></script>
 
 <div id="pageContainer">
 <div id="ns-register">	

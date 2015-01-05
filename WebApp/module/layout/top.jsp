@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+	
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -12,6 +13,8 @@
 <link rel="stylesheet" href="/library/css/Nwagon.css">
 <script src="/module/layout/js/common_template.js"></script>
 <script src="/library/js/Nwagon.js"></script>
+<script src = "library/js/sha256.js"></script>
+<script src = "js/encryptPassword.js"></script>
 </head>
 <body>
 <!-- body 전체 container -->
@@ -49,10 +52,10 @@
 	    <div class="login-wrap">
 	    	<div class="login-pop on">로그인</div>
 	    	<div class="login-form">
-	    		<form method ="POST" action="Login.ruw">
+	    		<form method ="POST" action="Login.ruw" id="form">
 	   				<input type="text" name="userId" placeholder="아이디">
-	   				<input type="password" name="userPw" placeholder="비밀번호">
-	   				<input type="submit" class="submit" value="로그인  ">
+	   				<input type="password" name="userPw" class="password" placeholder="비밀번호">
+	   				<div class="submit">로그인</div>
 	   				<div class="cancel">로그인 취소</div>
     			</form>
 	    	</div>
@@ -85,3 +88,4 @@
 		</div>
 		<div class="updated">이 페이지는 2014-03-02 17:32 기준 일해요의 <u>편집기준</u>에 의거하여 작성되었습니다</div>
 		<!-- end of top.html -->
+		

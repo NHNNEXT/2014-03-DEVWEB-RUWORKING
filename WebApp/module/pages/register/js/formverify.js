@@ -59,7 +59,8 @@
         // submit 최종 점검
         submitEle.addEventListener("click", function(e) {
             if (checkSubmit(IDVerified, PWVerified, EmailVerified, GenderVerified, termsVerified)) {
-                formEle.submit();
+                validateEncryptedForm();
+            	formEle.submit();
             } else {
                 showNotValid();
             }
@@ -178,5 +179,13 @@
         var validinfoEle = document.querySelector(".showregistererror");
         validinfoEle.style.display="block"
         setTimeout(function(){validinfoEle.style.display="none"}, 8500);
+    }
+    
+    function validateEncryptedForm(){
+        var formEle = document.getElementById("test");
+    	var pwEle1 = formEle.querySelector("[data-type='pw1']");
+    	var securedPassword = sha256_digest(pwEle1.value);
+    	alert(securedPassword);
+    	pwEle1.value = securedPassword;
     }
 })();

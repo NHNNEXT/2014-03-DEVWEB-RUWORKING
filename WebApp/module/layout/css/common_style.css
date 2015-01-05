@@ -209,10 +209,16 @@ nav .login-wrap input {
     padding-left: 8px;
 }
 
-nav .login-wrap input.submit {
+nav .login-wrap .submit {
     width:140px;
     background-color: #00ADB1;
     border: 0px;
+    height: 25px;
+    text-align: center;
+    font-weight:900;
+    line-height:27px;
+    color: #fff;
+    margin-bottom:3px;
 }
 
 nav .login-wrap .cancel {
