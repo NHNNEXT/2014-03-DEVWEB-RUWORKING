@@ -8,8 +8,8 @@
 	<div id="ns-evidenceDetail">
 		<div class="evidence-wrapper">
 			<div class="article-header">
-				<div class="title">${article.title}</div>
 				<div class="date">${article.date}</div>
+				<div class="title">${article.title}</div>
 				<div class="basic-info">
 					글쓴이
 					<div class="userId">${article.userId}</div>
