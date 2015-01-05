@@ -133,7 +133,7 @@ public class MainModel {
 	}
 
 	public List<mainArticle> getRecentArticleNotImage() {
-		String sql = "select politician.name, party.name as partyName, article.title, article.content, article.img_url, article.date, article.id, article.ancestor_id from politician inner join article on politician.id = article.politician_id inner join party on politician.party_id = party.id where article.deleted = 0 order by article.date desc;";
+		String sql = "select politician.name, party.name as partyName, article.title, article.content, article.img_url, article.date, article.id, article.ancestor_id, article.version from politician inner join article on politician.id = article.politician_id inner join party on politician.party_id = party.id inner join (select ancestor_id, MAX(version) as version from article group by ancestor_id) as maxVersion on maxVersion.version = article.version and maxVersion.ancestor_id = article.ancestor_id  where article.deleted = 0 order by article.date desc;";
 		ArrayList<Object> queryValues = new ArrayList<Object>();
 		PstmtQuerySet querySet = new PstmtQuerySet(sql, queryValues);
 		DAOFactory DAO = new DAOFactory();
@@ -158,7 +158,7 @@ public class MainModel {
 		return ret;
 	}
 	public List<mainArticle> getRecentArticleImage() {
-		String sql = "select politician.name, party.name as partyName, article.title, article.content, article.img_url, article.date, article.id, article.ancestor_id from politician inner join article on politician.id = article.politician_id inner join party on politician.party_id = party.id where article.deleted = 0 order by article.date desc;";
+		String sql = "select politician.name, party.name as partyName, article.title, article.content, article.img_url, article.date, article.id, article.ancestor_id, article.version from politician inner join article on politician.id = article.politician_id inner join party on politician.party_id = party.id inner join (select ancestor_id, MAX(version) as version from article group by ancestor_id) as maxVersion on maxVersion.version = article.version and maxVersion.ancestor_id = article.ancestor_id  where article.deleted = 0 order by article.date desc;";
 		ArrayList<Object> queryValues = new ArrayList<Object>();
 		PstmtQuerySet querySet = new PstmtQuerySet(sql, queryValues);
 		DAOFactory DAO = new DAOFactory();
