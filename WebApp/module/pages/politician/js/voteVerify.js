@@ -44,6 +44,8 @@
 			                 var eachPercentEle = targetForm.parentElement.parentElement.parentElement.querySelector(".percentage");
 			                 eachPercentEle.innerHTML=result.eachPercent+"%";
 
+			                 reDrawGraph(result);
+
 						 }
 					 }
 					request.send(params);
@@ -72,6 +74,9 @@
 				                 var eachPercentEle = targetForm.parentElement.parentElement.parentElement.querySelector(".percentage");
 				                 eachPercentEle.innerHTML=result.eachPercent+"%";
 				                 
+				                 reDrawGraph(result);
+
+				                 
 							 }
 						 }
 						request.send(params);
@@ -81,6 +86,26 @@
 			
 			}.bind(this, targetForm), false);
 			
+		}
+		
+		function reDrawGraph(result){
+			var options = {
+				'dataset': {
+					title: 'Web accessibility status',
+					values:[result.totalPercent, 100-result.totalPercent],
+					colorset: ['#2EB400', '#DC143C'],
+					fields: ['완료', '미이행'] 
+				},
+				'donut_width' : 30, //70
+				'core_circle_radius':40,
+				'chartDiv': 'chart_d',
+				'chartType': 'donut',
+				'chartSize': {width:300, height:285}
+			};
+			
+			var originEle = document.getElementById("chart_d");
+			originEle.innerHTML = "";
+			Nwagon.chart(options);
 		}
 	},false);
 	
