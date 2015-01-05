@@ -122,9 +122,6 @@ docs/_build/
 target/
 /WEB-INF/
 
-#userData
-WebApp/userData/
-
 #IntelliJ
 .idea/
 *.iml
