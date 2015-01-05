@@ -55,6 +55,7 @@
 	    		<form method ="POST" action="Login.ruw" id="form">
 	   				<input type="text" name="userId" placeholder="아이디">
 	   				<input type="password" name="userPw" class="password" placeholder="비밀번호">
+	   				<input type="hidden" name="PwEncryption" class="PwEncryption">
 	   				<div class="submit">로그인</div>
 	   				<div class="cancel">로그인 취소</div>
     			</form>

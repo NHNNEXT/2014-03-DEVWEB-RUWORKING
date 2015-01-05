@@ -34,6 +34,7 @@
 		<div class="input-wrap"><input type="text" name="id" data-type="id" placeholder = "아이디">
 		<span class="validate-info validate-big">알파벳, 숫자를 활용하여 4자 ~ 12자의 ID를 구성하세요<br>단, 아이디에 영문자가 반드시 1개이상 포함되어야 합니다</span></div>
 		<div class="input-wrap"><input type="password" name="pw1" data-type="pw1" placeholder = "비밀번호">
+		<input type="hidden" name="pwEncryption" data-type="pwEncryption">
 		<span class="validate-info">비밀번호가 일치하지 않습니다.</span></div>
 		<div class="input-wrap"><input type="password" name="pw2" data-type="pw2" placeholder = "비밀번호 확인">
 		<span class="validate-info">비밀번호가 일치하지 않습니다.</span></div>

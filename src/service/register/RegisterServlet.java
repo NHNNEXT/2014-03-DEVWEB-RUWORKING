@@ -22,7 +22,7 @@ public class RegisterServlet extends HttpServlet{
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		String id = request.getParameter("id");
-		String password = request.getParameter("pw1");
+		String password = request.getParameter("pwEncryption");
 		String email = request.getParameter("email");
 		String gender = request.getParameter("gender");
 		
