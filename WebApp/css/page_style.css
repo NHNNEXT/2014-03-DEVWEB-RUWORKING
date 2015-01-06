@@ -214,69 +214,32 @@ to {
 	animation-timing-function: ease-in-out;
 }
 
-@
--webkit-keyframes loading { 25% {
-	-ms-transform: rotate(-5deg);
-	-webkit-transform: rotate(-5deg);
-	transform: rotate(-5deg);
+@-webkit-keyframes loading { 
+	25% {
+		-ms-transform: rotate(-5deg);
+		-webkit-transform: rotate(-5deg);
+		transform: rotate(-5deg);
+	}
+
+	75% {
+	-ms-transform: rotate(5deg);
+	-webkit-transform: rotate(5deg);
+	transform: rotate(5deg);
+	}
 }
 
-75%
-{
--ms-transform
-:
- 
-rotate
-(5deg);
+@keyframes loading {
+	25% {
+		-ms-transform: rotate(-5deg);
+		-webkit-transform: rotate(-5deg);
+		transform: rotate(-5deg);
+	}
 
-        
--webkit-transform
-:
- 
-rotate
-(5deg);
-
-        
-transform
-:
- 
-rotate
-(5deg);
-
-    
-}
-}
-@
-keyframes loading { 25% {
-	-ms-transform: rotate(-5deg);
-	-webkit-transform: rotate(-5deg);
-	transform: rotate(-5deg);
-}
-
-75%
-{
--ms-transform
-:
- 
-rotate
-(5deg);
-
-        
--webkit-transform
-:
- 
-rotate
-(5deg);
-
-        
-transform
-:
- 
-rotate
-(5deg);
-
-    
-}
+	75% {
+		-ms-transform:rotate(5deg);
+		-webkit-transform:rotate(5deg);
+		transform:rotate(5deg);
+	}
 }
 #ns-index .secondfloor .boxTypeA, #ns-index .secondfloor .boxTypeC {
 	width: 232px;
