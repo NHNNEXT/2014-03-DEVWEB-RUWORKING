@@ -9,7 +9,12 @@ public class mainArticle {
 	String date = new String();
 	String article_id = new String();
 	String ancestor_id = new String();
+	String politician_id = new String();
 	
+	public String getPolitician_id() {
+		return politician_id;
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -42,7 +47,7 @@ public class mainArticle {
 		return ancestor_id;
 	}
 
-	public mainArticle(String name, String partyName, String title, String content, String date, String article_id, String ancestor_id) {
+	public mainArticle(String name, String partyName, String title, String content, String date, String article_id, String ancestor_id, String politician_id) {
 		this.name = name;
 		this.partyName = partyName;
 		this.title = title;
@@ -50,10 +55,11 @@ public class mainArticle {
 		this.date = date;
 		this.article_id = article_id;
 		this.ancestor_id = ancestor_id;
+		this.politician_id = politician_id;
 	}
 	
-	public mainArticle(String name, String partyName, String title, String content, String date, String article_id, String ancestor_id, String img_url) {
-		this(name, partyName, title, content, date, article_id, ancestor_id);
+	public mainArticle(String name, String partyName, String title, String content, String date, String article_id, String ancestor_id, String img_url, String politician_id) {
+		this(name, partyName, title, content, date, article_id, ancestor_id, politician_id);
 		this.img_url = img_url;
 	}
 }

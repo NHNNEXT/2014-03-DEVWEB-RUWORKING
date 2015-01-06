@@ -73,7 +73,9 @@
 				<div>
 					<div class="cardA">
 						<div class="header">
-							<div class="name">${mainArticleNotImage[0].name}</div>
+							<div class="name">
+								<a href="/viewDetail.ruw?pid=${mainArticleNotImage[0].politician_id}">${mainArticleNotImage[0].name}</a>
+							</div>
 							<div class="party">${mainArticleNotImage[0].partyName}</div>
 						</div>
 						<div class="body">
@@ -90,7 +92,9 @@
 				<c:forEach var="article" items="${mainArticleImage }">
 					<div class="cardB">
 						<div class="header">
-							<div class="name">${article.name }</div>
+							<div class="name">
+								<a href="/viewDetail.ruw?pid=${article.politician_id}">${article.name }</a>
+							</div>
 							<div class="party">${article.partyName }</div>
 						</div>
 						<div class="body">
@@ -116,7 +120,9 @@
 						</c:otherwise>
 					</c:choose>
 					<div class="header">
-						<div class="name">${article.name }</div>
+						<div class="name">
+							<a href="/viewDetail.ruw?pid=${article.politician_id}">${article.name }</a>
+						</div>
 						<div class="party">${article.partyName }</div>
 					</div>
 					<div class="body">
