@@ -14,24 +14,67 @@ public class Article {
 	private int politicianId;
 	private int ancestorId;
 
-	public Article(String title, String content, String imgUrl, String link, int version,
-			String userId, int promiseNum, int politicianId) {
-		this(-1, title, content, imgUrl, link, null, version, userId, promiseNum, politicianId, -1);
+	public static class Builder {
+		private int id = -1;
+		private String title;
+		private String content;
+		private String imgUrl;
+		private String link = null;
+		private String date = null;
+		private int version;
+		private String userId;
+		private int promiseNum;
+		private int politicianId;
+		private int ancestorId = -1;
+
+		public Builder(String title, String content, String imgUrl,
+				int version, String userId, int promiseNum, int politicianId) {
+			this.title = title;
+			this.content = content;
+			this.imgUrl = imgUrl;
+			this.version = version;
+			this.userId = userId;
+			this.promiseNum = promiseNum;
+			this.politicianId = politicianId;
+		}
+
+		public Builder link(String val){
+			link = val;
+			return this;
+		}
+		
+		public Builder id(int val) {
+			id = val;
+			return this;
+		}
+		
+		public Builder date(String val){
+			date = val;
+			return this;
+		}
+		
+		public Builder ancestorId(int val) {
+			ancestorId = val;
+			return this;
+		}
+		
+		public Article build(){
+			return new Article(this);
+		}
 	}
 
-	public Article(Integer id, String title, String content, String imgUrl, String link, String date,
-			int version, String userId, int promiseNum, int politicianId, int ancestorId) {
-		this.id = id;
-		this.title = title;
-		this.content = content;
-		this.imgUrl = imgUrl;
-		this.link = link;
-		this.date = date;
-		this.version = version;
-		this.userId = userId;
-		this.promiseNum = promiseNum;
-		this.politicianId = politicianId;
-		this.ancestorId = ancestorId;
+	public Article (Builder builder){
+		this.id = builder.id;
+		this.title = builder.title;
+		this.content = builder.content;
+		this.imgUrl = builder.imgUrl;
+		this.link = builder.link;
+		this.date = builder.date;
+		this.version = builder.version;
+		this.userId = builder.userId;
+		this.promiseNum = builder.promiseNum;
+		this.politicianId = builder.politicianId;
+		this.ancestorId = builder.ancestorId;
 	}
 
 	public int getId() {
@@ -45,11 +88,11 @@ public class Article {
 	public String getContent() {
 		return content;
 	}
-	
+
 	public String getImgUrl() {
 		return imgUrl;
 	}
-	
+
 	public String getLink() {
 		return link;
 	}
@@ -57,7 +100,7 @@ public class Article {
 	public String getDate() {
 		return date;
 	}
-	
+
 	public int getVersion() {
 		return version;
 	}
@@ -73,7 +116,7 @@ public class Article {
 	public int getPoliticianId() {
 		return politicianId;
 	}
-	
+
 	public int getAncestorId() {
 		return ancestorId;
 	}

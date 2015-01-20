@@ -37,7 +37,7 @@ public class UploadArticleServlet extends HttpServlet {
 		int politicianId = Integer.parseInt((String)multi.getParameter("politicianId"));
 		String fileName = multi.getFilesystemName("attachedFile"); 
 		String filePath = relativePath+"/"+fileName;
-		Article article = new Article(title, content, filePath, null, version, userId, promiseNum, politicianId);
+		Article article = new Article.Builder(title, content, filePath, version, userId, promiseNum, politicianId).build();
 		ArticleModel articleModel = new ArticleModel();
 
 		if(multi.getParameter("ancestorId") == null) {

@@ -41,7 +41,7 @@ public class PoliticianRankingModel {
 		try {
 			while(rs.next()){
 				int percent = rs.getInt("rate");
-				promiseList.add(new Politician(rs.getInt("id"), rs.getString("name"), rs.getString("local"), rs.getString("party_name"), rs.getString("img_Url"), percent));
+				promiseList.add(new Politician.Builder(rs.getInt("id"), rs.getString("name"), rs.getString("local"), rs.getString("party_name"), rs.getString("img_Url")).promiseFulfillment(percent).build());
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

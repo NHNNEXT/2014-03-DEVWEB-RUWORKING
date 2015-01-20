@@ -11,17 +11,41 @@ public class Politician {
 	private String imgUrl;
 	private int promiseFulfillment;
 
-	public Politician(int politicianId, String name, String local, String party, String imgUrl) {
-		this.politicianId = politicianId;
-		this.name = name;
-		this.local = local;
-		this.party = party;
-		this.imgUrl = imgUrl;
+	public static class Builder {
+		private int politicianId;
+		private String name;
+		private String local;
+		private String party;
+		private String imgUrl;
+		private int promiseFulfillment = 0;
+
+		public Builder(int politicianId, String name, String local,
+				String party, String imgUrl) {
+			this.politicianId = politicianId;
+			this.name = name;
+			this.local = local;
+			this.party = party;
+			this.imgUrl = imgUrl;
+		}
+
+		public Builder promiseFulfillment(int val) {
+			promiseFulfillment = val;
+			return this;
+		}
+
+		public Politician build() {
+			return new Politician(this);
+		}
 	}
-	
-	public Politician(int politicianId, String name, String local, String party, String imgUrl, int promiseFulfillment) {
-		this(politicianId, name, local, party, imgUrl);
-		this.promiseFulfillment = promiseFulfillment;
+
+	private Politician(Builder builder) {
+
+		politicianId = builder.politicianId;
+		name = builder.name;
+		local = builder.local;
+		party = builder.party;
+		imgUrl = builder.imgUrl;
+		promiseFulfillment = builder.promiseFulfillment;
 	}
 
 	public int getPoliticianId() {
@@ -43,7 +67,7 @@ public class Politician {
 	public String getImgUrl() {
 		return imgUrl;
 	}
-	
+
 	public int getPromiseFulfillment() {
 		return promiseFulfillment;
 	}

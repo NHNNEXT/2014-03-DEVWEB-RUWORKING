@@ -94,12 +94,13 @@ public class ArticleModel {
 			rs = DAO.selectQuery(querySet);
 
 			while (rs.next()) {
-				article = new Article(rs.getInt("id"), rs.getString("title"),
+				article = new Article.Builder(rs.getString("title"),
 						rs.getString("content"), rs.getString("img_url"),
-						rs.getString("link"), rs.getString("date"),
-						rs.getInt("version"), rs.getString("user_id"),
-						rs.getInt("promise_num"), rs.getInt("politician_id"), rs.getInt("ancestor_id"));
+						 rs.getInt("version"), rs.getString("user_id"),
+						rs.getInt("promise_num"), rs.getInt("politician_id")).id(rs.getInt("id")).date(rs.getString("date")).ancestorId(rs.getInt("ancestor_id")).link(rs.getString("link")).build();
 			}
+			
+
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

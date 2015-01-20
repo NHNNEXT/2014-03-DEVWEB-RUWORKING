@@ -30,7 +30,7 @@ public class SearchModel {
 		try {
 			rs = DAO.selectQuery(querySet);
 			while(rs.next()) {
-				searchResultList.add(new Politician(rs.getInt("id"), rs.getString("name"), rs.getString("local"), getParty(rs.getInt("party_id")), rs.getString("img_url")));
+				searchResultList.add(new Politician.Builder(rs.getInt("id"), rs.getString("name"), rs.getString("local"), getParty(rs.getInt("party_id")), rs.getString("img_url")).build());
 			}
 			return searchResultList;
 		}  catch (SQLException e) {
@@ -88,7 +88,7 @@ public class SearchModel {
 		try {
 			rs = DAO.selectQuery(querySet);
 			while(rs.next()) {
-				searchResultList.add(new Politician(rs.getInt("id"), rs.getString("name"), rs.getString("local"), getParty(rs.getInt("party_id")), rs.getString("img_url")));
+				searchResultList.add(new Politician.Builder(rs.getInt("id"), rs.getString("name"), rs.getString("local"), getParty(rs.getInt("party_id")), rs.getString("img_url")).build());
 			}
 			return searchResultList;
 		}  catch (SQLException e) {

@@ -29,9 +29,9 @@ public class ViewDetailModel {
 			if (rs.next()) {
 				int partyId = rs.getInt("party_id");
 				String partyName = getPartyName(partyId);
-				return new Politician(rs.getInt("id"), rs.getString("name"),
+				return new Politician.Builder(rs.getInt("id"), rs.getString("name"),
 						rs.getString("local"), partyName,
-						rs.getString("img_url"));
+						rs.getString("img_url")).build();
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

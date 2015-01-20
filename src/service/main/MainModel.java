@@ -46,7 +46,7 @@ public class MainModel {
 		try {
 			while(rs.next()){
 				int percent = rs.getInt("rate");
-				Top5List.add(new Politician(rs.getInt("id"), rs.getString("name"), rs.getString("local"), rs.getString("party_name"), rs.getString("img_Url"), percent));
+				Top5List.add(new Politician.Builder(rs.getInt("id"), rs.getString("name"), rs.getString("local"), rs.getString("party_name"), rs.getString("img_Url")).promiseFulfillment(percent).build());
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
