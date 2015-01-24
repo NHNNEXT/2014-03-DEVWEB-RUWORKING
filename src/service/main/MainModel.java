@@ -18,14 +18,12 @@ import db.query.PstmtQuerySet;
 
 public class MainModel {
 	public List<Politician> getRankedFulfillment(int numOfPolitician){
-		ArrayList<Object> queryValues = new ArrayList<Object>();
+		
 		String sql = "SELECT FLOOR(SUM(vote_score/vote_count)/5) AS rate, politician.*, party.name AS party_name from promise inner join politician on promise.politician_id = politician.id inner join party on politician.party_id = party.id GROUP BY politician_id ORDER BY SUM(vote_score/vote_count)/5 DESC LIMIT ?";
-		
-		queryValues.add(numOfPolitician);
-		PstmtQuerySet querySet = new PstmtQuerySet(sql, queryValues);
-		
+		PstmtQuerySet querySet = makeQuerySet(numOfPolitician, sql);		
 		DAOFactory DAO = new DAOFactory();
 		ResultSet rs = null;
+		
 		try {
 			rs = DAO.selectQuery(querySet);
 			return makeFulfillmentList(rs);
@@ -39,6 +37,13 @@ public class MainModel {
 			}
 		}
 		return null;
+	}
+
+	private PstmtQuerySet makeQuerySet(int numOfPolitician, String sql) {
+		ArrayList<Object> queryValues = new ArrayList<Object>();	
+		queryValues.add(numOfPolitician);
+		PstmtQuerySet querySet = new PstmtQuerySet(sql, queryValues);
+		return querySet;
 	}
 	
 	private List<Politician> makeFulfillmentList(ResultSet rs) {

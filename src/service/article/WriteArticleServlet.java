@@ -2,6 +2,7 @@ package service.article;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -29,16 +30,17 @@ public class WriteArticleServlet extends HttpServlet {
 			view.forward(request, response);
 			return;
 		}
-		int politicianId = Integer.parseInt(request.getParameter("pid"));
+		ArrayList<Object> promiseTitleIngredients = new ArrayList<Object>();
+		promiseTitleIngredients.add(Integer.parseInt(request.getParameter("pid")));
 		ArticleModel articleModel = new ArticleModel();
 		List<String> promiseList = null;
 		try {
-			promiseList = articleModel.getPromiseTitle(politicianId);
+			promiseList = articleModel.getPromiseTitle(promiseTitleIngredients);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		request.setAttribute("promiseList", promiseList);
-		request.setAttribute("politicianId", politicianId);
+		request.setAttribute("politicianId", Integer.parseInt(request.getParameter("pid")));
 		RequestDispatcher view = request.getRequestDispatcher("module/evidence/upload.jsp");
 		view.forward(request, response);
 	}

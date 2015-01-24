@@ -3,6 +3,7 @@ package service.article;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -22,12 +23,14 @@ public class DeleteArticleServlet extends HttpServlet{
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		String articleId = request.getParameter("articleId");
+		ArrayList<Object> articleIngredients = new ArrayList<Object>();
+		articleIngredients.add(request.getParameter("articleId"));
+		
 		ArticleModel articleModel = new ArticleModel();
-		Article article = articleModel.getArticle(articleId);
+		Article article = articleModel.getArticle(articleIngredients);
 		int politicianId = article.getPoliticianId();
 		try {
-			if(articleModel.deleteArticleById(articleId)){
+			if(articleModel.deleteArticleById(articleIngredients)){
 				response.sendRedirect("viewDetail.ruw?pid="+politicianId);
 			}else {
 				//경고창 띄우기 "서버 문제로 게시글이 삭제되지 않았습니다." 	

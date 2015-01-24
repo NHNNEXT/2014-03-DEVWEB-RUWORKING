@@ -3,6 +3,7 @@ package service.article;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -23,9 +24,10 @@ public class EditArticleServlet extends HttpServlet{
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		String ancestorId = request.getParameter("articleId");
+		ArrayList<Object> articleIngredients = new ArrayList<Object>();
+		articleIngredients.add(request.getParameter("articleId"));
 		ArticleModel articleModel = new ArticleModel();
-		Article article = articleModel.getArticle(ancestorId);
+		Article article = articleModel.getArticle(articleIngredients);
 		String promiseTitle=null;
 		try {
 			promiseTitle = articleModel.getPromiseTitle(article.getPoliticianId(), article.getPromiseNum());

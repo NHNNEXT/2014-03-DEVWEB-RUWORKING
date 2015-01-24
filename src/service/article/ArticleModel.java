@@ -11,22 +11,9 @@ import db.query.PstmtQuerySet;
 
 public class ArticleModel {
 
-	public void postArticle(Article article) throws SQLException {
-		ArrayList<Object> queryValues = new ArrayList<Object>();
+	public void postArticle(ArrayList<Object> queryValues) throws SQLException {
+		
 		String sql = "INSERT INTO article VALUES(NULL,?,?,?,?,?,?,0,?,?,?,?)";
-		Timestamp date = new Timestamp(System.currentTimeMillis());
-
-		queryValues.add(article.getTitle());
-		queryValues.add(article.getContent());
-		queryValues.add(article.getImgUrl());
-		queryValues.add(article.getLink());
-		queryValues.add(date);
-		queryValues.add(article.getVersion());
-		queryValues.add(article.getUserId());
-		queryValues.add(article.getPromiseNum());
-		queryValues.add(article.getPoliticianId());
-		queryValues.add(getMaxArticleId());
-
 		PstmtQuerySet querySet = new PstmtQuerySet(sql, queryValues);
 		DAOFactory DAO = new DAOFactory();
 
@@ -37,13 +24,16 @@ public class ArticleModel {
 		DAO.closeConnections();
 	}
 	
-	private int getMaxArticleId(){
+	int getMaxArticleId(){
+		
 		String sql = "SELECT MAX(id)+1 FROM article";
 		ArrayList<Object> queryValues = new ArrayList<Object>();
 		PstmtQuerySet querySet = new PstmtQuerySet(sql, queryValues);
 		DAOFactory DAO = new DAOFactory();
+		
 		ResultSet rs = null;
 		int articleId = 0;
+		
 		try {
 			rs = DAO.selectQuery(querySet);
 			rs.next();
@@ -54,39 +44,12 @@ public class ArticleModel {
 		return articleId;
 	}
 	
-	public void postArticle(Article article, int ancestorId) throws SQLException {
-		ArrayList<Object> queryValues = new ArrayList<Object>();
-		String sql = "INSERT INTO article VALUES(NULL,?,?,?,?,?,?,0,?,?,?,?)";
-		Timestamp date = new Timestamp(System.currentTimeMillis());
-
-		queryValues.add(article.getTitle());
-		queryValues.add(article.getContent());
-		queryValues.add(article.getImgUrl());
-		queryValues.add(article.getLink());
-		queryValues.add(date);
-		queryValues.add(article.getVersion());
-		queryValues.add(article.getUserId());
-		queryValues.add(article.getPromiseNum());
-		queryValues.add(article.getPoliticianId());
-		queryValues.add(ancestorId);
-
-		PstmtQuerySet querySet = new PstmtQuerySet(sql, queryValues);
-		DAOFactory DAO = new DAOFactory();
-
-		if (DAO.nonSelectQuery(querySet)) {
-			DAO.closeConnections();
-			return;
-		}
-		DAO.closeConnections();
-	}
-
-	public Article getArticle(String id) {
+	public Article getArticle(ArrayList<Object> queryValues) {
 
 		String sql = "SELECT * FROM article WHERE id=?";
-		ArrayList<Object> queryValues = new ArrayList<Object>();
-		queryValues.add(id);
 		PstmtQuerySet querySet = new PstmtQuerySet(sql, queryValues);
 		DAOFactory DAO = new DAOFactory();
+	
 		ResultSet rs = null;
 		Article article = null;
 
@@ -115,17 +78,16 @@ public class ArticleModel {
 		return article;
 	}
 
-	public List<String> getPromiseTitle(int pid) throws SQLException {
+	public List<String> getPromiseTitle(ArrayList<Object> queryValues) throws SQLException {
 		// TODO promise table에서 정치인아이디가 pid인 것 search하여 List에 넣기
 		String sql = "SELECT * FROM promise WHERE politician_id=?";
-		ArrayList<Object> queryValues = new ArrayList<Object>();
-		queryValues.add(pid);
 		PstmtQuerySet querySet = new PstmtQuerySet(sql, queryValues);
 		DAOFactory DAO = new DAOFactory();
+		
 		ResultSet rs = null;
-		rs = DAO.selectQuery(querySet);
 		List<String> promiseLists = new ArrayList<String>();
-
+		
+		rs = DAO.selectQuery(querySet);
 		while (rs.next()) {
 			promiseLists.add(rs.getString("title"));
 		}
@@ -135,6 +97,7 @@ public class ArticleModel {
 	}
 	
 	public String getPromiseTitle(int pid, int promiseNum) throws SQLException {
+		
 		String sql = "SELECT * FROM promise WHERE politician_id=? AND promise_num=?";
 		ArrayList<Object> queryValues = new ArrayList<Object>();
 		queryValues.add(pid);
@@ -144,6 +107,7 @@ public class ArticleModel {
 		ResultSet rs = null;
 		rs = DAO.selectQuery(querySet);
 		String promiseTitle = null;
+		
 		while (rs.next()) {
 			promiseTitle = rs.getString("title");
 		}
@@ -151,10 +115,8 @@ public class ArticleModel {
 		return promiseTitle;
 	}
 
-	public boolean deleteArticleById(String articleId) throws SQLException {
-		ArrayList<Object> queryValues = new ArrayList<Object>();
+	public boolean deleteArticleById(ArrayList<Object> queryValues) throws SQLException {
 		String sql = "UPDATE article SET deleted=1 WHERE id=?";
-		queryValues.add(articleId);
 		PstmtQuerySet querySet = new PstmtQuerySet(sql, queryValues);
 		DAOFactory DAO = new DAOFactory();
 

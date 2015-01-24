@@ -2,6 +2,7 @@ package service.article;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -20,17 +21,20 @@ public class GetArticleServlet extends HttpServlet{
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		String articleId = request.getParameter("article-id");
-		String ancestorId = request.getParameter("ancestor-id");
 		
+		ArrayList<Object> articleIngredients = new ArrayList<Object>();
+		articleIngredients.add(request.getParameter("article-id"));
 		ArticleModel model = new ArticleModel();
+		Article article = model.getArticle(articleIngredients);
+		
+		ArrayList<Object> commentsIngredients = new ArrayList<Object>();
+		commentsIngredients.add(request.getParameter("ancestor-id"));
 		CommentModel commentModel = new CommentModel();
+		List comments= commentModel.getComments(commentsIngredients);
 		
-		List commentList= commentModel.getCommentList(ancestorId);
-		Article article = model.getArticle(articleId);
-		
+				
 		request.setAttribute("article", article);
-		request.setAttribute("commentList", commentList);
+		request.setAttribute("commentList", comments);
 
 		RequestDispatcher view = request.getRequestDispatcher("module/evidence/show.jsp");
 		view.forward(request, response);		

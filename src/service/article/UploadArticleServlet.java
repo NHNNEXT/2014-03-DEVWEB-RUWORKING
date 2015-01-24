@@ -2,6 +2,8 @@ package service.article;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -22,44 +24,47 @@ public class UploadArticleServlet extends HttpServlet {
 			HttpServletResponse response) throws ServletException, IOException {
 		
 		request.setCharacterEncoding("UTF-8");
+
 		String relativePath = "/userData/articleImg";
 		String savePath = request.getServletContext().getRealPath(relativePath);
-		
 		int sizeLimit = 1024*1024*50;
 		MultipartRequest multi = new MultipartRequest(request, savePath, sizeLimit, "utf-8", new DefaultFileRenamePolicy());
-		
-		HttpSession session = request.getSession();
-		String title = multi.getParameter("articleTitle");
-		String content = multi.getParameter("articleContent");
-		int version = Integer.parseInt(multi.getParameter("version"));
-		String userId = (String) session.getAttribute("userId");
-		int promiseNum = Integer.parseInt(multi.getParameter("promiseNumber"));
-		int politicianId = Integer.parseInt((String)multi.getParameter("politicianId"));
-		String fileName = multi.getFilesystemName("attachedFile"); 
-		String filePath = relativePath+"/"+fileName;
-		Article article = new Article.Builder(title, content, filePath, version, userId, promiseNum, politicianId).build();
+
+		ArrayList<Object> postArticleValues = makeQueryValues(request,
+				relativePath, multi);
 		ArticleModel articleModel = new ArticleModel();
 
-		if(multi.getParameter("ancestorId") == null) {
-			//올릴 때
-			try {
-				articleModel.postArticle(article);
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		else{
-			//수정할 때
-			int ancestorId = Integer.parseInt(multi.getParameter("ancestorId"));
-			try {
-				articleModel.postArticle(article, ancestorId);
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+		if(multi.getParameter("ancestorId") == null)
+			postArticleValues.add(articleModel.getMaxArticleId());
+		else
+			postArticleValues.add(Integer.parseInt(multi.getParameter("ancestorId")));	
+		
+			
+		try {
+			articleModel.postArticle(postArticleValues);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		
-		response.sendRedirect("/viewDetail.ruw?pid=" + politicianId);
+		
+		response.sendRedirect("/viewDetail.ruw?pid=" + (String)multi.getParameter("politicianId"));
+	}
+
+	private ArrayList<Object> makeQueryValues(HttpServletRequest request,
+			String relativePath, MultipartRequest multi) {
+		ArrayList<Object> postArticleValues = new ArrayList<Object>();
+		Timestamp date = new Timestamp(System.currentTimeMillis());
+		HttpSession session = request.getSession();
+		postArticleValues.add(multi.getParameter("articleTitle"));
+		postArticleValues.add(multi.getParameter("articleContent"));
+		postArticleValues.add(relativePath+"/"+multi.getFilesystemName("attachedFile"));
+		postArticleValues.add(null);//Link 수정해야함
+		postArticleValues.add(date);
+		postArticleValues.add(Integer.parseInt(multi.getParameter("version")));
+		postArticleValues.add((String) session.getAttribute("userId"));
+		postArticleValues.add(Integer.parseInt(multi.getParameter("promiseNumber")));
+		postArticleValues.add(Integer.parseInt((String)multi.getParameter("politicianId")));
+		return postArticleValues;
 	}
 }
